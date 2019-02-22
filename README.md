@@ -72,4 +72,4 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## Volumes
 
 - `postgres-data`:
-  The database data.
+  The database's data.
