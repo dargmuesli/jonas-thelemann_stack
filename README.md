@@ -22,7 +22,8 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - #### `adminer`
 
-  Connect to the PostgreSQL instance via [Adminer](https://www.adminer.org/) on [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/) using:
+  You can access the database's frontend at [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/).
+  This information is required for login:
 
   |          |                     |
   | -------- | ------------------- |
@@ -32,7 +33,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
   | Password | [postgres_password] |
   | Database | [postgres_db]       |
 
-  Values in square brackets are Docker secrets.
+  Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
 
 - #### `certdumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
 
@@ -53,6 +54,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 - #### `traefik`
 
   You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+  Traefik enables HTTPS for all services and acts as a load-balancer too.
 
 <a name="secrets"></a>
 
