@@ -15,9 +15,9 @@ services:
       - "traefik.frontend.rule=Host:adminer.jonas-thelemann.test"
       - "traefik.port=8080"
     volumes:
-    - "./production/adminer/adminer.css:/var/www/html/adminer.css"
+    - "../production/adminer/adminer.css:/var/www/html/adminer.css"
   jonas-thelemann-de:
-    image: "dargmuesli/jonas-thelemann.de:test"
+    image: "dargmuesli/jonas-thelemann.de"
     deploy:
       labels:
       - "traefik.enable=true"
@@ -25,8 +25,8 @@ services:
       - "traefik.port=443"
       - "traefik.protocol=https"
     volumes:
-    - "../jonas-thelemann.de/dist/jonas-thelemann.de:/var/www/jonas-thelemann.de"
-    - "./development/certificates:/etc/ssl/certificates"
+    - "../../jonas-thelemann.de/dist/jonas-thelemann.de:/var/www/jonas-thelemann.de"
+    - "./certificates:/etc/ssl/certificates"
   randomwinpicker-de:
     image: "dargmuesli/randomwinpicker"
     deploy:
@@ -36,8 +36,8 @@ services:
       - "traefik.port=443"
       - "traefik.protocol=https"
     volumes:
-    - "./development/certificates/jonas-thelemann.de.crt:/etc/ssl/certificates/randomwinpicker.crt"
-    - "./development/certificates/jonas-thelemann.de.key:/etc/ssl/certificates/randomwinpicker.key"
+    - "./certificates/jonas-thelemann.de.crt:/etc/ssl/certificates/randomwinpicker.crt"
+    - "./certificates/jonas-thelemann.de.key:/etc/ssl/certificates/randomwinpicker.key"
   postgres:
     image: "postgres:alpine"
     environment:
@@ -51,7 +51,7 @@ services:
     - "postgres_user"
     volumes:
     - "postgres-data:/var/lib/postgresql/data"
-    - "./production/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
+    - "../production/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
   traefik:
     image: "traefik"
     ports:
@@ -85,13 +85,13 @@ services:
     - "--insecureSkipVerify=true"
     volumes:
     - "/var/run/docker.sock:/var/run/docker.sock"
-    - "./development/certificates:/etc/ssl/certificates"
+    - "./certificates:/etc/ssl/certificates"
 secrets:
   postgres_db:
-    file: "./development/secrets/postgres_db.secret"
+    file: "./secrets/postgres_db.secret"
   postgres_password:
-    file: "./development/secrets/postgres_password.secret"
+    file: "./secrets/postgres_password.secret"
   postgres_user:
-    file: "./development/secrets/postgres_user.secret"
+    file: "./secrets/postgres_user.secret"
 volumes:
   postgres-data: {}
