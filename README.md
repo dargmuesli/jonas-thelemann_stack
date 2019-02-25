@@ -5,7 +5,7 @@
 
 The Docker stack configuration for [my website](https://jonas-thelemann.de/).
 
-This project is deployed in accordance to the [DargStack template](https://github.com/Dargmuesli/dargstack-template/) to make deployment a breeze. It is closely related to [my website's source code](https://github.com/dargmuesli/jonas-thelemann.de/).
+This project is deployed in accordance to the [DargStack template](https://github.com/Dargmuesli/dargstack-template/) to make deployment a breeze. It is closely related to [my website's source code](https://github.com/dargmuesli/jonas-thelemann/).
 
 ## Table of Contents
 1. **[Services](#services)**

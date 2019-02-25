@@ -16,8 +16,8 @@ services:
       - "traefik.port=8080"
     volumes:
     - "../production/adminer/adminer.css:/var/www/html/adminer.css"
-  jonas-thelemann-de:
-    image: "dargmuesli/jonas-thelemann.de"
+  jonas-thelemann:
+    image: "dargmuesli/jonas-thelemann"
     deploy:
       labels:
       - "traefik.enable=true"
@@ -25,7 +25,7 @@ services:
       - "traefik.port=443"
       - "traefik.protocol=https"
     volumes:
-    - "../../jonas-thelemann.de/dist/jonas-thelemann.de:/var/www/jonas-thelemann.de"
+    - "../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann"
     - "./certificates:/etc/ssl/certificates"
   randomwinpicker-de:
     image: "dargmuesli/randomwinpicker"
@@ -36,8 +36,8 @@ services:
       - "traefik.port=443"
       - "traefik.protocol=https"
     volumes:
-    - "./certificates/jonas-thelemann.de.crt:/etc/ssl/certificates/randomwinpicker.crt"
-    - "./certificates/jonas-thelemann.de.key:/etc/ssl/certificates/randomwinpicker.key"
+    - "./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.crt"
+    - "./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.key"
   postgres:
     image: "postgres:alpine"
     environment:
@@ -81,7 +81,7 @@ services:
     - "--docker.exposedByDefault=false"
     - "--docker.swarmMode=true"
     - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
-    - "--entryPoints=Name:https Address::443 TLS:/etc/ssl/certificates/jonas-thelemann.de.crt,/etc/ssl/certificates/jonas-thelemann.de.key Compress:true"
+    - "--entryPoints=Name:https Address::443 TLS:/etc/ssl/certificates/jonas-thelemann.crt,/etc/ssl/certificates/jonas-thelemann.key Compress:true"
     - "--insecureSkipVerify=true"
     volumes:
     - "/var/run/docker.sock:/var/run/docker.sock"
