@@ -39,7 +39,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   See [DargStack template: certificates](https://github.com/Dargmuesli/dargstack-template/#certificates).
 
-- #### `jonas-thelemann-de`
+- #### `jonas-thelemann`
 
   You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
 
