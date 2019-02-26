@@ -1,0 +1,26 @@
+services:
+  certdumper:
+    image: alpine:latest
+    command: >
+      ash -c \
+        apk --no-cache add inotify-tools jq openssl util-linux bash && \
+        wget https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/dumpcerts.sh -O dumpcerts.sh && \
+        chmod 744 dumpcerts.sh && \
+        while true; do \
+          bash dumpcerts.sh /etc/traefik/acme/acme.json /etc/traefik/acme/ && \
+          ln -f /etc/traefik/acme/certificates/* /etc/traefik/acme/ && \
+          ln -f /etc/traefik/acme/private/* /etc/traefik/acme/ && \
+          inotifywait -e modify /etc/traefik/acme/acme.json
+        done
+    volumes:
+    - acme-data:/etc/traefik/acme
+  traefik:
+    command:
+    - (( prepend ))
+    - --acme.acmeLogging=true
+    - --acme.dnsChallenge.provider=${STACK_ACME_PROVIDER}
+    - --acme.domains=${STACK_DOMAIN},bitrix.${STACK_DOMAIN},docs.${STACK_DOMAIN},gitlab.${STACK_DOMAIN},portainer.${STACK_DOMAIN},registry.${STACK_DOMAIN},traefik.${STACK_DOMAIN},www.${STACK_DOMAIN}
+    - --acme.email=${STACK_ACME_EMAIL}
+    - --acme.entrypoint=https
+    - --acme.storage=/etc/traefik/acme/acme.json
+    env_file: "traefik.env"
