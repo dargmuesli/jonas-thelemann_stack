@@ -65,7 +65,6 @@ services:
       mode: "host"
     deploy:
       labels:
-      - "traefik.docker.network=jonas-thelemann-de_default"
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:traefik.jonas-thelemann.test"
       - "traefik.port=8080"
