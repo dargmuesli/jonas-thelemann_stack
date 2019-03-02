@@ -29,12 +29,12 @@ services:
       - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
     volumes:
     - (( replace ))
-    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/jonas-thelemann.env:ro
+    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
     - acme-data:/etc/ssl/certificates
   randomwinpicker:
     volumes:
     - (( replace ))
-    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker.test/credentials/randomwinpicker.env:ro
+    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
     - acme-data:/etc/ssl/certificates
   traefik:
     command:
