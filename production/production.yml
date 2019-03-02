@@ -9,15 +9,16 @@ services:
     command: >
       ash -c " \
         apk --no-cache add inotify-tools jq openssl util-linux bash && \
-        wget https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/dumpcerts.sh -O dumpcerts.sh && \
+        cd /etc/traefik/acme/ && \
+        wget https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/dumpcerts.sh -O ./dumpcerts.sh && \
         chmod 744 dumpcerts.sh && \
         while true; do \
-          bash dumpcerts.sh /etc/traefik/acme/acme.json /etc/traefik/acme/ && \
-          ln -f /etc/traefik/acme/certs/* /etc/traefik/acme/ && \
-          ln -f /etc/traefik/acme/private/* /etc/traefik/acme/ && \
-          ln -f /etc/ssl/certificates/certs/${STACK_DOMAIN}.crt /etc/ssl/certificates/randomwinpicker.crt && \
-          ln -f /etc/ssl/certificates/private/${STACK_DOMAIN}.key /etc/ssl/certificates/randomwinpicker.key && \
-          inotifywait -e modify /etc/traefik/acme/acme.json
+          bash dumpcerts.sh acme.json ./ && \
+          ln -f ./certs/* ./ && \
+          ln -f ./private/* ./ && \
+          ln -f ./${STACK_DOMAIN}.crt ./randomwinpicker.crt && \
+          ln -f ./${STACK_DOMAIN}.key ./randomwinpicker.key && \
+          inotifywait -e modify ./acme.json
         done"
     volumes:
     - acme-data:/etc/traefik/acme
