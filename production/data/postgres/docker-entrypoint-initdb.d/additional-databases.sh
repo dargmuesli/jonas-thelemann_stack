@@ -3,10 +3,12 @@
 set -e
 set -u
 
+username="$(cat /run/secrets/postgres_user)"
+
 function create_database() {
     local database=$1
     echo "  Creating user and database '$database'"
-    psql -v ON_ERROR_STOP=1 --username "$(cat $POSTGRES_USER_FILE)" <<-EOSQL
+    psql -v ON_ERROR_STOP=1 --username "$username" --dbname "postgres" <<-EOSQL
         CREATE DATABASE "$database";
 EOSQL
 }
