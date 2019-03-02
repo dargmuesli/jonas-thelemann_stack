@@ -17,7 +17,7 @@ services:
     volumes:
     - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:2.0.0
+    image: dargmuesli/jonas-thelemann:2.0.1
     deploy:
       labels:
       - traefik.enable=true
