@@ -7,7 +7,7 @@ services:
   certdumper:
     image: alpine:latest
     command: >
-      ash -c \
+      ash -c " \
         apk --no-cache add inotify-tools jq openssl util-linux bash && \
         wget https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/dumpcerts.sh -O dumpcerts.sh && \
         chmod 744 dumpcerts.sh && \
@@ -18,7 +18,7 @@ services:
           ln -f /etc/ssl/certificates/certs/${STACK_DOMAIN}.crt /etc/ssl/certificates/randomwinpicker.crt && \
           ln -f /etc/ssl/certificates/private/${STACK_DOMAIN}.key /etc/ssl/certificates/randomwinpicker.key && \
           inotifywait -e modify /etc/traefik/acme/acme.json
-        done
+        done"
     volumes:
     - acme-data:/etc/traefik/acme
   jonas-thelemann:
