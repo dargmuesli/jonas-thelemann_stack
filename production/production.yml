@@ -13,7 +13,7 @@ services:
         chmod 744 dumpcerts.sh && \
         while true; do \
           bash dumpcerts.sh /etc/traefik/acme/acme.json /etc/traefik/acme/ && \
-          ln -f /etc/traefik/acme/certificates/* /etc/traefik/acme/ && \
+          ln -f /etc/traefik/acme/certs/* /etc/traefik/acme/ && \
           ln -f /etc/traefik/acme/private/* /etc/traefik/acme/ && \
           ln -f /etc/ssl/certificates/certs/${STACK_DOMAIN}.crt /etc/ssl/certificates/randomwinpicker.crt && \
           ln -f /etc/ssl/certificates/private/${STACK_DOMAIN}.key /etc/ssl/certificates/randomwinpicker.key && \
