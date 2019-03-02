@@ -1,4 +1,9 @@
 services:
+  adminer:
+    deploy:
+      labels:
+      - (( append ))
+      - "traefik.frontend.auth.basic=${STACK_AUTH_BASIC}"
   certdumper:
     image: alpine:latest
     command: >
@@ -10,17 +15,43 @@ services:
           bash dumpcerts.sh /etc/traefik/acme/acme.json /etc/traefik/acme/ && \
           ln -f /etc/traefik/acme/certificates/* /etc/traefik/acme/ && \
           ln -f /etc/traefik/acme/private/* /etc/traefik/acme/ && \
+          ln -f /etc/ssl/certificates/certs/${STACK_DOMAIN}.crt /etc/ssl/certificates/randomwinpicker.crt && \
+          ln -f /etc/ssl/certificates/private/${STACK_DOMAIN}.key /etc/ssl/certificates/randomwinpicker.key && \
           inotifywait -e modify /etc/traefik/acme/acme.json
         done
     volumes:
     - acme-data:/etc/traefik/acme
+  jonas-thelemann:
+    deploy:
+      labels:
+      - (( append ))
+      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
+    volumes:
+    - (( replace ))
+    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/jonas-thelemann.env:ro
+    - acme-data:/etc/ssl/certificates
+  randomwinpicker:
+    volumes:
+    - (( replace ))
+    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker.test/credentials/randomwinpicker.env:ro
+    - acme-data:/etc/ssl/certificates
   traefik:
     command:
     - (( prepend ))
     - --acme.acmeLogging=true
     - --acme.dnsChallenge.provider=${STACK_ACME_PROVIDER}
-    - --acme.domains=${STACK_DOMAIN},bitrix.${STACK_DOMAIN},docs.${STACK_DOMAIN},gitlab.${STACK_DOMAIN},portainer.${STACK_DOMAIN},registry.${STACK_DOMAIN},traefik.${STACK_DOMAIN},www.${STACK_DOMAIN}
+    - --acme.domains=${STACK_DOMAIN},1generator.${STACK_DOMAIN},adminer.${STACK_DOMAIN},randomwinpicker.${STACK_DOMAIN},traefik.${STACK_DOMAIN},www.${STACK_DOMAIN}
     - --acme.email=${STACK_ACME_EMAIL}
     - --acme.entrypoint=https
     - --acme.storage=/etc/traefik/acme/acme.json
-    env_file: "traefik.env"
+    deploy:
+      labels:
+      - (( append ))
+      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
+    env_file: "./secrets/traefik.env"
+    volumes:
+    - (( replace ))
+    - /var/run/docker.sock:/var/run/docker.sock
+    - acme-data:/etc/traefik/acme
+volumes:
+  acme-data: {}
