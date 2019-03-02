@@ -29,7 +29,7 @@ services:
       - traefik.auth.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test;PathPrefix:/tools/
     volumes:
     - ../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann.test/credentials/jonas-thelemann.env:ro
+    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann.test/credentials/.env:ro
     - ./certificates/:/etc/ssl/certificates
   randomwinpicker:
     image: dargmuesli/randomwinpicker:3.0.0
@@ -40,13 +40,13 @@ services:
       - traefik.port=443
       - traefik.protocol=https
     volumes:
-    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker.test/credentials/randomwinpicker.env:ro
+    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
     - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.crt
     - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.key
   postgres:
     image: postgres:11-alpine
     environment:
-      POSTGRES_ADDITIONAL_DBS: randomwinpicker
+      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
