@@ -16,21 +16,6 @@ services:
       - traefik.port=8080
     volumes:
     - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
-  jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:2.0.1
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.port=443
-      - traefik.protocol=https
-      - traefik.default.frontend.priority=1
-      - traefik.default.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test
-      - traefik.auth.frontend.priority=2
-      - traefik.auth.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test;PathPrefix:/tools/
-    volumes:
-    - ../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann.test/credentials/.env:ro
-    - ./certificates/:/etc/ssl/certificates
   randomwinpicker:
     image: dargmuesli/randomwinpicker:3.0.0
     deploy:
@@ -88,6 +73,21 @@ services:
     - --insecureSkipVerify=true
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+    - ./certificates/:/etc/ssl/certificates
+  www:
+    image: dargmuesli/jonas-thelemann:2.0.1
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.port=443
+      - traefik.protocol=https
+      - traefik.default.frontend.priority=1
+      - traefik.default.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test
+      - traefik.auth.frontend.priority=2
+      - traefik.auth.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test;PathPrefix:/tools/
+    volumes:
+    - ../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann
+    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann.test/credentials/.env:ro
     - ./certificates/:/etc/ssl/certificates
 secrets:
   postgres_db:

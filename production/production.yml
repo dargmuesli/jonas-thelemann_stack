@@ -22,15 +22,6 @@ services:
         done"
     volumes:
     - acme-data:/etc/traefik/acme
-  jonas-thelemann:
-    deploy:
-      labels:
-      - (( append ))
-      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
-    volumes:
-    - (( replace ))
-    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
-    - acme-data:/etc/ssl/certificates
   randomwinpicker:
     volumes:
     - (( replace ))
@@ -54,5 +45,14 @@ services:
     - (( replace ))
     - /var/run/docker.sock:/var/run/docker.sock
     - acme-data:/etc/traefik/acme
+  www:
+    deploy:
+      labels:
+      - (( append ))
+      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
+    volumes:
+    - (( replace ))
+    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
+    - acme-data:/etc/ssl/certificates
 volumes:
   acme-data: {}
