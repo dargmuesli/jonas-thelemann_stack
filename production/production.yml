@@ -16,8 +16,8 @@ services:
           bash dumpcerts.sh acme.json ./ && \
           ln -f ./certs/* ./ && \
           ln -f ./private/* ./ && \
-          ln -f ./${STACK_DOMAIN}.crt ./randomwinpicker.crt && \
-          ln -f ./${STACK_DOMAIN}.key ./randomwinpicker.key && \
+          ln -f ./${STACK_DOMAIN}.crt ./randomwinpicker.de.crt && \
+          ln -f ./${STACK_DOMAIN}.key ./randomwinpicker.de.key && \
           inotifywait -e modify ./acme.json
         done"
     volumes:
