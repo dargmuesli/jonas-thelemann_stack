@@ -53,6 +53,12 @@ This project is deployed in accordance to the [DargStack template](https://githu
   You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
   Traefik enables HTTPS for all services and acts as a load-balancer too.
 
+### Additional Services
+
+- #### `status` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square) [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=9CFPA32m2n&Days=1000&Design=6)](https://www.statuscake.com)
+
+  You can access the status dashboard at [status.jonas-thelemann.de](https://status.jonas-thelemann.de/)
+
 <a name="secrets"></a>
 
 ## Secrets
