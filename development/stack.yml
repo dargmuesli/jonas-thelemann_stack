@@ -1,94 +1,3 @@
-version: "3.6"
-services:
-  1generator:
-    image: dargmuesli/1generator:1.0.1
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.frontend.rule=Host:1generator.jonas-thelemann.test
-      - traefik.port=80
-  adminer:
-    image: adminer:4
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.frontend.rule=Host:adminer.jonas-thelemann.test
-      - traefik.port=8080
-    volumes:
-    - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
-  randomwinpicker:
-    image: dargmuesli/randomwinpicker:3.0.0
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.frontend.rule=Host:randomwinpicker.jonas-thelemann.test
-      - traefik.port=443
-      - traefik.protocol=https
-    volumes:
-    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
-    - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.crt
-    - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.key
-  postgres:
-    image: postgres:11-alpine
-    environment:
-      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de
-      POSTGRES_DB_FILE: /run/secrets/postgres_db
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
-      POSTGRES_USER_FILE: /run/secrets/postgres_user
-    secrets:
-    - postgres_db
-    - postgres_password
-    - postgres_user
-    volumes:
-    - postgres-data:/var/lib/postgresql/data
-    - ../production/data/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
-  traefik:
-    image: traefik:1.7-alpine
-    ports:
-    - target: 80
-      published: 80
-      protocol: tcp
-      mode: host
-    - target: 443
-      published: 443
-      protocol: tcp
-      mode: host
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.frontend.rule=Host:traefik.jonas-thelemann.test
-      - traefik.port=8080
-      mode: global
-      placement:
-        constraints:
-        - node.role == manager
-    command:
-    - --api
-    - --defaultentrypoints=http,https
-    - --docker
-    - --docker.exposedByDefault=false
-    - --docker.swarmMode=true
-    - --entryPoints=Name:http Address::80 Redirect.EntryPoint:https
-    - --entryPoints=Name:https Address::443 TLS:/etc/ssl/certificates/jonas-thelemann.crt,/etc/ssl/certificates/jonas-thelemann.key Compress:true
-    - --insecureSkipVerify=true
-    volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    - ./certificates/:/etc/ssl/certificates
-  www:
-    image: dargmuesli/jonas-thelemann:2.0.1
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.port=443
-      - traefik.protocol=https
-      - traefik.default.frontend.priority=1
-      - traefik.default.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test
-      - traefik.auth.frontend.priority=2
-      - traefik.auth.frontend.rule=Host:jonas-thelemann.test,www.jonas-thelemann.test;PathPrefix:/tools/
-    volumes:
-    - ../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann.test/credentials/.env:ro
-    - ./certificates/:/etc/ssl/certificates
 secrets:
   postgres_db:
     file: ./secrets/postgres_db.secret
@@ -96,5 +5,97 @@ secrets:
     file: ./secrets/postgres_password.secret
   postgres_user:
     file: ./secrets/postgres_user.secret
+services:
+  1generator:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:1generator.${STACK_DOMAIN}
+      - traefik.port=80
+    image: dargmuesli/1generator:1.0.1
+  adminer:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:adminer.${STACK_DOMAIN}
+      - traefik.port=8080
+    image: adminer:4
+    volumes:
+    - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
+  postgres:
+    environment:
+      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de
+      POSTGRES_DB_FILE: /run/secrets/postgres_db
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_USER_FILE: /run/secrets/postgres_user
+    image: postgres:11-alpine
+    secrets:
+    - postgres_db
+    - postgres_password
+    - postgres_user
+    volumes:
+    - postgres-data:/var/lib/postgresql/data
+    - ../production/data/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
+  randomwinpicker:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:randomwinpicker.${STACK_DOMAIN}
+      - traefik.port=443
+      - traefik.protocol=https
+    image: dargmuesli/randomwinpicker:3.0.0
+    volumes:
+    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
+    - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.crt
+    - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.key
+  traefik:
+    command:
+    - --api
+    - --defaultentrypoints=http,https
+    - --docker
+    - --docker.exposedByDefault=false
+    - --docker.swarmMode=true
+    - --entryPoints=Name:http Address::80 Redirect.EntryPoint:https
+    - --entryPoints=Name:https Address::443 TLS:/etc/ssl/certificates/jonas-thelemann.crt,/etc/ssl/certificates/jonas-thelemann.key
+      Compress:true
+    - --insecureSkipVerify=true
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:traefik.${STACK_DOMAIN}
+      - traefik.port=8080
+      mode: global
+      placement:
+        constraints:
+        - node.role == manager
+    image: traefik:1.7-alpine
+    ports:
+    - mode: host
+      protocol: tcp
+      published: 80
+      target: 80
+    - mode: host
+      protocol: tcp
+      published: 443
+      target: 443
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ./certificates/:/etc/ssl/certificates
+  www:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.port=443
+      - traefik.protocol=https
+      - traefik.default.frontend.priority=1
+      - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
+      - traefik.auth.frontend.priority=2
+      - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
+    image: dargmuesli/jonas-thelemann:2.0.1
+    volumes:
+    - ../../jonas-thelemann/dist/jonas-thelemann:/var/www/jonas-thelemann
+    - ../production/secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
+    - ./certificates/:/etc/ssl/certificates
+version: "3.6"
 volumes:
   postgres-data: {}
