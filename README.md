@@ -1,6 +1,3 @@
-<!-- TODO: uptime for individual services -->
-[![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=BkiZnQ1xpj&Days=1000&Design=2)](https://www.statuscake.com)
-
 # jonas-thelemann Stack
 
 The Docker stack configuration for [my website](https://jonas-thelemann.de/).
@@ -16,11 +13,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 ## Services
 
-- #### `1generator`
+- #### `1generator` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=2f0CqL5WTk&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access this subproject at [1generator.jonas-thelemann.test](https://1generator.jonas-thelemann.test/).
 
-- #### `adminer`
+- #### `adminer` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=tlaGVNKSNr&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the database's frontend at [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/).
   This information is required for login:
@@ -39,7 +36,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   See [DargStack template: certificates](https://github.com/Dargmuesli/dargstack-template/#certificates).
 
-- #### `jonas-thelemann`
+- #### `jonas-thelemann` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=BkiZnQ1xpj&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
 
@@ -47,11 +44,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   You can access the database via `adminer`.
 
-- #### `randomwinpicker`
+- #### `randomwinpicker` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=VRBItScv8j&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access this subproject at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
 
-- #### `traefik`
+- #### `traefik` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=mbRFzFJJ0l&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
   Traefik enables HTTPS for all services and acts as a load-balancer too.
