@@ -43,11 +43,11 @@ services:
       - traefik.frontend.rule=Host:randomwinpicker.${STACK_DOMAIN}
       - traefik.port=443
       - traefik.protocol=https
-    image: dargmuesli/randomwinpicker:3.0.0
+    image: dargmuesli/randomwinpicker:4.0.0
     volumes:
-    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
-    - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.crt
-    - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.key
+    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
+    - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.de.crt
+    - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.de.key
   traefik:
     command:
     - --api
