@@ -14,10 +14,10 @@ services:
         chmod 744 dumpcerts.sh && \
         while true; do \
           bash dumpcerts.sh acme.json ./ && \
-          ln -f ./certs/* ./ && \
-          ln -f ./private/* ./ && \
-          ln -f ./${STACK_DOMAIN}.crt ./randomwinpicker.de.crt && \
-          ln -f ./${STACK_DOMAIN}.key ./randomwinpicker.de.key && \
+          ln -f ./certs/${STACK_DOMAIN}.crt ./${STACK_DOMAIN%.*}.crt && \
+          ln -f ./private/${STACK_DOMAIN}.key ./${STACK_DOMAIN%.*}.key && \
+          ln -f ./${STACK_DOMAIN%.*}.crt ./randomwinpicker.crt && \
+          ln -f ./${STACK_DOMAIN%.*}.key ./randomwinpicker.key && \
           inotifywait -e modify ./acme.json
         done"
     volumes:
@@ -52,7 +52,7 @@ services:
       - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
     volumes:
     - (( replace ))
-    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
+    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/jonas-thelemann.env:ro
     - acme-data:/etc/ssl/certificates/
 volumes:
   acme-data: {}

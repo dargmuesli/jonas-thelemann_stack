@@ -43,11 +43,10 @@ services:
       - traefik.frontend.rule=Host:randomwinpicker.${STACK_DOMAIN}
       - traefik.port=443
       - traefik.protocol=https
-    image: dargmuesli/randomwinpicker:4.0.0
+    image: dargmuesli/randomwinpicker:4.0.1
     volumes:
     - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
-    - ./certificates/jonas-thelemann.crt:/etc/ssl/certificates/randomwinpicker.de.crt
-    - ./certificates/jonas-thelemann.key:/etc/ssl/certificates/randomwinpicker.de.key
+    - ./certificates/:/etc/ssl/certificates/
   traefik:
     command:
     - --api
@@ -91,10 +90,10 @@ services:
       - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
       - traefik.auth.frontend.priority=2
       - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
-    image: dargmuesli/jonas-thelemann:2.0.1
+    image: dargmuesli/jonas-thelemann:2.0.5
     volumes:
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
-    - ../production/secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/.env:ro
+    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - ./certificates/:/etc/ssl/certificates/
 version: "3.6"
 volumes:
