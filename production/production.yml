@@ -25,7 +25,7 @@ services:
   randomwinpicker:
     volumes:
     - (( replace ))
-    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/.env:ro
+    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
     - acme-data:/etc/ssl/certificates
   traefik:
     command:
