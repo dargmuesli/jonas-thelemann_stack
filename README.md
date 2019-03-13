@@ -9,8 +9,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 1. **[Services](#services)**
 1. **[Volumes](#volumes)**
 
-<a name="secrets"></a>
-
 ## Secrets
 - `postgres_db`:
   The database's name.
@@ -20,8 +18,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - `postgres_user`:
   The database's default name.
-
-<a name="services"></a>
 
 ## Services
 - #### `1generator` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=2f0CqL5WTk&Days=1000&Design=6)](https://www.statuscake.com)
@@ -68,8 +64,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 - #### `status` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square) [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=9CFPA32m2n&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the status dashboard at [status.jonas-thelemann.de](https://status.jonas-thelemann.de/)
-
-<a name="volumes"></a>
 
 ## Volumes
 
