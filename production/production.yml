@@ -52,7 +52,7 @@ services:
       - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
     volumes:
     - (( replace ))
-    - ./secrets/jonas-thelemann.env:/var/www/${STACK_DOMAIN}/credentials/jonas-thelemann.env:ro
+    - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - acme-data:/etc/ssl/certificates/
 volumes:
   acme-data: {}
