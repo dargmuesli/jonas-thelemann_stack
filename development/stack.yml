@@ -19,6 +19,7 @@ services:
       - traefik.enable=true
       - traefik.frontend.rule=Host:adminer.${STACK_DOMAIN}
       - traefik.port=8080
+      - traefik.frontend.auth.basic=${STACK_AUTH_BASIC}
     image: adminer:4
     volumes:
     - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
@@ -61,6 +62,7 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.frontend.auth.basic=${STACK_AUTH_BASIC}
       - traefik.frontend.rule=Host:traefik.${STACK_DOMAIN}
       - traefik.port=8080
       mode: global
@@ -88,6 +90,7 @@ services:
       - traefik.protocol=https
       - traefik.default.frontend.priority=1
       - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
+      - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
       - traefik.auth.frontend.priority=2
       - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
     image: dargmuesli/jonas-thelemann:2.0.5

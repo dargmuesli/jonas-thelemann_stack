@@ -1,9 +1,4 @@
 services:
-  adminer:
-    deploy:
-      labels:
-      - (( append ))
-      - "traefik.frontend.auth.basic=${STACK_AUTH_BASIC}"
   certdumper:
     image: alpine:latest
     command: >
@@ -36,20 +31,12 @@ services:
     - --acme.email=${STACK_ACME_EMAIL}
     - --acme.entrypoint=https
     - --acme.storage=/etc/traefik/acme/acme.json
-    deploy:
-      labels:
-      - (( append ))
-      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
     env_file: "./secrets/traefik.env"
     volumes:
     - (( replace ))
     - /var/run/docker.sock:/var/run/docker.sock
     - acme-data:/etc/traefik/acme/
   www:
-    deploy:
-      labels:
-      - (( append ))
-      - "traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}"
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
