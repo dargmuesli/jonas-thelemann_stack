@@ -9,10 +9,10 @@ services:
         chmod 744 dumpcerts.sh && \
         while true; do \
           bash dumpcerts.sh acme.json ./ && \
-          ln -f ./certs/${STACK_DOMAIN}.crt ./${STACK_DOMAIN%.*}.crt && \
-          ln -f ./private/${STACK_DOMAIN}.key ./${STACK_DOMAIN%.*}.key && \
-          ln -f ./${STACK_DOMAIN%.*}.crt ./randomwinpicker.crt && \
-          ln -f ./${STACK_DOMAIN%.*}.key ./randomwinpicker.key && \
+          ln -f ./certs/$${STACK_DOMAIN}.crt ./$${STACK_DOMAIN%.*}.crt && \
+          ln -f ./private/$${STACK_DOMAIN}.key ./$${STACK_DOMAIN%.*}.key && \
+          ln -f ./$${STACK_DOMAIN%.*}.crt ./randomwinpicker.crt && \
+          ln -f ./$${STACK_DOMAIN%.*}.key ./randomwinpicker.key && \
           inotifywait -e modify ./acme.json
         done"
     volumes:
