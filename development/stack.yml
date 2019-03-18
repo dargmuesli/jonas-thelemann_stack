@@ -56,7 +56,7 @@ services:
     - --docker.exposedByDefault=false
     - --docker.swarmMode=true
     - --entryPoints=Name:http Address::80 Redirect.EntryPoint:https
-    - --entryPoints=Name:https Address::443 TLS:/etc/ssl/certificates/jonas-thelemann.crt,/etc/ssl/certificates/jonas-thelemann.key
+    - --entryPoints=Name:https Address::443 TLS:/etc/traefik/acme/jonas-thelemann.crt,/etc/traefik/acme/jonas-thelemann.key
       Compress:true
     - --insecureSkipVerify=true
     deploy:
@@ -81,7 +81,7 @@ services:
       target: 443
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - ./certificates/:/etc/ssl/certificates/
+    - ./certificates/:/etc/traefik/acme/
   www:
     deploy:
       labels:
