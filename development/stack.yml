@@ -52,6 +52,17 @@ services:
     volumes:
     - postgres-data:/var/lib/postgresql/data/
     - ../production/data/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
+  postgres_backup:
+    env_file: ../production/secrets/postgres_backup.env
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    image: prodrigestivill/postgres-backup-local:11-alpine
+    secrets:
+    # - postgres_db
+    - postgres_password
+    # - postgres_user
+    volumes:
+    - ../production/backup/postgres/:/backups/
   randomwinpicker:
     deploy:
       labels:
