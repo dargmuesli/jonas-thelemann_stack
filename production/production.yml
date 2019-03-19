@@ -1,3 +1,8 @@
+secrets:
+  traefik_cf-api-email:
+    external: true
+  traefik_cf-api-key:
+    external: true
 services:
   certdumper:
     image: alpine:latest
@@ -33,7 +38,14 @@ services:
     - --acme.email=${STACK_ACME_EMAIL}
     - --acme.entrypoint=https
     - --acme.storage=/etc/traefik/acme/acme.json
-    env_file: "./secrets/traefik.env"
+    environment:
+      # For other providers see:
+      # https://docs.traefik.io/configuration/acme/#provider
+      CF_API_EMAIL_FILE: /run/secrets/traefik_cf-api-email
+      CF_API_KEY_FILE: /run/secrets/traefik_cf-api-key
+    secrets:
+    - traefik_cf-api-email
+    - traefik_cf-api-key
     volumes:
     - (( replace ))
     - /var/run/docker.sock:/var/run/docker.sock
