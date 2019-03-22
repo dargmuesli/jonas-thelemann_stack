@@ -28,7 +28,7 @@ services:
     image: nextcloud:15-fpm-alpine
     volumes:
     - nextcloud-data:/var/www/html/
-  nginx:
+  nextcloud_nginx:
     deploy:
       labels:
       - traefik.enable=true
