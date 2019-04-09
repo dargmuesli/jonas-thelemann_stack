@@ -70,7 +70,7 @@ services:
       - traefik.frontend.rule=Host:randomwinpicker.${STACK_DOMAIN}
       - traefik.port=443
       - traefik.protocol=https
-    image: dargmuesli/randomwinpicker:4.0.1
+    image: dargmuesli/randomwinpicker:4.0.3
     volumes:
     - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
     - ./certificates/:/etc/ssl/certificates/
