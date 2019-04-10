@@ -7,6 +7,8 @@ secrets:
     file: ./secrets/postgres_password.secret
   postgres_user:
     file: ./secrets/postgres_user.secret
+  postgres-backup_db:
+    file: ./secrets/postgres-backup_db.secret
 services:
   1generator:
     deploy:
@@ -82,14 +84,16 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/data/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   postgres_backup:
-    env_file: ../production/secrets/postgres_backup.env
     environment:
+      POSTGRES_DB_FILE: /run/secrets/postgres-backup_db
+      POSTGRES_HOST: postgres
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_USER_FILE: /run/secrets/postgres_user
     image: prodrigestivill/postgres-backup-local:11-alpine
     secrets:
-    # - postgres_db
+    - postgres-backup_db
     - postgres_password
-    # - postgres_user
+    - postgres_user
     volumes:
     - ../production/backup/postgres/:/backups/
   randomwinpicker:
