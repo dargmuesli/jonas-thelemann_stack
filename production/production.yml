@@ -23,12 +23,12 @@ services:
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
     volumes:
-    - acme-data:/etc/traefik/acme/
+    - acme_data:/etc/traefik/acme/
   randomwinpicker:
     volumes:
     - (( replace ))
     - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
-    - acme-data:/etc/ssl/certificates/
+    - acme_data:/etc/ssl/certificates/
   traefik:
     command:
     - (( prepend ))
@@ -49,11 +49,11 @@ services:
     volumes:
     - (( replace ))
     - /var/run/docker.sock:/var/run/docker.sock
-    - acme-data:/etc/traefik/acme/
+    - acme_data:/etc/traefik/acme/
   www:
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
-    - acme-data:/etc/ssl/certificates/
+    - acme_data:/etc/ssl/certificates/
 volumes:
-  acme-data: {}
+  acme_data: {}

@@ -51,6 +51,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
 
+- ### `portainer`
+
+  You can access container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
+
+- ### `portainer-agent`
+
+  You can access the container manager agent via `portainer`.
+
 - ### `postgres`
 
   You can access the database via `adminer`.
@@ -79,8 +87,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 ## Volumes
 
-- ### `acme-data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+- ### `acme_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
   The database's data.
 
-- ### `postgres-data`
+- ### `nextcloud_data`
+  The cloud's data.
+
+- ### `portainer_data`
+  The container manager's data.
+
+- ### `postgres_data`
   The database's data.
