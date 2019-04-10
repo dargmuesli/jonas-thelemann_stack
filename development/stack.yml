@@ -119,7 +119,7 @@ services:
       - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
       - traefik.auth.frontend.priority=2
       - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
-    image: dargmuesli/jonas-thelemann:2.0.5
+    image: dargmuesli/jonas-thelemann:2.0.6
     volumes:
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
     - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
