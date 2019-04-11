@@ -10,13 +10,13 @@ This project is deployed in accordance to the [DargStack template](https://githu
 1. **[Volumes](#volumes)**
 
 ## Secrets
-- `postgres_db`:
+- ### `postgres_db`:
   the database's name.
 
-- `postgres_password`:
+- ### `postgres_password`:
   the database's password.
 
-- `postgres_user`:
+- ### `postgres_user`:
   the database's default name.
 
 ## Services
@@ -39,7 +39,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
 
-- #### `certdumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+- ### `certdumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
 
   See [DargStack template: certificates](https://github.com/Dargmuesli/dargstack-template/#certificates).
 
@@ -88,7 +88,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## Volumes
 
 - ### `acme_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
-  The database's data.
+  The certificate's data.
 
 - ### `nextcloud_data`
   The cloud's data.
