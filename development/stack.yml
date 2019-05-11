@@ -27,6 +27,24 @@ services:
     image: adminer:4
     volumes:
     - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
+  jonas-thelemann:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.port=443
+      - traefik.protocol=https
+      - traefik.default.frontend.priority=1
+      - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
+      - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
+      - traefik.auth.frontend.priority=2
+      - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
+    environment:
+      APACHE_RUN_USER: "#1000"
+    image: dargmuesli/jonas-thelemann:dev
+    volumes:
+    - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
+    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
+    - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: "../production/secrets/nextcloud.env"
     image: nextcloud:15-fpm-alpine
@@ -141,24 +159,6 @@ services:
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./certificates/:/etc/traefik/acme/
-  www:
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.port=443
-      - traefik.protocol=https
-      - traefik.default.frontend.priority=1
-      - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
-      - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
-      - traefik.auth.frontend.priority=2
-      - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
-    environment:
-      APACHE_RUN_USER: "#1000"
-    image: dargmuesli/jonas-thelemann:dev
-    volumes:
-    - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
-    - ./certificates/:/etc/ssl/certificates/
 version: "3.6"
 volumes:
   nextcloud_data: {}
