@@ -39,6 +39,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
 
+- ### `codimd`
+
+  You can access the markdown collaboration tool at [codimd.jonas-thelemann.test](https://codimd.jonas-thelemann.test/).
+
 - ### `jonas-thelemann` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=BkiZnQ1xpj&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).

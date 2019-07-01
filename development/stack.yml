@@ -1,4 +1,6 @@
 secrets:
+  codimd_db_url:
+    file: ./secrets/codimd_db_url.secret
   portainer_admin-password:
     file: ./secrets/portainer_admin-password.secret
   postgres_db:
@@ -27,6 +29,21 @@ services:
     image: adminer:4
     volumes:
     - ../production/data/adminer/adminer.css:/var/www/html/adminer.css:ro
+  codimd:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:codimd.${STACK_DOMAIN}
+      - traefik.port=3000
+    env_file: "../production/secrets/codimd.env"
+    environment:
+      # CMD_DB_URL_FILE: /run/secrets/codimd_db_url
+      CMD_DOMAIN: codimd.${STACK_DOMAIN}
+      CMD_PROTOCOL_USESSL: "true"
+      CMD_URL_ADDPORT: "false"
+    image: quay.io/codimd/server:1.4.0-alpine
+    secrets:
+    - codimd_db_url
   jonas-thelemann:
     deploy:
       labels:
@@ -89,7 +106,7 @@ services:
     - /var/lib/docker/volumes:/var/lib/docker/volumes
   postgres:
     environment:
-      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de
+      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de codimd
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
@@ -161,6 +178,7 @@ services:
     - ./certificates/:/etc/traefik/acme/
 version: "3.6"
 volumes:
+  codimd_config: {}
   nextcloud_data: {}
   portainer_data: {}
   postgres_data: {}
