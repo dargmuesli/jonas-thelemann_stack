@@ -15,12 +15,14 @@ keyUsage=critical,digitalSignature,keyEncipherment
 subjectAltName = @alt_names
 
 [alt_names]
-DNS.1 = jonas-thelemann.test
-DNS.2 = 1generator.jonas-thelemann.test
-DNS.3 = adminer.jonas-thelemann.test
-DNS.4 = codimd.jonas-thelemann.test
-DNS.5 = nextcloud.jonas-thelemann.test
-DNS.6 = portainer.jonas-thelemann.test
-DNS.7 = randomwinpicker.jonas-thelemann.test
-DNS.8 = traefik.jonas-thelemann.test
-DNS.9 = www.jonas-thelemann.test
+DNS.1  = jonas-thelemann.test
+DNS.2  = 1generator.jonas-thelemann.test
+DNS.3  = adminer.jonas-thelemann.test
+DNS.4  = calendar.jonas-thelemann.test
+DNS.5  = codimd.jonas-thelemann.test
+DNS.6  = contacts.jonas-thelemann.test
+DNS.7  = nextcloud.jonas-thelemann.test
+DNS.8  = portainer.jonas-thelemann.test
+DNS.9  = randomwinpicker.jonas-thelemann.test
+DNS.10 = traefik.jonas-thelemann.test
+DNS.11 = www.jonas-thelemann.test

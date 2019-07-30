@@ -71,7 +71,13 @@ services:
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.frontend.rule=Host:nextcloud.${STACK_DOMAIN}
+      - traefik.calendar.frontend.rule=Host:calendar.${STACK_DOMAIN}
+      - traefik.calendar.frontend.redirect.regex=.*
+      - traefik.calendar.frontend.redirect.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
+      - traefik.contacts.frontend.rule=Host:contacts.${STACK_DOMAIN}
+      - traefik.contacts.frontend.redirect.regex=.*
+      - traefik.contacts.frontend.redirect.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
+      - traefik.default.frontend.rule=Host:nextcloud.${STACK_DOMAIN}
       - traefik.port=80
     image: nginx:1-alpine
     volumes:
