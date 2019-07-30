@@ -75,7 +75,7 @@ services:
       - traefik.port=80
     image: nginx:1-alpine
     volumes:
-    - ../production/data/nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ../production/data/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
   portainer:
     command: -H tcp://tasks.portainer-agent:9001 --tlsskipverify --admin-password-file '/run/secrets/portainer_admin-password'
