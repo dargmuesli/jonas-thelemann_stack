@@ -5,7 +5,7 @@ secrets:
     external: true
 services:
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:2.0.6
+    image: dargmuesli/jonas-thelemann:2.0.7
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
