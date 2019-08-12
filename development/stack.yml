@@ -149,6 +149,15 @@ services:
     volumes:
     - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
     - ./certificates/:/etc/ssl/certificates/
+  thelounge:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:thelounge.${STACK_DOMAIN}
+      - traefik.port=9000
+    image: thelounge/thelounge:3.1.1-alpine
+    volumes:
+    - thelounge_data:/var/opt/thelounge
   traefik:
     command:
     - --api
@@ -189,3 +198,4 @@ volumes:
   nextcloud_data: {}
   portainer_data: {}
   postgres_data: {}
+  thelounge_data: {}

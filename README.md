@@ -75,6 +75,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   You can access this subproject at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
 
+- ### `thelounge`
+
+  You can access the web IRC client's dashboard at [thelounge.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+
 - ### `traefik` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=mbRFzFJJ0l&Days=1000&Design=6)](https://www.statuscake.com)
 
   You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
