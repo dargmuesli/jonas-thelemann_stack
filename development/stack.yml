@@ -45,22 +45,27 @@ services:
     secrets:
     - codimd_db_url
   jonas-thelemann:
+    image: dargmuesli/jonas-thelemann:dev
+    volumes:
+    - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
+    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
+  jonas-thelemann_nginx:
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.port=443
-      - traefik.protocol=https
+      # - traefik.port=443
+      # - traefik.protocol=https
+      - traefik.port=80
+      - traefik.protocol=http
       - traefik.default.frontend.priority=1
       - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
       - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
       - traefik.auth.frontend.priority=2
       - traefik.auth.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN};PathPrefix:/tools/
-    environment:
-      APACHE_RUN_USER: "#1000"
-    image: dargmuesli/jonas-thelemann:dev
+    image: nginx:1-alpine
     volumes:
+    - ../production/configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: "../production/secrets/nextcloud.env"
