@@ -53,7 +53,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `nextcloud_nginx`
 
-  You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
+  You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
 
 - ### `portainer`
 
