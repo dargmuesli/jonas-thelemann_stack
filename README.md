@@ -2,7 +2,7 @@
 
 The Docker stack configuration for [my website](https://jonas-thelemann.de/).
 
-This project is deployed in accordance to the [DargStack template](https://github.com/Dargmuesli/dargstack-template/) to make deployment a breeze. It is closely related to [my website's source code](https://github.com/dargmuesli/jonas-thelemann/).
+This project is deployed in accordance to the [DargStack template](https://github.com/dargmuesli/dargstack_template/) to make deployment a breeze. It is closely related to [my website's source code](https://github.com/dargmuesli/jonas-thelemann/).
 
 ## Table of Contents
 1. **[Secrets](#secrets)**
@@ -86,7 +86,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `traefik_certs-dumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
 
-  See [DargStack template: certificates](https://github.com/Dargmuesli/dargstack-template/#certificates).
+  See [DargStack template: certificates](https://github.com/dargmuesli/dargstack_template/#certificates).
 
 ### Additional Services
 - #### `status` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square) [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=9CFPA32m2n&Days=1000&Design=6)](https://www.statuscake.com)
