@@ -45,7 +45,7 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - acme_data:/etc/traefik/acme/
   traefik_certs-dumper:
-    image: ldez/traefik-certs-dumper:v2.4.0
+    image: ldez/traefik-certs-dumper:v2.6.0
     command:
     - file
     - --clean=false
