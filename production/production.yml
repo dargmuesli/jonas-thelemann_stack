@@ -11,6 +11,12 @@ services:
     - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - jonas-thelemann_data:/var/www/jonas-thelemann/
     - acme_data:/etc/ssl/certificates/
+  jonas-thelemann_nginx:
+    volumes:
+    - (( replace ))
+    - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
+    - jonas-thelemann_data:/var/www/jonas-thelemann/
+    - acme_data:/etc/ssl/certificates/
   randomwinpicker:
     volumes:
     - (( replace ))
