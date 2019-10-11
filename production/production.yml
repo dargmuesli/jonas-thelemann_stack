@@ -9,11 +9,13 @@ services:
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
+    - jonas-thelemann_data:/var/www/jonas-thelemann/
     - acme_data:/etc/ssl/certificates/
   randomwinpicker:
     volumes:
     - (( replace ))
     - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
+    - jonas-thelemann_data:/var/www/jonas-thelemann/:ro
     - acme_data:/etc/ssl/certificates/
   traefik:
     command:
@@ -54,3 +56,4 @@ services:
     - ./configuration/traefik_certs-dumper/post-hook:/mnt/traefik_certs-dumper/post-hook
 volumes:
   acme_data: {}
+  jonas-thelemann_data: {}
