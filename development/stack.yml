@@ -53,10 +53,8 @@ services:
     deploy:
       labels:
       - traefik.enable=true
-      # - traefik.port=443
-      # - traefik.protocol=https
-      - traefik.port=80
-      - traefik.protocol=http
+      - traefik.port=443
+      - traefik.protocol=https
       - traefik.default.frontend.priority=1
       - traefik.default.frontend.rule=Host:${STACK_DOMAIN},www.${STACK_DOMAIN}
       - traefik.auth.frontend.auth.basic=${STACK_AUTH_BASIC}
