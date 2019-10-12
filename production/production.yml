@@ -17,12 +17,6 @@ services:
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
     - jonas-thelemann_data:/var/www/jonas-thelemann/
     - acme_data:/etc/ssl/certificates/
-  randomwinpicker:
-    volumes:
-    - (( replace ))
-    - ./secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
-    - jonas-thelemann_data:/var/www/jonas-thelemann/:ro
-    - acme_data:/etc/ssl/certificates/
   traefik:
     command:
     - (( prepend ))
@@ -40,10 +34,6 @@ services:
     secrets:
     - traefik_cf-api-email
     - traefik_cf-api-key
-    volumes:
-    - (( replace ))
-    - /var/run/docker.sock:/var/run/docker.sock
-    - acme_data:/etc/traefik/acme/
   traefik_certs-dumper:
     image: ldez/traefik-certs-dumper:v2.6.0
     command:
