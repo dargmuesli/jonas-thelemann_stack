@@ -142,15 +142,21 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/backup/postgres/:/backups/
   randomwinpicker:
+    image: dargmuesli/randomwinpicker:5.0.0
+    volumes:
+    - randomwinpicker_data:/var/www/randomwinpicker/
+    - ../production/secrets/randomwinpicker/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
+  randomwinpicker_nginx:
     deploy:
       labels:
       - traefik.enable=true
       - traefik.frontend.rule=Host:randomwinpicker.${STACK_DOMAIN}
       - traefik.port=443
       - traefik.protocol=https
-    image: dargmuesli/randomwinpicker:4.1.3
+    image: nginx:1-alpine
     volumes:
-    - ../production/secrets/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
+    - randomwinpicker_data:/var/www/randomwinpicker/:ro
+    - ../production/configuration/randomwinpicker_nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./certificates/:/etc/ssl/certificates/
   thelounge:
     deploy:
@@ -201,4 +207,5 @@ volumes:
   nextcloud_data: {}
   portainer_data: {}
   postgres_data: {}
+  randomwinpicker_data: {}
   thelounge_data: {}
