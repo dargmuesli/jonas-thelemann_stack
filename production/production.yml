@@ -6,6 +6,7 @@ secrets:
 services:
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:3.0.0
+    user: (( prune ))
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
