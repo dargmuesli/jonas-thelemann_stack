@@ -1,16 +1,16 @@
 secrets:
   codimd_db_url:
-    file: ./secrets/codimd_db_url.secret
+    file: ./secrets/codimd/db_url.secret
   portainer_admin-password:
-    file: ./secrets/portainer_admin-password.secret
+    file: ./secrets/portainer/admin-password.secret
   postgres_db:
-    file: ./secrets/postgres_db.secret
+    file: ./secrets/postgres/db.secret
   postgres_password:
-    file: ./secrets/postgres_password.secret
+    file: ./secrets/postgres/password.secret
   postgres_user:
-    file: ./secrets/postgres_user.secret
+    file: ./secrets/postgres/user.secret
   postgres-backup_db:
-    file: ./secrets/postgres-backup_db.secret
+    file: ./secrets/postgres-backup/db.secret
 services:
   1generator:
     deploy:
@@ -35,7 +35,7 @@ services:
       - traefik.enable=true
       - traefik.frontend.rule=Host:codimd.${STACK_DOMAIN}
       - traefik.port=3000
-    env_file: "../production/secrets/codimd.env"
+    env_file: "../production/secrets/codimd/codimd.env"
     environment:
       # CMD_DB_URL_FILE: /run/secrets/codimd_db_url
       CMD_DOMAIN: codimd.${STACK_DOMAIN}
@@ -48,7 +48,7 @@ services:
     image: dargmuesli/jonas-thelemann:dev
     volumes:
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
-    - ../production/secrets/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
+    - ../production/secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
   jonas-thelemann_nginx:
     deploy:
       labels:
@@ -66,7 +66,7 @@ services:
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
-    env_file: "../production/secrets/nextcloud.env"
+    env_file: "../production/secrets/nextcloud/nextcloud.env"
     image: nextcloud:16-fpm-alpine
     volumes:
     - nextcloud_data:/var/www/html/
