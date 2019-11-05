@@ -2,7 +2,7 @@
   "automerge": true,
   "automergeType": "branch",
   "docker-compose": {
-    "fileMatch": ["(^|/)stack[^/]*\\.ya?ml$"]
+    "fileMatch": ["(^|/)(stack|production)[^/]*\\.ya?ml$"]
   },
   "extends": [
     "config:base",
