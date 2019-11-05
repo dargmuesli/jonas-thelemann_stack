@@ -120,7 +120,7 @@ services:
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: postgres:11-alpine
+    image: postgres:12-alpine
     secrets:
     - postgres_db
     - postgres_password
