@@ -68,7 +68,7 @@ services:
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: "../production/secrets/nextcloud/nextcloud.env"
-    image: nextcloud:16-fpm-alpine
+    image: nextcloud:17-fpm-alpine
     volumes:
     - nextcloud_data:/var/www/html/
   nextcloud_nginx:
