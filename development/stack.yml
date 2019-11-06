@@ -98,7 +98,7 @@ services:
       placement:
         constraints: [node.role == manager]
       replicas: 1
-    image: portainer/portainer:1.20.2
+    image: portainer/portainer:1.22.2
     secrets:
     - portainer_admin-password
     volumes:
