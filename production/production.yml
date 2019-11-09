@@ -5,7 +5,7 @@ secrets:
     external: true
 services:
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.0.2
+    image: dargmuesli/jonas-thelemann:3.0.2@sha256:3e3d63b5a03c74f1ee2500c51699413217b99d99d33be764248527aeafa4fbcd
     user: (( prune ))
     volumes:
     - (( replace ))
@@ -36,7 +36,7 @@ services:
     - traefik_cf-api-email
     - traefik_cf-api-key
   traefik_certs-dumper:
-    image: ldez/traefik-certs-dumper:v2.6.0
+    image: ldez/traefik-certs-dumper:v2.6.0@sha256:f786bbf5b21fcd68f4103c9807657a44fc74aeec16fc4702e4c947fb1050fa7d
     command:
     - file
     - --clean=false
