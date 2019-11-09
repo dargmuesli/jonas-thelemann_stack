@@ -5,7 +5,7 @@ secrets:
     external: true
 services:
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.0.1
+    image: dargmuesli/jonas-thelemann:3.0.2
     user: (( prune ))
     volumes:
     - (( replace ))
