@@ -2,6 +2,9 @@
   "automerge": true,
   "automergeType": "branch",
   "docker": {
+    "major": {
+      "enabled": true
+    },
     "pinDigests": true
   },
   "docker-compose": {
@@ -11,7 +14,6 @@
     "config:base"
   ],
   "major": {
-    "automerge": false,
-    "enabled": true
+    "automerge": false
   }
 }
