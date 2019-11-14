@@ -141,7 +141,7 @@ services:
     - postgres_user
     volumes:
     - postgres_data:/var/lib/postgresql/data/
-    - ../production/backup/postgres/:/backups/
+    - ../production/backups/postgres/:/backups/
   randomwinpicker:
     image: dargmuesli/randomwinpicker:5.0.1@sha256:4b2b5dc8ec5a8500be9409747248969bc24c63ac80fd0e95ba7f48b48117b5fd
     volumes:
