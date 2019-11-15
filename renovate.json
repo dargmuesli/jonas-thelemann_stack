@@ -1,6 +1,9 @@
 {
   "automerge": true,
   "automergeType": "branch",
+  "digest": {
+    "automerge": true
+  },
   "docker": {
     "major": {
       "enabled": true
