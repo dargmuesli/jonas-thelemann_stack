@@ -34,6 +34,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_nginx_secure.tls.certresolver=default
       - traefik.http.routers.jonas-thelemann_nginx_secure_tools.middlewares=auth
+      - traefik.http.routers.jonas-thelemann_nginx_secure_tools.tls.certresolver=default
     volumes:
     - (( replace ))
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -44,6 +45,8 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.nextcloud_nginx_secure.tls.certresolver=default
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.certresolver=default
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.certresolver=default
   portainer:
     deploy:
       labels:
