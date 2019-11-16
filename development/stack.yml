@@ -196,7 +196,6 @@ services:
       - --api=true
       - --entryPoints.web.address=:80
       - --entryPoints.web-secure.address=:443
-      - --log.level=DEBUG
       - --providers.docker=true
       - --providers.docker.endpoint=unix:///var/run/docker.sock
       - --providers.docker.exposedByDefault=false
