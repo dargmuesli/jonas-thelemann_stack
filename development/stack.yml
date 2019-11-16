@@ -83,20 +83,20 @@ services:
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.http.middlewares.nextcloud_secure_redirectregex_calendar.redirectregex.regex=.*
-      - traefik.http.middlewares.nextcloud_secure_redirectregex_calendar.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
-      - traefik.http.middlewares.nextcloud_secure_redirectregex_contacts.redirectregex.regex=.*
-      - traefik.http.middlewares.nextcloud_secure_redirectregex_contacts.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
-      - traefik.http.routers.nextcloud.middlewares=redirectscheme
-      - traefik.http.routers.nextcloud.rule=Host(`nextcloud.${STACK_DOMAIN}`)
-      - traefik.http.routers.nextcloud_secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
-      - traefik.http.routers.nextcloud_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.routers.nextcloud_secure_calendar.middlewares=nextcloud_secure_redirectregex_calendar@docker
-      - traefik.http.routers.nextcloud_secure_calendar.rule=Host(`calendar.${STACK_DOMAIN}`)
-      - traefik.http.routers.nextcloud_secure_calendar.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.routers.nextcloud_secure_contacts.middlewares=nextcloud_secure_redirectregex_contacts@docker
-      - traefik.http.routers.nextcloud_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
-      - traefik.http.routers.nextcloud_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.regex=.*
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.regex=.*
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
+      - traefik.http.routers.nextcloud_nginx.middlewares=redirectscheme
+      - traefik.http.routers.nextcloud_nginx.rule=Host(`nextcloud.${STACK_DOMAIN}`)
+      - traefik.http.routers.nextcloud_nginx_secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
+      - traefik.http.routers.nextcloud_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.middlewares=nextcloud_secure_redirectregex_calendar@docker
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.rule=Host(`calendar.${STACK_DOMAIN}`)
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.middlewares=nextcloud_secure_redirectregex_contacts@docker
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
     image: nginx:1-alpine@sha256:b4c0378c841cd76f0b75bc63454bfc6fe194a5220d4eab0d75963bccdbc327ff
     volumes:
@@ -169,11 +169,11 @@ services:
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.http.routers.randomwinpicker.middlewares=redirectscheme
-      - traefik.http.routers.randomwinpicker.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
-      - traefik.http.routers.randomwinpicker_secure.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
-      - traefik.http.routers.randomwinpicker_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.services.randomwinpicker.loadbalancer.server.port=80
+      - traefik.http.routers.randomwinpicker_nginx.middlewares=redirectscheme
+      - traefik.http.routers.randomwinpicker_nginx.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
+      - traefik.http.routers.randomwinpicker_nginx_secure.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
+      - traefik.http.routers.randomwinpicker_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.randomwinpicker_nginx.loadbalancer.server.port=80
     image: nginx:1-alpine@sha256:b4c0378c841cd76f0b75bc63454bfc6fe194a5220d4eab0d75963bccdbc327ff
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/:ro
