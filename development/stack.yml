@@ -91,10 +91,10 @@ services:
       - traefik.http.routers.nextcloud_nginx.rule=Host(`nextcloud.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.routers.nextcloud_nginx_secure_calendar.middlewares=nextcloud_secure_redirectregex_calendar@docker
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.middlewares=nextcloud_nginx_secure_redirectregex_calendar@docker
       - traefik.http.routers.nextcloud_nginx_secure_calendar.rule=Host(`calendar.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.routers.nextcloud_nginx_secure_contacts.middlewares=nextcloud_secure_redirectregex_contacts@docker
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.middlewares=nextcloud_nginx_secure_redirectregex_contacts@docker
       - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
