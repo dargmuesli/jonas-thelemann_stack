@@ -1,9 +1,25 @@
 secrets:
-  traefik_cf-api-email:
+  traefik_cf-dns-api-token:
     external: true
-  traefik_cf-api-key:
+  traefik_cf-zone-api-token:
     external: true
 services:
+  1generator:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.1generator_secure.tls.certresolver=default
+  adminer:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.adminer_secure.middlewares=auth
+      - traefik.http.routers.adminer_secure.tls.certresolver=default
+  codimd:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.codimd_secure.tls.certresolver=default
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:3.0.2@sha256:3e3d63b5a03c74f1ee2500c51699413217b99d99d33be764248527aeafa4fbcd
     user: (( prune ))
@@ -13,28 +29,59 @@ services:
     - jonas-thelemann_data:/var/www/jonas-thelemann/
     - acme_data:/etc/ssl/certificates/
   jonas-thelemann_nginx:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.jonas-thelemann_nginx_secure.tls.certresolver=default
+      - traefik.http.routers.jonas-thelemann_nginx_secure_tools.middlewares=auth
+      - traefik.http.routers.jonas-thelemann_nginx_secure_tools.tls.certresolver=default
     volumes:
     - (( replace ))
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
     - jonas-thelemann_data:/var/www/jonas-thelemann/
     - acme_data:/etc/ssl/certificates/
+  nextcloud_nginx:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.nextcloud_nginx_secure.tls.certresolver=default
+      - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.certresolver=default
+      - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.certresolver=default
+  portainer:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.portainer_secure.tls.certresolver=default
+  randomwinpicker_nginx:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.randomwinpicker_nginx_secure.tls.certresolver=default
+  thelounge:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.thelounge_secure.tls.certresolver=default
   traefik:
     command:
     - (( prepend ))
-    - --acme.acmeLogging=true
-    - --acme.dnsChallenge.provider=${STACK_ACME_PROVIDER}
-    - --acme.domains=${STACK_DOMAIN},1generator.${STACK_DOMAIN},adminer.${STACK_DOMAIN},codimd.${STACK_DOMAIN},nextcloud.${STACK_DOMAIN},randomwinpicker.${STACK_DOMAIN},traefik.${STACK_DOMAIN},www.${STACK_DOMAIN}
-    - --acme.email=${STACK_ACME_EMAIL}
-    - --acme.entrypoint=https
-    - --acme.storage=/etc/traefik/acme/acme.json
+    - --certificatesResolvers.default.acme.email=${STACK_ACME_EMAIL}
+    - --certificatesResolvers.default.acme.storage=/etc/traefik/acme/acme.json
+    - --certificatesResolvers.default.acme.dnsChallenge.provider=${STACK_ACME_PROVIDER}
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.middlewares.auth.basicauth.users=${STACK_AUTH_BASIC}
+      - traefik.http.routers.traefik_secure.middlewares=auth
+      - traefik.http.routers.traefik_secure.tls.certresolver=default
     environment:
       # For other providers see:
       # https://docs.traefik.io/configuration/acme/#provider
-      CF_API_EMAIL_FILE: /run/secrets/traefik_cf-api-email
-      CF_API_KEY_FILE: /run/secrets/traefik_cf-api-key
+      CF_DNS_API_TOKEN_FILE: /run/secrets/traefik_cf-dns-api-token
+      CF_ZONE_API_TOKEN_FILE: /run/secrets/traefik_cf-zone-api-token
     secrets:
-    - traefik_cf-api-email
-    - traefik_cf-api-key
+    - traefik_cf-dns-api-token
+    - traefik_cf-zone-api-token
   traefik_certs-dumper:
     image: ldez/traefik-certs-dumper:v2.6.0@sha256:f786bbf5b21fcd68f4103c9807657a44fc74aeec16fc4702e4c947fb1050fa7d
     command:
@@ -43,14 +90,13 @@ services:
     - --crt-name="$STACK_DOMAIN"
     - --dest=/etc/traefik/acme/
     - --key-name="$STACK_DOMAIN"
-    - --post-hook=/mnt/traefik_certs-dumper/post-hook $STACK_DOMAIN
     - --source=/etc/traefik/acme/acme.json
+    - --version=v2
     - --watch
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
     volumes:
     - acme_data:/etc/traefik/acme/
-    - ./configuration/traefik_certs-dumper/post-hook:/mnt/traefik_certs-dumper/post-hook
 volumes:
   acme_data: {}
   jonas-thelemann_data: {}
