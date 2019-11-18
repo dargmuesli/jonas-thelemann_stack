@@ -3,14 +3,14 @@ secrets:
     file: ./secrets/codimd/db_url.secret
   portainer_admin-password:
     file: ./secrets/portainer/admin-password.secret
+  postgres-backup_db:
+    file: ./secrets/postgres-backup/db.secret
   postgres_db:
     file: ./secrets/postgres/db.secret
   postgres_password:
     file: ./secrets/postgres/password.secret
   postgres_user:
     file: ./secrets/postgres/user.secret
-  postgres-backup_db:
-    file: ./secrets/postgres-backup/db.secret
 services:
   1generator:
     deploy:
@@ -43,7 +43,7 @@ services:
       - traefik.http.routers.codimd_secure.rule=Host(`codimd.${STACK_DOMAIN}`)
       - traefik.http.routers.codimd_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.codimd.loadbalancer.server.port=3000
-    env_file: "../production/secrets/codimd/codimd.env"
+    env_file: ../production/secrets/codimd/codimd.env
     environment:
       # CMD_DB_URL_FILE: /run/secrets/codimd_db_url
       CMD_DOMAIN: codimd.${STACK_DOMAIN}
@@ -75,7 +75,7 @@ services:
     - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
-    env_file: "../production/secrets/nextcloud/nextcloud.env"
+    env_file: ../production/secrets/nextcloud/nextcloud.env
     image: nextcloud:17-fpm-alpine@sha256:37bf8221b16aeb23e34dfd17a739d940291285c698f3fea9f6029e5e0ccfd254
     volumes:
     - nextcloud_data:/var/www/html/
@@ -114,7 +114,8 @@ services:
       - traefik.http.services.portainer.loadbalancer.server.port=9000
       mode: replicated
       placement:
-        constraints: [node.role == manager]
+        constraints:
+        - node.role == manager
       replicas: 1
     image: portainer/portainer:1.22.2@sha256:824ac88d88d509a8fa2971fc6c7c923321e960c32deaf0cb3c6838002e3de660
     secrets:
@@ -125,7 +126,8 @@ services:
     deploy:
       mode: global
       placement:
-        constraints: [node.platform.os == linux]
+        constraints:
+        - node.platform.os == linux
     environment:
       AGENT_CLUSTER_ADDR: tasks.portainer-agent
     image: portainer/agent:1.5.1@sha256:6e1a21dddb13a89310576716f85c174c8b0fbc1d733e2bcaad87a3fdee4b8b14
@@ -193,15 +195,15 @@ services:
     - thelounge_data:/var/opt/thelounge
   traefik:
     command:
-      - --api=true
-      - --entryPoints.web.address=:80
-      - --entryPoints.web-secure.address=:443
-      - --providers.docker=true
-      - --providers.docker.endpoint=unix:///var/run/docker.sock
-      - --providers.docker.exposedByDefault=false
-      - --providers.docker.swarmMode=true
-      - --providers.file.filename=/dynamic.yml #DARGSTACK-REMOVE
-      - --providers.file.watch=true #DARGSTACK-REMOVE
+    - --api=true
+    - --entryPoints.web.address=:80
+    - --entryPoints.web-secure.address=:443
+    - --providers.docker=true
+    - --providers.docker.endpoint=unix:///var/run/docker.sock
+    - --providers.docker.exposedByDefault=false
+    - --providers.docker.swarmMode=true
+    - --providers.file.filename=/dynamic.yml #DARGSTACK-REMOVE
+    - --providers.file.watch=true #DARGSTACK-REMOVE
     deploy:
       labels:
       - traefik.enable=true
