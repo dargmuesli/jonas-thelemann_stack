@@ -61,7 +61,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `portainer`
 
-  You can access container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
+  You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
 
 - ### `portainer-agent`
 
