@@ -56,7 +56,7 @@ services:
     image: dargmuesli/jonas-thelemann:dev
     user: 1000:82
     volumes:
-    - ../../jonas-thelemann/dist/jonas-thelemann/:/var/www/jonas-thelemann/
+    - ../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/
     - ../production/secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
   jonas-thelemann_nginx:
     deploy:
