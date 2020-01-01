@@ -190,7 +190,7 @@ services:
       - traefik.http.routers.thelounge_secure.rule=Host(`thelounge.${STACK_DOMAIN}`)
       - traefik.http.routers.thelounge_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.thelounge.loadbalancer.server.port=9000
-    image: thelounge/thelounge:3.3.0-alpine@sha256:abddff6a484f406f1b8b7272f3cc0c544d92b23d5f6246818d7769ac6ba8416c
+    image: thelounge/thelounge:4.0.0-alpine@sha256:c375236bfeaa0ce41ec6c134195f100a15d59d12f0f5d11f32cbbf3b94267705
     volumes:
     - thelounge_data:/var/opt/thelounge
   traefik:
