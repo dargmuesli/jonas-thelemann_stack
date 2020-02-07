@@ -163,7 +163,7 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/backups/postgres/:/backups/
   randomwinpicker:
-    image: dargmuesli/randomwinpicker:5.0.1@sha256:4b2b5dc8ec5a8500be9409747248969bc24c63ac80fd0e95ba7f48b48117b5fd
+    image: dargmuesli/randomwinpicker:5.0.2@sha256:d78067ef09c440889ea6a9057733dc8298364f70a6cd230dfbd88c3df3164e53
     user: 1000:82
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/
