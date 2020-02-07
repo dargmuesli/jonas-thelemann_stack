@@ -164,6 +164,7 @@ services:
     - ../production/backups/postgres/:/backups/
   randomwinpicker:
     image: dargmuesli/randomwinpicker:5.0.1@sha256:4b2b5dc8ec5a8500be9409747248969bc24c63ac80fd0e95ba7f48b48117b5fd
+    user: 1000:82
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/
     - ../production/secrets/randomwinpicker/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
