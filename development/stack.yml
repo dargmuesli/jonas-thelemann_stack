@@ -136,7 +136,7 @@ services:
     - /var/lib/docker/volumes:/var/lib/docker/volumes
   postgres:
     environment:
-      POSTGRES_ADDITIONAL_DBS: randomwinpicker.de codimd
+      POSTGRES_ADDITIONAL_DBS: codimd randomwinpicker
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
