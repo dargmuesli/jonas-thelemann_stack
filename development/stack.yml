@@ -49,7 +49,7 @@ services:
       CMD_DOMAIN: codimd.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/codimd/server:1.5.0-alpine@sha256:f61379f99cdda10fc107fac1c7dd2244815e42c6b302bdaba992330e522553d7
+    image: quay.io/codimd/server:1.5.0-alpine@sha256:2cc768d367b5628648cf6c748a947e5ee9380f62481963a5bfebc492d163732f
     secrets:
     - codimd_db_url
   jonas-thelemann:
