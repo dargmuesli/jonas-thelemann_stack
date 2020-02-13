@@ -26,7 +26,7 @@ services:
     volumes:
     - (( replace ))
     - ./secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
-    - jonas-thelemann_data:/var/www/jonas-thelemann/
+    - jonas-thelemann_data:/var/www/jonas-thelemann/server/
     - acme_data:/etc/ssl/certificates/
   jonas-thelemann_nginx:
     deploy:
@@ -38,7 +38,7 @@ services:
     volumes:
     - (( replace ))
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
-    - jonas-thelemann_data:/var/www/jonas-thelemann/
+    - jonas-thelemann_data:/var/www/jonas-thelemann/server/:ro
     - acme_data:/etc/ssl/certificates/
   nextcloud_nginx:
     deploy:
