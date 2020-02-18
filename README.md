@@ -10,6 +10,18 @@ This project is deployed in accordance to the [DargStack template](https://githu
 1. **[Volumes](#volumes)**
 
 ## Secrets
+- ### `codimd_db_url`:
+  the markdown collaboration tool's database url.
+
+- ### `codimd_session-secret`:
+  the markdown collaboration tool's session secret.
+
+- ### `portainer_admin-password`:
+  the container manager's password for the user `admin`.
+
+- ### `postgres-backup_db`:
+  the database backup service's database name.
+
 - ### `postgres_db`:
   the database's name.
 
@@ -18,6 +30,12 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `postgres_user`:
   the database's default name.
+
+- ### `traefik_cf-dns-api-token`: ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+  the reverse proxy's Cloudflare DNS API token.
+
+- ### `traefik_cf-zone-api-token`: ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+  the reverse proxy's Cloudflare zone API token.
 
 ## Services
 - ### `1generator` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=2f0CqL5WTk&Days=1000&Design=6)](https://www.statuscake.com)
@@ -77,7 +95,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `randomwinpicker` [![Website Uptime Monitoring](https://app.statuscake.com/button/index.php?Track=VRBItScv8j&Days=1000&Design=6)](https://www.statuscake.com)
 
-  You can access this subproject at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
+  You can access the main project via `randomwinpicker_nginx`.
+
+- ### `randomwinpicker_nginx`
+
+  You can access the main project at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
 
 - ### `thelounge`
 
@@ -110,3 +132,9 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
 - ### `postgres_data`
   The database's data.
+
+- ### `randomwinpicker_data`
+  Randomwinpicker's data.
+
+- ### `thelounge_data`
+  The IRC client's data.
