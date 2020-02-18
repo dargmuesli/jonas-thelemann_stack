@@ -89,7 +89,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
   You can access the database via `adminer`.
 
-- ### `postgres-backup` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+- ### `postgres_backup` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
 
   Backup service for `postgres`.
 
