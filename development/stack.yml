@@ -1,6 +1,8 @@
 secrets:
   codimd_db_url:
     file: ./secrets/codimd/db_url.secret
+  codimd_session-secret:
+    file: ./secrets/codimd/session-secret.secret
   portainer_admin-password:
     file: ./secrets/portainer/admin-password.secret
   postgres-backup_db:
@@ -43,15 +45,16 @@ services:
       - traefik.http.routers.codimd_secure.rule=Host(`codimd.${STACK_DOMAIN}`)
       - traefik.http.routers.codimd_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.codimd.loadbalancer.server.port=3000
-    env_file: ../production/secrets/codimd/codimd.env
     environment:
-      # CMD_DB_URL_FILE: /run/secrets/codimd_db_url
       CMD_DOMAIN: codimd.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
     image: quay.io/codimd/server:1.6.0-alpine@sha256:be841010407abfe2f29009da6c716c026d089ced632b33832fbad1c591deaee3
     secrets:
-    - codimd_db_url
+    - source: codimd_db_url
+      target: dbURL
+    - source: codimd_session-secret
+      target: sessionsecret
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:dev
     user: 1000:82
