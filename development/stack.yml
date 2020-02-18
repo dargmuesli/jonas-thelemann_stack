@@ -238,7 +238,6 @@ services:
     - ./configurations/traefik/dynamic.yml:/dynamic.yml:ro #DARGSTACK-REMOVE
 version: "3.6"
 volumes:
-  codimd_config: {}
   nextcloud_data: {}
   portainer_data: {}
   postgres_data: {}
