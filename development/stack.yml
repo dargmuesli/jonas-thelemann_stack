@@ -72,7 +72,7 @@ services:
       - traefik.http.routers.jonas-thelemann_nginx_secure_tools.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) && PathPrefix(`/tools/`)
       - traefik.http.routers.jonas-thelemann_nginx_secure_tools.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann_nginx.loadbalancer.server.port=80
-    image: nginx:1.17.8-alpine@sha256:fa266689d339b47a4a9d1148015d4bc5c4914d3d7e3ec061d85aa8813dfd485c
+    image: nginx:1.17.9-alpine@sha256:ef2b6cd6fdfc6d0502b77710b27f7928a5e29ab5cfae398824e5dcfbbb7a75e2
     volumes:
     - ../production/configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
     - ../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/:ro
@@ -101,7 +101,7 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
-    image: nginx:1.17.8-alpine@sha256:fa266689d339b47a4a9d1148015d4bc5c4914d3d7e3ec061d85aa8813dfd485c
+    image: nginx:1.17.9-alpine@sha256:ef2b6cd6fdfc6d0502b77710b27f7928a5e29ab5cfae398824e5dcfbbb7a75e2
     volumes:
     - ../production/configuration/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
@@ -180,7 +180,7 @@ services:
       - traefik.http.routers.randomwinpicker_nginx_secure.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
       - traefik.http.routers.randomwinpicker_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.randomwinpicker_nginx.loadbalancer.server.port=80
-    image: nginx:1.17.8-alpine@sha256:fa266689d339b47a4a9d1148015d4bc5c4914d3d7e3ec061d85aa8813dfd485c
+    image: nginx:1.17.9-alpine@sha256:ef2b6cd6fdfc6d0502b77710b27f7928a5e29ab5cfae398824e5dcfbbb7a75e2
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/server/:ro
     - ../production/configuration/randomwinpicker_nginx/nginx.conf:/etc/nginx/nginx.conf
