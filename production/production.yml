@@ -52,8 +52,6 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.portainer_secure.tls.certresolver=default
-  randomwinpicker:
-    user: (( prune ))
   randomwinpicker_nginx:
     deploy:
       labels:
