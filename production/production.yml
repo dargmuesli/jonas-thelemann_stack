@@ -21,7 +21,7 @@ services:
       - (( append ))
       - traefik.http.routers.codimd_secure.tls.certresolver=default
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.1.3@sha256:3f1f879d4b4ac4d24b092910a7333e89a9b6c01405647f37e114e232ccc183b2
+    image: dargmuesli/jonas-thelemann:3.2.0@sha256:58249573e9c5c5354d3cec7749283908bde068a9b2a8257f8468773675e452ea
     user: (( prune ))
     volumes:
     - (( replace ))
