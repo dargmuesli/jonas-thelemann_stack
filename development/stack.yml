@@ -79,7 +79,7 @@ services:
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: ../production/secrets/nextcloud/nextcloud.env
-    image: nextcloud:18.0.3-fpm-alpine@sha256:a2848016567f12148d879a930a3ea626b93e27665db4d236350a014d7cd46718
+    image: nextcloud:18.0.3-fpm-alpine@sha256:f505b694fd952e0b1af465b0ce53442a3a442f0b60d280e8472b322589913f72
     volumes:
     - nextcloud_data:/var/www/html/
   nextcloud_nginx:
