@@ -3,6 +3,10 @@ secrets:
     file: ./secrets/codimd/db_url.secret
   codimd_session-secret:
     file: ./secrets/codimd/session-secret.secret
+  nextcloud_admin-password:
+    file: ./secrets/nextcloud/admin-password.secret
+  nextcloud_admin-user:
+    file: ./secrets/nextcloud/admin-user.secret
   portainer_admin-password:
     file: ./secrets/portainer/admin-password.secret
   postgres-backup_db:
@@ -80,6 +84,11 @@ services:
   nextcloud:
     env_file: ../production/secrets/nextcloud/nextcloud.env
     image: nextcloud:18.0.3-fpm-alpine@sha256:f505b694fd952e0b1af465b0ce53442a3a442f0b60d280e8472b322589913f72
+    secrets:
+    - nextcloud_admin-password
+    - nextcloud_admin-user
+    - postgres_password
+    - postgres_user
     volumes:
     - nextcloud_data:/var/www/html/
   nextcloud_nginx:
