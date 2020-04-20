@@ -83,7 +83,7 @@ services:
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: ../production/secrets/nextcloud/nextcloud.env
-    image: nextcloud:18.0.3-fpm-alpine@sha256:2b3dd3889c25596192117e87f3f1a55636b670332255a7ed75a3a7bc0ba04092
+    image: nextcloud:18.0.3-fpm-alpine@sha256:b07c471da7a58592dfbf288744f32f69bfbb05357f230204f4a930bb6966f28b
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
