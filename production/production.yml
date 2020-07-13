@@ -26,7 +26,7 @@ services:
       - (( append ))
       - traefik.http.services.creal.loadbalancer.server.port=8080
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:0.1.0@sha256:84fa360df2f24a1f164b2974243f6fd0e4a3b9badb69cc3953b06afb4e5a89fe
+    image: dargmuesli/creal:0.1.1@sha256:1962e688ced545e67303870202b3c630c149bcbe13a39c8be98f307a8972ead1
     user: (( prune ))
     volumes: (( prune ))
   creal_strapi:
