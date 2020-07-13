@@ -7,4 +7,5 @@ mkcert \
 -ecdsa \
 -key-file "$THIS/$NAME.key" \
     $NAME.test \
-    "*.$NAME.test"
+    "*.$NAME.test" \
+    "*.creal.$NAME.test"

@@ -3,6 +3,12 @@ secrets:
     file: ./secrets/codimd/db_url.secret
   codimd_session-secret:
     file: ./secrets/codimd/session-secret.secret
+  creal_aws-bucket:
+    file: ./secrets/creal/aws-bucket.secret
+  creal_aws-credentials:
+    file: ./secrets/creal/aws-credentials.secret
+  creal_sqitch-target:
+    file: ./secrets/creal/sqitch-target.secret
   nextcloud_admin-password:
     file: ./secrets/nextcloud/admin-password.secret
   nextcloud_admin-user:
@@ -15,6 +21,8 @@ secrets:
     file: ./secrets/postgres/db.secret
   postgres_password:
     file: ./secrets/postgres/password.secret
+  postgres_role_creal-postgraphile_password:
+    file: ./secrets/postgres/role_creal-postgraphile_password.secret
   postgres_user:
     file: ./secrets/postgres/user.secret
 services:
@@ -59,6 +67,48 @@ services:
       target: dbURL
     - source: codimd_session-secret
       target: sessionsecret
+  creal:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.creal.middlewares=redirectscheme
+      - traefik.http.routers.creal.rule=Host(`creal.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_secure.rule=Host(`creal.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.creal.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
+    environment:
+      AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
+      STACK_DOMAIN: ${STACK_DOMAIN}
+    image: dargmuesli/creal:dev
+    secrets:
+    - creal_aws-bucket
+    - creal_aws-credentials
+    - creal_sqitch-target
+    - postgres_role_creal-postgraphile_password
+    user: node:node
+    volumes:
+    - ../../creal/nuxt/:/srv/app/
+    - ../../creal/sqitch/:/srv/sqitch/
+  creal_strapi:
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.creal_strapi.middlewares=redirectscheme
+      - traefik.http.routers.creal_strapi.rule=Host(`strapi.creal.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi_secure.rule=Host(`strapi.creal.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: creal_strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+    image: strapi/strapi:3.0.1-alpine@sha256:a571dcbc923fabf795df83f044a97dea285abb8b1cd071db2958c154de24ad27
+    secrets:
+    - postgres_password
+    - postgres_user
+    volumes:
+    - ../../creal_strapi/:/srv/app/
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:dev
     user: 1000:82
@@ -148,7 +198,7 @@ services:
     - /var/lib/docker/volumes:/var/lib/docker/volumes
   postgres:
     environment:
-      POSTGRES_ADDITIONAL_DBS: codimd randomwinpicker
+      POSTGRES_ADDITIONAL_DBS: codimd creal creal_strapi randomwinpicker
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
@@ -158,6 +208,7 @@ services:
     - postgres_password
     - postgres_user
     volumes:
+    - /mnt/dev/postgresql/:/var/run/postgresql/ #DARGSTACK-REMOVE
     - postgres_data:/var/lib/postgresql/data/
     - ../production/configuration/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   postgres_backup:

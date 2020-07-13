@@ -20,6 +20,18 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.codimd_secure.tls.certresolver=default
+  creal:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.services.creal.loadbalancer.server.port=8080
+      - traefik.http.routers.creal_secure.tls.certresolver=default
+    image: dargmuesli/creal:0.1.0@sha256:84fa360df2f24a1f164b2974243f6fd0e4a3b9badb69cc3953b06afb4e5a89fe
+    user: (( prune ))
+    volumes: (( prune ))
+  creal_strapi:
+    image: dargmuesli/creal_strapi:1.0.0@sha256:8ccf2edcec3aa5141020da10f2f8690b04c22ec0b63c2df78e91a86c51bf52fc
+    volumes: (( prune ))
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:3.2.4@sha256:7afa3161b0e362356d8f71cbe330ce07b9976e2075b72b478deaa3b7fb93d525
     user: (( prune ))
