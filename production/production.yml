@@ -30,6 +30,10 @@ services:
     user: (( prune ))
     volumes: (( prune ))
   creal_strapi:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
     image: dargmuesli/creal_strapi:1.0.0@sha256:8ccf2edcec3aa5141020da10f2f8690b04c22ec0b63c2df78e91a86c51bf52fc
     volumes: (( prune ))
   jonas-thelemann:
