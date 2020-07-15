@@ -24,9 +24,8 @@ services:
     deploy:
       labels:
       - (( append ))
-      - traefik.http.services.creal.loadbalancer.server.port=8080
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:0.1.1@sha256:1962e688ced545e67303870202b3c630c149bcbe13a39c8be98f307a8972ead1
+    image: dargmuesli/creal:0.1.3@sha256:597891c6e2185255ee6a12ca3951fae3497f25dcb8aa83bfc6d9d2d7010d6df9
     user: (( prune ))
     volumes: (( prune ))
   creal_strapi:

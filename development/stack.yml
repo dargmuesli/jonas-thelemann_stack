@@ -75,7 +75,7 @@ services:
       - traefik.http.routers.creal.rule=Host(`creal.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_secure.rule=Host(`creal.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.services.creal.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
+      - traefik.http.services.creal.loadbalancer.server.port=3000
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
       STACK_DOMAIN: ${STACK_DOMAIN}
