@@ -36,7 +36,7 @@ services:
     image: dargmuesli/creal_strapi:1.0.1@sha256:a7096f7641fbba39f9bff6da1fc21f9fad510a819f75102890c918228d4347bb
     volumes: (( prune ))
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.2.4@sha256:7afa3161b0e362356d8f71cbe330ce07b9976e2075b72b478deaa3b7fb93d525
+    image: dargmuesli/jonas-thelemann:3.3.0@sha256:7fa864c5202af55484bc83111132cf320a7a367c847fc4c7a8cde58d9cd235c2
     user: (( prune ))
     volumes:
     - (( replace ))
