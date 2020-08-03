@@ -113,4 +113,5 @@ services:
     - acme_data:/etc/traefik/acme/
 volumes:
   acme_data: {}
+  creal_strapi_data: {}
   jonas-thelemann_data: {}
