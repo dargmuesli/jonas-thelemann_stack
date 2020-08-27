@@ -61,7 +61,7 @@ services:
       CMD_DOMAIN: codimd.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/codimd/server:1.6.0-alpine@sha256:7779e2186bd22bd77f19d067f674fedd20ea6caa027a05ec89144c9d5fce9556
+    image: quay.io/codimd/server:1.6.0-alpine@sha256:d3905df85525fe5dce79047b0fa599a6fe20e9c5cdf6247dfa1b0463094a67eb
     secrets:
     - source: codimd_db_url
       target: dbURL
