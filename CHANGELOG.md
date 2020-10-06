@@ -1,3 +1,10 @@
+## [0.15.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.15.2...0.15.3) (2020-10-06)
+
+
+### Bug Fixes
+
+* **development:** correct relative paths ([8816f25](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8816f258e45e39186b334faf5007dcdede9a99e2))
+
 ## [0.15.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.15.1...0.15.2) (2020-10-05)
 
 
