@@ -87,8 +87,8 @@ services:
     - postgres_role_creal-postgraphile_password
     user: node:node
     volumes:
-    - ../../creal/nuxt/:/srv/app/
-    - ../../creal/sqitch/:/srv/sqitch/
+    - ../../../creal/nuxt/:/srv/app/
+    - ../../../creal/sqitch/:/srv/sqitch/
   creal_strapi:
     deploy:
       labels:
@@ -108,12 +108,12 @@ services:
     - postgres_password
     - postgres_user
     volumes:
-    - ../../creal_strapi/:/srv/app/
+    - ../../../creal_strapi/:/srv/app/
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:dev
     user: 1000:82
     volumes:
-    - ../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/
+    - ../../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/
     - ../production/secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
   jonas-thelemann_nginx:
     deploy:
@@ -129,7 +129,7 @@ services:
     image: nginx:1.19.3-alpine@sha256:a3c6118edc80de4a5aaf2711b7742c25d4d2da54325bae465205cb386afa79ee
     volumes:
     - ../production/configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
-    - ../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/:ro
+    - ../../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/:ro
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
     env_file: ../production/secrets/nextcloud/nextcloud.env
