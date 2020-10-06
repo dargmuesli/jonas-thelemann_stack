@@ -16,5 +16,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "scheduleVersion": "0.15.4"
 }
