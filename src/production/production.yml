@@ -1,7 +1,9 @@
 secrets:
   traefik_cf-dns-api-token:
+  # The DNS provider's DNS API token.
     external: true
   traefik_cf-zone-api-token:
+  # The DNS provider's zone API token.
     external: true
 services:
   1generator:
@@ -97,6 +99,7 @@ services:
     - traefik_cf-dns-api-token
     - traefik_cf-zone-api-token
   traefik_certs-dumper:
+  # See [DargStack template: certificates](https://github.com/dargmuesli/dargstack_template/#certificates).
     command:
     - file
     - --clean=false
@@ -113,6 +116,12 @@ services:
     - acme_data:/etc/traefik/acme/
 version: "3.7"
 volumes:
-  acme_data: {}
-  creal_strapi_data: {}
-  jonas-thelemann_data: {}
+  acme_data:
+  # The reverse proxy's certificate data.
+    {}
+  creal_strapi_data:
+  # The DJ website's CMS data.
+    {}
+  jonas-thelemann_data:
+  # The main project's data.
+    {}

@@ -1,32 +1,51 @@
+# jonas-thelemann.de
+# https://jonas-thelemann.de/
+# jonas-thelemann
+# https://github.com/dargmuesli/jonas-thelemann/
+---
 secrets:
   codimd_db_url:
+  # The markdown collaboration tool's database url.
     file: ./secrets/codimd/db_url.secret
   codimd_session-secret:
+  # The markdown collaboration tool's session secret.
     file: ./secrets/codimd/session-secret.secret
   creal_aws-bucket:
+  # The DJ website's AWS bucket name.
     file: ./secrets/creal/aws-bucket.secret
   creal_aws-credentials:
+  # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
   creal_sqitch-target:
+  # The DJ website's Sqitch target.
     file: ./secrets/creal/sqitch-target.secret
   nextcloud_admin-password:
+  # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
   nextcloud_admin-user:
+  # The cloud admin user's name.
     file: ./secrets/nextcloud/admin-user.secret
   portainer_admin-password:
+  # The container manager's password for the user `admin`.
     file: ./secrets/portainer/admin-password.secret
   postgres-backup_db:
+  # The database backup service's database name.
     file: ./secrets/postgres-backup/db.secret
   postgres_db:
+  # The database's name.
     file: ./secrets/postgres/db.secret
   postgres_password:
+  # The database default user's password.
     file: ./secrets/postgres/password.secret
   postgres_role_creal-postgraphile_password:
+  # The `maevsi_postgraphile` database role's password.
     file: ./secrets/postgres/role_creal-postgraphile_password.secret
   postgres_user:
+  # The database default user's name.
     file: ./secrets/postgres/user.secret
 services:
   1generator:
+  # You can access this subproject at [1generator.jonas-thelemann.test](https://1generator.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -37,6 +56,18 @@ services:
       - traefik.http.services.1generator.loadbalancer.server.port=80
     image: dargmuesli/1generator:1.0.1@sha256:6f8dc24e6fc0a254ebe65b0d49f61fdf0749836b91ce1fd3314bbf92ced2b07c
   adminer:
+  # You can access the database's frontend at [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/).
+  # This information is required for login:
+  #
+  # |          |                     |
+  # | -------- | ------------------- |
+  # | System   | PostgreSQL          |
+  # | Server   | postgres            |
+  # | Username | [postgres_user]     |
+  # | Password | [postgres_password] |
+  # | Database | [postgres_db]       |
+  #
+  # Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
     deploy:
       labels:
       - traefik.enable=true
@@ -49,6 +80,7 @@ services:
     volumes:
     - ../production/configuration/adminer/adminer.css:/var/www/html/adminer.css:ro
   codimd:
+  # You can access the markdown collaboration tool at [codimd.jonas-thelemann.test](https://codimd.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -68,6 +100,7 @@ services:
     - source: codimd_session-secret
       target: sessionsecret
   creal:
+  # You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -90,6 +123,7 @@ services:
     - ../../../creal/nuxt/:/srv/app/
     - ../../../creal/sqitch/:/srv/sqitch/
   creal_strapi:
+  # You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -110,12 +144,14 @@ services:
     volumes:
     - ../../../creal_strapi/:/srv/app/
   jonas-thelemann:
+  # You can access the main project via `jonas-thelemann_nginx`.
     image: dargmuesli/jonas-thelemann:dev
     user: 1000:82
     volumes:
     - ../../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/
     - ../production/secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
   jonas-thelemann_nginx:
+  # You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -132,6 +168,7 @@ services:
     - ../../../jonas-thelemann/dist/jonas-thelemann/server/:/var/www/jonas-thelemann/server/:ro
     - ./certificates/:/etc/ssl/certificates/
   nextcloud:
+  # You can access nextcloud via `nextcloud_nginx`.
     env_file: ../production/secrets/nextcloud/nextcloud.env
     image: nextcloud:19.0.4-fpm-alpine@sha256:5b668d8227750135757a0d8adb5746fe91edc6f8c5567b545aa8eeb96ca718f9
     secrets:
@@ -142,6 +179,7 @@ services:
     volumes:
     - nextcloud_data:/var/www/html/
   nextcloud_nginx:
+  # You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -165,6 +203,7 @@ services:
     - ../production/configuration/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
   portainer:
+  # You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
     command: -H tcp://tasks.portainer-agent:9001 --tlsskipverify --admin-password-file '/run/secrets/portainer_admin-password'
     deploy:
       labels:
@@ -185,6 +224,7 @@ services:
     volumes:
     - portainer_data:/data
   portainer-agent:
+  # You can access the container manager agent via `portainer`.
     deploy:
       mode: global
       placement:
@@ -197,6 +237,7 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/docker/volumes:/var/lib/docker/volumes
   postgres:
+  # You can access the database via `adminer`.
     environment:
       POSTGRES_ADDITIONAL_DBS: codimd creal creal_strapi randomwinpicker
       POSTGRES_DB_FILE: /run/secrets/postgres_db
@@ -212,6 +253,7 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/configuration/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   postgres_backup:
+  # Backup service for `postgres`.
     environment:
       POSTGRES_DB_FILE: /run/secrets/postgres-backup_db
       POSTGRES_HOST: postgres
@@ -226,11 +268,13 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/backups/postgres/:/backups/
   randomwinpicker:
+  # You can access the main project via `randomwinpicker_nginx`.
     image: dargmuesli/randomwinpicker:5.1.2@sha256:6bcd59c2588f52a66a8f9cf13e2e6eaf40f05650e3b9437389e18ad48c8391fc
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/server/
     - ../production/secrets/randomwinpicker/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
   randomwinpicker_nginx:
+  # You can access the main project at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -245,6 +289,7 @@ services:
     - ../production/configuration/randomwinpicker_nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./certificates/:/etc/ssl/certificates/
   thelounge:
+  # You can access the web IRC client's dashboard at [thelounge.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
@@ -257,6 +302,8 @@ services:
     volumes:
     - thelounge_data:/var/opt/thelounge
   traefik:
+  # You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+  # Traefik enables HTTPS for all services and acts as a load-balancer too.
     command:
     - --api=true
     - --entryPoints.web.address=:80
@@ -297,8 +344,18 @@ services:
     - ./configurations/traefik/dynamic.yml:/dynamic.yml:ro #DARGSTACK-REMOVE
 version: "3.6"
 volumes:
-  nextcloud_data: {}
-  portainer_data: {}
-  postgres_data: {}
-  randomwinpicker_data: {}
-  thelounge_data: {}
+  nextcloud_data:
+  # The cloud's data.
+    {}
+  portainer_data:
+  # The container manager's data.
+    {}
+  postgres_data:
+  # The database's data.
+    {}
+  randomwinpicker_data:
+  # Randomwinpicker's data.
+    {}
+  thelounge_data:
+  # The IRC client's data.
+    {}
