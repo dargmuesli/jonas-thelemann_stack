@@ -252,21 +252,6 @@ services:
     - /mnt/dev/postgresql/:/var/run/postgresql/ #DARGSTACK-REMOVE
     - postgres_data:/var/lib/postgresql/data/
     - ../production/configuration/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
-  postgres_backup:
-  # Backup service for `postgres`.
-    environment:
-      POSTGRES_DB_FILE: /run/secrets/postgres-backup_db
-      POSTGRES_HOST: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
-      POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: prodrigestivill/postgres-backup-local:12-alpine@sha256:7ba83a4065d593d21a67dbfc013ab91e5faad4f97717498c8771b5dcf751f62d
-    secrets:
-    - postgres-backup_db
-    - postgres_password
-    - postgres_user
-    volumes:
-    - postgres_data:/var/lib/postgresql/data/
-    - ../production/backups/postgres/:/backups/
   randomwinpicker:
   # You can access the main project via `randomwinpicker_nginx`.
     image: dargmuesli/randomwinpicker:5.1.5@sha256:e0284ccef1e6b911f20e0721c7d88bfb71f997f2140abebdfe94aeb1b2e8661d
