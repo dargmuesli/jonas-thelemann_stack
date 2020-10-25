@@ -111,7 +111,7 @@ services:
       - traefik.http.services.creal.loadbalancer.server.port=3000
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
-      STACK_DOMAIN: ${STACK_DOMAIN}
+      NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
     image: dargmuesli/creal:dev
     secrets:
     - creal_aws-bucket
