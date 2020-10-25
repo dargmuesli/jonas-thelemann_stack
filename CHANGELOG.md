@@ -1,3 +1,11 @@
+# [0.16.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.15.4...0.16.0) (2020-10-25)
+
+
+### Features
+
+* **deps:** update dargmuesli/creal docker tag to v0.5.0 ([dd8f7a6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/dd8f7a6c0cadf2b3a684f4e74ef77cbd77776572))
+* **production:** set several replica counts to two ([157a642](https://github.com/dargmuesli/jonas-thelemann_stack/commit/157a642a01b42814004c12118a6dcdcb846739e0))
+
 ## [0.15.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.15.3...0.15.4) (2020-10-06)
 
 
