@@ -1,3 +1,10 @@
+## [0.16.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.3...0.16.4) (2020-10-26)
+
+
+### Bug Fixes
+
+* **postgres:** single replica only ([3064d70](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3064d7020093a863f2b376533b92817c2f9e9528))
+
 ## [0.16.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.2...0.16.3) (2020-10-26)
 
 
