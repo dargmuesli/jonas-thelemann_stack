@@ -64,7 +64,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `postgres_role_creal-postgraphile_password`
     
-    The `maevsi_postgraphile` database role's password.
+    The `creal_postgraphile` database role's password.
     
  - ### `postgres_user`
     

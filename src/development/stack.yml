@@ -38,7 +38,7 @@ secrets:
   # The database default user's password.
     file: ./secrets/postgres/password.secret
   postgres_role_creal-postgraphile_password:
-  # The `maevsi_postgraphile` database role's password.
+  # The `creal_postgraphile` database role's password.
     file: ./secrets/postgres/role_creal-postgraphile_password.secret
   postgres_user:
   # The database default user's name.
