@@ -1,3 +1,10 @@
+## [0.16.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.2...0.16.3) (2020-10-26)
+
+
+### Bug Fixes
+
+* **postgres:** add missing additional db "nextcloud" ([6d5c175](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6d5c175cefccf55d4007e04c5364fd5e73af4ef4))
+
 ## [0.16.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.1...0.16.2) (2020-10-26)
 
 
