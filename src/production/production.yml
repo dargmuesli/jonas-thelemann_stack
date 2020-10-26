@@ -81,9 +81,6 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.portainer_secure.tls.certresolver=default
-  postgres:
-    deploy:
-      replicas: 2
   postgres_backup:
   # Backup service for `postgres`.
     environment:
