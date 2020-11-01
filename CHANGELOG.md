@@ -1,3 +1,11 @@
+## [0.16.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.5...0.16.6) (2020-11-01)
+
+
+### Bug Fixes
+
+* **codimd:** use only one replica ([e847910](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e8479102c79f88199c529d891167f556f82b4ff7))
+* **nextcloud:** use only one replica ([c0a8da6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c0a8da68f2c983230cee31ecb84927e5004a68bf))
+
 ## [0.16.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.4...0.16.5) (2020-10-26)
 
 
