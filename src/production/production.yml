@@ -23,7 +23,6 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.codimd_secure.tls.certresolver=default
-      replicas: 2
   creal:
     deploy:
       labels:
