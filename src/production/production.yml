@@ -65,9 +65,6 @@ services:
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
     - jonas-thelemann_data:/var/www/jonas-thelemann/server/:ro
     - acme_data:/etc/ssl/certificates/
-  nextcloud:
-    deploy:
-      replicas: 2
   nextcloud_nginx:
     deploy:
       labels:
