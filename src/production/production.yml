@@ -44,7 +44,7 @@ services:
   jonas-thelemann:
     deploy:
       replicas: 2
-    image: dargmuesli/jonas-thelemann:3.4.5@sha256:7bf988e2928ab2d078a06e00c6460e65b3423ec06e2a26c1a1e041cf2a5f5c71
+    image: dargmuesli/jonas-thelemann:3.4.6@sha256:4d360418025de2ecb2e6ea2d714e20f727ebf401dc74cc0a068436f554c168e2
     user: (( prune ))
     volumes:
     - (( replace ))
