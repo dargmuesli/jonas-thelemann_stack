@@ -1,3 +1,10 @@
+## [0.16.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.6...0.16.7) (2020-11-04)
+
+
+### Bug Fixes
+
+* **strapi:** use non-alpine version ([86da7a2](https://github.com/dargmuesli/jonas-thelemann_stack/commit/86da7a2f6a20eab2ad7ac15f5eee8edff3289650))
+
 ## [0.16.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.5...0.16.6) (2020-11-01)
 
 
