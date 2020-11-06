@@ -6,7 +6,7 @@
 configs:
   creal_strapi_env:
   # The DJ website's CMS environment variables.
-    file: ./secrets/creal_strapi/env
+    file: ./secrets/creal_strapi/env.secret
 secrets:
   codimd_db_url:
   # The markdown collaboration tool's database url.
