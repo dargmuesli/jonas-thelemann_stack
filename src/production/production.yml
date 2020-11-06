@@ -38,7 +38,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
       replicas: 2
-    image: dargmuesli/creal_strapi:1.1.4@sha256:a1ce7039638acb04b0086f5cdb44749d8e5b081acc483f1bd1cbd8112072b617
+    image: dargmuesli/creal_strapi:1.1.5@sha256:d5ab22e217575ef9661a694c2125fc93b8a6160f749b4bb3a291f5e172d8370f
     volumes:
     - creal_strapi_data:/srv/app/
   jonas-thelemann:
