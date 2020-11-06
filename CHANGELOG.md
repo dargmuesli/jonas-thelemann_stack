@@ -1,3 +1,10 @@
+# [0.17.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.9...0.17.0) (2020-11-06)
+
+
+### Features
+
+* **deps:** update dargmuesli/creal_strapi docker tag to v1.1.4 ([7f2e1dc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7f2e1dc410f3230a841d293d25b47f0f5be9e112))
+
 ## [0.16.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.8...0.16.9) (2020-11-04)
 
 
