@@ -1,3 +1,10 @@
+## [0.17.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.17.0...0.17.1) (2020-11-06)
+
+
+### Bug Fixes
+
+* **creal_strapi:** add missing secret suffix ([9adaa1d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9adaa1d4546ee5730258dc07e4167e9e66fd86dd))
+
 # [0.17.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.16.9...0.17.0) (2020-11-06)
 
 
