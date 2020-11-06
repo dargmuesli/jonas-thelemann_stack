@@ -8,11 +8,21 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## Table of Contents
 
 
- 1. [secrets](#secrets)
+ 1. [configs](#configs)
     
- 2. [services](#services)
+ 2. [secrets](#secrets)
     
- 3. [volumes](#volumes)
+ 3. [services](#services)
+    
+ 4. [volumes](#volumes)
+    
+
+## configs
+
+
+ - ### `creal_strapi_env`
+    
+    The DJ website's CMS environment variables.
     
 
 ## secrets
