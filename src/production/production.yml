@@ -11,7 +11,6 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.1generator_secure.tls.certresolver=default
-      replicas: 2
   adminer:
     deploy:
       labels:
@@ -28,7 +27,6 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-      replicas: 2
     image: dargmuesli/creal:0.11.0@sha256:4db2510bfcecf10f8e53f2af1b5e963c6793ee15542279f4085c237ae7d831cf
     user: (( prune ))
     volumes: (( prune ))
@@ -37,13 +35,10 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-      replicas: 2
     image: dargmuesli/creal_strapi:1.1.6@sha256:8936b8b77450c3637a8eb7e2a06626ebc7651418e1e18308de0c9c933ab24cc0
     volumes:
     - creal_strapi_data:/srv/app/
   jonas-thelemann:
-    deploy:
-      replicas: 2
     image: dargmuesli/jonas-thelemann:3.4.7@sha256:4fca62911bce06382a1d0a9c46d9ba5dcf9dea910bdfeba4b1ed43b3b6ec36f4
     user: (( prune ))
     volumes:
@@ -58,7 +53,6 @@ services:
       - traefik.http.routers.jonas-thelemann_nginx_secure.tls.certresolver=default
       - traefik.http.routers.jonas-thelemann_nginx_secure_tools.middlewares=auth
       - traefik.http.routers.jonas-thelemann_nginx_secure_tools.tls.certresolver=default
-      replicas: 2
     volumes:
     - (( replace ))
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -71,7 +65,6 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.certresolver=default
-      replicas: 2
   portainer:
     deploy:
       labels:
@@ -92,21 +85,16 @@ services:
     volumes:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/backups/postgres/:/backups/
-  randomwinpicker:
-    deploy:
-      replicas: 2
   randomwinpicker_nginx:
     deploy:
       labels:
       - (( append ))
       - traefik.http.routers.randomwinpicker_nginx_secure.tls.certresolver=default
-      replicas: 2
   thelounge:
     deploy:
       labels:
       - (( append ))
       - traefik.http.routers.thelounge_secure.tls.certresolver=default
-      replicas: 2
   traefik:
     command:
     - (( prepend ))
