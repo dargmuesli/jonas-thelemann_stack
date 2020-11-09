@@ -1,3 +1,15 @@
+## [0.17.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.17.2...0.17.3) (2020-11-09)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([46ad90b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/46ad90b937149218a547892d4e47e952c4d4ec00))
+
+
+### Reverts
+
+* remove replicate count setters ([dd9d51e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/dd9d51e345d432a757e62dd4c6b41fd2fef7359e))
+
 ## [0.17.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.17.1...0.17.2) (2020-11-06)
 
 
