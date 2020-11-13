@@ -1,7 +1,7 @@
 {
   "name": "jonas-thelemann_stack",
   "private": true,
-  "version": "0.17.5",
+  "version": "0.17.6",
   "scheduleVersion": "0.17.6",
   "description": "DargStack configuration for my website.",
   "repository": "https://github.com/dargmuesli/jonas-thelemann_stack.git",
