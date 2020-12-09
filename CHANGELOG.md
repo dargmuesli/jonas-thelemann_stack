@@ -1,3 +1,10 @@
+# [0.18.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.17.7...0.18.0) (2020-12-09)
+
+
+### Features
+
+* **traefik:** add pilot token ([4b6401b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4b6401b307009c7fd374c17ca57dc4d4b9bbe319))
+
 ## [0.17.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.17.6...0.17.7) (2020-12-03)
 
 
