@@ -176,7 +176,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     See [DargStack template: certificates](https://github.com/dargmuesli/dargstack_template/#certificates).
     
-
+ - ### `trapparty`
+    
+    You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
+    
 ## volumes
 
 

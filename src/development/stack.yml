@@ -335,6 +335,22 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./certificates/:/etc/traefik/acme/
     - ./configurations/traefik/dynamic.yml:/dynamic.yml:ro #DARGSTACK-REMOVE
+  trapparty:
+  # You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.trapparty.middlewares=redirectscheme
+      - traefik.http.routers.trapparty.rule=Host(`trapparty.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_secure.rule=Host(`trapparty.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.trapparty.loadbalancer.server.port=3000
+    environment:
+      NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
+    image: dargmuesli/trapparty:dev
+    user: node:node
+    volumes:
+    - ../../../trapparty/nuxt/:/srv/app/
 version: "3.6"
 volumes:
   nextcloud_data:

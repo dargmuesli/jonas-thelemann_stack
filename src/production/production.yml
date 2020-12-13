@@ -129,6 +129,14 @@ services:
     image: ldez/traefik-certs-dumper:v2.7.4@sha256:2936bcc5e365a47d8a642dee64f3ad902439da250f9e62e03298a5e8c2501b00
     volumes:
     - acme_data:/etc/traefik/acme/
+  trapparty:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.trapparty_secure.tls.certresolver=default
+    image: dargmuesli/trapparty:1.0.0@sha256:cd66244ab6c6d244eddf1c9369ce0ac9d930b31ef41d107c735248d7a718cf67
+    user: (( prune ))
+    volumes: (( prune ))
 version: "3.7"
 volumes:
   acme_data:
