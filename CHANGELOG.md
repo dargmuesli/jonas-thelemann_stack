@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.18.2...0.19.0) (2020-12-13)
+
+
+### Features
+
+* **trapparty:** add service ([73d80f1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/73d80f10045e50582d895895ed64c0eb17bc126c))
+
 ## [0.18.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.18.1...0.18.2) (2020-12-13)
 
 
