@@ -1,3 +1,10 @@
+## [0.18.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.18.1...0.18.2) (2020-12-13)
+
+
+### Bug Fixes
+
+* **production:** correct environment variable template file name ([edcc4e6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/edcc4e6af7cacf8c498c633af568f37ab4693351))
+
 ## [0.18.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.18.0...0.18.1) (2020-12-12)
 
 
