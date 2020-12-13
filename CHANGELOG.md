@@ -1,3 +1,10 @@
+## [0.19.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.19.0...0.19.1) (2020-12-13)
+
+
+### Bug Fixes
+
+* **mkcert:** remove unused subdomain ([d026f4a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d026f4a6f4e20371d012fa81cdff4580e74115fa))
+
 # [0.19.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.18.2...0.19.0) (2020-12-13)
 
 
