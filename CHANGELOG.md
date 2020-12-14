@@ -1,3 +1,10 @@
+## [0.20.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.4...0.20.5) (2020-12-14)
+
+
+### Bug Fixes
+
+* **trapparty_postgraphile:** add production configuration ([f75b4f5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f75b4f5c15843a6a7de31becebd045d185db6e7f))
+
 ## [0.20.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.3...0.20.4) (2020-12-14)
 
 
