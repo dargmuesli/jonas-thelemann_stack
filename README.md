@@ -24,6 +24,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's CMS environment variables.
     
+ - ### `trapparty_postgraphile_rc`
+    
+    The TrapParty GraphQL API's configuration file.
+    
 
 ## secrets
 
@@ -76,6 +80,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The `creal_postgraphile` database role's password.
     
+ - ### `postgres_role_trapparty-postgraphile_password`
+    
+    The `trapparty_postgraphile` database role's password.
+    
  - ### `postgres_user`
     
     The database default user's name.
@@ -87,6 +95,22 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `traefik_cf-zone-api-token` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
     The DNS provider's zone API token.
+    
+ - ### `trapparty_postgraphile_connection`
+    
+    The TrapParty GraphQL API's database URI.
+    
+ - ### `trapparty_postgraphile_jwt-secret`
+    
+    The TrapParty GraphQL API's JWT secret.
+    
+ - ### `trapparty_postgraphile_owner-connection`
+    
+    The TrapParty GraphQL API's database owner URI.
+    
+ - ### `trapparty_sqitch-target`
+    
+    The party website's Sqitch target.
     
 
 ## services
@@ -180,6 +204,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
     
+ - ### `trapparty_postgraphile`
+    
+    You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
+    
+
 ## volumes
 
 

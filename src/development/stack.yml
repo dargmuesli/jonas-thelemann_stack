@@ -7,6 +7,9 @@ configs:
   creal_strapi_env:
   # The DJ website's CMS environment variables.
     file: ./secrets/creal_strapi/env.secret
+  trapparty_postgraphile_rc:
+  # The TrapParty GraphQL API's configuration file.
+    file: ../production/configuration/trapparty_postgraphile/.postgraphilerc.js
 secrets:
   codimd_db_url:
   # The markdown collaboration tool's database url.
@@ -44,9 +47,24 @@ secrets:
   postgres_role_creal-postgraphile_password:
   # The `creal_postgraphile` database role's password.
     file: ./secrets/postgres/role_creal-postgraphile_password.secret
+  postgres_role_trapparty-postgraphile_password:
+  # The `trapparty_postgraphile` database role's password.
+    file: ./secrets/postgres/role_trapparty-postgraphile_password.secret
   postgres_user:
   # The database default user's name.
     file: ./secrets/postgres/user.secret
+  trapparty_postgraphile_connection:
+  # The TrapParty GraphQL API's database URI.
+    file: ./secrets/trapparty_postgraphile/connection.secret
+  trapparty_postgraphile_jwt-secret:
+  # The TrapParty GraphQL API's JWT secret.
+    file: ./secrets/trapparty_postgraphile/jwt-secret.secret
+  trapparty_postgraphile_owner-connection:
+  # The TrapParty GraphQL API's database owner URI.
+    file: ./secrets/trapparty_postgraphile/owner-connection.secret
+  trapparty_sqitch-target:
+  # The party website's Sqitch target.
+    file: ./secrets/trapparty/sqitch-target.secret
 services:
   1generator:
   # You can access this subproject at [1generator.jonas-thelemann.test](https://1generator.jonas-thelemann.test/).
@@ -246,7 +264,7 @@ services:
   postgres:
   # You can access the database via `adminer`.
     environment:
-      POSTGRES_ADDITIONAL_DBS: codimd creal creal_strapi nextcloud randomwinpicker
+      POSTGRES_ADDITIONAL_DBS: codimd creal creal_strapi nextcloud randomwinpicker trapparty
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
@@ -310,6 +328,8 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.middlewares.header_cors.headers.accessControlAllowHeaders=authorization,content-type
+      - traefik.http.middlewares.header_cors.headers.accessControlAllowOrigin=*
       - traefik.http.middlewares.redirectscheme.redirectscheme.scheme=https
       - traefik.http.routers.traefik.middlewares=redirectscheme
       - traefik.http.routers.traefik.rule=Host(`traefik.${STACK_DOMAIN}`)
@@ -348,9 +368,33 @@ services:
     environment:
       NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
     image: dargmuesli/trapparty:dev
+    secrets:
+    - trapparty_sqitch-target
+    - postgres_db
+    - postgres_role_trapparty-postgraphile_password
     user: node:node
     volumes:
     - ../../../trapparty/nuxt/:/srv/app/
+    - ../../../trapparty/sqitch/:/srv/sqitch/
+  trapparty_postgraphile:
+  # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
+    configs:
+      - source: trapparty_postgraphile_rc
+        target: /postgraphile/.postgraphilerc.js
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.trapparty_postgraphile.middlewares=redirectscheme
+      - traefik.http.routers.trapparty_postgraphile.rule=Host(`trapparty_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.trapparty_postgraphile_secure.rule=Host(`trapparty_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.trapparty_postgraphile.loadbalancer.server.port=5000
+    image: graphile/postgraphile:v4.10.0@sha256:decf3ea81b43f062238d8cde4be735eafc762c4cfd21fbff307f5170a28959c9
+    secrets:
+    - trapparty_postgraphile_connection
+    - trapparty_postgraphile_jwt-secret
+    - trapparty_postgraphile_owner-connection
 version: "3.6"
 volumes:
   nextcloud_data:
