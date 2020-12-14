@@ -24,7 +24,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's CMS environment variables.
     
- - ### `trapparty_postgraphile_rc`
+ - ### `trapparty-postgraphile_rc`
     
     The TrapParty GraphQL API's configuration file.
     
@@ -82,7 +82,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `postgres_role_trapparty-postgraphile_password`
     
-    The `trapparty_postgraphile` database role's password.
+    The `trapparty-postgraphile` database role's password.
     
  - ### `postgres_user`
     
@@ -96,11 +96,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DNS provider's zone API token.
     
- - ### `trapparty_postgraphile_connection`
+ - ### `trapparty-postgraphile_connection`
     
     The TrapParty GraphQL API's database URI.
     
- - ### `trapparty_postgraphile_owner-connection`
+ - ### `trapparty-postgraphile_owner-connection`
     
     The TrapParty GraphQL API's database owner URI.
     
@@ -200,7 +200,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
     
- - ### `trapparty_postgraphile`
+ - ### `trapparty-postgraphile`
     
     You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
     
