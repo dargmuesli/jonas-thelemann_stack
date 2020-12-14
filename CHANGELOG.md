@@ -1,3 +1,10 @@
+## [0.20.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.6...0.20.7) (2020-12-14)
+
+
+### Bug Fixes
+
+* **trapparty-postgraphile:** remove underscore from name ([0a29cc0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0a29cc089a7991d00cf2ad2dcabdb61ab5b374ed))
+
 ## [0.20.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.5...0.20.6) (2020-12-14)
 
 
