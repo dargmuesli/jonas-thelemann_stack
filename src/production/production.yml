@@ -137,6 +137,11 @@ services:
     image: dargmuesli/trapparty:1.0.4@sha256:0853c780ff5c7986361af189c322818dbab9443a5c2915238900d74d6a429a58
     user: (( prune ))
     volumes: (( prune ))
+  trapparty_postgraphile:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.trapparty_postgraphile_secure.tls.certresolver=default
 version: "3.7"
 volumes:
   acme_data:
