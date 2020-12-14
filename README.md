@@ -100,10 +100,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The TrapParty GraphQL API's database URI.
     
- - ### `trapparty_postgraphile_jwt-secret`
-    
-    The TrapParty GraphQL API's JWT secret.
-    
  - ### `trapparty_postgraphile_owner-connection`
     
     The TrapParty GraphQL API's database owner URI.

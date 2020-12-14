@@ -56,9 +56,6 @@ secrets:
   trapparty_postgraphile_connection:
   # The TrapParty GraphQL API's database URI.
     file: ./secrets/trapparty_postgraphile/connection.secret
-  trapparty_postgraphile_jwt-secret:
-  # The TrapParty GraphQL API's JWT secret.
-    file: ./secrets/trapparty_postgraphile/jwt-secret.secret
   trapparty_postgraphile_owner-connection:
   # The TrapParty GraphQL API's database owner URI.
     file: ./secrets/trapparty_postgraphile/owner-connection.secret
@@ -393,7 +390,6 @@ services:
     image: graphile/postgraphile:v4.10.0@sha256:decf3ea81b43f062238d8cde4be735eafc762c4cfd21fbff307f5170a28959c9
     secrets:
     - trapparty_postgraphile_connection
-    - trapparty_postgraphile_jwt-secret
     - trapparty_postgraphile_owner-connection
 version: "3.6"
 volumes:
