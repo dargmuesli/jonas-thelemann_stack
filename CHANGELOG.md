@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.19.1...0.20.0) (2020-12-14)
+
+
+### Features
+
+* **trapparty:** update to v1 ([5f08758](https://github.com/dargmuesli/jonas-thelemann_stack/commit/5f08758c10d2bcfafb2c26d8b92fe0ef78b3f397))
+
 ## [0.19.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.19.0...0.19.1) (2020-12-13)
 
 
