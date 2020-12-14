@@ -1,3 +1,10 @@
+## [0.20.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.7...0.20.8) (2020-12-14)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([4052171](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4052171de8e1e79816223570304979137b65dcd9))
+
 ## [0.20.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.6...0.20.7) (2020-12-14)
 
 
