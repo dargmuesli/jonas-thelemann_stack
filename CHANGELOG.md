@@ -1,3 +1,10 @@
+## [0.20.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.0...0.20.1) (2020-12-14)
+
+
+### Bug Fixes
+
+* **trapparty_postgraphile:** remove jwt secret ([ba5921a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ba5921a729e253a124856c7079a3e36484ff53af))
+
 # [0.20.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.19.1...0.20.0) (2020-12-14)
 
 
