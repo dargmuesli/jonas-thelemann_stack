@@ -276,7 +276,7 @@ services:
     - ../production/configuration/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   randomwinpicker:
   # You can access the main project via `randomwinpicker_nginx`.
-    image: dargmuesli/randomwinpicker:5.1.12@sha256:d9876d9dac8bb639901c4990d8635b971028babe09e30a27070a08de072c17ed
+    image: dargmuesli/randomwinpicker:5.2.0@sha256:42759f3d0d31c3db3090e08c205558f83db008952e542aed0d8ad9c8cc05aaf3
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/server/
     - ../production/secrets/randomwinpicker/randomwinpicker.env:/var/www/randomwinpicker/credentials/randomwinpicker.env:ro
