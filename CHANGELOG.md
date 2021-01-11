@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.17...1.0.0) (2021-01-11)
+
+
+### chore
+
+* **release:** schedule release 1.0.0 ([1de6763](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1de67634a313bf4ac5aabd4d7728b7ae8d36e630))
+
+
+### BREAKING CHANGES
+
+* **release:** not a breaking change, just the initial stable 1.0
+
 ## [0.20.17](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.16...0.20.17) (2020-12-27)
 
 
