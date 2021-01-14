@@ -159,7 +159,7 @@ services:
       DATABASE_NAME: creal_strapi
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
-    image: strapi/strapi:3.4.2@sha256:6e902e9783621738f62a9ec00489354301f1f131340d25f95e01ae2e03aa91aa
+    image: strapi/strapi:3.4.3@sha256:0ce6b665da46210ac9876f032f8b91e4d9a2f01ac5b8b2c02f78bfc9af8fad64
     secrets:
     - postgres_password
     - postgres_user
