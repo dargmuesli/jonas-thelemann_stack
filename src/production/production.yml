@@ -39,7 +39,7 @@ services:
     volumes:
     - creal_strapi_data:/srv/app/
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.4.14@sha256:66f4c76c2e6fd554bc5d2b080928c904e136541b506ec097265053fb12e7c0b2
+    image: dargmuesli/jonas-thelemann:3.4.15@sha256:36a85fe666673daa753e515aea77d04f8977a6b15a3e913f46bef947fcb90748
     user: (( prune ))
     volumes:
     - (( replace ))
