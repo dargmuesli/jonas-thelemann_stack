@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.0...1.0.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* **creal_strapi:** switch to actual secret ([ca7be8f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ca7be8f0432d3aa69b14cb5f5da2833853dc63c1))
+
 # [1.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/0.20.17...1.0.0) (2021-01-11)
 
 
