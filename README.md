@@ -20,10 +20,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## configs
 
 
- - ### `creal_strapi_env`
-    
-    The DJ website's CMS environment variables.
-    
  - ### `trapparty-postgraphile_rc`
     
     The TrapParty GraphQL API's configuration file.
@@ -39,6 +35,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `codimd_session-secret`
     
     The markdown collaboration tool's session secret.
+    
+ - ### `creal-strapi_admin-jwt-secret`
+    
+    The DJ website's CMS administrator JWT secret.
     
  - ### `creal_aws-bucket`
     

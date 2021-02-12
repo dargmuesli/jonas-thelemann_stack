@@ -4,9 +4,6 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 configs:
-  creal_strapi_env:
-  # The DJ website's CMS environment variables.
-    file: ./secrets/creal_strapi/env.secret
   trapparty-postgraphile_rc:
   # The TrapParty GraphQL API's configuration file.
     file: ../production/configuration/trapparty-postgraphile/.postgraphilerc.js
@@ -26,6 +23,9 @@ secrets:
   creal_sqitch-target:
   # The DJ website's Sqitch target.
     file: ./secrets/creal/sqitch-target.secret
+  creal-strapi_admin-jwt-secret:
+  # The DJ website's CMS administrator JWT secret.
+    file: ./secrets/creal_strapi/admin-jwt-secret.secret
   nextcloud_admin-password:
   # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
@@ -143,9 +143,6 @@ services:
     - ../../../creal/sqitch/:/srv/sqitch/
   creal_strapi:
   # You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
-    configs:
-    - source: creal_strapi_env
-      target: /srv/app/.env
     deploy:
       labels:
       - traefik.enable=true
@@ -155,12 +152,14 @@ services:
       - traefik.http.routers.creal_strapi_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
     environment:
+      ADMIN_JWT_SECRET_FILE: /run/secrets/creal-strapi_admin-jwt-secret
       DATABASE_CLIENT: postgres
       DATABASE_NAME: creal_strapi
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
     image: strapi/strapi:3.4.6@sha256:a3b7907dcbb4d8903b0fc6de01fdbf1437299b88dcd79ac05f15bfdd70b186cf
     secrets:
+    - creal-strapi_admin-jwt-secret
     - postgres_password
     - postgres_user
     volumes:
