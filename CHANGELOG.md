@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.1.0...1.2.0) (2021-04-06)
+
+
+### Features
+
+* **nbt:** add node-binance-trader ([f3e2666](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f3e2666faf236032bec02b9a8045b1faa01c658b))
+
 # [1.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.2...1.1.0) (2021-04-06)
 
 
