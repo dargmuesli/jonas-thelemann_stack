@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.1...1.0.2) (2021-04-06)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([eab770a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/eab770ada6d1359004058d7f8a0c1dd54bc2fab0))
+
 ## [1.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.0...1.0.1) (2021-02-12)
 
 
