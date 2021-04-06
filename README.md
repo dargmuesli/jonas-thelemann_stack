@@ -163,6 +163,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
     
+ - ### `node-binance-trader`
+    
+    You cannot access the trader via a web interface.
+    
  - ### `portainer`
     
     You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).

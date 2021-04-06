@@ -228,6 +228,12 @@ services:
     volumes:
     - ../production/configuration/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
+  node-binance-trader:
+  # You cannot access the trader via a web interface.
+    command: yarn run trader
+    image: herve76/node-binance-trader:0.4.1@sha256:e46c20346d86d770d6e6795e2940c897ef164ae13a34ad7eb919cf84e3b8bed1
+    volumes:
+    - ../production/secrets/node-binance-trader/secrets.env:/srv/app/.env:ro
   portainer:
   # You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
     command: -H tcp://tasks.portainer-agent:9001 --tlsskipverify --admin-password-file '/run/secrets/portainer_admin-password'
