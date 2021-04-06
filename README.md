@@ -28,14 +28,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
- - ### `codimd_db_url`
-    
-    The markdown collaboration tool's database url.
-    
- - ### `codimd_session-secret`
-    
-    The markdown collaboration tool's session secret.
-    
  - ### `creal-strapi_admin-jwt-secret`
     
     The DJ website's CMS administrator JWT secret.
@@ -51,6 +43,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal_sqitch-target`
     
     The DJ website's Sqitch target.
+    
+ - ### `hedgedoc_db_url`
+    
+    The markdown collaboration tool's database url.
+    
+ - ### `hedgedoc_session-secret`
+    
+    The markdown collaboration tool's session secret.
     
  - ### `nextcloud_admin-password`
     
@@ -131,10 +131,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
     
- - ### `codimd`
-    
-    You can access the markdown collaboration tool at [codimd.jonas-thelemann.test](https://codimd.jonas-thelemann.test/).
-    
  - ### `creal`
     
     You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
@@ -142,6 +138,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal_strapi`
     
     You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
+    
+ - ### `hedgedoc`
+    
+    You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
     
  - ### `jonas-thelemann`
     
