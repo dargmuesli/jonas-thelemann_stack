@@ -1,0 +1,6 @@
+version: 1.4
+
+jobs:
+  NextcloudCron:
+    cmd: wget -O/dev/null -q http://nextcloud_nginx/cron.php
+    time: 0 */5

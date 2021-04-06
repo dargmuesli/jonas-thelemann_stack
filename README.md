@@ -143,6 +143,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
     
+ - ### `jobber`
+    
+    You cannot access the jobber via a web interface.
+    
  - ### `jonas-thelemann`
     
     You can access the main project via `jonas-thelemann_nginx`.
