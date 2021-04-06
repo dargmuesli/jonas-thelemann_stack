@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.2...1.1.0) (2021-04-06)
+
+
+### Features
+
+* **jobber:** add nextcloud cron job ([43f9950](https://github.com/dargmuesli/jonas-thelemann_stack/commit/43f9950d9d50842894a0647a2c90af8402bf7b1d))
+
 ## [1.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.0.1...1.0.2) (2021-04-06)
 
 
