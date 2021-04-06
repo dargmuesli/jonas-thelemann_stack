@@ -166,7 +166,7 @@ services:
     - ../../../creal_strapi/:/srv/app/
   jobber:
   # You cannot access the jobber via a web interface.
-    image: jobber:1.4.4-alpine3.11@sha256:3920b2a0597bb70e87e9f89df1e37dd0f469b85a1cb4de9da4d1555b7b647603
+    image: jobber:1.4.4-alpine3.11@sha256:9007ad3980ebd786be63107ec8d746f44b4aa40ca6c93376bba4f80280b31049
     volumes:
       - ../production/configuration/jobber/.jobber:/home/jobberuser/.jobber:ro
   jonas-thelemann:
