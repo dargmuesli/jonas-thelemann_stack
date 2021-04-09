@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.2.0...1.2.1) (2021-04-09)
+
+
+### Bug Fixes
+
+* **nbt:** remove default secret value ([8d0463a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8d0463a1d50859ed459650ed087e0f14d02dbbe4))
+
 # [1.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.1.0...1.2.0) (2021-04-06)
 
 
