@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.2.2...1.3.0) (2021-05-05)
+
+
+### Features
+
+* **hedgedoc:** upgrade from codimd ([31a7ab3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/31a7ab39a8baa9e1615133926d4fc1b239806bfd))
+
 ## [1.2.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.2.1...1.2.2) (2021-05-05)
 
 
