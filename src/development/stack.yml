@@ -8,12 +8,6 @@ configs:
   # The TrapParty GraphQL API's configuration file.
     file: ../production/configuration/trapparty-postgraphile/.postgraphilerc.js
 secrets:
-  codimd_db_url:
-  # The markdown collaboration tool's database url.
-    file: ./secrets/codimd/db_url.secret
-  codimd_session-secret:
-  # The markdown collaboration tool's session secret.
-    file: ./secrets/codimd/session-secret.secret
   creal_aws-bucket:
   # The DJ website's AWS bucket name.
     file: ./secrets/creal/aws-bucket.secret
@@ -26,6 +20,12 @@ secrets:
   creal-strapi_admin-jwt-secret:
   # The DJ website's CMS administrator JWT secret.
     file: ./secrets/creal_strapi/admin-jwt-secret.secret
+  hedgedoc_db_url:
+  # The markdown collaboration tool's database url.
+    file: ./secrets/hedgedoc/db_url.secret
+  hedgedoc_session-secret:
+  # The markdown collaboration tool's session secret.
+    file: ./secrets/hedgedoc/session-secret.secret
   nextcloud_admin-password:
   # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
@@ -98,26 +98,6 @@ services:
     image: adminer:4.8.0-standalone@sha256:a3e73e13e4f3f1bd1007d7a5d75a6bd23846c3252b71ab7a5817de9ffec04826
     volumes:
     - ../production/configuration/adminer/adminer.css:/var/www/html/adminer.css:ro
-  codimd:
-  # You can access the markdown collaboration tool at [codimd.jonas-thelemann.test](https://codimd.jonas-thelemann.test/).
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.http.routers.codimd.middlewares=redirectscheme
-      - traefik.http.routers.codimd.rule=Host(`codimd.${STACK_DOMAIN}`)
-      - traefik.http.routers.codimd_secure.rule=Host(`codimd.${STACK_DOMAIN}`)
-      - traefik.http.routers.codimd_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.services.codimd.loadbalancer.server.port=3000
-    environment:
-      CMD_DOMAIN: codimd.${STACK_DOMAIN}
-      CMD_PROTOCOL_USESSL: "true"
-      CMD_URL_ADDPORT: "false"
-    image: quay.io/codimd/server:1.6.0-alpine@sha256:4957009ea9bcb32c94865530e439c4adfe1a6fdc56a09b9b0743af69224f165b
-    secrets:
-    - source: codimd_db_url
-      target: dbURL
-    - source: codimd_session-secret
-      target: sessionsecret
   creal:
   # You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
     deploy:
@@ -164,6 +144,26 @@ services:
     - postgres_user
     volumes:
     - ../../../creal_strapi/:/srv/app/
+  hedgedoc:
+  # You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.hedgedoc.middlewares=redirectscheme
+      - traefik.http.routers.hedgedoc.rule=Host(`hedgedoc.${STACK_DOMAIN}`)
+      - traefik.http.routers.hedgedoc_secure.rule=Host(`hedgedoc.${STACK_DOMAIN}`)
+      - traefik.http.routers.hedgedoc_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.hedgedoc.loadbalancer.server.port=3000
+    environment:
+      CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
+      CMD_PROTOCOL_USESSL: "true"
+      CMD_URL_ADDPORT: "false"
+    image: quay.io/hedgedoc/hedgedoc:1.7.2-alpine@sha256:737d6eac86855590aa28b33417137172cd6303389cd575bd01aa56cceaf866fb
+    secrets:
+    - source: hedgedoc_db_url
+      target: dbURL
+    - source: hedgedoc_session-secret
+      target: sessionsecret
   jobber:
   # You cannot access the jobber via a web interface.
     image: jobber:1.4.4-alpine3.11@sha256:10e354645c84f98fcb5b3a49b578e47d3ad16406e94d763e6e1784397fef208c
@@ -271,7 +271,7 @@ services:
   postgres:
   # You can access the database via `adminer`.
     environment:
-      POSTGRES_ADDITIONAL_DBS: codimd creal creal_strapi nextcloud randomwinpicker trapparty
+      POSTGRES_ADDITIONAL_DBS: creal creal_strapi hedgedoc nextcloud randomwinpicker trapparty
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user

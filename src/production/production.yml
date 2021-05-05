@@ -17,11 +17,6 @@ services:
       - (( append ))
       - traefik.http.routers.adminer_secure.middlewares=auth
       - traefik.http.routers.adminer_secure.tls.certresolver=default
-  codimd:
-    deploy:
-      labels:
-      - (( append ))
-      - traefik.http.routers.codimd_secure.tls.certresolver=default
   creal:
     deploy:
       labels:
@@ -38,6 +33,11 @@ services:
     image: dargmuesli/creal_strapi:1.2.7@sha256:b97f8c3cb5b3334f5cf7212deb5e2b978bce5abaf9f40ca95d4322c620d8e011
     volumes:
     - creal_strapi_data:/srv/app/
+  hedgedoc:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
   jonas-thelemann:
     image: dargmuesli/jonas-thelemann:3.5.5@sha256:d40aa1c76abebee7c2fb1fcd0ccf48aedea4eee14825859924d47cf746339923
     user: (( prune ))
