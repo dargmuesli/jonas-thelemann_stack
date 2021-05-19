@@ -231,7 +231,7 @@ services:
   node-binance-trader:
   # You cannot access the trader via a web interface.
     command: yarn run trader
-    image: herve76/node-binance-trader:0.4.1@sha256:e46c20346d86d770d6e6795e2940c897ef164ae13a34ad7eb919cf84e3b8bed1
+    image: herve76/node-binance-trader:0.5.0@sha256:d70660cda53201350b2bbc3ee0899eb41500724f5f92d7de226e63f1419af677
     volumes:
     - ../production/secrets/node-binance-trader/secrets.env:/srv/app/.env:ro
   portainer:
