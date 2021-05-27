@@ -397,7 +397,7 @@ services:
       - traefik.http.routers.trapparty-postgraphile_secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.trapparty-postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.trapparty-postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:v4.11.0@sha256:1a41e298fe71c13cdbeb603c6340c3deeef1a143ef3acb63646671c28b53457c
+    image: graphile/postgraphile:v4.12.0@sha256:d4440d3a40288fa7d44cadc7e2052cde8ef758ee414fdf6ccbaf4735b60f9981
     secrets:
     - trapparty-postgraphile_connection
     - trapparty-postgraphile_owner-connection
