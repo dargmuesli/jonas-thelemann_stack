@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.3...1.3.4) (2021-05-31)
+
+
+### Bug Fixes
+
+* **nextcloud:** update configuration ([bb46f37](https://github.com/dargmuesli/jonas-thelemann_stack/commit/bb46f37428fdf3710db2f58f711a2f508139329a))
+
 ## [1.3.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.2...1.3.3) (2021-05-31)
 
 
