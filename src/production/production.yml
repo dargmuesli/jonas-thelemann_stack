@@ -39,7 +39,7 @@ services:
       - (( append ))
       - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.6.2@sha256:c2882a67b2dd99849ad052492240d2a42766edd05011ff4f11a093197918130e
+    image: dargmuesli/jonas-thelemann:3.6.3@sha256:f21ffb3709c304801852f79d1115b8f6c2ca0cbbc5990eab873e73798dd2eed7
     user: (( prune ))
     volumes:
     - (( replace ))
