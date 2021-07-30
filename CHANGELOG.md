@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.7...1.3.8) (2021-07-30)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([306b419](https://github.com/dargmuesli/jonas-thelemann_stack/commit/306b4198f8605647670bedeecbd32b052af100e2))
+
 ## [1.3.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.6...1.3.7) (2021-06-05)
 
 
