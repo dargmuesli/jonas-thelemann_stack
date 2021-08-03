@@ -1,3 +1,10 @@
+## [1.3.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.11...1.3.12) (2021-08-03)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([483cb64](https://github.com/dargmuesli/jonas-thelemann_stack/commit/483cb64199f974df6f01e124162fb64b3af4601a))
+
 ## [1.3.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.10...1.3.11) (2021-08-02)
 
 
