@@ -22,7 +22,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:0.24.2@sha256:a547fb70e49e6df1881bfded1cae20a0e95a3e69a5222cffb48c9791a21bc665
+    image: dargmuesli/creal:0.24.3@sha256:6c7d7be17c838c82df993d0c3ebf88ae246ffcc699190ace5121cdc0b0247090
     user: (( prune ))
     volumes: (( prune ))
   creal_strapi:
