@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.13...1.4.0) (2021-08-29)
+
+
+### Features
+
+* **jonas-thelemann:** migrate to v4 ([b6e7e04](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b6e7e04bb4cb8f3c47a9dd4bd963f0b952bae22f))
+* **node-binance-trader:** move to production ([e22905e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e22905ea67271fa786cbb47768ed50692be5c225))
+
 ## [1.3.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.12...1.3.13) (2021-08-29)
 
 
