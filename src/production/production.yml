@@ -39,20 +39,18 @@ services:
       - (( append ))
       - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
   jonas-thelemann:
-    image: dargmuesli/jonas-thelemann:3.6.9@sha256:cba0bcff11ced7aa21769119960fb505c7351c485fd667bb7982e0ff8488ddf3
-    user: (( prune ))
-    volumes:
-    - (( replace ))
-    - ./secrets/jonas-thelemann/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
-    - jonas-thelemann_data:/var/www/jonas-thelemann/server/
-    - acme_data:/etc/ssl/certificates/
-  jonas-thelemann_nginx:
     deploy:
       labels:
       - (( append ))
-      - traefik.http.routers.jonas-thelemann_nginx_secure.tls.certresolver=default
-      - traefik.http.routers.jonas-thelemann_nginx_secure_tools.middlewares=auth
-      - traefik.http.routers.jonas-thelemann_nginx_secure_tools.tls.certresolver=default
+      - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
+    image: dargmuesli/jonas-thelemann:4.0.0@sha256:6f8e59410b96085506e360f126f2f5ea4c2ce17404791b94606b67d745b9730b
+  jonas-thelemann_v3_nginx:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.jonas-thelemann_v3_nginx_secure.tls.certresolver=default
+      - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.middlewares=auth
+      - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.tls.certresolver=default
     volumes:
     - (( replace ))
     - ./configuration/jonas-thelemann_nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -155,7 +153,4 @@ volumes:
     {}
   creal_strapi_data:
   # The DJ website's CMS data.
-    {}
-  jonas-thelemann_data:
-  # The main project's data.
     {}

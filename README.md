@@ -149,11 +149,15 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `jonas-thelemann`
     
-    You can access the main project via `jonas-thelemann_nginx`.
-    
- - ### `jonas-thelemann_nginx`
-    
     You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
+    
+ - ### `jonas-thelemann_v3`
+    
+    You can access the main project's version 3 via `jonas-thelemann_v3_nginx`.
+    
+ - ### `jonas-thelemann_v3_nginx`
+    
+    You can access the main project at [v3.jonas-thelemann.test](https://v3.jonas-thelemann.test/).
     
  - ### `nextcloud`
     
@@ -163,7 +167,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
     
- - ### `node-binance-trader`
+ - ### `node-binance-trader` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
     You cannot access the trader via a web interface.
     
@@ -224,7 +228,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's CMS data.
     
- - ### `jonas-thelemann_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+ - ### `jonas-thelemann_data`
     
     The main project's data.
     
