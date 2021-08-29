@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.0...1.4.1) (2021-08-29)
+
+
+### Bug Fixes
+
+* **jonas-thelemann-v3:** use v3 in more places ([3eb5b6f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3eb5b6f9d184582350e86a6bee9533e9a0390f25))
+
 # [1.4.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.3.13...1.4.0) (2021-08-29)
 
 
