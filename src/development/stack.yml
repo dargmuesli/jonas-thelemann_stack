@@ -182,7 +182,7 @@ services:
     image: dargmuesli/jonas-thelemann:dev
   jonas-thelemann_v3:
   # You can access the main project's version 3 via `jonas-thelemann_v3_nginx`.
-    image: dargmuesli/jonas-thelemann:3.6.9@sha256:cba0bcff11ced7aa21769119960fb505c7351c485fd667bb7982e0ff8488ddf3
+    image: dargmuesli/jonas-thelemann:4.2.0@sha256:4fed95bc6f17d08e0a3ff666838ba77e4cd524179d69150f4b155a2e4ef86416
     volumes:
     - ../production/secrets/jonas-thelemann_v3/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - jonas-thelemann_v3_data:/var/www/jonas-thelemann/server/
