@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.3...1.4.4) (2021-08-30)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add google analytics environment variables ([90be996](https://github.com/dargmuesli/jonas-thelemann_stack/commit/90be9967a66802e71dadb65d58eb5959e6209848))
+
 ## [1.4.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.2...1.4.3) (2021-08-30)
 
 
