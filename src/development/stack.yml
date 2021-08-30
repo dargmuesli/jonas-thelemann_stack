@@ -344,7 +344,7 @@ services:
       labels:
       - traefik.enable=true
       - traefik.http.middlewares.header_cors.headers.accessControlAllowHeaders=authorization,content-type
-      - traefik.http.middlewares.header_cors.headers.accessControlAllowOrigin=*
+      - traefik.http.middlewares.header_cors.headers.accessControlAllowOriginList=*
       - traefik.http.middlewares.redirectscheme.redirectscheme.scheme=https
       - traefik.http.routers.traefik.middlewares=redirectscheme
       - traefik.http.routers.traefik.rule=Host(`traefik.${STACK_DOMAIN}`)
