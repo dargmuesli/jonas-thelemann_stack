@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.1...1.4.2) (2021-08-30)
+
+
+### Bug Fixes
+
+* **traefik:** use access control allow origin list ([9b43ae5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9b43ae5577ad4ed54b88d82f1226698aa27a18eb))
+
 ## [1.4.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.0...1.4.1) (2021-08-29)
 
 
