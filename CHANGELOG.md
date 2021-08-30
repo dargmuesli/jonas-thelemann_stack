@@ -1,3 +1,11 @@
+## [1.4.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.6...1.4.7) (2021-08-30)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** use environment variables ([ce4aa55](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ce4aa552c28d34583ef8d0a58fd34f0045ad8639))
+* **release:** schedule release ([54dd593](https://github.com/dargmuesli/jonas-thelemann_stack/commit/54dd593d901c5f4707e2f99c88c8cdb50c627efa))
+
 ## [1.4.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.5...1.4.6) (2021-08-30)
 
 
