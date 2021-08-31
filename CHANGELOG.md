@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.10...1.4.11) (2021-08-31)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([bd43133](https://github.com/dargmuesli/jonas-thelemann_stack/commit/bd4313302352ef4a781af439d8499e8a59ac1541))
+
 ## [1.4.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.9...1.4.10) (2021-08-31)
 
 
