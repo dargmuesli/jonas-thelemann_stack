@@ -1,3 +1,11 @@
+## [1.4.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.7...1.4.8) (2021-08-31)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** remove google analytics variables ([ac351c6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ac351c61cebee65063c459d99eb766c6bc9cd6cd))
+* **release:** schedule release ([b9652ec](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b9652ec27a3452e342ffe75acc8295097ec4f379))
+
 ## [1.4.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.6...1.4.7) (2021-08-30)
 
 
