@@ -43,7 +43,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: dargmuesli/jonas-thelemann:4.4.5@sha256:9b7ea1804fefd5874fef005dc802e1d1fbc1d22e60ec38eff5274ccf50be6bc6
+    image: dargmuesli/jonas-thelemann:4.4.6@sha256:14c560e209164e62b4bb8a057bf0baacd85bfda0c604f5ecb867464e3d5efe74
   jonas-thelemann_v3_nginx:
     deploy:
       labels:
