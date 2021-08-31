@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.12...1.4.13) (2021-08-31)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/jonas-thelemann to v4.4.7 ([660a4ed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/660a4ed31aef2a29f60af71facd127e04daef172))
+
 ## [1.4.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.11...1.4.12) (2021-08-31)
 
 
