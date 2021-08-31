@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.8...1.4.9) (2021-08-31)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** correct configuration ([1969951](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1969951c8e86d9e8d43ea1e7c5eaec33875fd1a8))
+
 ## [1.4.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.7...1.4.8) (2021-08-31)
 
 
