@@ -180,8 +180,6 @@ services:
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=8080
     environment:
-      GOOGLE_ANALYTICS_DOMAIN: ${GOOGLE_ANALYTICS_DOMAIN}
-      GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/jonas-thelemann:dev
   jonas-thelemann_v3:
   # You can access the main project's version 3 via `jonas-thelemann_v3_nginx`.
