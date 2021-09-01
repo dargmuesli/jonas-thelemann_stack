@@ -166,7 +166,7 @@ services:
       target: sessionsecret
   jobber:
   # You cannot access the jobber via a web interface.
-    image: jobber:1.4.4-alpine3.11@sha256:10e354645c84f98fcb5b3a49b578e47d3ad16406e94d763e6e1784397fef208c
+    image: jobber:1.4.4-alpine3.11@sha256:652facc4ce8aa8669bc36de8a996361a34188e2a0b307d1d3be69e4963d41b26
     volumes:
       - ../production/configuration/jobber/.jobber:/home/jobberuser/.jobber:ro
   jonas-thelemann:
