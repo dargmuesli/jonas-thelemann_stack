@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.5.0...1.5.1) (2021-09-08)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** correct development port ([46c750f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/46c750f5d9c0e73b8790312dda184988a3984554))
+
 # [1.5.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.15...1.5.0) (2021-09-08)
 
 
