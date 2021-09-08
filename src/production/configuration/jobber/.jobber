@@ -4,3 +4,12 @@ jobs:
   NextcloudCron:
     cmd: wget -O/dev/null -q http://nextcloud_nginx/cron.php
     time: 0 */5
+  DBBackup:
+    cmd: aws s3 sync /backups s3://$(cat /run/secrets/jobber_aws-bucket)/backups
+    time: 0 0 0 *
+    notifyOnSuccess:
+      - type: system-email
+    notifyOnError:
+      - type: system-email
+    notifyOnFailure:
+      - type: system-email
