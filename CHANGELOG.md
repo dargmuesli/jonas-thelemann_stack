@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.15...1.5.0) (2021-09-08)
+
+
+### Features
+
+* **jobber:** add backup task ([ad54605](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ad546054c18161272fe3182f0295c380e6b493b3))
+
 ## [1.4.15](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.4.14...1.4.15) (2021-08-31)
 
 
