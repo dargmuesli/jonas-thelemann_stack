@@ -213,7 +213,7 @@ services:
       - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.rule=Host(`v3.${STACK_DOMAIN}`) && PathPrefix(`/tools/`)
       - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann_v3_nginx.loadbalancer.server.port=80
-    image: nginx:1.21.3-alpine@sha256:207b15224a9bf2de90834e2e35613257033a52e8f5ed86208bbfc51b3e03739d
+    image: nginx:1.21.3-alpine@sha256:1ff1364a1c4332341fc0a854820f1d50e90e11bb0b93eb53b47dc5e10c680116
     volumes:
     - ../production/configuration/jonas-thelemann_v3_nginx/nginx.conf:/etc/nginx/nginx.conf
     - jonas-thelemann_v3_data:/var/www/jonas-thelemann/server/:ro
@@ -253,7 +253,7 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
-    image: nginx:1.21.3-alpine@sha256:207b15224a9bf2de90834e2e35613257033a52e8f5ed86208bbfc51b3e03739d
+    image: nginx:1.21.3-alpine@sha256:1ff1364a1c4332341fc0a854820f1d50e90e11bb0b93eb53b47dc5e10c680116
     volumes:
     - ../production/configuration/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
@@ -323,7 +323,7 @@ services:
       - traefik.http.routers.randomwinpicker_nginx_secure.rule=Host(`randomwinpicker.${STACK_DOMAIN}`)
       - traefik.http.routers.randomwinpicker_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.randomwinpicker_nginx.loadbalancer.server.port=80
-    image: nginx:1.21.3-alpine@sha256:207b15224a9bf2de90834e2e35613257033a52e8f5ed86208bbfc51b3e03739d
+    image: nginx:1.21.3-alpine@sha256:1ff1364a1c4332341fc0a854820f1d50e90e11bb0b93eb53b47dc5e10c680116
     volumes:
     - randomwinpicker_data:/var/www/randomwinpicker/server/:ro
     - ../production/configuration/randomwinpicker_nginx/nginx.conf:/etc/nginx/nginx.conf
