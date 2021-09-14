@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.5.4...1.6.0) (2021-09-14)
+
+
+### Features
+
+* **traefik:** move token to production ([58916c1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/58916c111f64394bfac570f7d10d67d989b8d495))
+
 ## [1.5.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.5.3...1.5.4) (2021-09-14)
 
 
