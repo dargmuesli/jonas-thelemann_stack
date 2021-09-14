@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.5.2...1.5.3) (2021-09-14)
+
+
+### Bug Fixes
+
+* **configurations:** correct directory name ([a2098d7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a2098d7d86502b718c335aac57fb439d0c05eb30))
+
 ## [1.5.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.5.1...1.5.2) (2021-09-09)
 
 
