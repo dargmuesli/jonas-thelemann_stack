@@ -52,6 +52,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The markdown collaboration tool's session secret.
     
+ - ### `jobber_aws-bucket`
+    
+    The job scheduler's AWS bucket name.
+    
+ - ### `jobber_aws-credentials`
+    
+    The job scheduler's AWS credentials.
+    
  - ### `nextcloud_admin-password`
     
     The cloud admin user's password.
@@ -228,7 +236,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's CMS data.
     
- - ### `jonas-thelemann_data`
+ - ### `jonas-thelemann_v3_data`
     
     The main project's data.
     
