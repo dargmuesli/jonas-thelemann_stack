@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.6.3...1.7.0) (2021-10-01)
+
+
+### Features
+
+* **deps:** update postgres docker tag to v14 ([d12b595](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d12b595f06802f0157fa3c8186fe82a32248203a))
+
 ## [1.6.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.6.2...1.6.3) (2021-09-29)
 
 
