@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.0...1.7.1) (2021-10-07)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add missing development volume ([bc299e1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/bc299e1616a72b9b0d91965e5ae71bcba24ff34f))
+
 # [1.7.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.6.3...1.7.0) (2021-10-01)
 
 
