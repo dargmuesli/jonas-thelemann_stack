@@ -44,7 +44,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:4.6.0@sha256:30ec422e1c810d7b9890cf10c8411cf56559b9ec63ef0e39c644bca575d24b68
+    image: dargmuesli/jonas-thelemann:4.6.2@sha256:07b7f81a643d853de9b5ec9819d2f2696fec96b40bb1edf20f83bf95d552d700
   jonas-thelemann_v3_nginx:
     deploy:
       labels:
