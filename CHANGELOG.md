@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.2...1.7.3) (2021-10-07)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** prune dev volume on prod ([1c544a9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1c544a91ccc38078363e82cd89b02ed203bf63aa))
+
 ## [1.7.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.1...1.7.2) (2021-10-07)
 
 
