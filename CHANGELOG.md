@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.5...1.8.0) (2021-10-14)
+
+
+### Features
+
+* add creal-postgraphile ([a4bcee1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a4bcee1d1b6dd161ec2e70f01eee08d1b2c9339b))
+
 ## [1.7.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.4...1.7.5) (2021-10-08)
 
 
