@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.1...1.8.2) (2021-10-14)
+
+
+### Bug Fixes
+
+* **creal-postgraphile:** add certresolver for production ([0f47ea9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0f47ea9399dfa7b64d5d2b84b7e80d2c0b770a76))
+
 ## [1.8.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.0...1.8.1) (2021-10-14)
 
 
