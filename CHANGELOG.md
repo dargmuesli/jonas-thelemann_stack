@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.0...1.8.1) (2021-10-14)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([15554ed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/15554edd67a4ddf40b6426f64f6ff6686a9e4e2c))
+
 # [1.8.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.7.5...1.8.0) (2021-10-14)
 
 
