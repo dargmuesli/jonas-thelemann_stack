@@ -4,6 +4,9 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 configs:
+  creal-postgraphile_rc:
+  # The cReal GraphQL API's configuration file.
+    file: ../production/configurations/creal-postgraphile/.postgraphilerc.js
   trapparty-postgraphile_rc:
   # The TrapParty GraphQL API's configuration file.
     file: ../production/configurations/trapparty-postgraphile/.postgraphilerc.js
@@ -14,6 +17,12 @@ secrets:
   creal_aws-credentials:
   # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
+  creal-postgraphile_connection:
+  # The cReal GraphQL API's database URI.
+    file: ./secrets/creal-postgraphile/connection.secret
+  creal-postgraphile_owner-connection:
+  # The cReal GraphQL API's database owner URI.
+    file: ./secrets/creal-postgraphile/owner-connection.secret
   creal_sqitch-target:
   # The DJ website's Sqitch target.
     file: ./secrets/creal/sqitch-target.secret
@@ -127,6 +136,24 @@ services:
     volumes:
     - ../../../creal/nuxt/:/srv/app/
     - ../../../creal/sqitch/:/srv/sqitch/
+  creal-postgraphile:
+  # You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.jonas-thelemann.test](https://creal-postgraphile.jonas-thelemann.test/).
+    configs:
+      - source: creal-postgraphile_rc
+        target: /postgraphile/.postgraphilerc.js
+    deploy:
+      labels:
+      - traefik.enable=true
+      - traefik.http.routers.creal-postgraphile.middlewares=redirectscheme
+      - traefik.http.routers.creal-postgraphile.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal-postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.creal-postgraphile_secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal-postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.creal-postgraphile.loadbalancer.server.port=5000
+    image: graphile/postgraphile:v4.12.3@sha256:d404e7a265516eeee34467325e897ffd53f9b5a46d9ded049350bc0f54201530
+    secrets:
+    - creal-postgraphile_connection
+    - creal-postgraphile_owner-connection
   creal_strapi:
   # You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
     deploy:

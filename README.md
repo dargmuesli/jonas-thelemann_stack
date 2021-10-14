@@ -20,6 +20,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## configs
 
 
+ - ### `creal-postgraphile_rc`
+    
+    The cReal GraphQL API's configuration file.
+    
  - ### `trapparty-postgraphile_rc`
     
     The TrapParty GraphQL API's configuration file.
@@ -28,6 +32,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
+ - ### `creal-postgraphile_connection`
+    
+    The cReal GraphQL API's database URI.
+    
+ - ### `creal-postgraphile_owner-connection`
+    
+    The cReal GraphQL API's database owner URI.
+    
  - ### `creal-strapi_admin-jwt-secret`
     
     The DJ website's CMS administrator JWT secret.
@@ -142,6 +154,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal`
     
     You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
+    
+ - ### `creal-postgraphile`
+    
+    You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.jonas-thelemann.test](https://creal-postgraphile.jonas-thelemann.test/).
     
  - ### `creal_strapi`
     
