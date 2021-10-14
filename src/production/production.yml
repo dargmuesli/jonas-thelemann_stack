@@ -25,6 +25,11 @@ services:
     image: dargmuesli/creal:0.28.0@sha256:8eb7b0b238d1dc7955223499086f62794fc5b5528fedad722165f3804f99e34d
     user: (( prune ))
     volumes: (( prune ))
+  creal-postgraphile:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.creal-postgraphile_secure.tls.certresolver=default
   creal_strapi:
     deploy:
       labels:
