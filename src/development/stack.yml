@@ -226,7 +226,7 @@ services:
     - ../../../jonas-thelemann:/srv/app/
   jonas-thelemann_v3:
   # You can access the main project's version 3 via `jonas-thelemann_v3_nginx`.
-    image: dargmuesli/jonas-thelemann:3.6.9@sha256:cba0bcff11ced7aa21769119960fb505c7351c485fd667bb7982e0ff8488ddf3
+    image: dargmuesli/jonas-thelemann:4.7.4@sha256:78bb1bc4e37220e9dc272514b8dcf89e7d45990516201fe0e46b8770519f9407
     volumes:
     - ../production/secrets/jonas-thelemann_v3/jonas-thelemann.env:/var/www/jonas-thelemann/credentials/jonas-thelemann.env:ro
     - jonas-thelemann_v3_data:/var/www/jonas-thelemann/server/
