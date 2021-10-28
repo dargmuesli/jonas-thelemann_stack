@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.8...1.8.9) (2021-10-28)
+
+
+### Bug Fixes
+
+* **jobber:** execute backup 1 hour after backup creation ([9b4e99b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9b4e99b38cdf7e317e63cef46c15ebf5607732a8))
+
 ## [1.8.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.7...1.8.8) (2021-10-27)
 
 
