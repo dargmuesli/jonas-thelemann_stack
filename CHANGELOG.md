@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.9...1.9.0) (2021-10-29)
+
+
+### Features
+
+* **portainer:** upgrade to v2.9.2 ([a9713d1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a9713d1c56ba75fba6f8afd345563a27d7345a8f))
+
 ## [1.8.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.8.8...1.8.9) (2021-10-28)
 
 
