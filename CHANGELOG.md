@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.3...1.9.4) (2021-11-03)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/jobber-aws-msmtp docker tag to v1.2.2 ([e6cf9c3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e6cf9c3254f65e9886201301153ef809e36aaeb7))
+
 ## [1.9.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.2...1.9.3) (2021-11-01)
 
 
