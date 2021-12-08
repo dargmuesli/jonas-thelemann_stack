@@ -1,3 +1,10 @@
+## [1.9.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.8...1.9.9) (2021-12-08)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** revert dev version upgrade ([e360270](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e360270c261593417320ad94b3ccc5e2336aad69))
+
 ## [1.9.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.7...1.9.8) (2021-12-08)
 
 
