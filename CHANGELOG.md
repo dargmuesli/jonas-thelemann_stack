@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.10.0...1.10.1) (2021-12-08)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/creal docker tag to v0.34.3 ([dc316c1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/dc316c11ca3a3eb4299fbeba52eeb3b95c7b6b2d))
+
 # [1.10.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.9...1.10.0) (2021-12-08)
 
 
