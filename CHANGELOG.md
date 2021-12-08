@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.9...1.10.0) (2021-12-08)
+
+
+### Features
+
+* **creal_strapi:** upgrade to v4 ([2b88108](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2b881082c8df4b1b2e696e4aca2182b6e62ec116))
+
 ## [1.9.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.8...1.9.9) (2021-12-08)
 
 
