@@ -22,7 +22,9 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:0.33.3@sha256:f95f05d8927dd0b16e01a93387567dc513e070ccaabda81534545e141d3d0b21
+    environment:
+      HOST: 0.0.0.0
+    image: dargmuesli/creal:0.33.4@sha256:8d48c70580a24912e3a2bed17a914a2479a2ed36b5d5e18bc1f7dfbbbe49659f
     user: (( prune ))
     volumes: (( prune ))
   creal-postgraphile:
@@ -49,7 +51,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:4.8.1@sha256:b44bb45153eeda62795eb81959b4d620eb7bd251598e479277f93339354296c2
+    image: dargmuesli/jonas-thelemann:4.8.2@sha256:1ce80dc3184c83b624548526b64ce0e00b83e8a171294fea6b56a8885e6a05d0
     volumes: (( prune ))
   jonas-thelemann_v3_nginx:
     deploy:
@@ -146,7 +148,9 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: dargmuesli/trapparty:1.15.2@sha256:674d313b95aa2aa2a4d65a8b70e840d5ecd90cf611f39c0afdde1fe920632aa0
+    environment:
+      HOST: 0.0.0.0
+    image: dargmuesli/trapparty:1.15.3@sha256:43b67c368519828c7d89d36cf6d37229f4ce33ff2bd1d2a1b4e5dc81d269ba95
     user: (( prune ))
     volumes: (( prune ))
   trapparty-postgraphile:
