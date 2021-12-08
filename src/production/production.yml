@@ -24,7 +24,7 @@ services:
       - traefik.http.routers.creal_secure.tls.certresolver=default
     environment:
       HOST: 0.0.0.0
-    image: dargmuesli/creal:0.33.4@sha256:8d48c70580a24912e3a2bed17a914a2479a2ed36b5d5e18bc1f7dfbbbe49659f
+    image: dargmuesli/creal:0.34.0@sha256:7857f798a63a46696943c7b393b5beecf5ea0ffc58c16efda93c229b1af2fa5b
     user: (( prune ))
     volumes: (( prune ))
   creal-postgraphile:
@@ -37,7 +37,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: dargmuesli/creal_strapi:1.2.23@sha256:fbb6e1d852d408be4d430a253b50e0dca01fb6fc05d739b874b6d5da05a54b77
+    image: dargmuesli/creal_strapi:2.0.0@sha256:ef1f80f220af534b01c098d56c1fa82974620c7b02622b60a19c531dc5d5b5f0
     volumes:
     - creal_strapi_data:/srv/app/
   hedgedoc:
