@@ -1,3 +1,10 @@
+## [1.9.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.7...1.9.8) (2021-12-08)
+
+
+### Bug Fixes
+
+* update nuxt projects ([a297bbc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a297bbc69c7d81a8d5ebf341365e6e462ff4c050))
+
 ## [1.9.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.9.6...1.9.7) (2021-12-08)
 
 
