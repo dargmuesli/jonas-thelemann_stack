@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.10.2...1.11.0) (2021-12-10)
+
+
+### Features
+
+* **deps:** update dargmuesli/trapparty docker tag to v2 ([0fd199a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0fd199af55a3f7d72d0e4489039515a8f67d30c7))
+* **trapparty-postgraphile:** enhance graphiql ([2789e38](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2789e380458ba1e51d61ebc040b806b88d860948))
+
 ## [1.10.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.10.1...1.10.2) (2021-12-09)
 
 
