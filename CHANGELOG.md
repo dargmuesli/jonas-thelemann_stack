@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.1...1.11.2) (2021-12-12)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/trapparty docker tag to v2.2.1 ([41edb2c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/41edb2c7cf166a5d53144d7e81c90391ded24fe5))
+
 ## [1.11.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.0...1.11.1) (2021-12-12)
 
 
