@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.4...1.11.5) (2021-12-17)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add missing user directive ([beb7608](https://github.com/dargmuesli/jonas-thelemann_stack/commit/beb76086852a7bcf3c8812119ccbe6b1ca673f31))
+
 ## [1.11.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.3...1.11.4) (2021-12-16)
 
 
