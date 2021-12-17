@@ -1,3 +1,10 @@
+## [1.11.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.5...1.11.6) (2021-12-17)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add missing prune for user ([d3cbd42](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d3cbd421cf87d93a29fd337df5eb40b59271799a))
+
 ## [1.11.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.4...1.11.5) (2021-12-17)
 
 
