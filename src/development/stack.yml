@@ -221,6 +221,7 @@ services:
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
     image: dargmuesli/jonas-thelemann:dev
+    user: node:node
     volumes:
     - ../../../jonas-thelemann:/srv/app/
   jonas-thelemann_v3:
