@@ -1,3 +1,10 @@
+## [1.11.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.8...1.11.9) (2021-12-22)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/jonas-thelemann docker tag to v4.9.0 ([e06c3f7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e06c3f7b4d27731d6a732b2e0a333434da4dd56c))
+
 ## [1.11.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.7...1.11.8) (2021-12-18)
 
 
