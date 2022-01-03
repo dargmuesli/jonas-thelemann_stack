@@ -87,11 +87,6 @@ services:
     volumes:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/backups/postgres/:/backups/
-  randomwinpicker_nginx:
-    deploy:
-      labels:
-      - (( append ))
-      - traefik.http.routers.randomwinpicker_nginx_secure.tls.certresolver=default
   thelounge:
     deploy:
       labels:

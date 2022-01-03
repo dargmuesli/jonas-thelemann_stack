@@ -203,14 +203,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     Backup service for `postgres`.
     
- - ### `randomwinpicker`
-    
-    You can access the main project via `randomwinpicker_nginx`.
-    
- - ### `randomwinpicker_nginx`
-    
-    You can access the main project at [randomwinpicker.jonas-thelemann.test](https://randomwinpicker.jonas-thelemann.test/).
-    
  - ### `thelounge`
     
     You can access the web IRC client's dashboard at [thelounge.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
@@ -255,10 +247,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `postgres_data`
     
     The database's data.
-    
- - ### `randomwinpicker_data`
-    
-    Randomwinpicker's data.
     
  - ### `thelounge_data`
     
