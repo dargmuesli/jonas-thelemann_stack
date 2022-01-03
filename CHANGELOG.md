@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.9...2.0.0) (2022-01-03)
+
+
+### Features
+
+* **jonas-thelemann:** remove v3 ([ee77d96](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ee77d96b8731f97869b63d5c9476d96ab4797226))
+* **randomwinpicker:** remove ([9f1a5df](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9f1a5dfcde8ec73e094c1e9a4cda9a0aa736b71f))
+
+
+### BREAKING CHANGES
+
+* **randomwinpicker:** remove
+* **jonas-thelemann:** remove
+
 ## [1.11.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/1.11.8...1.11.9) (2021-12-22)
 
 
