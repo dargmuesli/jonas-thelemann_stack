@@ -175,14 +175,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
     
- - ### `jonas-thelemann_v3`
-    
-    You can access the main project's version 3 via `jonas-thelemann_v3_nginx`.
-    
- - ### `jonas-thelemann_v3_nginx`
-    
-    You can access the main project at [v3.jonas-thelemann.test](https://v3.jonas-thelemann.test/).
-    
  - ### `nextcloud`
     
     You can access nextcloud via `nextcloud_nginx`.
@@ -251,10 +243,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal_strapi_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
     The DJ website's CMS data.
-    
- - ### `jonas-thelemann_v3_data`
-    
-    The main project's data.
     
  - ### `nextcloud_data`
     

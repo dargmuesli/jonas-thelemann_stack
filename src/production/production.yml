@@ -54,18 +54,6 @@ services:
     image: dargmuesli/jonas-thelemann:4.9.0@sha256:2a27830d93598eee1ab5dfa5da6954e0f41634a9ee381c828242d78ca89e3fa8
     user: (( prune ))
     volumes: (( prune ))
-  jonas-thelemann_v3_nginx:
-    deploy:
-      labels:
-      - (( append ))
-      - traefik.http.routers.jonas-thelemann_v3_nginx_secure.tls.certresolver=default
-      - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.middlewares=auth
-      - traefik.http.routers.jonas-thelemann_v3_nginx_secure_tools.tls.certresolver=default
-    volumes:
-    - (( replace ))
-    - ./configurations/jonas-thelemann_v3_nginx/nginx.conf:/etc/nginx/nginx.conf
-    - jonas-thelemann_v3_data:/var/www/jonas-thelemann/server/:ro
-    - acme_data:/etc/ssl/certificates/
   nextcloud_nginx:
     deploy:
       labels:
