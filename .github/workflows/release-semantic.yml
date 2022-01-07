@@ -1,0 +1,12 @@
+name: 'Release: Semantic'
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release-semantic:
+    name: Semantic Release
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.2.1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
