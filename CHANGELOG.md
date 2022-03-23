@@ -1,3 +1,10 @@
+## [2.0.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.7...2.0.8) (2022-03-23)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/trapparty to v2.4.1 ([3415510](https://github.com/dargmuesli/jonas-thelemann_stack/commit/34155101ea22e5c2569ebe6b4c7c6fddbd83b29d))
+
 ## [2.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.6...2.0.7) (2022-03-22)
 
 
