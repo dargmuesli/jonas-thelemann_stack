@@ -227,7 +227,7 @@ services:
   nextcloud:
   # You can access nextcloud via `nextcloud_nginx`.
     env_file: ../production/secrets/nextcloud/nextcloud.env
-    image: nextcloud:23.0.3-fpm-alpine@sha256:63c408004d5b2170a1bd5a66e60d21124be92c61b8e9d4e003bdb3e42e31fce8
+    image: nextcloud:23.0.3-fpm-alpine@sha256:0ab8e30186812a0af4c7a6f7f3b16ca6375e61ee1ae890416a094df042cadf78
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
