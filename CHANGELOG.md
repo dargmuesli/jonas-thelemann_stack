@@ -1,3 +1,10 @@
+## [2.0.17](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.16...2.0.17) (2022-04-16)
+
+
+### Bug Fixes
+
+* **creal_strapi:** correct volume mount ([dd7dff6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/dd7dff61666881f9d2e81c8b54089984649a6298))
+
 ## [2.0.16](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.15...2.0.16) (2022-04-16)
 
 
