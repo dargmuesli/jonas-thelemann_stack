@@ -24,7 +24,7 @@ services:
       - traefik.http.routers.creal_secure.tls.certresolver=default
     environment:
       HOST: 0.0.0.0
-    image: dargmuesli/creal:0.43.2@sha256:c20a15544d72ca0bc29bdcb79fefe4b6afb03cf331289a87b97243b71102b1f5
+    image: dargmuesli/creal:0.43.3@sha256:3c118b99869d0853e86034112297e73671e7efee04dae8affbf3f7f02ab6626e
     user: (( prune ))
     volumes: (( prune ))
   creal-postgraphile:
