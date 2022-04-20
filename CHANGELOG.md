@@ -1,3 +1,10 @@
+## [2.0.19](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.18...2.0.19) (2022-04-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dargmuesli/creal to v0.44.0 ([333dcbc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/333dcbcae9cf2ed2c420b2d82b1e24e4adeaa5da))
+
 ## [2.0.18](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.17...2.0.18) (2022-04-18)
 
 
