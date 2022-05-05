@@ -1,3 +1,10 @@
+## [2.0.22](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.21...2.0.22) (2022-05-05)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([a3dcabc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a3dcabc142e953fb0bfc6ebbcbe63412b7715055))
+
 ## [2.0.21](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.20...2.0.21) (2022-05-02)
 
 
