@@ -37,7 +37,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: dargmuesli/creal_strapi:2.1.6@sha256:9c09f4514b44d5cabfd684872809673d4ed987049291d79b930d0c41bf69fabe
+    image: dargmuesli/creal_strapi:2.1.7@sha256:9d0b91fb89e3de4a3b2014c81c13eaa703a8a679355042c6d80b0fadffeb4e04
     volumes:
     - creal_strapi_data:/srv/app/public/
   hedgedoc:
@@ -51,7 +51,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:4.9.18@sha256:b35417a88d52861516f615aab783dd386fff22ac69179a631aa9386e68a70c0e
+    image: dargmuesli/jonas-thelemann:4.9.19@sha256:c4c40d6794ee12c76558d9669503985739710b9bf9e88a1b8cc465fc8668bb2b
     user: (( prune ))
     volumes: (( prune ))
   nextcloud_nginx:
