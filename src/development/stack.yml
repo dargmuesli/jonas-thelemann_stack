@@ -110,7 +110,7 @@ services:
       - traefik.http.routers.adminer_secure.rule=Host(`adminer.${STACK_DOMAIN}`)
       - traefik.http.routers.adminer_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.adminer.loadbalancer.server.port=8080
-    image: adminer:4.8.1-standalone@sha256:694911aafdb847a5753e437126e62be331ab3844ba1cbef5f3692da092f6f048
+    image: adminer:4.8.1-standalone@sha256:9b171348a0278a3f63e3be48ecd0da57ea9ad006f9f22126c9549b435b9eede9
     volumes:
     - ../production/configurations/adminer/adminer.css:/var/www/html/adminer.css:ro
   creal:
@@ -190,7 +190,7 @@ services:
       CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/hedgedoc/hedgedoc:1.9.3-alpine@sha256:f31077fffed4850defe409e9c73548fc449415d520e40fa6638391696c67fb25
+    image: quay.io/hedgedoc/hedgedoc:1.9.3-alpine@sha256:a3301525aa0cbbd14ca9d8cd39b913556135911d085346672829a30e44632575
     secrets:
     - source: hedgedoc_db_url
       target: dbURL
@@ -227,7 +227,7 @@ services:
   nextcloud:
   # You can access nextcloud via `nextcloud_nginx`.
     env_file: ../production/secrets/nextcloud/nextcloud.env
-    image: nextcloud:24.0.1-fpm-alpine@sha256:ff844d5b7226380bf9b3762cd7f64bd0f9e88e30e6671845566bab47edc6df78
+    image: nextcloud:24.0.1-fpm-alpine@sha256:8c3429867604c4b3f8caea81d149fb64177c1c92de7e61e1cddc0a8ab0033b7b
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
@@ -304,7 +304,7 @@ services:
       POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: postgres:14.3-alpine@sha256:c75bb07ca2cc3175a6187cc57dc228ae4b57d132e4b3f893ce50001fa6ca98af
+    image: postgres:14.3-alpine@sha256:5973fec8d8284c8961ac3c23945e52d533dd0d21cc7b3c7dd7a46fd199bed4a4
     secrets:
     - postgres_db
     - postgres_password
