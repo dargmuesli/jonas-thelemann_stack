@@ -1,3 +1,10 @@
+## [2.0.29](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.28...2.0.29) (2022-06-14)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/creal_strapi to v2.2.0 ([f8c27a6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f8c27a6486db18146d1d96a86f37e2a6186446bd))
+
 ## [2.0.28](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.27...2.0.28) (2022-06-13)
 
 
