@@ -1,3 +1,10 @@
+## [2.0.30](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.29...2.0.30) (2022-06-14)
+
+
+### Bug Fixes
+
+* **deps:** update creal & trapparty ([f61d414](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f61d414981dc756974b18f896c8596eb1a4f2584))
+
 ## [2.0.29](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.28...2.0.29) (2022-06-14)
 
 
