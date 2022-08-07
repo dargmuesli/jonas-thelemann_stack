@@ -175,7 +175,7 @@ services:
     - postgres_password
     - postgres_user
     volumes:
-    - ../../../creal_strapi/:/srv/app/
+    - ../../../creal_strapi/:/opt/app/
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
     deploy:
