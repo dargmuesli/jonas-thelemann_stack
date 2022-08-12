@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.1.0...2.2.0) (2022-08-12)
+
+
+### Features
+
+* **jonas-thelemann:** add pnpm store mount ([c561a30](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c561a30dd6155ffd66d2609ea46cba1bc1955ebd))
+
 # [2.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.0.35...2.1.0) (2022-08-07)
 
 
