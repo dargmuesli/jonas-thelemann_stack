@@ -223,6 +223,7 @@ services:
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../jonas-thelemann:/srv/app/
   nextcloud:
   # You can access nextcloud via `nextcloud_nginx`.
