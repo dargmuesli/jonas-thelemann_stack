@@ -61,12 +61,6 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.certresolver=default
-  node-binance-trader:
-  # You cannot access the trader via a web interface.
-    command: yarn run trader
-    image: herve76/node-binance-trader:testing@sha256:c74836f84f85e03dc0b0e3f3bde43e02e1cdb98fb204ed60086206b1f26db07c
-    volumes:
-    - ./secrets/node-binance-trader/secrets.env:/srv/app/.env:ro
   portainer:
     deploy:
       labels:
