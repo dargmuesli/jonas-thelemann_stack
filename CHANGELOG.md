@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.2.8...2.3.0) (2022-10-18)
+
+
+### Features
+
+* **prod:** remove node-binance-trader ([31b1b71](https://github.com/dargmuesli/jonas-thelemann_stack/commit/31b1b71f591dd3deb6424bf6dbfcfc6ec72671bc))
+
 ## [2.2.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.2.7...2.2.8) (2022-10-17)
 
 
