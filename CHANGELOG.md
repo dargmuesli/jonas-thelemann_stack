@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.3.3...2.4.0) (2022-11-25)
+
+
+### Features
+
+* **package:** migrate to pnpm ([020c87a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/020c87aa0d4527f34cbcd13d2a70cbdad7e5233c))
+
 ## [2.3.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.3.2...2.3.3) (2022-11-14)
 
 
