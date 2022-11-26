@@ -134,6 +134,7 @@ services:
     - postgres_role_creal-postgraphile_password
     user: node:node
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal/nuxt/:/srv/app/
     - ../../../creal/sqitch/:/srv/sqitch/
   creal-postgraphile:
@@ -175,6 +176,7 @@ services:
     - postgres_password
     - postgres_user
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal_strapi/:/opt/app/
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
@@ -389,6 +391,7 @@ services:
     - postgres_role_trapparty-postgraphile_password
     user: node:node
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../trapparty/nuxt/:/srv/app/
     - ../../../trapparty/sqitch/:/srv/sqitch/
   trapparty-postgraphile:
