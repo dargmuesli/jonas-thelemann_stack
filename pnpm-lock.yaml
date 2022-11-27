@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': 17.3.0
   '@commitlint/config-conventional': 17.3.0
+  dargstack: 2.0.0
   dargstack_rgen: 0.7.14
   husky: 8.0.2
   shx: 0.3.4
@@ -10,6 +11,7 @@ specifiers:
 devDependencies:
   '@commitlint/cli': 17.3.0
   '@commitlint/config-conventional': 17.3.0
+  dargstack: 2.0.0
   dargstack_rgen: 0.7.14
   husky: 8.0.2
   shx: 0.3.4
@@ -480,6 +482,10 @@ packages:
   /dargs/7.0.0:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}
     engines: {node: '>=8'}
+    dev: true
+
+  /dargstack/2.0.0:
+    resolution: {integrity: sha512-vUvqGmdTZmefcvmWpwrn774ek+iDE6+T8Wifiz5wamBreM2QlXoXCT4R6vnCRM+v9+eiPZg0gCaTOKpk8Fmoyg==}
     dev: true
 
   /dargstack_rgen/0.7.14:
