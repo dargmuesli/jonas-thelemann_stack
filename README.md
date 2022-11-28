@@ -20,11 +20,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## configs
 
 
- - ### `creal-postgraphile_rc`
+ - ### `creal_postgraphile_rc`
     
     The cReal GraphQL API's configuration file.
     
- - ### `trapparty-postgraphile_rc`
+ - ### `trapparty_postgraphile_rc`
     
     The TrapParty GraphQL API's configuration file.
     
@@ -32,18 +32,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
- - ### `creal-postgraphile_connection`
-    
-    The cReal GraphQL API's database URI.
-    
- - ### `creal-postgraphile_owner-connection`
-    
-    The cReal GraphQL API's database owner URI.
-    
- - ### `creal-strapi_admin-jwt-secret`
-    
-    The DJ website's CMS administrator JWT secret.
-    
  - ### `creal_aws-bucket`
     
     The DJ website's AWS bucket name.
@@ -52,9 +40,21 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's AWS credentials.
     
+ - ### `creal_postgraphile_connection`
+    
+    The cReal GraphQL API's database URI.
+    
+ - ### `creal_postgraphile_owner-connection`
+    
+    The cReal GraphQL API's database owner URI.
+    
  - ### `creal_sqitch-target`
     
     The DJ website's Sqitch target.
+    
+ - ### `creal_strapi_admin-jwt-secret`
+    
+    The DJ website's CMS administrator JWT secret.
     
  - ### `hedgedoc_db_url`
     
@@ -96,13 +96,13 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The database default user's password.
     
- - ### `postgres_role_creal-postgraphile_password`
+ - ### `postgres_role_creal_postgraphile_password`
     
     The `creal_postgraphile` database role's password.
     
- - ### `postgres_role_trapparty-postgraphile_password`
+ - ### `postgres_role_trapparty_postgraphile_password`
     
-    The `trapparty-postgraphile` database role's password.
+    The `trapparty_postgraphile` database role's password.
     
  - ### `postgres_user`
     
@@ -116,11 +116,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DNS provider's zone API token.
     
- - ### `trapparty-postgraphile_connection`
+ - ### `trapparty_postgraphile_connection`
     
     The TrapParty GraphQL API's database URI.
     
- - ### `trapparty-postgraphile_owner-connection`
+ - ### `trapparty_postgraphile_owner-connection`
     
     The TrapParty GraphQL API's database owner URI.
     
@@ -155,13 +155,13 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
     
- - ### `creal-postgraphile`
+ - ### `creal_postgraphile`
     
-    You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.jonas-thelemann.test](https://creal-postgraphile.jonas-thelemann.test/).
+    You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.jonas-thelemann.test](https://creal_postgraphile.jonas-thelemann.test/).
     
  - ### `creal_strapi`
     
-    You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
+    You can access the DJ website's CMS at [creal_strapi.jonas-thelemann.test](https://creal_strapi.jonas-thelemann.test/).
     
  - ### `hedgedoc`
     
@@ -216,7 +216,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
     
- - ### `trapparty-postgraphile`
+ - ### `trapparty_postgraphile`
     
     You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
     

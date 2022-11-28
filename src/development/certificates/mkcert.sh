@@ -25,29 +25,16 @@ rm "$THIS"/*.key "$THIS"/*.crt
 
 create "root"
 create "traefik" \
-    # 1generator
-    "1generator.localhost" \
-    # adminer
-    "adminer.localhost" \
-    # creal
-    "creal.localhost" \
-    # creal/postgraphile
-    "creal-postgraphile.localhost" \
-    # creal/strapi
-    "strapi.localhost" \
-    # hedgedoc
-    "hedgedoc.localhost" \
-    # jonas-thelemann
-    "localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
-    # nextcloud
-    "nextcloud.localhost" \
-    # portainer
-    "portainer.localhost" \
-    # thelounge
-    "thelounge.localhost" \
-    # traefik
-    "traefik.localhost" \
-    # trapparty
-    "trapparty.localhost" \
-    # trapparty/postgraphile
-    "trapparty-postgraphile.localhost"
+    `# 1generator` "1generator.localhost" \
+    `# adminer` "adminer.localhost" \
+    `# creal` "creal.localhost" \
+    `# creal/postgraphile` "creal_postgraphile.localhost" \
+    `# creal/strapi` "creal_strapi.localhost" \
+    `# hedgedoc` "hedgedoc.localhost" \
+    `# jonas-thelemann` "localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
+    `# nextcloud` "nextcloud.localhost" \
+    `# portainer` "portainer.localhost" \
+    `# thelounge` "thelounge.localhost" \
+    `# traefik` "traefik.localhost" \
+    `# trapparty` "trapparty.localhost" \
+    `# trapparty/postgraphile` "trapparty_postgraphile.localhost"
