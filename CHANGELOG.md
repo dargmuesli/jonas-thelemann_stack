@@ -1,3 +1,12 @@
+## [2.5.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.2...2.5.3) (2022-12-04)
+
+
+### Bug Fixes
+
+* correct subdomains ([605368a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/605368ae4a075c60938e6f60c37113a7d69a0e94))
+* **jonas-thelemann:** correct entrypoint ([845a0d5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/845a0d5ae2e27a78218297fb8d6064f8933b9b5e))
+* **jonas-thelemann:** correct port ([8468a86](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8468a86f49f90fd98b1062bfaeda1540a6b9e330))
+
 ## [2.5.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.1...2.5.2) (2022-12-04)
 
 
