@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.1...2.5.2) (2022-12-04)
+
+
+### Bug Fixes
+
+* **production:** correct creal_strapi volumes ([b96921b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b96921b71fd55d1d721f11d3439f4a43c261d978))
+
 ## [2.5.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.0...2.5.1) (2022-12-04)
 
 
