@@ -29,7 +29,7 @@ create "traefik" \
     `# adminer` "adminer.localhost" \
     `# creal` "creal.localhost" \
     `# creal/postgraphile` "creal-postgraphile.localhost" \
-    `# creal/strapi` "creal_strapi.localhost" \
+    `# creal/strapi` "creal-strapi.localhost" \
     `# hedgedoc` "hedgedoc.localhost" \
     `# jonas-thelemann` "localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
     `# nextcloud` "nextcloud.localhost" \

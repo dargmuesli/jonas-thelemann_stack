@@ -169,8 +169,8 @@ services:
       labels:
       - traefik.enable=true
       - traefik.http.routers.creal_strapi.middlewares=redirectscheme
-      - traefik.http.routers.creal_strapi.rule=Host(`creal_strapi.${STACK_DOMAIN}`)
-      - traefik.http.routers.creal_strapi_secure.rule=Host(`creal_strapi.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi.rule=Host(`creal-strapi.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi_secure.rule=Host(`creal-strapi.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_strapi_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
     environment:
