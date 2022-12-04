@@ -1,7 +1,7 @@
 tls:
   certificates:
-    - certFile: /etc/traefik/acme/jonas-thelemann.crt
-      keyFile: /etc/traefik/acme/jonas-thelemann.key
+    - certFile: /etc/traefik/acme/traefik.crt
+      keyFile: /etc/traefik/acme/traefik.key
   options:
     mintls13:
       minVersion: VersionTLS13

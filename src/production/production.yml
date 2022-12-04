@@ -27,11 +27,11 @@ services:
     image: dargmuesli/creal:0.45.1@sha256:4f6391458df299a6464da17a6c0f9fb8f0a72f8ea83fc1df4059362d253012ee
     user: (( prune ))
     volumes: (( prune ))
-  creal-postgraphile:
+  creal_postgraphile:
     deploy:
       labels:
       - (( append ))
-      - traefik.http.routers.creal-postgraphile_secure.tls.certresolver=default
+      - traefik.http.routers.creal_postgraphile_secure.tls.certresolver=default
   creal_strapi:
     deploy:
       labels:
@@ -131,11 +131,11 @@ services:
     image: dargmuesli/trapparty:2.7.1@sha256:933373dc43d9b4e222503a9ea663b32d0ddfa8d72d786f7de9fd32eafd8c11df
     user: (( prune ))
     volumes: (( prune ))
-  trapparty-postgraphile:
+  trapparty_postgraphile:
     deploy:
       labels:
       - (( append ))
-      - traefik.http.routers.trapparty-postgraphile_secure.tls.certresolver=default
+      - traefik.http.routers.trapparty_postgraphile_secure.tls.certresolver=default
 version: "3.7"
 volumes:
   acme_data:

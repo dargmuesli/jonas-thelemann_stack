@@ -4,12 +4,12 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 configs:
-  creal-postgraphile_rc:
+  creal_postgraphile_rc:
   # The cReal GraphQL API's configuration file.
-    file: ../production/configurations/creal-postgraphile/.postgraphilerc.js
-  trapparty-postgraphile_rc:
+    file: ../production/configurations/creal_postgraphile/.postgraphilerc.js
+  trapparty_postgraphile_rc:
   # The TrapParty GraphQL API's configuration file.
-    file: ../production/configurations/trapparty-postgraphile/.postgraphilerc.js
+    file: ../production/configurations/trapparty_postgraphile/.postgraphilerc.js
 secrets:
   creal_aws-bucket:
   # The DJ website's AWS bucket name.
@@ -17,16 +17,16 @@ secrets:
   creal_aws-credentials:
   # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
-  creal-postgraphile_connection:
+  creal_postgraphile_connection:
   # The cReal GraphQL API's database URI.
-    file: ./secrets/creal-postgraphile/connection.secret
-  creal-postgraphile_owner-connection:
+    file: ./secrets/creal_postgraphile/connection.secret
+  creal_postgraphile_owner-connection:
   # The cReal GraphQL API's database owner URI.
-    file: ./secrets/creal-postgraphile/owner-connection.secret
+    file: ./secrets/creal_postgraphile/owner-connection.secret
   creal_sqitch-target:
   # The DJ website's Sqitch target.
     file: ./secrets/creal/sqitch-target.secret
-  creal-strapi_admin-jwt-secret:
+  creal_strapi_admin-jwt-secret:
   # The DJ website's CMS administrator JWT secret.
     file: ./secrets/creal_strapi/admin-jwt-secret.secret
   hedgedoc_db_url:
@@ -59,21 +59,21 @@ secrets:
   postgres_password:
   # The database default user's password.
     file: ./secrets/postgres/password.secret
-  postgres_role_creal-postgraphile_password:
+  postgres_role_creal_postgraphile_password:
   # The `creal_postgraphile` database role's password.
-    file: ./secrets/postgres/role_creal-postgraphile_password.secret
-  postgres_role_trapparty-postgraphile_password:
-  # The `trapparty-postgraphile` database role's password.
-    file: ./secrets/postgres/role_trapparty-postgraphile_password.secret
+    file: ./secrets/postgres/role_creal_postgraphile_password.secret
+  postgres_role_trapparty_postgraphile_password:
+  # The `trapparty_postgraphile` database role's password.
+    file: ./secrets/postgres/role_trapparty_postgraphile_password.secret
   postgres_user:
   # The database default user's name.
     file: ./secrets/postgres/user.secret
-  trapparty-postgraphile_connection:
+  trapparty_postgraphile_connection:
   # The TrapParty GraphQL API's database URI.
-    file: ./secrets/trapparty-postgraphile/connection.secret
-  trapparty-postgraphile_owner-connection:
+    file: ./secrets/trapparty_postgraphile/connection.secret
+  trapparty_postgraphile_owner-connection:
   # The TrapParty GraphQL API's database owner URI.
-    file: ./secrets/trapparty-postgraphile/owner-connection.secret
+    file: ./secrets/trapparty_postgraphile/owner-connection.secret
   trapparty_sqitch-target:
   # The party website's Sqitch target.
     file: ./secrets/trapparty/sqitch-target.secret
@@ -118,11 +118,19 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.routers.creal.entryPoints=web
       - traefik.http.routers.creal.middlewares=redirectscheme
       - traefik.http.routers.creal.rule=Host(`creal.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal.service=creal #DARGSTACK-REMOVE
+      - traefik.http.routers.creal_secure.entryPoints=web-secure
       - traefik.http.routers.creal_secure.rule=Host(`creal.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.routers.creal_secure.service=creal #DARGSTACK-REMOVE
+      - traefik.http.routers.creal_secure_nuxt.entryPoints=nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.creal_secure_nuxt.service=creal_secure_nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.creal_secure_nuxt.rule=Host(`creal.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
       - traefik.http.services.creal.loadbalancer.server.port=3000
+      - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
       NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
@@ -131,51 +139,53 @@ services:
     - creal_aws-bucket
     - creal_aws-credentials
     - creal_sqitch-target
-    - postgres_role_creal-postgraphile_password
+    - postgres_role_creal_postgraphile_password
     user: node:node
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal/nuxt/:/srv/app/
     - ../../../creal/sqitch/:/srv/sqitch/
-  creal-postgraphile:
-  # You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.jonas-thelemann.test](https://creal-postgraphile.jonas-thelemann.test/).
+  creal_postgraphile:
+  # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.jonas-thelemann.test](https://creal_postgraphile.jonas-thelemann.test/).
     configs:
-      - source: creal-postgraphile_rc
+      - source: creal_postgraphile_rc
         target: /postgraphile/.postgraphilerc.js
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.http.routers.creal-postgraphile.middlewares=redirectscheme
-      - traefik.http.routers.creal-postgraphile.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.creal-postgraphile_secure.middlewares=header_cors
-      - traefik.http.routers.creal-postgraphile_secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.creal-postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.services.creal-postgraphile.loadbalancer.server.port=5000
+      - traefik.http.routers.creal_postgraphile.middlewares=redirectscheme
+      - traefik.http.routers.creal_postgraphile.rule=Host(`creal_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.creal_postgraphile_secure.rule=Host(`creal_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.creal_postgraphile.loadbalancer.server.port=5000
     image: graphile/postgraphile:4.12.12@sha256:455859d464023b14550bcab6836a2ca44cb7fc56bf0d2bf05a0202f75fffacd1
     secrets:
-    - creal-postgraphile_connection
-    - creal-postgraphile_owner-connection
+    - creal_postgraphile_connection
+    - creal_postgraphile_owner-connection
   creal_strapi:
-  # You can access the DJ website's CMS at [strapi.jonas-thelemann.test](https://strapi.jonas-thelemann.test/).
+  # You can access the DJ website's CMS at [creal_strapi.jonas-thelemann.test](https://creal_strapi.jonas-thelemann.test/).
     deploy:
       labels:
       - traefik.enable=true
       - traefik.http.routers.creal_strapi.middlewares=redirectscheme
-      - traefik.http.routers.creal_strapi.rule=Host(`strapi.${STACK_DOMAIN}`)
-      - traefik.http.routers.creal_strapi_secure.rule=Host(`strapi.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi.rule=Host(`creal_strapi.${STACK_DOMAIN}`)
+      - traefik.http.routers.creal_strapi_secure.rule=Host(`creal_strapi.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_strapi_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
     environment:
-      ADMIN_JWT_SECRET_FILE: /run/secrets/creal-strapi_admin-jwt-secret
+      ADMIN_JWT_SECRET_FILE: /run/secrets/creal_strapi_admin-jwt-secret
       DATABASE_NAME: creal_strapi
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
     image: dargmuesli/creal_strapi:dev
     secrets:
-    - creal-strapi_admin-jwt-secret
+    - creal_strapi_admin-jwt-secret
     - postgres_password
     - postgres_user
     volumes:
-    - ../../../creal_strapi/:/opt/app/
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
+    - ../../../creal_strapi/:/srv/app/
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
     deploy:
@@ -215,11 +225,19 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.routers.jonas-thelemann.entryPoints=web
       - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme
       - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
+      - traefik.http.routers.jonas-thelemann.service=jonas-thelemann #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure.entryPoints=web_secure
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure.service=jonas-thelemann #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure_nuxt.entryPoints=nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure_nuxt.service=jonas-thelemann_secure_nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure_nuxt.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
+      - traefik.http.services.jonas-thelemann_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
     volumes:
@@ -311,7 +329,7 @@ services:
     - postgres_password
     - postgres_user
     volumes:
-    - /mnt/dev/postgresql/:/var/run/postgresql/ #DARGSTACK-REMOVE
+    - /run/:/run/ #DARGSTACK-REMOVE
     - postgres_data:/var/lib/postgresql/data/
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   thelounge:
@@ -334,6 +352,7 @@ services:
     - --api=true
     - --entryPoints.web.address=:80
     - --entryPoints.web-secure.address=:443
+    - --entryPoints.nuxt.address=:24678 #DARGSTACK-REMOVE
     - --providers.docker=true
     - --providers.docker.endpoint=unix:///var/run/docker.sock
     - --providers.docker.exposedByDefault=false
@@ -366,6 +385,10 @@ services:
       protocol: tcp
       published: 443
       target: 443
+    - mode: host #DARGSTACK-REMOVE
+      protocol: tcp #DARGSTACK-REMOVE
+      published: 24678 #DARGSTACK-REMOVE
+      target: 24678 #DARGSTACK-REMOVE
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./certificates/:/etc/traefik/acme/
@@ -375,40 +398,49 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.routers.trapparty.entryPoints=web
       - traefik.http.routers.trapparty.middlewares=redirectscheme
       - traefik.http.routers.trapparty.rule=Host(`trapparty.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty.service=trapparty #DARGSTACK-REMOVE
+      - traefik.http.routers.trapparty_secure.entryPoints=web-secure
       - traefik.http.routers.trapparty_secure.rule=Host(`trapparty.${STACK_DOMAIN}`)
       - traefik.http.routers.trapparty_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.routers.trapparty_secure.service=trapparty #DARGSTACK-REMOVE
+      - traefik.http.routers.trapparty_secure_nuxt.entryPoints=nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.trapparty_secure_nuxt.service=trapparty_secure_nuxt #DARGSTACK-REMOVE
+      - traefik.http.routers.trapparty_secure_nuxt.rule=Host(`trapparty.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
       - traefik.http.services.trapparty.loadbalancer.server.port=3000
+      - traefik.http.services.trapparty_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
     image: dargmuesli/trapparty:dev
     secrets:
     - trapparty_sqitch-target
     - postgres_db
-    - postgres_role_trapparty-postgraphile_password
+    - postgres_role_trapparty_postgraphile_password
     user: node:node
     volumes:
+    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../trapparty/nuxt/:/srv/app/
     - ../../../trapparty/sqitch/:/srv/sqitch/
-  trapparty-postgraphile:
+  trapparty_postgraphile:
   # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
     configs:
-      - source: trapparty-postgraphile_rc
+      - source: trapparty_postgraphile_rc
         target: /postgraphile/.postgraphilerc.js
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.http.routers.trapparty-postgraphile.middlewares=redirectscheme
-      - traefik.http.routers.trapparty-postgraphile.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.trapparty-postgraphile_secure.middlewares=header_cors
-      - traefik.http.routers.trapparty-postgraphile_secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.trapparty-postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
-      - traefik.http.services.trapparty-postgraphile.loadbalancer.server.port=5000
+      - traefik.http.routers.trapparty_postgraphile.middlewares=redirectscheme
+      - traefik.http.routers.trapparty_postgraphile.rule=Host(`trapparty_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.trapparty_postgraphile_secure.rule=Host(`trapparty_postgraphile.${STACK_DOMAIN}`)
+      - traefik.http.routers.trapparty_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
+      - traefik.http.services.trapparty_postgraphile.loadbalancer.server.port=5000
     image: graphile/postgraphile:4.12.12@sha256:455859d464023b14550bcab6836a2ca44cb7fc56bf0d2bf05a0202f75fffacd1
     secrets:
-    - trapparty-postgraphile_connection
-    - trapparty-postgraphile_owner-connection
+    - trapparty_postgraphile_connection
+    - trapparty_postgraphile_owner-connection
 version: "3.6"
 volumes:
   nextcloud_data:
