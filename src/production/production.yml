@@ -24,7 +24,7 @@ services:
       - traefik.http.routers.creal_secure.tls.certresolver=default
     environment:
       HOST: 0.0.0.0
-    image: dargmuesli/creal:0.45.1@sha256:4f6391458df299a6464da17a6c0f9fb8f0a72f8ea83fc1df4059362d253012ee
+    image: dargmuesli/creal:0.45.2@sha256:8f2336a91ad143ec0bd20aa0ca565bc06dfceda68a2c8d2097ae98ecd65166b5
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -128,7 +128,7 @@ services:
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
     environment:
       HOST: 0.0.0.0
-    image: dargmuesli/trapparty:3.0.0@sha256:87f66ae1af8caf229ca9a525dc7f6505db527c9333f2922b5ad12158a01186d2
+    image: dargmuesli/trapparty:3.0.1@sha256:2559ffe15c057203a29d4b578a72325c183ebf00ec649bb48f5e4ffe809375fe
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
