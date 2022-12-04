@@ -1,3 +1,17 @@
+# [2.5.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.4.0...2.5.0) (2022-12-04)
+
+
+### Bug Fixes
+
+* correct service names ([2a6e25d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2a6e25d44b1f1b35052fa70468517151ae09ef7d))
+
+
+### Features
+
+* **nuxt:** add websocket endpoint ([de8327e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/de8327ef9163b329c00fa10f6822ecad9252cbef))
+* upgrade to dargstack v2 ([7d3e6f6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7d3e6f6e088ec1535d84f96b3618f26f2079df05))
+* use pnpm store directory for other development services ([88c8bf4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/88c8bf41243fdb9cbe627fa00e3ba92595a73722))
+
 # [2.4.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.3.3...2.4.0) (2022-11-25)
 
 
