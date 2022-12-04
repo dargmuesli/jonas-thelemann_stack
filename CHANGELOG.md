@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.3...2.5.4) (2022-12-04)
+
+
+### Bug Fixes
+
+* correct internal subdomains ([61738d0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/61738d07ad04dbf84e18b01caabf1f86aecf4157))
+
 ## [2.5.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.2...2.5.3) (2022-12-04)
 
 
