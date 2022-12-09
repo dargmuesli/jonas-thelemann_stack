@@ -9,7 +9,7 @@
   "license": "GPL-3.0-only",
   "packageManager": "pnpm@7.18.1",
   "scripts": {
-    "prepare": "if [ -d '.git' ] && [ -d '.husky' ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi"
+    "postinstall": "if [ -d '.git' ] && [ -d '.husky' ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi"
   },
   "dependencies": {},
   "devDependencies": {
