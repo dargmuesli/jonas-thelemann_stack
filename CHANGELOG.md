@@ -1,3 +1,11 @@
+## [2.5.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.4...2.5.5) (2022-12-13)
+
+
+### Bug Fixes
+
+* **commitlint:** allow long body lines on ci ([c4416a8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c4416a82b28d907627128e2aa126ef3596b71c40))
+* **release:** schedule release ([fd3abcc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/fd3abcc264931fb95b5382a9cb6eceb7489f3610))
+
 ## [2.5.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.3...2.5.4) (2022-12-04)
 
 
