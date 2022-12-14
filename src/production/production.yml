@@ -51,7 +51,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: dargmuesli/jonas-thelemann:5.0.5@sha256:925ace416cc0537048278f5325b8bc9a9e6999efc3dd6bcc11d24e807551ed1b
+    image: dargmuesli/jonas-thelemann:5.1.0@sha256:3db69b83b5acfa5cfe310ed6b9fd656e3541aeb316d7b2891a3e29eeda7e94f1
     user: (( prune ))
     volumes: (( prune ))
   nextcloud_nginx:
