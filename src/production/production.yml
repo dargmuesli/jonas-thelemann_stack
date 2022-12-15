@@ -128,7 +128,7 @@ services:
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
     environment:
       HOST: 0.0.0.0
-    image: dargmuesli/trapparty:3.1.0@sha256:821a3e1f042a621163aabc8a9740a9814f2e072389fe37be6304dbda91f7102b
+    image: dargmuesli/trapparty:3.2.0@sha256:2136f7ed2ff98c88ca37daebf8767885d391f8f58e34dbe98324c2cbb3ac7c81
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
