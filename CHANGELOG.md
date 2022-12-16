@@ -1,3 +1,10 @@
+## [2.5.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.6...2.5.7) (2022-12-16)
+
+
+### Bug Fixes
+
+* **trapparty:** correct environment variables ([63d1c1b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/63d1c1b08c744be50e2af8e8c13435ddaaab7a44))
+
 ## [2.5.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.5...2.5.6) (2022-12-14)
 
 
