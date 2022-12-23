@@ -1,3 +1,10 @@
+## [2.5.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.8...2.5.9) (2022-12-23)
+
+
+### Bug Fixes
+
+* **postgres:** remove randomwinpicker from additional databases ([fff7548](https://github.com/dargmuesli/jonas-thelemann_stack/commit/fff754897603d4ea19b90f812d031a37ced6f92d))
+
 ## [2.5.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.7...2.5.8) (2022-12-16)
 
 
