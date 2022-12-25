@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.10...2.6.0) (2022-12-25)
+
+
+### Features
+
+* **jonas-thelemann:** update to v5.2.0 ([4d75c33](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4d75c336ef004e03f3368dcdfb3b64bd3ab2e701))
+
 ## [2.5.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.5.9...2.5.10) (2022-12-24)
 
 
