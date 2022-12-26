@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.1...2.6.2) (2022-12-26)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/jonas-thelemann docker tag to v5.2.4 ([7523fb5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7523fb5ac6454e529733bdc928b69f38d27c776e))
+
 ## [2.6.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.0...2.6.1) (2022-12-26)
 
 
