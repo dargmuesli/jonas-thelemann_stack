@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.2...2.6.3) (2023-01-03)
+
+
+### Bug Fixes
+
+* **creal:** upgrade to v1 ([bc6d4c1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/bc6d4c1c49731094b431e696fcf834535dafc249))
+
 ## [2.6.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.1...2.6.2) (2022-12-26)
 
 
