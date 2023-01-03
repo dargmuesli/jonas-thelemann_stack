@@ -133,7 +133,7 @@ services:
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
-      NUXT_ENV_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_ENV_" (https://nuxtjs.org/api/configuration-env/#automatic-injection-of-environment-variables)
+      NUXT_PUBLIC_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
     image: dargmuesli/creal:dev
     secrets:
     - creal_aws-bucket
