@@ -9,14 +9,13 @@
   "license": "GPL-3.0-only",
   "packageManager": "pnpm@7.21.0",
   "scripts": {
-    "postinstall": "if [ -d '.git' ] && [ -d '.husky' ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi"
+    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
-    "dargstack": "2.0.1",
-    "dargstack_rgen": "0.8.2",
+    "dargstack": "2.0.3",
+    "dargstack_rgen": "0.8.3",
     "husky": "8.0.2",
     "shx": "0.3.4"
   }
