@@ -1,3 +1,10 @@
+## [2.6.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.4...2.6.5) (2023-01-03)
+
+
+### Bug Fixes
+
+* **creal_strapi:** correct mount point ([58e17ef](https://github.com/dargmuesli/jonas-thelemann_stack/commit/58e17efae32aad52aff0aa200cae78fbb167b7fb))
+
 ## [2.6.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.3...2.6.4) (2023-01-03)
 
 
