@@ -38,7 +38,7 @@ services:
     image: dargmuesli/creal_strapi:2.5.4@sha256:3c2426f57f8e71fb202eb6f0522b1cc6dbe9934fc788bfe7f46a2f0e6468d73b
     volumes:
     - (( prune ))
-    - creal_strapi_data:/app/public/
+    - creal_strapi_data:/srv/app/public/
   hedgedoc:
     deploy:
       labels:
