@@ -1,5 +1,5 @@
 **/backups/*/**
-**/secrets/*/**
+**/production/secrets/**/*.secret
 *.crt
 *.csr
 *.env

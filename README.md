@@ -8,25 +8,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## Table of Contents
 
 
- 1. [configs](#configs)
+ 1. [secrets](#secrets)
     
- 2. [secrets](#secrets)
+ 2. [services](#services)
     
- 3. [services](#services)
-    
- 4. [volumes](#volumes)
-    
-
-## configs
-
-
- - ### `creal_postgraphile_rc`
-    
-    The cReal GraphQL API's configuration file.
-    
- - ### `trapparty_postgraphile_rc`
-    
-    The TrapParty GraphQL API's configuration file.
+ 3. [volumes](#volumes)
     
 
 ## secrets

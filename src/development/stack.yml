@@ -3,13 +3,6 @@
 # jonas-thelemann
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
-configs:
-  creal_postgraphile_rc:
-  # The cReal GraphQL API's configuration file.
-    file: ../production/configurations/creal_postgraphile/.postgraphilerc.js
-  trapparty_postgraphile_rc:
-  # The TrapParty GraphQL API's configuration file.
-    file: ../production/configurations/trapparty_postgraphile/.postgraphilerc.js
 secrets:
   creal_aws-bucket:
   # The DJ website's AWS bucket name.
@@ -148,9 +141,6 @@ services:
     - ../../../creal/sqitch/:/srv/sqitch/
   creal_postgraphile:
   # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.jonas-thelemann.test](https://creal_postgraphile.jonas-thelemann.test/).
-    configs:
-      - source: creal_postgraphile_rc
-        target: /postgraphile/.postgraphilerc.js
     deploy:
       labels:
       - traefik.enable=true
@@ -164,6 +154,8 @@ services:
     secrets:
     - creal_postgraphile_connection
     - creal_postgraphile_owner-connection
+    volumes:
+    - ../production/configurations/creal_postgraphile/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
   creal_strapi:
   # You can access the DJ website's CMS at [creal_strapi.jonas-thelemann.test](https://creal_strapi.jonas-thelemann.test/).
     deploy:
@@ -248,7 +240,7 @@ services:
     - ../../../jonas-thelemann:/srv/app/
   nextcloud:
   # You can access nextcloud via `nextcloud_nginx`.
-    env_file: ../production/secrets/nextcloud/nextcloud.env
+    env_file: ../production/configurations/nextcloud/nextcloud.env
     image: nextcloud:25.0.2-fpm-alpine@sha256:8f08c4e83222bab16946b8cd1fe3a3e49ef94fe1cc66a766ec1643d51d6e04fc
     secrets:
     - nextcloud_admin-password
@@ -429,9 +421,6 @@ services:
     - ../../../trapparty/sqitch/:/srv/sqitch/
   trapparty_postgraphile:
   # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
-    configs:
-      - source: trapparty_postgraphile_rc
-        target: /postgraphile/.postgraphilerc.js
     deploy:
       labels:
       - traefik.enable=true
@@ -445,6 +434,8 @@ services:
     secrets:
     - trapparty_postgraphile_connection
     - trapparty_postgraphile_owner-connection
+    volumes:
+    - ../production/configurations/trapparty_postgraphile/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
 version: "3.6"
 volumes:
   nextcloud_data:
