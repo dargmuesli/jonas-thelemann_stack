@@ -22,7 +22,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:1.0.3@sha256:936d7f0e2dfacdaf6ab3f35d3299b10b3908e62c59e3cd5185a09fc140c7b9ad
+    image: dargmuesli/creal:1.1.0@sha256:20af27ca672b59c2da9ccf06310c1ce39d4e6b0f3e76e9587b4979180063ab23
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -50,7 +50,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:5.2.4@sha256:0e63a646d2050ba3cc97078957ff53cdb02ad38d42694cac8f85b3dfd19e99a6
+    image: dargmuesli/jonas-thelemann:5.3.0@sha256:87b6244ef212cf9669cf315ef85931c4db86917e45edb0f6c8042351de12e69e
     user: (( prune ))
     volumes: (( prune ))
   nextcloud_nginx:
@@ -125,7 +125,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: dargmuesli/trapparty:3.3.2@sha256:20acd38e25f129060ee31f084ce48411a3262badbfafc5560e878a41a6ae6c76
+    image: dargmuesli/trapparty:3.4.1@sha256:3e9c56860b141b657c4d38ad07a581293c5c1c2efa4d607d6759a7f550f4c2d5
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:

@@ -133,6 +133,7 @@ services:
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
+      NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
       NUXT_PUBLIC_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
     image: dargmuesli/creal:dev
     secrets:
@@ -238,6 +239,8 @@ services:
       - traefik.http.routers.jonas-thelemann_secure_nuxt.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
+    environment:
+      NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
     volumes:
@@ -412,6 +415,7 @@ services:
       - traefik.http.services.trapparty.loadbalancer.server.port=3000
       - traefik.http.services.trapparty_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
+      NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
       NUXT_PUBLIC_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
     image: dargmuesli/trapparty:dev
     secrets:
