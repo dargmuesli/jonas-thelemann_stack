@@ -1,3 +1,11 @@
+# [2.7.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.6...2.7.0) (2023-01-06)
+
+
+### Features
+
+* add gtag ([7705f28](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7705f28b7d5cc0b582e22d6817741ff5f604c424))
+* sort secrets and configurations ([22881a5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/22881a58395ee82e6f364507569731e4eff93d98))
+
 ## [2.6.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.6.5...2.6.6) (2023-01-03)
 
 
