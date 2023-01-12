@@ -150,7 +150,7 @@ services:
       - traefik.http.routers.creal_postgraphile_secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:4.12.12@sha256:455859d464023b14550bcab6836a2ca44cb7fc56bf0d2bf05a0202f75fffacd1
+    image: graphile/postgraphile:4.13.0@sha256:1788d6fa2af32577f3dc4816bc6445e0092d9d37349de2cac6e669316c0d0d60
     secrets:
     - creal_postgraphile_connection
     - creal_postgraphile_owner-connection
@@ -430,7 +430,7 @@ services:
       - traefik.http.routers.trapparty_postgraphile_secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.trapparty_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.trapparty_postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:4.12.12@sha256:455859d464023b14550bcab6836a2ca44cb7fc56bf0d2bf05a0202f75fffacd1
+    image: graphile/postgraphile:4.13.0@sha256:1788d6fa2af32577f3dc4816bc6445e0092d9d37349de2cac6e669316c0d0d60
     secrets:
     - trapparty_postgraphile_connection
     - trapparty_postgraphile_owner-connection
