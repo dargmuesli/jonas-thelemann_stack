@@ -50,7 +50,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:5.5.1@sha256:95457be9e34fad7e7156c7e430633a17167b9d8034dbe748d8e03dcba67ab5cd
+    image: dargmuesli/jonas-thelemann:5.6.0@sha256:5ba872dcb53c9fead4a8e96522edb069c3c7a3538c42e41b3618c77909836c51
     user: (( prune ))
     volumes: (( prune ))
   nextcloud_nginx:
