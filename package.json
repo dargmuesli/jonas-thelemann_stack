@@ -15,7 +15,7 @@
     "@commitlint/cli": "17.4.3",
     "@commitlint/config-conventional": "17.4.3",
     "dargstack": "2.1.0",
-    "dargstack_rgen": "0.8.5",
+    "dargstack_rgen": "0.8.6",
     "husky": "8.0.3",
     "shx": "0.3.4"
   }
