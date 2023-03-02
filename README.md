@@ -120,11 +120,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
 
  - ### `1generator`
     
-    You can access this subproject at [1generator.jonas-thelemann.test](https://1generator.jonas-thelemann.test/).
+    You can access this subproject at [1generator.localhost](https://1generator.localhost/).
     
  - ### `adminer`
     
-    You can access the database's frontend at [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/).
+    You can access the database's frontend at [adminer.localhost](https://adminer.localhost/).
     This information is required for login:
     
     |          |                     |
@@ -139,19 +139,19 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `creal`
     
-    You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
+    You can access the DJ website at [creal.localhost](https://creal.localhost/).
     
  - ### `creal_postgraphile`
     
-    You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.jonas-thelemann.test](https://creal_postgraphile.jonas-thelemann.test/).
+    You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.localhost](https://creal_postgraphile.localhost/).
     
  - ### `creal_strapi`
     
-    You can access the DJ website's CMS at [creal_strapi.jonas-thelemann.test](https://creal_strapi.jonas-thelemann.test/).
+    You can access the DJ website's CMS at [creal_strapi.localhost](https://creal_strapi.localhost/).
     
  - ### `hedgedoc`
     
-    You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
+    You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     
  - ### `jobber`
     
@@ -159,7 +159,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `jonas-thelemann`
     
-    You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
+    You can access the main project at [localhost](https://localhost/).
     
  - ### `nextcloud`
     
@@ -167,11 +167,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `nextcloud_nginx`
     
-    You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
+    You can access nexcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
     
  - ### `portainer`
     
-    You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
+    You can access the container manager's frontend at [portainer.localhost](https://portainer.localhost/).
     
  - ### `portainer-agent`
     
@@ -187,11 +187,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `thelounge`
     
-    You can access the web IRC client's dashboard at [thelounge.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+    You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
     
  - ### `traefik`
     
-    You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+    You can access the reverse proxy's dashboard at [traefik.localhost](https://traefik.localhost/).
     Traefik enables HTTPS for all services and acts as a load-balancer too.
     
  - ### `traefik_certs-dumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
@@ -200,11 +200,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `trapparty`
     
-    You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
+    You can access TrapParty's website at [trapparty.localhost](https://trapparty.localhost/).
     
  - ### `trapparty_postgraphile`
     
-    You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
+    You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
     
 
 ## volumes

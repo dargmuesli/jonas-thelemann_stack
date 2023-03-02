@@ -72,7 +72,7 @@ secrets:
     file: ./secrets/trapparty/sqitch-target.secret
 services:
   1generator:
-  # You can access this subproject at [1generator.jonas-thelemann.test](https://1generator.jonas-thelemann.test/).
+  # You can access this subproject at [1generator.localhost](https://1generator.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -83,7 +83,7 @@ services:
       - traefik.http.services.1generator.loadbalancer.server.port=80
     image: dargmuesli/1generator:1.0.1@sha256:6f8dc24e6fc0a254ebe65b0d49f61fdf0749836b91ce1fd3314bbf92ced2b07c
   adminer:
-  # You can access the database's frontend at [adminer.jonas-thelemann.test](https://adminer.jonas-thelemann.test/).
+  # You can access the database's frontend at [adminer.localhost](https://adminer.localhost/).
   # This information is required for login:
   #
   # |          |                     |
@@ -107,7 +107,7 @@ services:
     volumes:
     - ../production/configurations/adminer/adminer.css:/var/www/html/adminer.css:ro
   creal:
-  # You can access the DJ website at [creal.jonas-thelemann.test](https://creal.jonas-thelemann.test/).
+  # You can access the DJ website at [creal.localhost](https://creal.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -140,7 +140,7 @@ services:
     - ../../../creal/nuxt/:/srv/app/
     - ../../../creal/sqitch/:/srv/sqitch/
   creal_postgraphile:
-  # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.jonas-thelemann.test](https://creal_postgraphile.jonas-thelemann.test/).
+  # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.localhost](https://creal_postgraphile.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -157,7 +157,7 @@ services:
     volumes:
     - ../production/configurations/creal_postgraphile/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
   creal_strapi:
-  # You can access the DJ website's CMS at [creal_strapi.jonas-thelemann.test](https://creal_strapi.jonas-thelemann.test/).
+  # You can access the DJ website's CMS at [creal_strapi.localhost](https://creal_strapi.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -180,7 +180,7 @@ services:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
   hedgedoc:
-  # You can access the markdown collaboration tool at [hedgedoc.jonas-thelemann.test](https://hedgedoc.jonas-thelemann.test/).
+  # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -214,7 +214,7 @@ services:
       - ../production/secrets/jobber/aliases:/etc/aliases:ro
       - ../production/secrets/jobber/msmtprc:/etc/msmtprc:ro
   jonas-thelemann:
-  # You can access the main project at [jonas-thelemann.test](https://jonas-thelemann.test/).
+  # You can access the main project at [localhost](https://localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -250,7 +250,7 @@ services:
     volumes:
     - nextcloud_data:/var/www/html/
   nextcloud_nginx:
-  # You can access nexcloud's frontend at [nextcloud.jonas-thelemann.test](https://nextcloud.jonas-thelemann.test/).
+  # You can access nexcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -278,7 +278,7 @@ services:
     - ../production/configurations/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
   portainer:
-  # You can access the container manager's frontend at [portainer.jonas-thelemann.test](https://portainer.jonas-thelemann.test/).
+  # You can access the container manager's frontend at [portainer.localhost](https://portainer.localhost/).
     command: -H tcp://tasks.portainer-agent:9001 --tlsskipverify --admin-password-file '/run/secrets/portainer_admin-password'
     deploy:
       labels:
@@ -328,7 +328,7 @@ services:
     - postgres_data:/var/lib/postgresql/data/
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   thelounge:
-  # You can access the web IRC client's dashboard at [thelounge.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+  # You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -341,7 +341,7 @@ services:
     volumes:
     - thelounge_data:/var/opt/thelounge
   traefik:
-  # You can access the reverse proxy's dashboard at [traefik.jonas-thelemann.test](https://traefik.jonas-thelemann.test/).
+  # You can access the reverse proxy's dashboard at [traefik.localhost](https://traefik.localhost/).
   # Traefik enables HTTPS for all services and acts as a load-balancer too.
     command:
     - --api=true
@@ -389,7 +389,7 @@ services:
     - ./certificates/:/etc/traefik/acme/
     - ./configurations/traefik/dynamic.yml:/dynamic.yml:ro #DARGSTACK-REMOVE
   trapparty:
-  # You can access TrapParty's website at [trapparty.jonas-thelemann.test](https://trapparty.jonas-thelemann.test/).
+  # You can access TrapParty's website at [trapparty.localhost](https://trapparty.localhost/).
     deploy:
       labels:
       - traefik.enable=true
@@ -420,7 +420,7 @@ services:
     - ../../../trapparty/nuxt/:/srv/app/
     - ../../../trapparty/sqitch/:/srv/sqitch/
   trapparty_postgraphile:
-  # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.jonas-thelemann.test](https://postgraphile.jonas-thelemann.test/).
+  # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
     deploy:
       labels:
       - traefik.enable=true
