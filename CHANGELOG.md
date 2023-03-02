@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.7.5...2.8.0) (2023-03-02)
+
+
+### Features
+
+* **jobber:** add minio ([044d2ce](https://github.com/dargmuesli/jonas-thelemann_stack/commit/044d2ce93dbc98a8b431193132701853df2e7c89)), closes [#109](https://github.com/dargmuesli/jonas-thelemann_stack/issues/109)
+
 ## [2.7.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.7.4...2.7.5) (2023-02-26)
 
 
