@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.8.0...2.8.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* **creal-strapi:** set user ([ea48a6f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ea48a6ffbf9bd7fcb342df4ac400623077ce0987))
+
 # [2.8.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.7.5...2.8.0) (2023-03-02)
 
 
