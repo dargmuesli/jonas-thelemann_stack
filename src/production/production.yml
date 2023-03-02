@@ -53,6 +53,7 @@ services:
     image: dargmuesli/jonas-thelemann:5.11.2@sha256:d8db41a5d4000878b23022d7d4f808f7c051e67a8c72796ab617e172b04fc1d6
     user: (( prune ))
     volumes: (( prune ))
+  minio: (( prune ))
   nextcloud_nginx:
     deploy:
       labels:
@@ -141,3 +142,4 @@ volumes:
   creal_strapi_data:
   # The DJ website's CMS data.
     {}
+  minio_data: (( prune ))

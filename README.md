@@ -70,10 +70,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The container manager's password for the user `admin`.
     
- - ### `postgres-backup_db`
-    
-    The database backup service's database name.
-    
  - ### `postgres_db`
     
     The database's name.
@@ -161,6 +157,11 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access the main project at [localhost](https://localhost/).
     
+ - ### `minio`
+    
+    You can access the s3 console at [minio.localhost](https://minio.localhost/).
+    You can access the s3 api service at [s3.localhost](https://s3.localhost/) if you want to access via cli from outside the stack.
+    
  - ### `nextcloud`
     
     You can access nextcloud via `nextcloud_nginx`.
@@ -217,6 +218,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal_strapi_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
     The DJ website's CMS data.
+    
+ - ### `minio_data`
+    
+    The s3 server's data.
     
  - ### `nextcloud_data`
     
