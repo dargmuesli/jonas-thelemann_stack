@@ -43,9 +43,6 @@ secrets:
   portainer_admin-password:
   # The container manager's password for the user `admin`.
     file: ./secrets/portainer/admin-password.secret
-  postgres-backup_db:
-  # The database backup service's database name.
-    file: ./secrets/postgres-backup/db.secret
   postgres_db:
   # The database's name.
     file: ./secrets/postgres/db.secret
