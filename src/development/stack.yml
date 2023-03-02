@@ -173,6 +173,7 @@ services:
     - creal_strapi_admin-jwt-secret
     - postgres_password
     - postgres_user
+    user: node:node
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
