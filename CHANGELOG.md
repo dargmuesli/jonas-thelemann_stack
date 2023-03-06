@@ -1,3 +1,10 @@
+## [2.8.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.8.1...2.8.2) (2023-03-06)
+
+
+### Bug Fixes
+
+* **postgres-backup:** add missing secret ([545c387](https://github.com/dargmuesli/jonas-thelemann_stack/commit/545c3877fc11aaca9765761401dcca371a1e32f8))
+
 ## [2.8.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.8.0...2.8.1) (2023-03-02)
 
 
