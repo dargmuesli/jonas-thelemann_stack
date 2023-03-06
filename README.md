@@ -70,6 +70,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The container manager's password for the user `admin`.
     
+ - ### `postgres-backup_db` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+    
+    The database backup service's database name.
+    
  - ### `postgres_db`
     
     The database's name.

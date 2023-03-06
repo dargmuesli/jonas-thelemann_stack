@@ -1,4 +1,7 @@
 secrets:
+  postgres-backup_db:
+  # The database backup service's database name.
+    external: true
   traefik_cf-dns-api-token:
   # The DNS provider's DNS API token.
     external: true
