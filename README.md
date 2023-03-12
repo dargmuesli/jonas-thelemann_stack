@@ -18,10 +18,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
- - ### `creal_aws-bucket`
-    
-    The DJ website's AWS bucket name.
-    
  - ### `creal_aws-credentials`
     
     The DJ website's AWS credentials.

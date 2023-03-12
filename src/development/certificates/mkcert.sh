@@ -32,7 +32,7 @@ create "traefik" \
     `# creal/strapi` "creal-strapi.localhost" \
     `# hedgedoc` "hedgedoc.localhost" \
     `# jonas-thelemann` "localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
-    `# minio` "minio.localhost" \
+    `# minio` "minio.localhost" "s3.localhost" "creal-audio.s3.localhost" \
     `# nextcloud` "nextcloud.localhost" \
     `# portainer` "portainer.localhost" \
     `# thelounge` "thelounge.localhost" \

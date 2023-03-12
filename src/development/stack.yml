@@ -4,9 +4,6 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 secrets:
-  creal_aws-bucket:
-  # The DJ website's AWS bucket name.
-    file: ./secrets/creal/aws-bucket.secret
   creal_aws-credentials:
   # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
@@ -123,11 +120,13 @@ services:
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
-      NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
-      NUXT_PUBLIC_STACK_DOMAIN: ${STACK_DOMAIN} # Must be prefixed by "NUXT_PUBLIC_" (https://nuxt.com/docs/api/composables/use-runtime-config)
+      NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
+      NUXT_PUBLIC_S3_BUCKET: ${CREAL_S3_BUCKET}
+      NUXT_PUBLIC_S3_ENDPOINT_EXTERNAL: ${CREAL_S3_ENDPOINT}
+      NUXT_PUBLIC_S3_REGION: ${CREAL_S3_REGION}
+      NUXT_PUBLIC_STACK_DOMAIN: ${STACK_DOMAIN}
     image: dargmuesli/creal:dev
     secrets:
-    - creal_aws-bucket
     - creal_aws-credentials
     - creal_sqitch-target
     - postgres_role_creal_postgraphile_password
@@ -255,9 +254,9 @@ services:
         - traefik.http.services.minio.loadbalancer.passhostheader=true
         # Minio itself
         - traefik.http.routers.s3.middlewares=redirectscheme
-        - traefik.http.routers.s3.rule=Host(`s3.${STACK_DOMAIN}`)
+        - traefik.http.routers.s3.rule=Host(`s3.${STACK_DOMAIN}`, `creal-audio.s3.${STACK_DOMAIN}`)
         - traefik.http.routers.s3.service=s3
-        - traefik.http.routers.s3_secure.rule=Host(`s3.${STACK_DOMAIN}`)
+        - traefik.http.routers.s3_secure.rule=Host(`s3.${STACK_DOMAIN}`, `creal-audio.s3.${STACK_DOMAIN}`)
         - traefik.http.routers.s3_secure.tls.options=mintls13@file
         - traefik.http.routers.s3_secure.service=s3
         - traefik.http.services.s3.loadbalancer.server.port=9000
