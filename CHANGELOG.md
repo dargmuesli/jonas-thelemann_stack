@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.8.2...2.9.0) (2023-03-12)
+
+
+### Features
+
+* **deps:** update dargmuesli/creal docker tagto v1.6.0 ([373dbb3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/373dbb3fead3362e2d2d45daef8e15837fc58292))
+
 ## [2.8.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.8.1...2.8.2) (2023-03-06)
 
 
