@@ -190,7 +190,7 @@ services:
       CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/hedgedoc/hedgedoc:1.9.7-alpine@sha256:73f013f0383fb991b2e361e4827d45828998cc300e5048b37e5ce323b933e200
+    image: quay.io/hedgedoc/hedgedoc:1.9.7-alpine@sha256:e0c5695521b9dff5b74dcdf9e28701641ec5087d3e613686861f815e4fd1eba5
     secrets:
     - source: hedgedoc_db_url
       target: dbURL
