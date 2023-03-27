@@ -3,7 +3,7 @@
 
 The Docker stack configuration for [jonas-thelemann.de](https://jonas-thelemann.de/).
 
-This project is deployed in accordance to the [DargStack template](https://github.com/dargmuesli/dargstack_template/) to make deployment a breeze. It is closely related to [jonas-thelemann's source code](https://github.com/dargmuesli/jonas-thelemann/).
+This project is deployed in accordance to the [DargStack template](https://github.com/dargstack/dargstack_template/) to make deployment a breeze. It is closely related to [jonas-thelemann's source code](https://github.com/dargmuesli/jonas-thelemann/).
 
 ## Table of Contents
 
@@ -197,7 +197,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
  - ### `traefik_certs-dumper` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
-    See [DargStack template: certificates](https://github.com/dargmuesli/dargstack_template/#certificates).
+    You cannot access the reverse proxy's certificate helper directly.
     
  - ### `trapparty`
     
