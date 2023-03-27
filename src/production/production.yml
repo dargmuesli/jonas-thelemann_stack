@@ -110,7 +110,7 @@ services:
     - traefik_cf-dns-api-token
     - traefik_cf-zone-api-token
   traefik_certs-dumper:
-  # See [DargStack template: certificates](https://github.com/dargmuesli/dargstack_template/#certificates).
+  # You cannot access the reverse proxy's certificate helper directly.
     command:
     - file
     - --clean=false
