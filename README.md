@@ -46,6 +46,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The markdown collaboration tool's session secret.
     
+ - ### `jobber_aliases`
+    
+    The job scheduler's SMTP client mail alias.
+    
  - ### `jobber_aws-bucket`
     
     The job scheduler's AWS bucket name.
@@ -53,6 +57,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `jobber_aws-credentials`
     
     The job scheduler's AWS credentials.
+    
+ - ### `jobber_msmtprc`
+    
+    The job scheduler's SMTP client configuration.
     
  - ### `nextcloud_admin-password`
     

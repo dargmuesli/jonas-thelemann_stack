@@ -25,12 +25,18 @@ secrets:
   hedgedoc_session-secret:
   # The markdown collaboration tool's session secret.
     file: ./secrets/hedgedoc/session-secret.secret
+  jobber_aliases:
+  # The job scheduler's SMTP client mail alias.
+    file: ./secrets/jobber/aliases.secret
   jobber_aws-bucket:
   # The job scheduler's AWS bucket name.
     file: ./secrets/jobber/aws-bucket.secret
   jobber_aws-credentials:
   # The job scheduler's AWS credentials.
     file: ./secrets/jobber/aws-credentials.secret
+  jobber_msmtprc:
+  # The job scheduler's SMTP client configuration.
+    file: ./secrets/jobber/msmtprc.secret
   nextcloud_admin-password:
   # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
@@ -202,14 +208,16 @@ services:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/jobber_aws-credentials
     image: dargmuesli/jobber-aws-msmtp:1.2.5@sha256:71019d2f58a0ecc5d8b5f78865c00acf23b3243bf8fc7792fcb7f18e5a42744e
     secrets:
+    - source: jobber_aliases
+      target: /etc/aliases
     - jobber_aws-bucket
     - jobber_aws-credentials
+    - source: jobber_msmtprc
+      target: /etc/msmtprc
     volumes:
       - ../production/backups/postgres/:/backups/
       - ../production/configurations/jobber/.jobber:/home/jobberuser/.jobber:ro
-      - ../production/configurations/jobber/aws-config:/home/jobberuser/.aws/config:ro
-      - ../production/secrets/jobber/aliases:/etc/aliases:ro
-      - ../production/secrets/jobber/msmtprc:/etc/msmtprc:ro
+      - ./configurations/jobber/aws-config:/home/jobberuser/.aws/config:ro
   jonas-thelemann:
   # You can access the main project at [localhost](https://localhost/).
     deploy:
