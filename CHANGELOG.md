@@ -1,3 +1,10 @@
+## [2.9.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.3...2.9.4) (2023-03-30)
+
+
+### Bug Fixes
+
+* **jobber:** correct secrets for development ([12fd09f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/12fd09fbc52c733c991383d74cf3e8345d820664))
+
 ## [2.9.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.2...2.9.3) (2023-03-23)
 
 
