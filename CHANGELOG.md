@@ -1,3 +1,10 @@
+## [2.9.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.5...2.9.6) (2023-04-23)
+
+
+### Bug Fixes
+
+* schedule release ([55bdaac](https://github.com/dargmuesli/jonas-thelemann_stack/commit/55bdaaceee35979022baf46a642d08bcd91c2022))
+
 ## [2.9.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.4...2.9.5) (2023-04-09)
 
 
