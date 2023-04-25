@@ -1,3 +1,23 @@
+# [3.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.6...3.0.0-beta.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* **development:** correct volumes ([52aba72](https://github.com/dargmuesli/jonas-thelemann_stack/commit/52aba7273160bde163bab1e88cdf86967c442b14))
+
+
+* feat(production)!: disable homepage ([2dcac71](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2dcac71202b81bb54af9ae4bf7f92891e0408522))
+
+
+### Features
+
+* **production:** switch to github container registry ([a1308e8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a1308e82f6bf961a57782e6c9964257a059a1461))
+
+
+### BREAKING CHANGES
+
+* use Cloudflare instead
+
 ## [2.9.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/2.9.5...2.9.6) (2023-04-23)
 
 
