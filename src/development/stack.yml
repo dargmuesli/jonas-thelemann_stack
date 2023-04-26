@@ -139,8 +139,7 @@ services:
     user: node:node
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
-    - ../../../creal/nuxt/:/srv/app/
-    - ../../../creal/sqitch/:/srv/sqitch/
+    - ../../../creal/:/srv/app/
   creal_postgraphile:
   # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.localhost](https://creal_postgraphile.localhost/).
     deploy:
@@ -242,7 +241,7 @@ services:
     user: node:node
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
-    - ../../../jonas-thelemann:/srv/app/
+    - ../../../jonas-thelemann/:/srv/app/
   minio:
   # You can access the s3 console at [minio.localhost](https://minio.localhost/).
   # You can access the s3 api service at [s3.localhost](https://s3.localhost/) if you want to access via cli from outside the stack.
@@ -455,8 +454,7 @@ services:
     user: node:node
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
-    - ../../../trapparty/nuxt/:/srv/app/
-    - ../../../trapparty/sqitch/:/srv/sqitch/
+    - ../../../trapparty/:/srv/app/
   trapparty_postgraphile:
   # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
     deploy:

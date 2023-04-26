@@ -25,7 +25,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: dargmuesli/creal:1.7.3@sha256:1797e1a671f7703dd7cb5b88e9c42ce5175a215c8d3aa2809450f16f0a129fba
+    image: ghcr.io/dargmuesli/creal:1.7.5@sha256:03757fc6e7c865a4d5c6d7d08fc9bbf1df9e476f9216142fa888fdd4fa7c9ad3
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -38,7 +38,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: dargmuesli/creal_strapi:2.5.13@sha256:6c2596c8159ef3df2fd658e441ce97552ac2de2023f75e13a4a2679626da0f32
+    image: ghcr.io/dargmuesli/creal_strapi:2.5.15@sha256:1d8dbcd7f9a33d1305440318d79ceacc8b3d90f0208416b9c2ad1738b1aaa8ed
     user: (( prune ))
     volumes:
     - (( prune ))
@@ -48,15 +48,15 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
-  jonas-thelemann:
-    deploy:
-      labels:
-      - (( append ))
-      - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-      - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    image: dargmuesli/jonas-thelemann:5.12.7@sha256:7bee4c30be72647baf9ca61e5b2963e82d3ed1f0cb722bcd120da5f54b77ac2c
-    user: (( prune ))
-    volumes: (( prune ))
+  jonas-thelemann: (( prune ))
+    # deploy:
+    #   labels:
+    #   - (( append ))
+    #   - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
+    #   - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
+    # image: ghcr.io/dargmuesli/jonas-thelemann:5.12.7@sha256:7bee4c30be72647baf9ca61e5b2963e82d3ed1f0cb722bcd120da5f54b77ac2c
+    # user: (( prune ))
+    # volumes: (( prune ))
   minio: (( prune ))
   nextcloud_nginx:
     deploy:
@@ -130,7 +130,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: dargmuesli/trapparty:3.10.3@sha256:23d0db9986211eb04878383ca8a6e5b8c9e0f24dfa2c724239e1e873ce66c462
+    image: ghcr.io/dargmuesli/trapparty:3.10.4@sha256:c330973f65b56853c7b01773afb4941605102a7b5948be85c74c3561711ed3c6
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:

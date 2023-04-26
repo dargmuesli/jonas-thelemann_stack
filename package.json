@@ -1,7 +1,7 @@
 {
   "name": "jonas-thelemann_stack",
   "private": true,
-  "version": "2.9.6",
+  "version": "3.0.0-beta.1",
   "description": "DargStack configuration for my website.",
   "repository": "https://github.com/dargmuesli/jonas-thelemann_stack.git",
   "author": "Jonas Thelemann <e-mail@jonas-thelemann.de>",
@@ -14,7 +14,7 @@
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
     "dargstack": "2.2.1",
-    "dargstack_rgen": "0.9.2",
+    "dargstack_rgen": "0.9.3",
     "husky": "8.0.3"
   }
 }
