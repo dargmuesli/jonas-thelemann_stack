@@ -344,7 +344,7 @@ services:
         - node.platform.os == linux
     environment:
       AGENT_CLUSTER_ADDR: tasks.portainer-agent
-    image: portainer/agent:2.18.1@sha256:7c246779e83fe078412a42d8217d97695e6b385b3833c1cfd57b564d82a21879
+    image: portainer/agent:2.18.2@sha256:e1d933a37f718bfd838b01c80f8efad36a73cbda9d02472a39c764bc10488e21
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/docker/volumes:/var/lib/docker/volumes
