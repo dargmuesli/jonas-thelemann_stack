@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.4...3.0.5) (2023-05-29)
+
+
+### Bug Fixes
+
+* schedule release ([e9a910d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e9a910dc8ddbe1c3ca51a964b06975e134595ebd))
+
 ## [3.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.3...3.0.4) (2023-05-21)
 
 
