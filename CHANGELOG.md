@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.6...3.0.7) (2023-06-01)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal_strapi docker tag to v2.5.20 ([88b9edd](https://github.com/dargmuesli/jonas-thelemann_stack/commit/88b9edde9cd5dda219947c4b01921ec894971695))
+
 ## [3.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.5...3.0.6) (2023-05-29)
 
 
