@@ -1,3 +1,10 @@
+## [3.0.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.10...3.0.11) (2023-06-18)
+
+
+### Bug Fixes
+
+* **nextcloud:** update nginx configuration ([86c36a4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/86c36a4f56274d11e571f14d07629414fae6b591))
+
 ## [3.0.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.9...3.0.10) (2023-06-14)
 
 
