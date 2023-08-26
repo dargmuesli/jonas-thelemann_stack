@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.19...3.1.0) (2023-08-26)
+
+
+### Features
+
+* remove basic authentication ([6a42b73](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6a42b73bebc985f0c08ecdf5bb7bb30f1b4fe83b))
+
 ## [3.0.19](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.0.18...3.0.19) (2023-08-13)
 
 
