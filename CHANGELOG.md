@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.2...3.1.3) (2023-09-07)
+
+
+### Bug Fixes
+
+* **production:** add port ([927d56d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/927d56d296739459f1c52078ccd46693c9993b29))
+
 ## [3.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.1...3.1.2) (2023-09-07)
 
 
