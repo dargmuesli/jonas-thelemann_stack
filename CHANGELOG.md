@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.3...3.1.4) (2023-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update quay.io/hedgedoc/hedgedoc:1.9.9-alpine docker digest to a0e529f ([10f54a5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/10f54a501005f9e08bf335e86d0b83cc33921bf1))
+
 ## [3.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.2...3.1.3) (2023-09-07)
 
 
