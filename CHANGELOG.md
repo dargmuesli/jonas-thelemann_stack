@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.1...3.1.2) (2023-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update ([4832a64](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4832a647be6a9dda20b490f50efd1269ed7d7137))
+
 ## [3.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.0...3.1.1) (2023-09-03)
 
 
