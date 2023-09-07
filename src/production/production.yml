@@ -24,7 +24,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:1.12.1@sha256:230a0a7eb0aec4b0ed7b37eae58ee0344dc0995618be2bda7f5f4a1ade42309b
+    image: ghcr.io/dargmuesli/creal:1.12.4@sha256:6c9faa3a2a6ba0839d8be709847d78730fc1b48615c499b639817d08c98ba39a
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -53,7 +53,7 @@ services:
     #   - (( append ))
     #   - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
     #   - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    # image: ghcr.io/dargmuesli/jonas-thelemann:5.12.7@sha256:7bee4c30be72647baf9ca61e5b2963e82d3ed1f0cb722bcd120da5f54b77ac2c
+    # image: ghcr.io/dargmuesli/jonas-thelemann:5.14.6@sha256:ee027a564450bc6c41a5993d51809d9beaa6697bc8c7c929cba2330af22e1786
     # user: (( prune ))
     # volumes: (( prune ))
   minio: (( prune ))
@@ -127,7 +127,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:3.12.3@sha256:9c1cba2de3767f8def2b69ff7fe58550ea3a57c2d89d72eea17cbb469a0e8b67
+    image: ghcr.io/dargmuesli/trapparty:3.12.5@sha256:b2bd4d4ce1911581a3639da5c9d0fb8f9ba77b307637b30b21de6f9d6e285d57
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
