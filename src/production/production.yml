@@ -129,7 +129,7 @@ services:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
       - traefik.http.services.trapparty.loadbalancer.server.port=3001
-    image: ghcr.io/dargmuesli/trapparty:3.12.7@sha256:19c9b986f1aa4d70efd380ddb9a5e2537a9493fbc64e605db34bb87cee19beda
+    image: ghcr.io/dargmuesli/trapparty:3.13.0@sha256:2671dc966feb59fd1cacf7f61ebe6ce02c1ac9dc5cdb0320601b1ca4d0e23ff4
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
