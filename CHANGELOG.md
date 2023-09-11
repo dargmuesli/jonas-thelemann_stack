@@ -1,3 +1,19 @@
+## [4.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.5...4.0.0) (2023-09-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **traefik:** prefix environment variables
+
+### Features
+
+* **traefik:** prefix environment variables ([b23b79b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b23b79b510099cdc05390fcc196afb3e6768cc52))
+
+
+### Bug Fixes
+
+* update environment variables ([f712927](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f71292756a9819736f203c08896b10414bcccedd))
+
 ## [3.1.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.4...3.1.5) (2023-09-07)
 
 
