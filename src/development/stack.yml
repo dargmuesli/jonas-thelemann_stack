@@ -126,11 +126,10 @@ services:
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
-      NUXT_PUBLIC_HOST: creal.${STACK_DOMAIN}
       NUXT_PUBLIC_S3_BUCKET: ${CREAL_S3_BUCKET}
       NUXT_PUBLIC_S3_ENDPOINT: ${CREAL_S3_ENDPOINT}
       NUXT_PUBLIC_S3_REGION: ${CREAL_S3_REGION}
-      NUXT_PUBLIC_SITE_URL: ${STACK_DOMAIN}
+      NUXT_PUBLIC_SITE_URL: https://creal.${STACK_DOMAIN}
       NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/creal:dev
     secrets:
@@ -445,8 +444,7 @@ services:
       - traefik.http.services.trapparty.loadbalancer.server.port=3000
       - traefik.http.services.trapparty_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
-      NUXT_PUBLIC_HOST: trapparty.${STACK_DOMAIN}
-      NUXT_PUBLIC_SITE_URL: ${STACK_DOMAIN}
+      NUXT_PUBLIC_SITE_URL: https://trapparty.${STACK_DOMAIN}
       NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/trapparty:dev
     secrets:
