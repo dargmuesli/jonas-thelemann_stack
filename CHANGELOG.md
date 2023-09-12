@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.0...4.0.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* schedule release ([ea45b98](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ea45b988436a8c35eadaa5b850eb18339131f418))
+
 ## [4.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/3.1.5...4.0.0) (2023-09-11)
 
 
