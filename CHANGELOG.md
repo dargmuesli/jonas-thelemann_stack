@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.2...4.0.3) (2023-09-13)
+
+
+### Bug Fixes
+
+* **deps:** update ([73cda0c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/73cda0c3bbc929b85a49186ea2d042a14760c9a8))
+
 ## [4.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.1...4.0.2) (2023-09-12)
 
 
