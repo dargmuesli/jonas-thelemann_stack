@@ -24,7 +24,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:1.14.2@sha256:119a6bc232b8beb1fe6afd7b2ea729fe73ce1c1e4d7764b5a4f869b34b86b3f0
+    image: ghcr.io/dargmuesli/creal:1.14.3@sha256:f890bd17ab3c7dc98ad0e94c869213d477fed9337c04f60aa217f2db435888ae
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -127,7 +127,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:3.13.2@sha256:269445006e2b7f46036c6da328db040ecc395a3c0749c73cd3bff666ae938e94
+    image: ghcr.io/dargmuesli/trapparty:3.13.3@sha256:0ecc52547fe9d99a3be2ef70e593bc3e7597aaabfb3ca63812455014283def7e
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
