@@ -46,9 +46,6 @@ secrets:
   portainer_admin-password:
   # The container manager's password for the user `admin`.
     file: ./secrets/portainer/admin-password.secret
-  postgres_db:
-  # The database's name.
-    file: ./secrets/postgres/db.secret
   postgres_password:
   # The database default user's password.
     file: ./secrets/postgres/password.secret
@@ -92,7 +89,7 @@ services:
   # | Server   | postgres            |
   # | Username | [postgres_user]     |
   # | Password | [postgres_password] |
-  # | Database | [postgres_db]       |
+  # | Database |                     |
   #
   # Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
     deploy:
@@ -352,12 +349,10 @@ services:
   # You can access the database via `adminer`.
     environment:
       POSTGRES_ADDITIONAL_DBS: creal creal_strapi hedgedoc nextcloud trapparty
-      POSTGRES_DB_FILE: /run/secrets/postgres_db
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
     image: postgres:16.0-alpine@sha256:4632571d35c43c53141ad14e66390ceaa4e6e5d6659aa2d122aab77d591915cd
     secrets:
-    - postgres_db
     - postgres_password
     - postgres_user
     volumes:
@@ -449,7 +444,6 @@ services:
     image: dargmuesli/trapparty:dev
     secrets:
     - trapparty_sqitch-target
-    - postgres_db
     - postgres_role_trapparty_postgraphile_password
     user: node:node
     volumes:

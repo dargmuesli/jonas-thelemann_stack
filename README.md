@@ -78,10 +78,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The database backup service's database name.
     
- - ### `postgres_db`
-    
-    The database's name.
-    
  - ### `postgres_password`
     
     The database default user's password.
@@ -137,7 +133,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     | Server   | postgres            |
     | Username | [postgres_user]     |
     | Password | [postgres_password] |
-    | Database | [postgres_db]       |
+    | Database |                     |
     
     Values in square brackets are [Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
     
