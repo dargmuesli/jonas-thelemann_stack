@@ -1,3 +1,10 @@
+## [5.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/5.0.0...5.1.0) (2023-09-25)
+
+
+### Features
+
+* **postgres:** remove default database ([444d87c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/444d87c16d6f608134936d9efead87cdff8c2dc0))
+
 ## [5.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.3...5.0.0) (2023-09-25)
 
 
