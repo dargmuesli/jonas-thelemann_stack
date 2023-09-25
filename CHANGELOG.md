@@ -1,3 +1,16 @@
+## [5.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.3...5.0.0) (2023-09-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update postgres docker tag to v16
+* **deps:** update prodrigestivill/postgres-backup-local docker tag to v16
+
+### Miscellaneous Chores
+
+* **deps:** update postgres docker tag to v16 ([383c01a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/383c01aad582d72ab1fa285b4f7962f1a9b767b2))
+* **deps:** update prodrigestivill/postgres-backup-local docker tag to v16 ([c1b2975](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c1b2975ad26dcd152b5bf32a6f4751c0b0f29bf5))
+
 ## [5.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/4.0.3...5.0.0-beta.1) (2023-09-22)
 
 
