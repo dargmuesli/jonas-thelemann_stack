@@ -351,7 +351,7 @@ services:
       POSTGRES_ADDITIONAL_DBS: creal creal_strapi hedgedoc nextcloud trapparty
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: postgres:16.0-alpine@sha256:c0c100270998cbd8bc3b1d8e5820f6b406cf53b71907429fe7edaf64180b06c5
+    image: postgres:16.0-alpine@sha256:393af370442a1153e66ca01b184f08286d8f505fe8d5f2293092d8116d1af837
     secrets:
     - postgres_password
     - postgres_user
