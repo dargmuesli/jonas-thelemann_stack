@@ -11,9 +11,6 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 18.0.0
     version: 18.0.0
-  conventional-changelog-conventionalcommits:
-    specifier: 7.0.2
-    version: 7.0.2
   dargstack:
     specifier: 2.2.1
     version: 2.2.1
