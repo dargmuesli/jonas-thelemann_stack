@@ -1,3 +1,14 @@
+## [6.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/5.1.2...6.0.0) (2023-10-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **creal_strapi:** rework secrets
+
+### Features
+
+* **creal_strapi:** rework secrets ([60a0c0d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/60a0c0d15b002b088984c2738a1fc94b07bd905b))
+
 ## [5.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/5.1.1...5.1.2) (2023-10-22)
 
 
