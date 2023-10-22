@@ -38,6 +38,22 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's CMS administrator JWT secret.
     
+ - ### `creal_strapi_api-token-salt`
+    
+    The DJ website's CMS administrator admin token salt.
+    
+ - ### `creal_strapi_app-keys`
+    
+    The DJ website's CMS session secrets.
+    
+ - ### `creal_strapi_jwt-secret`
+    
+    The DJ website's CMS JWT secret.
+    
+ - ### `creal_strapi_transfer-token-salt`
+    
+    The DJ website's CMS transfer token salt.
+    
  - ### `hedgedoc_db_url`
     
     The markdown collaboration tool's database url.

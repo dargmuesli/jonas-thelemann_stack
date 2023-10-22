@@ -18,7 +18,19 @@ secrets:
     file: ./secrets/creal/sqitch-target.secret
   creal_strapi_admin-jwt-secret:
   # The DJ website's CMS administrator JWT secret.
-    file: ./secrets/creal_strapi/admin-jwt-secret.secret
+    file: ./secrets/creal_strapi/admin-jwt.secret
+  creal_strapi_api-token-salt:
+  # The DJ website's CMS administrator admin token salt.
+    file: ./secrets/creal_strapi/api-token-salt.secret
+  creal_strapi_app-keys:
+  # The DJ website's CMS session secrets.
+    file: ./secrets/creal_strapi/app-keys.secret
+  creal_strapi_jwt-secret:
+  # The DJ website's CMS JWT secret.
+    file: ./secrets/creal_strapi/jwt.secret
+  creal_strapi_transfer-token-salt:
+  # The DJ website's CMS transfer token salt.
+    file: ./secrets/creal_strapi/transfer-token-salt.secret
   hedgedoc_db_url:
   # The markdown collaboration tool's database url.
     file: ./secrets/hedgedoc/db_url.secret
@@ -166,12 +178,22 @@ services:
       - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
     environment:
       ADMIN_JWT_SECRET_FILE: /run/secrets/creal_strapi_admin-jwt-secret
-      DATABASE_NAME: creal_strapi
+      API_TOKEN_SALT_SECRET_FILE: /run/secrets/creal_strapi_api-token-salt
+      APP_KEYS_SECRET_FILE: /run/secrets/creal_strapi_app-keys
       DATABASE_HOST: postgres
+      DATABASE_NAME: creal_strapi
       DATABASE_PORT: 5432
+      JWT_SECRET_FILE: /run/secrets/creal_strapi_jwt-secret
+      POSTGRES_PASSWORD_SECRET_FILE: /run/secrets/postgres_password
+      POSTGRES_USER_SECRET_FILE: /run/secrets/postgres_user
+      TRANSFER_TOKEN_SALT_SECRET_FILE: /run/secrets/creal_strapi_transfer-token-salt
     image: dargmuesli/creal_strapi:dev
     secrets:
     - creal_strapi_admin-jwt-secret
+    - creal_strapi_api-token-salt
+    - creal_strapi_app-keys
+    - creal_strapi_jwt-secret
+    - creal_strapi_transfer-token-salt
     - postgres_password
     - postgres_user
     user: node:node
