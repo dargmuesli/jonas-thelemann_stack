@@ -1,3 +1,10 @@
+## [5.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/5.1.1...5.1.2) (2023-10-22)
+
+
+### Bug Fixes
+
+* schedule release ([8fbca4f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8fbca4f366d648d5f626ca17e89496b22a569e1c))
+
 ## [5.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/5.1.0...5.1.1) (2023-10-08)
 
 
