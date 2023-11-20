@@ -127,7 +127,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:3.14.1@sha256:8ac7a5ca94873f8d0468857ef1141af98c56350e9aa1cede84f5f0ac11e9ac50
+    image: ghcr.io/dargmuesli/trapparty:3.14.2@sha256:320f9cc9e8a5fb6f0af0e7db7dc99fee49ffbe7c7f4e8452a8c13e1bea7ce7a7
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
