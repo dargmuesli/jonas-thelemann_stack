@@ -329,7 +329,7 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
-    image: nginx:1.25.3-alpine@sha256:3923f8de8d2214b9490e68fd6ae63ea604deddd166df2755b788bef04848b9bc
+    image: nginx:1.25.3-alpine@sha256:05ca8fa605c636a607b81ec05e92ea53eae1a37ce45eb630280d8867187da56f
     volumes:
     - ../production/configurations/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
