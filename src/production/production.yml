@@ -24,7 +24,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:1.18.6@sha256:3a2a861baa1f89d5f89c2fca5a210181dab7547f570d7e47eac564d3b3fb36c4
+    image: ghcr.io/dargmuesli/creal:1.18.6
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -37,7 +37,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal_strapi:2.8.5@sha256:f55835d97c0b979f1ed5f2a42035d46784b9940bf2ac948b32e78ad24112f1d1
+    image: ghcr.io/dargmuesli/creal_strapi:2.8.5
     user: (( prune ))
     volumes:
     - (( prune ))
@@ -53,7 +53,7 @@ services:
     #   - (( append ))
     #   - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
     #   - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    # image: ghcr.io/dargmuesli/jonas-thelemann:5.14.6@sha256:ee027a564450bc6c41a5993d51809d9beaa6697bc8c7c929cba2330af22e1786
+    # image: ghcr.io/dargmuesli/jonas-thelemann:5.14.6
     # user: (( prune ))
     # volumes: (( prune ))
   minio: (( prune ))
@@ -76,7 +76,7 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: prodrigestivill/postgres-backup-local:16-alpine@sha256:e72ca1c987e22dedf495ddd6c397fab8b3a9cb9cc06bf8364a27eb9f539726fe
+    image: prodrigestivill/postgres-backup-local:16-alpine
     secrets:
     - postgres-backup_db
     - postgres_password
@@ -119,7 +119,7 @@ services:
     - --watch
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
-    image: ldez/traefik-certs-dumper:v2.8.3@sha256:f634c0dac3c67894d0d2f1cfe27ba060c081075290cbf68af3254b574e04efd3
+    image: ldez/traefik-certs-dumper:v2.8.3
     volumes:
     - acme_data:/etc/traefik/acme/
   trapparty:
@@ -127,7 +127,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:3.14.5@sha256:3767405d2ff8e827a2b7dbcc03b7bca87dc2c37d231a1228dacc6622228e131d
+    image: ghcr.io/dargmuesli/trapparty:3.14.5
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
