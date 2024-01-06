@@ -206,6 +206,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     Backup service for `postgres`.
     
+ - ### `redis`
+    
+    You cannot access the key-value store via a web interface.
+    
  - ### `thelounge`
     
     You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
