@@ -1,3 +1,11 @@
+## [6.0.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.9...6.0.10) (2024-01-06)
+
+
+### Performance Improvements
+
+* **nextcloud:** add redis ([09b23b6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/09b23b6c822688493c9a070df033761597d53fcb))
+* **nextcloud:** add redis ([#151](https://github.com/dargmuesli/jonas-thelemann_stack/issues/151)) ([70166e0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/70166e0e24f8ca486750432559486a7ea2c8a1e8))
+
 ## [6.0.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.8...6.0.9) (2024-01-03)
 
 
