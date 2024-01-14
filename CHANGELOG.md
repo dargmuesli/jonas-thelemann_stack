@@ -1,3 +1,10 @@
+## [6.0.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.11...6.0.12) (2024-01-14)
+
+
+### Bug Fixes
+
+* schedule release ([04b4b86](https://github.com/dargmuesli/jonas-thelemann_stack/commit/04b4b8691f05897b84505f9f948c7f733dd957ab))
+
 ## [6.0.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.10...6.0.11) (2024-01-06)
 
 
