@@ -47,15 +47,15 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
-  jonas-thelemann: (( prune ))
-    # deploy:
-    #   labels:
-    #   - (( append ))
-    #   - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    #   - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
-    # image: ghcr.io/dargmuesli/jonas-thelemann:5.14.6
-    # user: (( prune ))
-    # volumes: (( prune ))
+  jonas-thelemann:
+    deploy:
+      labels:
+      - (( append ))
+      - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
+      - traefik.http.services.jonas-thelemann.loadbalancer.server.port=80
+    image: ghcr.io/dargmuesli/jonas-thelemann:5.22.5
+    user: (( prune ))
+    volumes: (( prune ))
   minio: (( prune ))
   nextcloud_nginx:
     deploy:
