@@ -31,7 +31,7 @@ create "traefik" \
     `# creal/postgraphile` "creal-postgraphile.localhost" \
     `# creal/strapi` "creal-strapi.localhost" \
     `# hedgedoc` "hedgedoc.localhost" \
-    `# jonas-thelemann` "localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
+    `# jonas-thelemann` "localhost" "backend.localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
     `# minio` "minio.localhost" "s3.localhost" "creal-audio.s3.localhost" \
     `# nextcloud` "nextcloud.localhost" \
     `# portainer` "portainer.localhost" \

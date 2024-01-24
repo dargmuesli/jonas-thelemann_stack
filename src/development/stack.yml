@@ -243,15 +243,15 @@ services:
       - traefik.enable=true
       - traefik.http.routers.jonas-thelemann.entryPoints=web
       - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme
-      - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
+      - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann.service=jonas-thelemann #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.entryPoints=web-secure
-      - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
+      - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.service=jonas-thelemann #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure_nuxt.entryPoints=nuxt #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure_nuxt.service=jonas-thelemann_secure_nuxt #DARGSTACK-REMOVE
-      - traefik.http.routers.jonas-thelemann_secure_nuxt.rule=Host(`${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
+      - traefik.http.routers.jonas-thelemann_secure_nuxt.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
       - traefik.http.services.jonas-thelemann_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
