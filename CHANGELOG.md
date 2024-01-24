@@ -1,3 +1,11 @@
+## [6.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.14...6.1.0) (2024-01-24)
+
+
+### Features
+
+* **jonas-thelemann:** add backend subdomain ([1aad18a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1aad18aac2c4f8f11cefc0a7a1c99488bc489d69))
+* **jonas-thelemann:** reenable for production ([aeb00ec](https://github.com/dargmuesli/jonas-thelemann_stack/commit/aeb00ec7b79ea1e07c60d1778380295414266e7a))
+
 ## [6.0.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.13...6.0.14) (2024-01-23)
 
 
