@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.2...6.1.3) (2024-01-25)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/trapparty docker tag to v3.14.7 ([ca6dfc7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ca6dfc768ffe0422904ed6f429643feb9de96755))
+
 ## [6.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.1...6.1.2) (2024-01-25)
 
 
