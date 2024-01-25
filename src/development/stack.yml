@@ -326,12 +326,19 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.permanent=true
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.regex=https://(.*)/.well-known/(?:card|cal)dav
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.replacement=https://$${1}/remote.php/dav
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.permanent=true
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.regex=https://(.*)/.well-known/(.*)
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.replacement=https://$${1}/index.php/$${2}
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.regex=.*
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.regex=.*
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
       - traefik.http.routers.nextcloud_nginx.middlewares=redirectscheme
       - traefik.http.routers.nextcloud_nginx.rule=Host(`nextcloud.${STACK_DOMAIN}`)
+      - traefik.http.routers.nextcloud_nginx_secure.middlewares=nextcloud_nginx_secure_redirectregex_dav,nextcloud_nginx_secure_redirectregex_well-known
       - traefik.http.routers.nextcloud_nginx_secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.nextcloud_nginx_secure_calendar.middlewares=nextcloud_nginx_secure_redirectregex_calendar
