@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.0...6.1.1) (2024-01-25)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** correct port ([c0492b1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c0492b13f7670557cf2061a4d80b50e48b41b014))
+
 ## [6.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.0.14...6.1.0) (2024-01-24)
 
 
