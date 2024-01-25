@@ -1,3 +1,10 @@
+## [6.1.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.11...6.1.12) (2024-01-25)
+
+
+### Bug Fixes
+
+* **nextcloud:** reintroduce redirects ([3b831fd](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3b831fd53e4d71347512c9007a7396a232b12e61))
+
 ## [6.1.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.10...6.1.11) (2024-01-25)
 
 
