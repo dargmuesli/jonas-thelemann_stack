@@ -1,3 +1,10 @@
+## [6.1.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.10...6.1.11) (2024-01-25)
+
+
+### Bug Fixes
+
+* **nextcloud:** remove `.well-known` redirect regex ([0131eab](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0131eab6f2533657f65de9dbf0f506a22037521d))
+
 ## [6.1.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.9...6.1.10) (2024-01-25)
 
 
