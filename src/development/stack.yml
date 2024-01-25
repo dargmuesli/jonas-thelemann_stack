@@ -261,7 +261,7 @@ services:
       - traefik.http.routers.jonas-thelemann_secure_nuxt.entryPoints=nuxt #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure_nuxt.service=jonas-thelemann_secure_nuxt #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure_nuxt.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`) #DARGSTACK-REMOVE
-      - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000 #DARGSTACK-REMOVE
+      - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000
       - traefik.http.services.jonas-thelemann_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
       NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
