@@ -49,6 +49,12 @@ secrets:
   jobber_msmtprc:
   # The job scheduler's SMTP client configuration.
     file: ./secrets/jobber/msmtprc.secret
+  jonas-thelemann_nodemailer-transporter:
+  # The email service's SMTP configuration.
+    file: ./secrets/jonas-thelemann/nodemailer-transporter.secret
+  jonas-thelemann_turnstile-key:
+  # The captcha provider's application key.
+    file: ./secrets/jonas-thelemann/turnstile-key.secret
   nextcloud_admin-password:
   # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
@@ -258,6 +264,9 @@ services:
       NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
+    secrets:
+      - jonas-thelemann_nodemailer-transporter
+      - jonas-thelemann_turnstile-key
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/

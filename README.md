@@ -78,6 +78,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The job scheduler's SMTP client configuration.
     
+ - ### `jonas-thelemann_nodemailer-transporter`
+    
+    The email service's SMTP configuration.
+    
+ - ### `jonas-thelemann_turnstile-key`
+    
+    The captcha provider's application key.
+    
  - ### `nextcloud_admin-password`
     
     The cloud admin user's password.
