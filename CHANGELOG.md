@@ -1,3 +1,10 @@
+## [6.1.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.5...6.1.6) (2024-01-25)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add environment variables ([6d361d9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6d361d9ba84b4ae0e72df26160fa41f24d6cd740))
+
 ## [6.1.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.4...6.1.5) (2024-01-25)
 
 
