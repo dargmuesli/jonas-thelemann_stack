@@ -1,3 +1,10 @@
+## [6.1.15](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.14...6.1.15) (2024-01-25)
+
+
+### Bug Fixes
+
+* **nextcloud:** add cloudflare ip header ([3a9e31b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3a9e31bcc23f6e1dc4ab270cb17248e2f3a31e01))
+
 ## [6.1.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.13...6.1.14) (2024-01-25)
 
 
