@@ -49,6 +49,12 @@ secrets:
   jobber_msmtprc:
   # The job scheduler's SMTP client configuration.
     file: ./secrets/jobber/msmtprc.secret
+  jonas-thelemann_nodemailer-transporter:
+  # The email service's SMTP configuration.
+    file: ./secrets/jonas-thelemann/nodemailer-transporter.secret
+  jonas-thelemann_turnstile-key:
+  # The captcha provider's application key.
+    file: ./secrets/jonas-thelemann/turnstile-key.secret
   nextcloud_admin-password:
   # The cloud admin user's password.
     file: ./secrets/nextcloud/admin-password.secret
@@ -241,11 +247,14 @@ services:
     deploy:
       labels:
       - traefik.enable=true
+      - traefik.http.middlewares.jonas-thelemann_cors.headers.accessControlAllowOriginList=https://jonas-thelemann.de
+      - traefik.http.middlewares.jonas-thelemann_cors.headers.accessControlAllowHeaders=content-type
       - traefik.http.routers.jonas-thelemann.entryPoints=web
       - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme
       - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann.service=jonas-thelemann #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.entryPoints=web-secure
+      - traefik.http.routers.jonas-thelemann_secure.middlewares=jonas-thelemann_cors
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.service=jonas-thelemann #DARGSTACK-REMOVE
@@ -258,6 +267,9 @@ services:
       NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
+    secrets:
+      - jonas-thelemann_nodemailer-transporter
+      - jonas-thelemann_turnstile-key
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
