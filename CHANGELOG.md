@@ -1,3 +1,10 @@
+## [6.1.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.8...6.1.9) (2024-01-25)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/jonas-thelemann docker tag to v5.23.6 ([f3a711d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f3a711d24b3a8333f0e73d17c518a50c49ec6d4f))
+
 ## [6.1.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.7...6.1.8) (2024-01-25)
 
 
