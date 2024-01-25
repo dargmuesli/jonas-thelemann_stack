@@ -1,3 +1,10 @@
+## [6.1.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.13...6.1.14) (2024-01-25)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add turnstile secret variable temporarily ([abb65a1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/abb65a1108d4cdf7b07bb392f7e56f8a722d043f))
+
 ## [6.1.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.12...6.1.13) (2024-01-25)
 
 
