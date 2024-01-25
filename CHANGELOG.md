@@ -1,3 +1,11 @@
+## [6.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.1...6.1.2) (2024-01-25)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** add cors middleware ([f6b2c79](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f6b2c799bfa58e470e6d3eedc9464049298a7174))
+* **jonas-thelemann:** add missing secrets ([9940475](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9940475b1c7e63a0ef0a606a0dbbfaa09a58e78c))
+
 ## [6.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.0...6.1.1) (2024-01-25)
 
 
