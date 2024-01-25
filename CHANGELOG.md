@@ -1,3 +1,10 @@
+## [6.1.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.9...6.1.10) (2024-01-25)
+
+
+### Bug Fixes
+
+* **nextcloud:** update configuration ([a6c5619](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6c56191e207fc9bbb9ff6f77b799c72de427a10))
+
 ## [6.1.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.8...6.1.9) (2024-01-25)
 
 
