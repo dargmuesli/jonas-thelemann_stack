@@ -327,11 +327,11 @@ services:
       labels:
       - traefik.enable=true
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.permanent=true
-      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.regex=https://(.*)/.well-known/(?:card|cal)dav
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.regex=https://([^/]+)/.well-known/(?:card|cal)dav
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_dav.redirectregex.replacement=https://$${1}/remote.php/dav
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.permanent=true
-      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.regex=https://(.*)/.well-known/(.*)
-      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.replacement=https://$${1}/index.php/$${2}
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.regex=https://([^/]+)/.well-known/(.*)
+      - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_well-known.redirectregex.replacement=https://$${1}/index.php/.well-known/$${2}
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.regex=.*
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_calendar.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.regex=.*
