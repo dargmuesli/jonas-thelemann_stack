@@ -1,3 +1,10 @@
+## [6.1.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.12...6.1.13) (2024-01-25)
+
+
+### Bug Fixes
+
+* **nextcloud:** correct redirect regexes ([7903ce3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7903ce3e37ca1aec3a2c59c78b564da729decb0b))
+
 ## [6.1.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.11...6.1.12) (2024-01-25)
 
 
