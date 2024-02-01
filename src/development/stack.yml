@@ -247,14 +247,12 @@ services:
     deploy:
       labels:
       - traefik.enable=true
-      - traefik.http.middlewares.jonas-thelemann_cors.headers.accessControlAllowOriginList=https://jonas-thelemann.de
-      - traefik.http.middlewares.jonas-thelemann_cors.headers.accessControlAllowHeaders=content-type
       - traefik.http.routers.jonas-thelemann.entryPoints=web
       - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme
       - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann.service=jonas-thelemann #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.entryPoints=web-secure
-      - traefik.http.routers.jonas-thelemann_secure.middlewares=jonas-thelemann_cors
+      - traefik.http.routers.jonas-thelemann_secure.middlewares=header_cors
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`, `backend.${STACK_DOMAIN}`, `www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.service=jonas-thelemann #DARGSTACK-REMOVE
