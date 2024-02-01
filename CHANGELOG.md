@@ -1,3 +1,10 @@
+## [6.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.16...6.2.0) (2024-02-01)
+
+
+### Features
+
+* **jonas-thelemann:** allow all cors origins ([5dbc564](https://github.com/dargmuesli/jonas-thelemann_stack/commit/5dbc564738b392d34a97a06001d46ff498cfaf79))
+
 ## [6.1.16](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.15...6.1.16) (2024-01-25)
 
 
