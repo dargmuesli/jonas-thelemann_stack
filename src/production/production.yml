@@ -52,7 +52,7 @@ services:
       labels:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/jonas-thelemann:5.23.6
+    image: ghcr.io/dargmuesli/jonas-thelemann:5.23.7
     user: (( prune ))
     volumes: (( prune ))
   minio: (( prune ))
