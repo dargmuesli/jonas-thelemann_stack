@@ -1,3 +1,10 @@
+## [6.2.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.2.0...6.2.1) (2024-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/creal to v1.19.1 ([2487bff](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2487bff3e76776a250d031992994ea91cc99a8ce))
+
 ## [6.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.1.16...6.2.0) (2024-02-01)
 
 
