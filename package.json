@@ -16,5 +16,6 @@
     "dargstack": "2.2.1",
     "dargstack_rgen": "0.9.27",
     "husky": "9.0.11"
-  }
+  },
+  "type": "module"
 }
