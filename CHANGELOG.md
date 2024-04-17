@@ -1,3 +1,14 @@
+## [7.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.2.9...7.0.0) (2024-04-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **gtag:** migrate from google analytics
+
+### Code Refactoring
+
+* **gtag:** migrate from google analytics ([6e496f6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6e496f62645aaff1fa973ca3a1f5db4cd99ee010))
+
 ## [6.2.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/6.2.8...6.2.9) (2024-04-07)
 
 
