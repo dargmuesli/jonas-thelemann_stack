@@ -144,8 +144,8 @@ services:
       NUXT_PUBLIC_CREAL_S3_BUCKET: ${CREAL_S3_BUCKET}
       NUXT_PUBLIC_CREAL_S3_ENDPOINT: ${CREAL_S3_ENDPOINT}
       NUXT_PUBLIC_CREAL_S3_REGION: ${CREAL_S3_REGION}
+      NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
       NUXT_PUBLIC_SITE_URL: https://creal.${STACK_DOMAIN}
-      NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/creal:dev
     secrets:
     - creal_aws-credentials
@@ -262,9 +262,9 @@ services:
       - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000
       - traefik.http.services.jonas-thelemann_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
+      NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
       NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
-      NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
       NUXT_TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY} # TODO: move to file (https://github.com/nuxt-modules/turnstile/pull/298)
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
@@ -482,8 +482,8 @@ services:
       - traefik.http.services.trapparty.loadbalancer.server.port=3000
       - traefik.http.services.trapparty_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
+      NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
       NUXT_PUBLIC_SITE_URL: https://trapparty.${STACK_DOMAIN}
-      NUXT_PUBLIC_VIO_GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
     image: dargmuesli/trapparty:dev
     secrets:
     - trapparty_sqitch-target
