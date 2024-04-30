@@ -1,3 +1,10 @@
+## [7.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.0.2...7.0.3) (2024-04-30)
+
+
+### Bug Fixes
+
+* **traefik:** remove pilot configuration ([d396f37](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d396f37e440cf3134e66ab70805892925eec6935))
+
 ## [7.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.0.1...7.0.2) (2024-04-30)
 
 
