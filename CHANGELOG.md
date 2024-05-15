@@ -1,3 +1,10 @@
+## [7.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.0.4...7.1.0) (2024-05-15)
+
+
+### Features
+
+* **jobber:** sink to sentry ([3377a93](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3377a932abbee1ebc3b0ce8d72ea0030cc34c3c8))
+
 ## [7.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.0.3...7.0.4) (2024-05-12)
 
 
