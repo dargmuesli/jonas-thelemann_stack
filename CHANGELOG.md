@@ -1,3 +1,10 @@
+## [7.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.0...7.1.1) (2024-05-18)
+
+
+### Bug Fixes
+
+* **jobber:** deactivate virtual environment when done ([2761718](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2761718ddfc6f22bc6e2132fbac46581698a8514))
+
 ## [7.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.0.4...7.1.0) (2024-05-15)
 
 
