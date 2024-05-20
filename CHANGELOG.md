@@ -1,3 +1,10 @@
+## [7.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.1...7.1.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/trapparty to v3.15.1 ([1f7b71e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1f7b71ea0da5087dd1ae704007a8fec982dc9fe2))
+
 ## [7.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.0...7.1.1) (2024-05-18)
 
 
