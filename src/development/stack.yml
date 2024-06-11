@@ -444,7 +444,7 @@ services:
       placement:
         constraints:
         - node.role == manager
-    image: traefik:v3.0.1
+    image: traefik:v3.0.2
     ports:
     - mode: host
       protocol: tcp
