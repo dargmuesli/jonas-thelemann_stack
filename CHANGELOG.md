@@ -1,3 +1,10 @@
+## [7.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.7...7.2.0) (2024-06-26)
+
+
+### Features
+
+* **nextcloud:** add cron service ([e8a952d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e8a952d332374ef482d083324abb89ccb5a5438d))
+
 ## [7.1.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.6...7.1.7) (2024-06-23)
 
 
