@@ -320,6 +320,20 @@ services:
     - postgres_user
     volumes:
     - nextcloud_data:/var/www/html/
+  nextcloud_cron:
+  # You can access nextcloud via `nextcloud_nginx`.
+    entrypoint: /cron.sh
+    env_file: ../production/configurations/nextcloud/nextcloud.env
+    environment:
+      REDIS_HOST: redis
+    image: nextcloud:29.0.3-fpm-alpine
+    secrets:
+    - nextcloud_admin-password
+    - nextcloud_admin-user
+    - postgres_password
+    - postgres_user
+    volumes:
+    - nextcloud_data:/var/www/html/
   nextcloud_nginx:
   # You can access nexcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
     deploy:

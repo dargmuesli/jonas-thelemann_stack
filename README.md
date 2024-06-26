@@ -194,6 +194,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access nextcloud via `nextcloud_nginx`.
     
+ - ### `nextcloud_cron`
+    
+    You can access nextcloud via `nextcloud_nginx`.
+    
  - ### `nextcloud_nginx`
     
     You can access nexcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
