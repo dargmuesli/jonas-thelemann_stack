@@ -1,3 +1,10 @@
+## [7.2.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.11...7.2.12) (2024-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/jonas-thelemann to v5.26.4 ([fc4b648](https://github.com/dargmuesli/jonas-thelemann_stack/commit/fc4b64815d13527538cf330ecd2e3b9e51b6735f))
+
 ## [7.2.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.10...7.2.11) (2024-06-28)
 
 
