@@ -162,7 +162,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.creal_postgraphile.middlewares=redirectscheme
       - traefik.http.routers.creal_postgraphile.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.creal_postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.creal_postgraphile_secure.middlewares=header_cors #DARGSTACK-REMOVE
       - traefik.http.routers.creal_postgraphile_secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_postgraphile.loadbalancer.server.port=5000
@@ -252,7 +252,7 @@ services:
       - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`) || Host(`backend.${STACK_DOMAIN}`) || Host(`www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann.service=jonas-thelemann #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.entryPoints=web-secure
-      - traefik.http.routers.jonas-thelemann_secure.middlewares=header_cors
+      - traefik.http.routers.jonas-thelemann_secure.middlewares=header_cors #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`${STACK_DOMAIN}`) || Host(`backend.${STACK_DOMAIN}`) || Host(`www.${STACK_DOMAIN}`)
       - traefik.http.routers.jonas-thelemann_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.jonas-thelemann_secure.service=jonas-thelemann #DARGSTACK-REMOVE
@@ -351,7 +351,7 @@ services:
       - traefik.http.middlewares.nextcloud_nginx_secure_redirectregex_contacts.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
       - traefik.http.routers.nextcloud_nginx.middlewares=redirectscheme
       - traefik.http.routers.nextcloud_nginx.rule=Host(`nextcloud.${STACK_DOMAIN}`)
-      - traefik.http.routers.nextcloud_nginx_secure.middlewares=nextcloud_nginx_secure_redirectregex_dav,nextcloud_nginx_secure_redirectregex_well-known
+      - traefik.http.routers.nextcloud_nginx_secure.middlewares=nextcloud_nginx_secure_redirectregex_dav,nextcloud_nginx_secure_redirectregex_well-known #DARGSTACK-REMOVE
       - traefik.http.routers.nextcloud_nginx_secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.routers.nextcloud_nginx_secure_calendar.middlewares=nextcloud_nginx_secure_redirectregex_calendar
@@ -512,7 +512,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.trapparty_postgraphile.middlewares=redirectscheme
       - traefik.http.routers.trapparty_postgraphile.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
-      - traefik.http.routers.trapparty_postgraphile_secure.middlewares=header_cors
+      - traefik.http.routers.trapparty_postgraphile_secure.middlewares=header_cors #DARGSTACK-REMOVE
       - traefik.http.routers.trapparty_postgraphile_secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.trapparty_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.trapparty_postgraphile.loadbalancer.server.port=5000

@@ -13,16 +13,19 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.1generator_secure.middlewares=cloudflarewarp
       - traefik.http.routers.1generator_secure.tls.certresolver=default
   adminer:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.adminer_secure.middlewares=cloudflarewarp
       - traefik.http.routers.adminer_secure.tls.certresolver=default
   creal:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.creal_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_secure.tls.certresolver=default
     image: ghcr.io/dargmuesli/creal:1.21.4
     user: (( prune ))
@@ -31,11 +34,13 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.creal_postgraphile_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.creal_postgraphile_secure.tls.certresolver=default
   creal_strapi:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.creal_strapi_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
     image: ghcr.io/dargmuesli/creal_strapi:2.8.19
     user: (( prune ))
@@ -46,6 +51,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.hedgedoc_secure.middlewares=cloudflarewarp
       - traefik.http.routers.hedgedoc_secure.tls.certresolver=default
   jobber:
     environment:
@@ -57,6 +63,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.jonas-thelemann_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
     image: ghcr.io/dargmuesli/jonas-thelemann:5.26.1
     user: (( prune ))
@@ -66,6 +73,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.nextcloud_nginx_secure.middlewares=cloudflarewarp,nextcloud_nginx_secure_redirectregex_dav,nextcloud_nginx_secure_redirectregex_well-known
       - traefik.http.routers.nextcloud_nginx_secure.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_calendar.tls.certresolver=default
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.certresolver=default
@@ -73,6 +81,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.portainer_secure.middlewares=cloudflarewarp
       - traefik.http.routers.portainer_secure.tls.certresolver=default
   postgres_backup:
   # Backup service for `postgres`.
@@ -93,6 +102,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.thelounge_secure.middlewares=cloudflarewarp
       - traefik.http.routers.thelounge_secure.tls.certresolver=default
   traefik:
     command:
@@ -100,9 +110,14 @@ services:
     - --certificatesResolvers.default.acme.email=${TRAEFIK_ACME_EMAIL}
     - --certificatesResolvers.default.acme.storage=/etc/traefik/acme/acme.json
     - --certificatesResolvers.default.acme.dnsChallenge.provider=${TRAEFIK_ACME_PROVIDER}
+    - --entryPoints.web.forwardedHeaders.trustedIPs=173.245.48.0/20,103.21.244.0/22,103.22.200.0/22,103.31.4.0/22,141.101.64.0/18,108.162.192.0/18,190.93.240.0/20,188.114.96.0/20,197.234.240.0/22,198.41.128.0/17,162.158.0.0/15,104.16.0.0/13,104.24.0.0/14,172.64.0.0/13,131.0.72.0/22,2400:cb00::/32,2606:4700::/32,2803:f800::/32,2405:b500::/32,2405:8100::/32,2a06:98c0::/29,2c0f:f248::/32
+    - --experimental.plugins.cloudflarewarp.moduleName=github.com/BetterCorp/cloudflarewarp
+    - --experimental.plugins.cloudflarewarp.version=v1.3.3
     deploy:
       labels:
       - (( append ))
+      - traefik.http.middlewares.cloudflarewarp.plugin.cloudflarewarp.disableDefault=false
+      - traefik.http.routers.traefik_secure.middlewares=cloudflarewarp
       - traefik.http.routers.traefik_secure.tls.certresolver=default
     environment:
       CF_DNS_API_TOKEN_FILE: /run/secrets/traefik_cf-dns-api-token
@@ -130,6 +145,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.trapparty_secure.middlewares=cloudflarewarp
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
     image: ghcr.io/dargmuesli/trapparty:3.15.5
     user: (( prune ))
@@ -138,6 +154,7 @@ services:
     deploy:
       labels:
       - (( append ))
+      - traefik.http.routers.trapparty_postgraphile_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.trapparty_postgraphile_secure.tls.certresolver=default
 version: "3.7"
 volumes:
