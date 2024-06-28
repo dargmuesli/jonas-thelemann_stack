@@ -1,3 +1,10 @@
+## [7.2.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.7...7.2.8) (2024-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal to v1.21.11 ([64067ae](https://github.com/dargmuesli/jonas-thelemann_stack/commit/64067ae8d88bf3373d860f4e33231c0fec5d16e4))
+
 ## [7.2.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.6...7.2.7) (2024-06-28)
 
 
