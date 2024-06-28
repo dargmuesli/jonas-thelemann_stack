@@ -27,7 +27,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:1.21.4
+    image: ghcr.io/dargmuesli/creal:1.21.5
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
