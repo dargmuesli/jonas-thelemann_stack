@@ -1,3 +1,10 @@
+## [7.2.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.2...7.2.3) (2024-06-28)
+
+
+### Bug Fixes
+
+* **traefik:** correct forwarded ip ([59d2bc4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/59d2bc491e327e604438a25f284fcc0aeb123bd1))
+
 ## [7.2.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.1...7.2.2) (2024-06-28)
 
 
