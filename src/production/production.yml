@@ -61,7 +61,7 @@ services:
     image: ghcr.io/dargmuesli/jonas-thelemann:5.23.14
     user: (( prune ))
     volumes: (( prune ))
-  minio: (( prune ))
+  # minio: (( prune )) # breaks renovate
   nextcloud_nginx:
     deploy:
       labels:
