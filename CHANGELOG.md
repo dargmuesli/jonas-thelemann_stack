@@ -1,3 +1,10 @@
+## [7.2.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.0...7.2.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* **renovate:** prune minio by dargstack remove ([60dfd3f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/60dfd3fd989974ecca4f1bc8630124598e030a94))
+
 ## [7.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.1.7...7.2.0) (2024-06-26)
 
 
