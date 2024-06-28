@@ -1,3 +1,10 @@
+## [7.2.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.5...7.2.6) (2024-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([d3911f9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d3911f966631700c5a9e5f2884f5cc8d0c89993b))
+
 ## [7.2.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.4...7.2.5) (2024-06-28)
 
 
