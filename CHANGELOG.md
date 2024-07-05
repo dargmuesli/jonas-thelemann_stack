@@ -1,3 +1,10 @@
+## [7.2.22](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.21...7.2.22) (2024-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal docker tag to v2.3.0 ([2f8f2b1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2f8f2b12627c7eb0ae82d852cb3a84763ffa1dd9))
+
 ## [7.2.21](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.20...7.2.21) (2024-07-05)
 
 
