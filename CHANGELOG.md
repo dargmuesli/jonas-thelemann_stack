@@ -1,3 +1,10 @@
+## [7.2.24](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.23...7.2.24) (2024-07-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([4f0a92d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4f0a92dbff8cc2a317e01cdded93f07cb903456c))
+
 ## [7.2.23](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.22...7.2.23) (2024-07-05)
 
 
