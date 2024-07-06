@@ -27,7 +27,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:2.5.0
+    image: ghcr.io/dargmuesli/creal:2.5.1
     user: (( prune ))
     volumes: (( prune ))
   creal_postgraphile:
@@ -65,7 +65,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/jonas-thelemann:5.26.6
+    image: ghcr.io/dargmuesli/jonas-thelemann:5.26.7
     user: (( prune ))
     volumes: (( prune ))
   # minio: (( prune )) # breaks renovate
