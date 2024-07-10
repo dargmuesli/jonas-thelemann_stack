@@ -1,3 +1,10 @@
+## [7.2.33](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.32...7.2.33) (2024-07-10)
+
+
+### Bug Fixes
+
+* **jonas-thelemann:** expose api only ([83f51bc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/83f51bca972ad5e83399566cc71d1af5460fe437))
+
 ## [7.2.32](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.31...7.2.32) (2024-07-09)
 
 
