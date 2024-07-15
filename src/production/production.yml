@@ -147,7 +147,7 @@ services:
       - (( append ))
       - traefik.http.routers.trapparty_secure.middlewares=cloudflarewarp
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:3.15.10
+    image: ghcr.io/dargmuesli/trapparty:3.15.11
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
