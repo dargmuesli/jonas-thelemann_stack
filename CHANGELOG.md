@@ -1,3 +1,10 @@
+## [7.2.41](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.40...7.2.41) (2024-09-19)
+
+
+### Bug Fixes
+
+* **nextcloud:** correct mount path ([e20fd22](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e20fd2242fdb9cabed338baea54167c67e410735))
+
 ## [7.2.40](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.39...7.2.40) (2024-09-19)
 
 
