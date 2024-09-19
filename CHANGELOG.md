@@ -1,3 +1,10 @@
+## [7.2.40](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.39...7.2.40) (2024-09-19)
+
+
+### Bug Fixes
+
+* schedule release ([006f16c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/006f16c082cf2002aaa31d0c2cfb8f05ede9563e))
+
 ## [7.2.39](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.38...7.2.39) (2024-09-15)
 
 
