@@ -1,3 +1,10 @@
+## [7.2.42](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.41...7.2.42) (2024-09-19)
+
+
+### Bug Fixes
+
+* **nextcloud-nginx:** streamline configuration ([e21f080](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e21f0807d381164dbef09c6132be82e52cb1027b))
+
 ## [7.2.41](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.40...7.2.41) (2024-09-19)
 
 
