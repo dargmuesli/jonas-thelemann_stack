@@ -1,3 +1,14 @@
+## [8.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.44...8.0.0) (2024-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update postgres docker tag to v17 (#170)
+
+### Miscellaneous Chores
+
+* **deps:** update postgres docker tag to v17 ([#170](https://github.com/dargmuesli/jonas-thelemann_stack/issues/170)) ([6910ac6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6910ac60216b512455794d8746f8206dedb01535))
+
 ## [7.2.44](https://github.com/dargmuesli/jonas-thelemann_stack/compare/7.2.43...7.2.44) (2024-09-29)
 
 
