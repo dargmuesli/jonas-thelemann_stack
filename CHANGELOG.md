@@ -1,3 +1,9 @@
+## [8.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.5...8.0.6) (2024-12-15)
+
+### Bug Fixes
+
+* schedule release ([bedd52d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/bedd52d191f45b4263361c9f2d39268644023027))
+
 ## [8.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.4...8.0.5) (2024-12-01)
 
 ### Bug Fixes
