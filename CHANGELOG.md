@@ -1,3 +1,9 @@
+## [8.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.6...8.0.7) (2024-12-16)
+
+### Bug Fixes
+
+* **environment:** add `i18n` base url variables ([#174](https://github.com/dargmuesli/jonas-thelemann_stack/issues/174)) ([6d667e1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6d667e1a34590d0779a3111a0b0c50b603aa2399))
+
 ## [8.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.5...8.0.6) (2024-12-15)
 
 ### Bug Fixes
