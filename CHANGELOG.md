@@ -1,3 +1,13 @@
+## [9.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.7...9.0.0) (2024-12-20)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update ghcr.io/dargmuesli/trapparty to 4.0.0
+
+### Miscellaneous Chores
+
+* **deps:** update ghcr.io/dargmuesli/trapparty to 4.0.0 ([6e421f5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6e421f5cb21975624c86415189540116e5ac0f25))
+
 ## [8.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/8.0.6...8.0.7) (2024-12-16)
 
 ### Bug Fixes
