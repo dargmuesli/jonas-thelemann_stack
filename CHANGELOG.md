@@ -1,3 +1,9 @@
+## [9.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/9.0.4...9.0.5) (2025-02-02)
+
+### Bug Fixes
+
+* schedule release ([65d4ae5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/65d4ae5e265eb05ec7a4ff6af2aeacc5fc5bf03b))
+
 ## [9.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/9.0.3...9.0.4) (2025-01-26)
 
 ### Bug Fixes
