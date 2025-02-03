@@ -2,15 +2,15 @@
   "author": "Jonas Thelemann <e-mail+dargmuesli/jonas-thelemann_stack@jonas-thelemann.de>",
   "description": "DargStack configuration for my website.",
   "devDependencies": {
-    "@commitlint/cli": "19.6.1",
-    "@commitlint/config-conventional": "19.6.0",
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
     "dargstack": "2.2.2",
     "dargstack_rgen": "0.9.54",
     "husky": "9.1.7"
   },
   "license": "GPL-3.0-only",
   "name": "jonas-thelemann_stack",
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@9.15.5",
   "private": true,
   "repository": "https://github.com/dargmuesli/jonas-thelemann_stack.git",
   "scripts": {
