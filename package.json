@@ -4,7 +4,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
-    "dargstack": "2.2.2",
+    "dargstack": "2.2.3",
     "dargstack_rgen": "0.9.54",
     "husky": "9.1.7"
   },
