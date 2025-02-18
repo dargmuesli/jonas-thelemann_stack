@@ -65,7 +65,7 @@ services:
       - (( append ))
       - traefik.http.routers.jonas-thelemann_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/jonas-thelemann:5.27.5
+    image: ghcr.io/dargmuesli/jonas-thelemann:5.27.6
     user: (( prune ))
     volumes: (( prune ))
   # minio: (( prune )) # breaks renovate
