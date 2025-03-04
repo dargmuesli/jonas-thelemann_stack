@@ -1,3 +1,9 @@
+## [10.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.0...10.0.1) (2025-03-04)
+
+### Bug Fixes
+
+* **creal:** update strapi to v3.0.13 ([67b3911](https://github.com/dargmuesli/jonas-thelemann_stack/commit/67b3911a5ae352b4e0b7077f8783f3220dae491d))
+
 ## [10.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/9.0.7...10.0.0) (2025-03-04)
 
 ### ⚠ BREAKING CHANGES
