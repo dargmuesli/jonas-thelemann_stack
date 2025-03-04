@@ -1,3 +1,13 @@
+## [10.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/9.0.7...10.0.0) (2025-03-04)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v31
+
+### Features
+
+* **deps:** update nextcloud docker tag to v31 ([5922a1f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/5922a1f8d533228af82c9296738923512593a995))
+
 ## [9.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/9.0.6...9.0.7) (2025-03-02)
 
 ### Bug Fixes
