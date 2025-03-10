@@ -138,7 +138,7 @@ services:
     - --watch
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
-    image: ldez/traefik-certs-dumper:v2.9.3
+    image: ldez/traefik-certs-dumper:v2.10.0
     volumes:
     - acme_data:/etc/traefik/acme/
   trapparty:
@@ -147,7 +147,7 @@ services:
       - (( append ))
       - traefik.http.routers.trapparty_secure.middlewares=cloudflarewarp
       - traefik.http.routers.trapparty_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/trapparty:4.1.3
+    image: ghcr.io/dargmuesli/trapparty:4.1.4
     user: (( prune ))
     volumes: (( prune ))
   trapparty_postgraphile:
