@@ -1,3 +1,9 @@
+## [10.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.2...10.0.3) (2025-03-20)
+
+### Bug Fixes
+
+* **package:** update dargstack casing ([e812f29](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e812f29d9a2ca83717f798cc9ca4335c20e2ca5d))
+
 ## [10.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.1...10.0.2) (2025-03-16)
 
 ### Bug Fixes
