@@ -1,6 +1,6 @@
 {
   "author": "Jonas Thelemann <e-mail+dargmuesli/jonas-thelemann_stack@jonas-thelemann.de>",
-  "description": "DargStack configuration for my website.",
+  "description": "Dargstack configuration for my website.",
   "devDependencies": {
     "@commitlint/cli": "19.8.0",
     "@commitlint/config-conventional": "19.8.0",
