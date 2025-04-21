@@ -10,7 +10,7 @@
   },
   "license": "GPL-3.0-only",
   "name": "jonas-thelemann_stack",
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.9.0",
   "private": true,
   "repository": "https://github.com/dargmuesli/jonas-thelemann_stack.git",
   "scripts": {
