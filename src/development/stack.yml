@@ -417,7 +417,7 @@ services:
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   redis:
   # You cannot access the key-value store via a web interface.
-    image: redis:7.4.2-alpine
+    image: redis:7.4.3-alpine
   thelounge:
   # You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
     deploy:
