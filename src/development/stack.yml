@@ -167,7 +167,7 @@ services:
       - traefik.http.routers.creal_postgraphile_secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.creal_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:4.14.0
+    image: graphile/postgraphile:4.14.1
     secrets:
     - creal_postgraphile_connection
     - creal_postgraphile_owner-connection
@@ -519,7 +519,7 @@ services:
       - traefik.http.routers.trapparty_postgraphile_secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
       - traefik.http.routers.trapparty_postgraphile_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.trapparty_postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:4.14.0
+    image: graphile/postgraphile:4.14.1
     secrets:
     - trapparty_postgraphile_connection
     - trapparty_postgraphile_owner-connection
