@@ -1,3 +1,9 @@
+## [10.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.0...10.1.1) (2025-05-06)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/jonas-thelemann docker tag to v5.27.12 ([f50775a](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f50775a41f2072ebf2db89465870164658856948))
+
 ## [10.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.7...10.1.0) (2025-05-06)
 
 ### Features
