@@ -1,3 +1,10 @@
+## [10.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.7...10.1.0) (2025-05-06)
+
+### Features
+
+* **nextcloud:** publish configuration ([9303fbc](https://github.com/dargmuesli/jonas-thelemann_stack/commit/9303fbc409260a8b67431d8c82925820c9aac2a3))
+* **nextcloud:** unify credentials ([6a30034](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6a30034eff907968f573143a7b752ba67d2547e5))
+
 ## [10.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.0.6...10.0.7) (2025-05-04)
 
 ### Bug Fixes
