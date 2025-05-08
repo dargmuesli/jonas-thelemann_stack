@@ -2,8 +2,8 @@
   "author": "Jonas Thelemann <e-mail+dargmuesli/jonas-thelemann_stack@jonas-thelemann.de>",
   "description": "Dargstack configuration for my website.",
   "devDependencies": {
-    "@commitlint/cli": "19.8.0",
-    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "dargstack": "2.5.1",
     "dargstack_rgen": "0.9.61",
     "husky": "9.1.7"
