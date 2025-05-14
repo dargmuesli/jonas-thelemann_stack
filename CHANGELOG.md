@@ -1,3 +1,9 @@
+## [10.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.2...10.1.3) (2025-05-14)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal docker tag to v3.1.1 ([c7b952e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c7b952e1dc61a42ce469128b66b1c910b7e1e774))
+
 ## [10.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.1...10.1.2) (2025-05-14)
 
 ### Bug Fixes
