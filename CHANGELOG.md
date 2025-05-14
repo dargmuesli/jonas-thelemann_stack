@@ -1,3 +1,9 @@
+## [10.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.1...10.1.2) (2025-05-14)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([4beb318](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4beb318c96309a8c1ca6906dabd01f8122867fcd))
+
 ## [10.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.0...10.1.1) (2025-05-06)
 
 ### Bug Fixes
