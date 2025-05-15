@@ -383,7 +383,7 @@ services:
         constraints:
         - node.role == manager
       replicas: 1
-    image: portainer/portainer-ce:2.29.2-alpine
+    image: portainer/portainer-ce:2.30.0-alpine
     secrets:
     - portainer_admin-password
     volumes:
