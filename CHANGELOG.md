@@ -1,3 +1,9 @@
+## [10.3.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.2.0...10.3.0) (2025-06-23)
+
+### Features
+
+* **jobber:** turn aws configuration into secret ([24c6cc6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/24c6cc6686abdabd09f0231561c404bfe907136f))
+
 ## [10.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.9...10.2.0) (2025-06-23)
 
 ### Features
