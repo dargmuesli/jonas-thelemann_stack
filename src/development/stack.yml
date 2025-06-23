@@ -4,6 +4,9 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 secrets:
+  creal_aws-bucket:
+  # The DJ website's AWS bucket.
+    file: ./secrets/creal/aws-bucket.secret
   creal_aws-credentials:
   # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
@@ -149,6 +152,8 @@ services:
       NUXT_PUBLIC_SITE_URL: https://creal.${STACK_DOMAIN}
     image: dargmuesli/creal:dev
     secrets:
+    - source: creal_aws-bucket
+      target: /run/environment-variables/NUXT_PRIVATE_CREAL_AWS_BUCKET
     - creal_aws-credentials
     - creal_sqitch-target
     - postgres_role_creal_postgraphile_password
