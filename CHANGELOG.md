@@ -1,3 +1,9 @@
+## [10.3.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.0...10.3.1) (2025-06-23)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([d3d519b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d3d519b66b7c592578d40cd2f8aba77c532fc5d5))
+
 ## [10.3.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.2.0...10.3.0) (2025-06-23)
 
 ### Features
