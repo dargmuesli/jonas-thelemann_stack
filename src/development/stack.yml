@@ -4,9 +4,12 @@
 # https://github.com/dargmuesli/jonas-thelemann/
 ---
 secrets:
-  creal_aws-bucket:
-  # The DJ website's AWS bucket.
-    file: ./secrets/creal/aws-bucket.secret
+  creal_s3_access-key-id:
+  # The DJ website's AWS access key id.
+    file: ./secrets/creal/s3_access-key-id.secret
+  creal_s3_secret-access-key:
+  # The DJ website's AWS access key.
+    file: ./secrets/creal/s3_secret-access-key.secret
   creal_aws-credentials:
   # The DJ website's AWS credentials.
     file: ./secrets/creal/aws-credentials.secret
@@ -146,7 +149,6 @@ services:
       - traefik.http.services.creal.loadbalancer.server.port=3000
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
-      AWS_SHARED_CREDENTIALS_FILE: /run/secrets/creal_aws-credentials
       NUXT_PUBLIC_CREAL_S3_BUCKET: ${CREAL_S3_BUCKET}
       NUXT_PUBLIC_CREAL_S3_ENDPOINT: ${CREAL_S3_ENDPOINT}
       NUXT_PUBLIC_CREAL_S3_REGION: ${CREAL_S3_REGION}
@@ -155,9 +157,10 @@ services:
       NUXT_PUBLIC_SITE_URL: https://creal.${STACK_DOMAIN}
     image: dargmuesli/creal:dev
     secrets:
-    - source: creal_aws-bucket
-      target: /run/environment-variables/NUXT_PRIVATE_CREAL_AWS_BUCKET
-    - creal_aws-credentials
+    - source: creal_s3_access-key-id
+      target: /run/environment-variables/NUXT_PRIVATE_CREAL_S3_ACCESS_KEY_ID
+    - source: creal_s3_secret-access-key
+      target: /run/environment-variables/NUXT_PRIVATE_CREAL_S3_SECRET_ACCESS_KEY
     - creal_sqitch-target
     - postgres_role_creal_postgraphile_password
     user: node:node
