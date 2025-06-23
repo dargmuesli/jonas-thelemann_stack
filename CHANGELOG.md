@@ -1,3 +1,9 @@
+## [10.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.9...10.2.0) (2025-06-23)
+
+### Features
+
+* **creal:** add aws bucket secret ([50285b8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/50285b8a2b2fcb245b4313f529eaaac1a196fc67))
+
 ## [10.1.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.1.8...10.1.9) (2025-06-15)
 
 ### Bug Fixes
