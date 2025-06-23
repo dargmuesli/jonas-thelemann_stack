@@ -18,10 +18,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
- - ### `creal_aws-bucket`
-    
-    The DJ website's AWS bucket.
-    
  - ### `creal_aws-credentials`
     
     The DJ website's AWS credentials.
@@ -33,6 +29,14 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `creal_postgraphile_owner-connection`
     
     The cReal GraphQL API's database owner URI.
+    
+ - ### `creal_s3_access-key-id`
+    
+    The DJ website's AWS access key id.
+    
+ - ### `creal_s3_secret-access-key`
+    
+    The DJ website's AWS access key.
     
  - ### `creal_sqitch-target`
     
