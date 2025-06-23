@@ -46,6 +46,9 @@ secrets:
   jobber_aws-bucket:
   # The job scheduler's AWS bucket name.
     file: ./secrets/jobber/aws-bucket.secret
+  jobber_aws-configuration:
+  # The job scheduler's AWS configuration.
+    file: ./secrets/jobber/aws-configuration.secret
   jobber_aws-credentials:
   # The job scheduler's AWS credentials.
     file: ./secrets/jobber/aws-credentials.secret
@@ -242,12 +245,13 @@ services:
       target: /etc/aliases
     - jobber_aws-bucket
     - jobber_aws-credentials
+    - source: jobber_aws-configuration
+      target: /home/jobberuser/.aws/config
     - source: jobber_msmtprc
       target: /etc/msmtprc
     volumes:
       - ../production/backups/postgres/:/backups/
       - ./configurations/jobber/.jobber:/home/jobberuser/.jobber:ro
-      - ./configurations/jobber/aws-config:/home/jobberuser/.aws/config:ro
   jonas-thelemann:
   # You can access the main project at [localhost](https://localhost/).
     deploy:
