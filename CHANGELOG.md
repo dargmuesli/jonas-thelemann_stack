@@ -1,3 +1,9 @@
+## [10.3.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.6...10.3.7) (2025-08-05)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal to 4.1.0 ([0bcc07d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0bcc07decad3570d6243b9b1fa570a98fb9433b4))
+
 ## [10.3.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.5...10.3.6) (2025-08-03)
 
 ### Bug Fixes
