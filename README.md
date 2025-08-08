@@ -283,6 +283,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The database's data.
     
+ - ### `redis_data`
+    
+    The key-value store's data.
+    
  - ### `thelounge_data`
     
     The IRC client's data.

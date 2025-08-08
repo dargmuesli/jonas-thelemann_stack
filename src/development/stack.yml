@@ -430,6 +430,8 @@ services:
   redis:
   # You cannot access the key-value store via a web interface.
     image: redis:8.2.0-alpine
+    volumes:
+    - redis_data:/data
   thelounge:
   # You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
     deploy:
@@ -550,6 +552,9 @@ volumes:
     {}
   postgres_data:
   # The database's data.
+    {}
+  redis_data:
+  # The key-value store's data.
     {}
   thelounge_data:
   # The IRC client's data.
