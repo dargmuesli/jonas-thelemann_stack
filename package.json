@@ -17,5 +17,5 @@
     "prepare": "husky"
   },
   "type": "module",
-  "version": "10.3.8"
+  "version": "10.3.9"
 }

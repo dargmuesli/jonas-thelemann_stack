@@ -1,3 +1,9 @@
+## [10.3.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.8...10.3.9) (2025-08-08)
+
+### Bug Fixes
+
+* **redis:** add data volume ([05b0b24](https://github.com/dargmuesli/jonas-thelemann_stack/commit/05b0b24f37c072b91f2b0026dbbe65b0a7947d77))
+
 ## [10.3.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.7...10.3.8) (2025-08-05)
 
 ### Bug Fixes
