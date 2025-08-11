@@ -10,9 +10,6 @@ secrets:
   creal_s3_secret-access-key:
   # The DJ website's AWS access key.
     file: ./secrets/creal/s3_secret-access-key.secret
-  creal_aws-credentials:
-  # The DJ website's AWS credentials.
-    file: ./secrets/creal/aws-credentials.secret
   creal_postgraphile_connection:
   # The cReal GraphQL API's database URI.
     file: ./secrets/creal_postgraphile/connection.secret

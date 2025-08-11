@@ -18,10 +18,6 @@ This project is deployed in accordance to the [DargStack template](https://githu
 ## secrets
 
 
- - ### `creal_aws-credentials`
-    
-    The DJ website's AWS credentials.
-    
  - ### `creal_postgraphile_connection`
     
     The cReal GraphQL API's database URI.
