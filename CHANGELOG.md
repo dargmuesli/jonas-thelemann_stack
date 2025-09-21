@@ -1,3 +1,9 @@
+## [10.3.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.12...10.3.13) (2025-09-21)
+
+### Bug Fixes
+
+* schedule release ([cafe60b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/cafe60bfcdfce5e6e95f8cd45e65d372861f8ccc))
+
 ## [10.3.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.11...10.3.12) (2025-09-14)
 
 ### Bug Fixes
