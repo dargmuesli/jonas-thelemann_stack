@@ -42,7 +42,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal_strapi:3.0.29
+    image: ghcr.io/dargmuesli/creal_strapi:3.0.30
     user: (( prune ))
     volumes:
     - (( prune ))
