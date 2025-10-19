@@ -1,3 +1,9 @@
+## [10.3.15](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.14...10.3.15) (2025-10-19)
+
+### Bug Fixes
+
+* schedule release ([e355eca](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e355eca5fee40b8329c4e07c5af5acbf94ba88d3))
+
 ## [10.3.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.13...10.3.14) (2025-10-05)
 
 ### Bug Fixes
