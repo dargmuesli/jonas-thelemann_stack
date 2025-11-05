@@ -1,3 +1,13 @@
+## [11.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.16...11.0.0) (2025-11-05)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v32
+
+### Miscellaneous Chores
+
+* **deps:** update nextcloud docker tag to v32 ([6278857](https://github.com/dargmuesli/jonas-thelemann_stack/commit/6278857d3e13675c50d73e3a0b6dde7267ec13d3))
+
 ## [10.3.16](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.15...10.3.16) (2025-11-02)
 
 ### Bug Fixes
