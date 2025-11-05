@@ -1,3 +1,9 @@
+## [11.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.0...11.0.1) (2025-11-05)
+
+### Performance Improvements
+
+* **nextcloud:** update nginx configuration ([a5c79c3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a5c79c3aa7abb563a0b3f4383cb0126ceadfcd65))
+
 ## [11.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/10.3.16...11.0.0) (2025-11-05)
 
 ### ⚠ BREAKING CHANGES
