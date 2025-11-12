@@ -430,7 +430,7 @@ services:
     - postgres_user
     volumes:
     - /run/:/run/ #DARGSTACK-REMOVE
-    - postgres_data:/var/lib/postgresql/data/
+    - postgres_data:/var/lib/postgresql/
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   redis:
   # You cannot access the key-value store via a web interface.
