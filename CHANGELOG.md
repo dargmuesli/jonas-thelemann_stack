@@ -1,3 +1,9 @@
+## [11.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.2...11.0.3) (2025-11-23)
+
+### Bug Fixes
+
+* schedule release ([eaedf1c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/eaedf1c4dbcd09db4ae71f09d529ec9bb3b7e10c))
+
 ## [11.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.1...11.0.2) (2025-11-16)
 
 ### Bug Fixes
