@@ -159,6 +159,8 @@ services:
     - source: creal_s3_secret-access-key
       target: /run/environment-variables/NUXT_PRIVATE_CREAL_S3_SECRET_ACCESS_KEY
     - creal_sqitch-target
+    - source: jonas-thelemann_turnstile-key
+      target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     - postgres_role_creal_postgraphile_password
     user: node:node
     volumes:
