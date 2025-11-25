@@ -312,7 +312,7 @@ services:
     volumes: #DARGSTACK-REMOVE
       - minio_data:/data #DARGSTACK-REMOVE
       - ./configurations/minio/entrypoint.sh:/patched-entrypoint.sh #DARGSTACK-REMOVE
-    environment: #DARGSTACK-REMOVE
+    environment:
       MINIO_BROWSER_REDIRECT_URL: https://minio.${STACK_DOMAIN}
       MINIO_ROOT_PASSWORD: s3password #DARGSTACK-REMOVE
       MINIO_ROOT_USER: s3user #DARGSTACK-REMOVE
