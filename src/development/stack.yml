@@ -276,12 +276,13 @@ services:
       NUXT_PUBLIC_I18N_BASE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
-      NUXT_TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY} # TODO: move to file (https://github.com/nuxt-modules/turnstile/pull/298)
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
     secrets:
-      - jonas-thelemann_nodemailer-transporter
-      - jonas-thelemann_turnstile-key
+    - source: jonas-thelemann_nodemailer-transporter
+      target: /run/environment-variables/NUXT_NODEMAILER_TRANSPORTER
+    - source: jonas-thelemann_turnstile-key
+      target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
