@@ -192,25 +192,25 @@ services:
       - traefik.http.routers.creal_strapi_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.creal_strapi.loadbalancer.server.port=1337
     environment:
-      ADMIN_JWT_SECRET_FILE: /run/secrets/creal_strapi_admin-jwt-secret
-      API_TOKEN_SALT_SECRET_FILE: /run/secrets/creal_strapi_api-token-salt
-      APP_KEYS_SECRET_FILE: /run/secrets/creal_strapi_app-keys
       DATABASE_HOST: postgres
       DATABASE_NAME: creal_strapi
       DATABASE_PORT: 5432
-      JWT_SECRET_FILE: /run/secrets/creal_strapi_jwt-secret
-      POSTGRES_PASSWORD_SECRET_FILE: /run/secrets/postgres_password
-      POSTGRES_USER_SECRET_FILE: /run/secrets/postgres_user
-      TRANSFER_TOKEN_SALT_SECRET_FILE: /run/secrets/creal_strapi_transfer-token-salt
     image: dargmuesli/creal_strapi:dev
     secrets:
-    - creal_strapi_admin-jwt-secret
-    - creal_strapi_api-token-salt
-    - creal_strapi_app-keys
-    - creal_strapi_jwt-secret
-    - creal_strapi_transfer-token-salt
-    - postgres_password
-    - postgres_user
+    - source: creal_strapi_admin-jwt-secret
+      target: /run/environment-variables/ADMIN_JWT_SECRET
+    - source: creal_strapi_api-token-salt
+      target: /run/environment-variables/API_TOKEN_SALT
+    - source: creal_strapi_app-keys
+      target: /run/environment-variables/APP_KEYS
+    - source: creal_strapi_jwt-secret
+      target: /run/environment-variables/JWT_SECRET
+    - source: creal_strapi_transfer-token-salt
+      target: /run/environment-variables/TRANSFER_TOKEN_SALT
+    - source: postgres_password
+      target: /run/environment-variables/DATABASE_PASSWORD
+    - source: postgres_user
+      target: /run/environment-variables/DATABASE_USERNAME
     user: node:node
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
