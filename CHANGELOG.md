@@ -1,3 +1,9 @@
+## [11.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.2...11.1.3) (2025-11-25)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([a19d1b8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a19d1b80ef1c63f27c0794c4f24456031bd59191))
+
 ## [11.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.1...11.1.2) (2025-11-25)
 
 ### Bug Fixes
