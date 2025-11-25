@@ -146,9 +146,6 @@ services:
       - traefik.http.services.creal.loadbalancer.server.port=3000
       - traefik.http.services.creal_secure_nuxt.loadbalancer.server.port=24678 #DARGSTACK-REMOVE
     environment:
-      NUXT_PUBLIC_CREAL_S3_BUCKET: ${CREAL_S3_BUCKET}
-      NUXT_PUBLIC_CREAL_S3_ENDPOINT: ${CREAL_S3_ENDPOINT}
-      NUXT_PUBLIC_CREAL_S3_REGION: ${CREAL_S3_REGION}
       NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
       NUXT_PUBLIC_I18N_BASE_URL: https://creal.${STACK_DOMAIN}
       NUXT_PUBLIC_SITE_URL: https://creal.${STACK_DOMAIN}
