@@ -1,3 +1,9 @@
+## [11.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.0...11.1.1) (2025-11-25)
+
+### Bug Fixes
+
+* **minio:** correct environment variable loading in production ([abc7294](https://github.com/dargmuesli/jonas-thelemann_stack/commit/abc7294812325669118bf98e95b6da2a8d631c63))
+
 ## [11.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.3...11.1.0) (2025-11-25)
 
 ### Features
