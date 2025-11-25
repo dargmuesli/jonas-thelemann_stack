@@ -1,3 +1,9 @@
+## [11.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.3...11.1.0) (2025-11-25)
+
+### Features
+
+* **minio:** add domain and url environment variable ([0a91de1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0a91de12353da77eb48dc4e3d0dc3012da016f8b))
+
 ## [11.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.0.2...11.0.3) (2025-11-23)
 
 ### Bug Fixes
