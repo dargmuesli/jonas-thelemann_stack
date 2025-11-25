@@ -1,3 +1,9 @@
+## [11.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.1...11.1.2) (2025-11-25)
+
+### Bug Fixes
+
+* revert "chore(creal): drop s3 environment variables" ([90e7524](https://github.com/dargmuesli/jonas-thelemann_stack/commit/90e75246b28c1863b3a3d7ed200363a96e5c5fba))
+
 ## [11.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.0...11.1.1) (2025-11-25)
 
 ### Bug Fixes
