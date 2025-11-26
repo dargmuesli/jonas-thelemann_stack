@@ -164,7 +164,7 @@ services:
     - postgres_role_creal_postgraphile_password
     user: node:node
     volumes:
-    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
+    - pnpm_data:/srv/.pnpm-store/
     - ../../../creal/:/srv/app/
     - creal_data:/srv/app/node_modules
   creal_postgraphile:
@@ -216,7 +216,7 @@ services:
       target: /run/environment-variables/DATABASE_USERNAME
     user: node:node
     volumes:
-    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
+    - pnpm_data:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
     - creal_strapi_data:/srv/app/node_modules
   hedgedoc:
@@ -288,7 +288,7 @@ services:
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     volumes:
-    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
+    - pnpm_data:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
     - jonas-thelemann_data:/srv/app/node_modules
   minio: #DARGSTACK-REMOVE
@@ -525,7 +525,7 @@ services:
     - postgres_role_trapparty_postgraphile_password
     user: node:node
     volumes:
-    - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
+    - pnpm_data:/srv/.pnpm-store/
     - ../../../trapparty/:/srv/app/
     - trapparty_data:/srv/app/node_modules
   trapparty_postgraphile:
@@ -561,6 +561,9 @@ volumes:
     {}
   nextcloud_data:
   # The cloud's data.
+    {}
+  pnpm_data:
+  # The node package manager's data.
     {}
   portainer_data:
   # The container manager's data.

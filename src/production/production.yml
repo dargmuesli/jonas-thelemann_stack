@@ -167,4 +167,5 @@ volumes:
   # `creal_strapi_data`, used for node modules storage in development, is not pruned but reused for upload storage
   jonas-thelemann_data: (( prune ))
   minio_data: (( prune ))
+  pnpm_data: (( prune ))
   trapparty_data: (( prune ))
