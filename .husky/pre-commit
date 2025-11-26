@@ -4,4 +4,4 @@ export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-pnpm dargstack_rgen --validate
+pnpm exec dargstack_rgen --validate
