@@ -163,7 +163,8 @@ volumes:
   acme_data:
   # The reverse proxy's certificate data.
     {}
-  creal_strapi_data:
-  # The DJ website's CMS data.
-    {}
+  creal_data: (( prune ))
+  # `creal_strapi_data`, used for node modules storage in development, is not pruned but reused for upload storage
+  jonas-thelemann_data: (( prune ))
   minio_data: (( prune ))
+  trapparty_data: (( prune ))

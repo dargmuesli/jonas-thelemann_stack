@@ -166,6 +166,7 @@ services:
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal/:/srv/app/
+    - creal_data:/srv/app/node_modules
   creal_postgraphile:
   # You can access cReal's GraphQL API for the PostgreSQL database at [creal_postgraphile.localhost](https://creal_postgraphile.localhost/).
     deploy:
@@ -217,6 +218,7 @@ services:
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
+    - creal_strapi_data:/srv/app/node_modules
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     deploy:
@@ -288,6 +290,7 @@ services:
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
+    - jonas-thelemann_data:/srv/app/node_modules
   minio: #DARGSTACK-REMOVE
   # You can access the s3 console at [minio.localhost](https://minio.localhost/).
   # You can access the s3 api service at [s3.localhost](https://s3.localhost/) if you want to access via cli from outside the stack.
@@ -524,6 +527,7 @@ services:
     volumes:
     - ${PNPM_STORE_DIR}:/srv/.pnpm-store/
     - ../../../trapparty/:/srv/app/
+    - trapparty_data:/srv/app/node_modules
   trapparty_postgraphile:
   # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
     deploy:
@@ -543,6 +547,15 @@ services:
     - ../production/configurations/trapparty_postgraphile/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
 version: "3.6"
 volumes:
+  creal_data:
+  # The DJ website's data.
+    {}
+  creal_strapi_data:
+  # The DJ website CMS' data.
+    {}
+  jonas-thelemann_data:
+  # The main project's data.
+    {}
   minio_data:
   # The s3 server's data.
     {}
@@ -560,4 +573,7 @@ volumes:
     {}
   thelounge_data:
   # The IRC client's data.
+    {}
+  trapparty_data:
+  # The TrapParty website's data.
     {}

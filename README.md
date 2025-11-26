@@ -259,9 +259,17 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The reverse proxy's certificate data.
     
- - ### `creal_strapi_data` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
+ - ### `creal_data`
     
-    The DJ website's CMS data.
+    The DJ website's data.
+    
+ - ### `creal_strapi_data`
+    
+    The DJ website CMS' data.
+    
+ - ### `jonas-thelemann_data`
+    
+    The main project's data.
     
  - ### `minio_data`
     
@@ -286,5 +294,9 @@ This project is deployed in accordance to the [DargStack template](https://githu
  - ### `thelounge_data`
     
     The IRC client's data.
+    
+ - ### `trapparty_data`
+    
+    The TrapParty website's data.
     
 
