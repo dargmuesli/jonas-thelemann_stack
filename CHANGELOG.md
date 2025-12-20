@@ -1,3 +1,9 @@
+## [11.1.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.6...11.1.7) (2025-12-20)
+
+### Bug Fixes
+
+* **creal-strapi:** drop node modules mount in production ([0150b33](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0150b338e7a5b227f8c57b79560a48ea83955306))
+
 ## [11.1.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.5...11.1.6) (2025-12-20)
 
 ### Bug Fixes
