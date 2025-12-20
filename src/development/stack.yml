@@ -218,7 +218,7 @@ services:
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
-    - creal_strapi_data:/srv/app/node_modules
+    - creal_strapi_data:/srv/app/node_modules #DARGSTACK-REMOVE
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     deploy:
