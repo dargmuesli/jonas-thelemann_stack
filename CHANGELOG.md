@@ -1,3 +1,9 @@
+## [11.1.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.7...11.1.8) (2025-12-28)
+
+### Bug Fixes
+
+* schedule release ([82a35e8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/82a35e8df032bb81c2fa588c88516c025d3866ef))
+
 ## [11.1.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.6...11.1.7) (2025-12-20)
 
 ### Bug Fixes
