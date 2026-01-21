@@ -1,3 +1,13 @@
+## [12.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.10...12.0.0) (2026-01-21)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade postgres to v18
+
+### Miscellaneous Chores
+
+* **deps:** upgrade postgres to v18 ([e812a6e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e812a6e87dd9fe9ed067fb2e7052d9e7f705ab14))
+
 ## [11.1.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.9...11.1.10) (2026-01-11)
 
 ### Bug Fixes
