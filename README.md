@@ -86,7 +86,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The job scheduler's SMTP client configuration.
     
- - ### `jonas-thelemann_nodemailer-transporter`
+ - ### `jonas-thelemann_nodemailer-transport`
     
     The email service's SMTP configuration.
     

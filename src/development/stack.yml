@@ -55,9 +55,9 @@ secrets:
   jobber_msmtprc:
   # The job scheduler's SMTP client configuration.
     file: ./secrets/jobber/msmtprc.secret
-  jonas-thelemann_nodemailer-transporter:
+  jonas-thelemann_nodemailer-transport:
   # The email service's SMTP configuration.
-    file: ./secrets/jonas-thelemann/nodemailer-transporter.secret
+    file: ./secrets/jonas-thelemann/nodemailer-transport.secret
   jonas-thelemann_turnstile-key:
   # The captcha provider's application key.
     file: ./secrets/jonas-thelemann/turnstile-key.secret
@@ -284,7 +284,7 @@ services:
     image: dargmuesli/jonas-thelemann:dev
     user: node:node
     secrets:
-    - source: jonas-thelemann_nodemailer-transporter
+    - source: jonas-thelemann_nodemailer-transport
       target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
