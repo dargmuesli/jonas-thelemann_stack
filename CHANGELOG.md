@@ -1,3 +1,9 @@
+## [12.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.0...12.0.1) (2026-01-30)
+
+### Bug Fixes
+
+* **creal:** map turnstile site key ([97a8fb2](https://github.com/dargmuesli/jonas-thelemann_stack/commit/97a8fb2a7f5987463b536a81f9abd9dbd0406ae1))
+
 ## [12.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/11.1.10...12.0.0) (2026-01-21)
 
 ### ⚠ BREAKING CHANGES
