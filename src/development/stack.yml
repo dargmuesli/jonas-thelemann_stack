@@ -285,7 +285,7 @@ services:
     user: node:node
     secrets:
     - source: jonas-thelemann_nodemailer-transporter
-      target: /run/environment-variables/NUXT_NODEMAILER_TRANSPORTER
+      target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     volumes:
