@@ -1,3 +1,9 @@
+## [12.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.2...12.0.3) (2026-01-30)
+
+### Bug Fixes
+
+* **jonas-thelemann:** correct nodemailer transport secret target ([d3295e4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/d3295e41cc2a7b1764c7e8cf80a7cd4e5c2efd7b))
+
 ## [12.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.1...12.0.2) (2026-01-30)
 
 ### Bug Fixes
