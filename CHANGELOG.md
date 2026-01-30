@@ -1,3 +1,9 @@
+## [12.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.1...12.0.2) (2026-01-30)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal to v5.2.0 ([5836cc0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/5836cc0d433526b33858c1c18938de8b906038a3))
+
 ## [12.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.0...12.0.1) (2026-01-30)
 
 ### Bug Fixes
