@@ -1,3 +1,13 @@
+## [13.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...13.0.0-beta.1) (2026-01-30)
+
+### ⚠ BREAKING CHANGES
+
+* **jonas-thelemann:** rename nodemailer transport secret
+
+### Features
+
+* **jonas-thelemann:** rename nodemailer transport secret ([7e54bd4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7e54bd49296fedc5a70d5bda002aafaceda6fe5c))
+
 ## [12.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.2...12.0.3) (2026-01-30)
 
 ### Bug Fixes
