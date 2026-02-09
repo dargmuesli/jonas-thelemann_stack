@@ -1,3 +1,9 @@
+## [12.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.4...12.1.0) (2026-02-09)
+
+### Features
+
+* drop user property ([05d6770](https://github.com/dargmuesli/jonas-thelemann_stack/commit/05d6770d0dd66900fa3ab3a7f678b71232cd8b29))
+
 ## [12.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...12.0.4) (2026-02-08)
 
 ### Bug Fixes
