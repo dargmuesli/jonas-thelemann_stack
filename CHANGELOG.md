@@ -1,3 +1,9 @@
+## [12.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.0...12.1.1) (2026-02-09)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([37c3b08](https://github.com/dargmuesli/jonas-thelemann_stack/commit/37c3b08a1624c8731c8b065ded1c9627069a7f21))
+
 ## [12.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.4...12.1.0) (2026-02-09)
 
 ### Features
