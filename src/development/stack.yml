@@ -163,7 +163,6 @@ services:
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     - postgres_role_creal_postgraphile_password
-    user: node:node
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal/:/srv/app/
@@ -215,7 +214,6 @@ services:
       target: /run/environment-variables/DATABASE_PASSWORD
     - source: postgres_user
       target: /run/environment-variables/DATABASE_USERNAME
-    user: node:node
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
@@ -282,7 +280,6 @@ services:
       NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
     image: dargmuesli/jonas-thelemann:dev
-    user: node:node
     secrets:
     - source: jonas-thelemann_nodemailer-transporter
       target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
@@ -524,7 +521,6 @@ services:
     secrets:
     - trapparty_sqitch-target
     - postgres_role_trapparty_postgraphile_password
-    user: node:node
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../trapparty/:/srv/app/
