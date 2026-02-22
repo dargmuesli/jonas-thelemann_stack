@@ -1,3 +1,9 @@
+## [12.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.1...12.1.2) (2026-02-22)
+
+### Bug Fixes
+
+* schedule release ([709fb9c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/709fb9c507df34f5bb393ce5e4756c48b8c65d1f))
+
 ## [12.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.0...12.1.1) (2026-02-09)
 
 ### Bug Fixes
