@@ -432,7 +432,7 @@ services:
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   redis:
   # You cannot access the key-value store via a web interface.
-    image: redis:8.6.0-alpine
+    image: redis:8.6.1-alpine
     volumes:
     - redis_data:/data
   thelounge:
@@ -477,7 +477,7 @@ services:
       placement:
         constraints:
         - node.role == manager
-    image: traefik:v3.6.8
+    image: traefik:v3.6.9
     ports:
     - mode: host
       protocol: tcp
