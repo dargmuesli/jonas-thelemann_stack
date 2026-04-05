@@ -1,3 +1,9 @@
+## [13.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.3...13.0.4) (2026-04-05)
+
+### Bug Fixes
+
+* schedule release ([68512e4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/68512e4ec16c0795c566e38797c3d1f92bcbbb94))
+
 ## [13.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.2...13.0.3) (2026-03-29)
 
 ### Bug Fixes
