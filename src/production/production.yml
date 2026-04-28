@@ -65,7 +65,7 @@ services:
       - traefik.http.routers.jonas-thelemann_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`backend.jonas-thelemann.de`) && PathPrefix(`/api`)
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/jonas-thelemann:6.15.1
+    image: ghcr.io/dargmuesli/jonas-thelemann:6.15.2
     volumes: (( prune ))
   # minio: (( prune )) # breaks renovate
   nextcloud_nginx:
