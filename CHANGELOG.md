@@ -1,3 +1,9 @@
+## [13.0.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.10...13.0.11) (2026-05-21)
+
+### Bug Fixes
+
+* **deps:** update jonas-thelemann ([576e005](https://github.com/dargmuesli/jonas-thelemann_stack/commit/576e0054df27ee14a8a31c2ae5ec81a02e61502d))
+
 ## [13.0.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.9...13.0.10) (2026-05-17)
 
 ### Bug Fixes
