@@ -1,3 +1,9 @@
+## [13.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.15...13.1.0) (2026-05-28)
+
+### Features
+
+* **shared:** add nuxt og image secret ([a960f2f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a960f2fb0883614a66c3cde177eba7c1a2a64ab2))
+
 ## [13.0.15](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.14...13.0.15) (2026-05-28)
 
 ### Bug Fixes
