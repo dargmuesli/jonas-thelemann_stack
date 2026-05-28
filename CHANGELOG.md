@@ -1,3 +1,13 @@
+## [13.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.1.0...13.2.0) (2026-05-28)
+
+### Features
+
+* **geoip:** add ([59dedc6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/59dedc6150f29decb2ea270c63cfbdd9dfec800d))
+
+### Bug Fixes
+
+* **certificates:** add app subdomain ([02401df](https://github.com/dargmuesli/jonas-thelemann_stack/commit/02401df67405e64c45ebc602dc37559853054ed4))
+
 ## [13.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.15...13.1.0) (2026-05-28)
 
 ### Features
