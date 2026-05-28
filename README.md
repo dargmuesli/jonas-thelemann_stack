@@ -185,6 +185,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     You can access the DJ website's CMS at [creal_strapi.localhost](https://creal_strapi.localhost/).
     
+ - ### `geoip`
+    
+    You cannot access the ip geolocator via a web interface.
+    
  - ### `hedgedoc`
     
     You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).

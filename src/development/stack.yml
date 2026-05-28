@@ -223,6 +223,15 @@ services:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
     - creal_strapi_data:/srv/app/node_modules #DARGSTACK-REMOVE
+  geoip:
+    # You cannot access the ip geolocator via a web interface.
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    image: ghcr.io/observabilitystack/geoip-api:2026-02
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     deploy:
