@@ -1,3 +1,9 @@
+## [13.0.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.11...13.0.12) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/github-actions to v5.4.0 ([8db57d6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8db57d6f995ec4e3fdcc3637c18c5ba873eb7ab0))
+
 ## [13.0.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.10...13.0.11) (2026-05-21)
 
 ### Bug Fixes
