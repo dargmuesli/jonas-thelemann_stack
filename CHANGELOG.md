@@ -1,3 +1,9 @@
+## [13.0.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.12...13.0.13) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([afd22e9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/afd22e9f4ae16e3cc6e86a6df8140c3ceb5fcc02))
+
 ## [13.0.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.11...13.0.12) (2026-05-28)
 
 ### Bug Fixes
