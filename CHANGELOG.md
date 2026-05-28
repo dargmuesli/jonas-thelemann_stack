@@ -1,3 +1,9 @@
+## [13.0.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.13...13.0.14) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update creal and trapparty ([489b21d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/489b21da263dcac01ec702663b89e4bd36c9bf76))
+
 ## [13.0.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.12...13.0.13) (2026-05-28)
 
 ### Bug Fixes
