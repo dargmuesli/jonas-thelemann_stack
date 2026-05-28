@@ -82,6 +82,9 @@ secrets:
   postgres_user:
   # The database default user's name.
     file: ./secrets/postgres/user.secret
+  shared_nuxt_og_image_secret:
+  # The secret used for generating Open Graph images on Nuxt websites.
+    file: ./secrets/shared/nuxt_og_image.secret
   trapparty_postgraphile_connection:
   # The TrapParty GraphQL API's database URI.
     file: ./secrets/trapparty_postgraphile/connection.secret
@@ -163,6 +166,8 @@ services:
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     - postgres_role_creal_postgraphile_password
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal/:/srv/app/
@@ -285,6 +290,8 @@ services:
       target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
@@ -521,6 +528,8 @@ services:
     secrets:
     - trapparty_sqitch-target
     - postgres_role_trapparty_postgraphile_password
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../trapparty/:/srv/app/

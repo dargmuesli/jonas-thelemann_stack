@@ -126,6 +126,10 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The database default user's name.
     
+ - ### `shared_nuxt_og_image_secret`
+    
+    The secret used for generating Open Graph images on Nuxt websites.
+    
  - ### `traefik_cf-dns-api-token` ![production](https://img.shields.io/badge/-production-informational.svg?style=flat-square)
     
     The DNS provider's DNS API token.
