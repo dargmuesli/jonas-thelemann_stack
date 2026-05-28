@@ -25,17 +25,17 @@ rm "$THIS"/*.key "$THIS"/*.crt
 
 create "root"
 create "traefik" \
-    `# 1generator` "1generator.localhost" \
-    `# adminer` "adminer.localhost" \
-    `# creal` "creal.localhost" \
-    `# creal/postgraphile` "creal-postgraphile.localhost" \
-    `# creal/strapi` "creal-strapi.localhost" \
-    `# hedgedoc` "hedgedoc.localhost" \
-    `# jonas-thelemann` "localhost" "backend.localhost" "www.localhost" "127.0.0.1" "0.0.0.0" \
-    `# minio` "minio.localhost" "s3.localhost" "creal-audio.s3.localhost" \
-    `# nextcloud` "nextcloud.localhost" \
-    `# portainer` "portainer.localhost" \
-    `# thelounge` "thelounge.localhost" \
-    `# traefik` "traefik.localhost" \
-    `# trapparty` "trapparty.localhost" \
-    `# trapparty/postgraphile` "trapparty-postgraphile.localhost"
+    `# 1generator` "1generator.app.localhost" \
+    `# adminer` "adminer.app.localhost" \
+    `# creal` "creal.app.localhost" \
+    `# creal/postgraphile` "creal-postgraphile.app.localhost" \
+    `# creal/strapi` "creal-strapi.app.localhost" \
+    `# hedgedoc` "hedgedoc.app.localhost" \
+    `# jonas-thelemann` "localhost" "backend.app.localhost" "www.app.localhost" "127.0.0.1" "0.0.0.0" \
+    `# minio` "minio.app.localhost" "s3.app.localhost" "creal-audio.s3.app.localhost" \
+    `# nextcloud` "nextcloud.app.localhost" \
+    `# portainer` "portainer.app.localhost" \
+    `# thelounge` "thelounge.app.localhost" \
+    `# traefik` "traefik.app.localhost" \
+    `# trapparty` "trapparty.app.localhost" \
+    `# trapparty/postgraphile` "trapparty-postgraphile.app.localhost"
