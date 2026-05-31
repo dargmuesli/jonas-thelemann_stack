@@ -3,7 +3,7 @@
   "description": "Dargstack configuration for my website.",
   "devDependencies": {
     "dargstack": "2.5.1",
-    "dargstack_rgen": "0.9.91"
+    "dargstack_rgen": "0.9.92"
   },
   "devEngines": {
     "packageManager": {
