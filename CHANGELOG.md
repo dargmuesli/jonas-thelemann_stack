@@ -1,3 +1,13 @@
+## [14.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.2.1...14.0.0) (2026-06-11)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v34
+
+### Miscellaneous Chores
+
+* **deps:** update nextcloud docker tag to v34 ([a6841eb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6841eb93c29732292dc46c001c974e6285071fb))
+
 ## [13.2.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.2.0...13.2.1) (2026-06-07)
 
 ### Bug Fixes
