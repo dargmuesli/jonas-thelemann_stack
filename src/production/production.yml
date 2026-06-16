@@ -65,7 +65,7 @@ services:
       - traefik.http.routers.jonas-thelemann_secure.middlewares=cloudflarewarp,header_cors
       - traefik.http.routers.jonas-thelemann_secure.rule=Host(`backend.jonas-thelemann.de`) && PathPrefix(`/api`)
       - traefik.http.routers.jonas-thelemann_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/jonas-thelemann:6.16.0
+    image: ghcr.io/dargmuesli/jonas-thelemann:6.16.1
     volumes: (( prune ))
   # minio: (( prune )) # breaks renovate
   nextcloud_nginx:
@@ -137,7 +137,7 @@ services:
     - --watch
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
-    image: ldez/traefik-certs-dumper:v2.11.2
+    image: ldez/traefik-certs-dumper:v2.11.4
     volumes:
     - acme_data:/etc/traefik/acme/
   trapparty:
