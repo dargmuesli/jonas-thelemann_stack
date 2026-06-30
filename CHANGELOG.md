@@ -1,3 +1,5 @@
+## [14.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.1...14.0.2) (2026-06-30)
+
 ## [14.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.0...14.0.1) (2026-06-21)
 
 ### Bug Fixes
