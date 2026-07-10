@@ -27,7 +27,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal:5.3.13
+    image: ghcr.io/dargmuesli/creal:5.3.14
     volumes: (( prune ))
   creal_postgraphile:
     deploy:
@@ -41,7 +41,7 @@ services:
       - (( append ))
       - traefik.http.routers.creal_strapi_secure.middlewares=cloudflarewarp
       - traefik.http.routers.creal_strapi_secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal_strapi:4.2.14
+    image: ghcr.io/dargmuesli/creal_strapi:4.2.15
     volumes:
     - (( prune ))
     - creal_strapi_data:/srv/app/public/
