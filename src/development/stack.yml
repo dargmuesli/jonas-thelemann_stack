@@ -246,7 +246,7 @@ services:
       CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/hedgedoc/hedgedoc:1.11.0-alpine
+    image: quay.io/hedgedoc/hedgedoc:1.11.1-alpine
     secrets:
     - source: hedgedoc_db_url
       target: dbURL
@@ -448,7 +448,7 @@ services:
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   redis:
   # You cannot access the key-value store via a web interface.
-    image: redis:8.8.0-alpine
+    image: redis:8.8.1-alpine
     volumes:
     - redis_data:/data
   thelounge:
@@ -493,7 +493,7 @@ services:
       placement:
         constraints:
         - node.role == manager
-    image: traefik:v3.7.8
+    image: traefik:v3.7.9
     ports:
     - mode: host
       protocol: tcp
