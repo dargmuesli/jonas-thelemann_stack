@@ -8,6 +8,174 @@
 
 * **jonas-thelemann:** rename nodemailer transport secret ([7e54bd4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7e54bd49296fedc5a70d5bda002aafaceda6fe5c))
 
+## [14.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.3...14.0.4) (2026-07-26)
+
+## [14.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.2...14.0.3) (2026-07-12)
+
+## [14.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.1...14.0.2) (2026-06-30)
+
+## [14.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.0...14.0.1) (2026-06-21)
+
+### Bug Fixes
+
+* schedule release ([be9e2ad](https://github.com/dargmuesli/jonas-thelemann_stack/commit/be9e2ad201952f54d0c11beb85d5170d75f4b394))
+
+## [14.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.2.1...14.0.0) (2026-06-11)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v34
+
+### Miscellaneous Chores
+
+* **deps:** update nextcloud docker tag to v34 ([a6841eb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6841eb93c29732292dc46c001c974e6285071fb))
+
+## [13.2.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.2.0...13.2.1) (2026-06-07)
+
+### Bug Fixes
+
+* schedule release ([53392a8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/53392a871c3cc51860799abae63bab13a3a46a49))
+
+## [13.2.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.1.0...13.2.0) (2026-05-28)
+
+### Features
+
+* **geoip:** add ([59dedc6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/59dedc6150f29decb2ea270c63cfbdd9dfec800d))
+
+### Bug Fixes
+
+* **certificates:** add app subdomain ([02401df](https://github.com/dargmuesli/jonas-thelemann_stack/commit/02401df67405e64c45ebc602dc37559853054ed4))
+
+## [13.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.15...13.1.0) (2026-05-28)
+
+### Features
+
+* **shared:** add nuxt og image secret ([a960f2f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a960f2fb0883614a66c3cde177eba7c1a2a64ab2))
+
+## [13.0.15](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.14...13.0.15) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update creal, creal_strapi, jonas-thelemann and trapparty ([93802e7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/93802e7907fd70768fefbd66c2fdcc0d4ff32782))
+
+## [13.0.14](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.13...13.0.14) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update creal and trapparty ([489b21d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/489b21da263dcac01ec702663b89e4bd36c9bf76))
+
+## [13.0.13](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.12...13.0.13) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([afd22e9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/afd22e9f4ae16e3cc6e86a6df8140c3ceb5fcc02))
+
+## [13.0.12](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.11...13.0.12) (2026-05-28)
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/github-actions to v5.4.0 ([8db57d6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8db57d6f995ec4e3fdcc3637c18c5ba873eb7ab0))
+
+## [13.0.11](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.10...13.0.11) (2026-05-21)
+
+### Bug Fixes
+
+* **deps:** update jonas-thelemann ([576e005](https://github.com/dargmuesli/jonas-thelemann_stack/commit/576e0054df27ee14a8a31c2ae5ec81a02e61502d))
+
+## [13.0.10](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.9...13.0.10) (2026-05-17)
+
+### Bug Fixes
+
+* schedule release ([8032ce4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8032ce4aa127114c1d14046c6f98176b21b17c56))
+
+## [13.0.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.8...13.0.9) (2026-05-10)
+
+### Bug Fixes
+
+* schedule release ([23a37b9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/23a37b95aadce7ae91709507d7676cc9c89018d0))
+
+## [13.0.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.7...13.0.8) (2026-05-03)
+
+### Bug Fixes
+
+* schedule release ([a561888](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a561888faabb332aa4f8361dc9bb505e43b80d57))
+
+## [13.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.6...13.0.7) (2026-04-26)
+
+### Bug Fixes
+
+* schedule release ([265d7b2](https://github.com/dargmuesli/jonas-thelemann_stack/commit/265d7b2fa8749d3361070b96c972b96f0cea5d44))
+
+## [13.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.5...13.0.6) (2026-04-19)
+
+### Bug Fixes
+
+* schedule release ([0cc6aeb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0cc6aebf70118e605c9aa0bd86b4451fe912c51b))
+
+## [13.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.4...13.0.5) (2026-04-12)
+
+### Bug Fixes
+
+* schedule release ([f772c41](https://github.com/dargmuesli/jonas-thelemann_stack/commit/f772c41fe73b08fa74e3b2f4e1890419e6426165))
+
+## [13.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.3...13.0.4) (2026-04-05)
+
+### Bug Fixes
+
+* schedule release ([68512e4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/68512e4ec16c0795c566e38797c3d1f92bcbbb94))
+
+## [13.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.2...13.0.3) (2026-03-29)
+
+### Bug Fixes
+
+* schedule release ([1123f7d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1123f7dad257383838d21767f5a8ba410c6b7dcb))
+
+## [13.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.1...13.0.2) (2026-03-15)
+
+### Bug Fixes
+
+* schedule release ([b5b5480](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b5b5480ff75e01118b3e8a97dbfabdfd115042d3))
+
+## [13.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/13.0.0...13.0.1) (2026-03-08)
+
+### Bug Fixes
+
+* schedule release ([3cf9a98](https://github.com/dargmuesli/jonas-thelemann_stack/commit/3cf9a98f6a22cc9f70d753990b0d944a543f1525))
+
+## [13.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.2...13.0.0) (2026-02-26)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v33
+
+### Miscellaneous Chores
+
+* **deps:** update nextcloud docker tag to v33 ([469cf72](https://github.com/dargmuesli/jonas-thelemann_stack/commit/469cf72fa9adb17339f13d5516b895fdfc139324))
+
+## [12.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.1...12.1.2) (2026-02-22)
+
+### Bug Fixes
+
+* schedule release ([709fb9c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/709fb9c507df34f5bb393ce5e4756c48b8c65d1f))
+
+## [12.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.1.0...12.1.1) (2026-02-09)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([37c3b08](https://github.com/dargmuesli/jonas-thelemann_stack/commit/37c3b08a1624c8731c8b065ded1c9627069a7f21))
+
+## [12.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.4...12.1.0) (2026-02-09)
+
+### Features
+
+* drop user property ([05d6770](https://github.com/dargmuesli/jonas-thelemann_stack/commit/05d6770d0dd66900fa3ab3a7f678b71232cd8b29))
+
+## [12.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...12.0.4) (2026-02-08)
+
+### Bug Fixes
+
+* schedule release ([7e21aec](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7e21aec3aeb93071300bfbbdeb4259e58df9e79a))
+
 ## [12.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.2...12.0.3) (2026-01-30)
 
 ### Bug Fixes

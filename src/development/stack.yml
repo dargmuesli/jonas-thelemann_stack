@@ -82,6 +82,9 @@ secrets:
   postgres_user:
   # The database default user's name.
     file: ./secrets/postgres/user.secret
+  shared_nuxt_og_image_secret:
+  # The secret used for generating Open Graph images on Nuxt websites.
+    file: ./secrets/shared/nuxt_og_image.secret
   trapparty_postgraphile_connection:
   # The TrapParty GraphQL API's database URI.
     file: ./secrets/trapparty_postgraphile/connection.secret
@@ -124,7 +127,7 @@ services:
       - traefik.http.routers.adminer_secure.rule=Host(`adminer.${STACK_DOMAIN}`)
       - traefik.http.routers.adminer_secure.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.adminer.loadbalancer.server.port=8080
-    image: adminer:5.4.1-standalone
+    image: adminer:5.5.0-standalone
     volumes:
     - ../production/configurations/adminer/adminer.css:/var/www/html/adminer.css:ro
   creal:
@@ -163,7 +166,8 @@ services:
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
     - postgres_role_creal_postgraphile_password
-    user: node:node
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal/:/srv/app/
@@ -215,11 +219,19 @@ services:
       target: /run/environment-variables/DATABASE_PASSWORD
     - source: postgres_user
       target: /run/environment-variables/DATABASE_USERNAME
-    user: node:node
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../creal_strapi/:/srv/app/
     - creal_strapi_data:/srv/app/node_modules #DARGSTACK-REMOVE
+  geoip:
+    # You cannot access the ip geolocator via a web interface.
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    image: ghcr.io/observabilitystack/geoip-api:2026-02
   hedgedoc:
   # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
     deploy:
@@ -234,7 +246,7 @@ services:
       CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/hedgedoc/hedgedoc:1.10.5-alpine
+    image: quay.io/hedgedoc/hedgedoc:1.11.1-alpine
     secrets:
     - source: hedgedoc_db_url
       target: dbURL
@@ -282,12 +294,13 @@ services:
       NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
     image: dargmuesli/jonas-thelemann:dev
-    user: node:node
     secrets:
     - source: jonas-thelemann_nodemailer-transport
       target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
     - source: jonas-thelemann_turnstile-key
       target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../jonas-thelemann/:/srv/app/
@@ -332,7 +345,7 @@ services:
     env_file: ../production/configurations/nextcloud/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:32.0.5-fpm-alpine
+    image: nextcloud:34.0.2-fpm-alpine
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
@@ -346,7 +359,7 @@ services:
     env_file: ../production/configurations/nextcloud/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:32.0.5-fpm-alpine
+    image: nextcloud:34.0.2-fpm-alpine
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
@@ -381,7 +394,7 @@ services:
       - traefik.http.routers.nextcloud_nginx_secure_contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
       - traefik.http.routers.nextcloud_nginx_secure_contacts.tls.options=mintls13@file #DARGSTACK-REMOVE
       - traefik.http.services.nextcloud.loadbalancer.server.port=80
-    image: nginx:1.29.4-alpine
+    image: nginx:1.31.3-alpine
     volumes:
     - ../production/configurations/nextcloud_nginx/nginx.conf:/etc/nginx/nginx.conf
     - nextcloud_data:/var/www/html/
@@ -401,7 +414,7 @@ services:
         constraints:
         - node.role == manager
       replicas: 1
-    image: portainer/portainer-ce:2.38.0-alpine
+    image: portainer/portainer-ce:2.43.0-alpine
     secrets:
     - portainer_admin-password
     volumes:
@@ -415,7 +428,7 @@ services:
         - node.platform.os == linux
     environment:
       AGENT_CLUSTER_ADDR: tasks.portainer-agent
-    image: portainer/agent:2.38.0
+    image: portainer/agent:2.43.0
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/docker/volumes:/var/lib/docker/volumes
@@ -425,7 +438,7 @@ services:
       POSTGRES_ADDITIONAL_DBS: creal creal_strapi hedgedoc nextcloud trapparty
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-    image: postgres:18.1-alpine
+    image: postgres:18.4-alpine
     secrets:
     - postgres_password
     - postgres_user
@@ -435,7 +448,7 @@ services:
     - ../production/configurations/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
   redis:
   # You cannot access the key-value store via a web interface.
-    image: redis:8.4.0-alpine
+    image: redis:8.8.1-alpine
     volumes:
     - redis_data:/data
   thelounge:
@@ -480,7 +493,7 @@ services:
       placement:
         constraints:
         - node.role == manager
-    image: traefik:v3.6.7
+    image: traefik:v3.7.9
     ports:
     - mode: host
       protocol: tcp
@@ -524,7 +537,8 @@ services:
     secrets:
     - trapparty_sqitch-target
     - postgres_role_trapparty_postgraphile_password
-    user: node:node
+    - source: shared_nuxt_og_image_secret
+      target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
     volumes:
     - pnpm_data:/srv/.pnpm-store/
     - ../../../trapparty/:/srv/app/
