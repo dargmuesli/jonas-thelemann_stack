@@ -1,3 +1,5 @@
+## [14.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.5...14.0.6) (2026-07-31)
+
 ## [14.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.4...14.0.5) (2026-07-28)
 
 ## [14.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.3...14.0.4) (2026-07-26)
