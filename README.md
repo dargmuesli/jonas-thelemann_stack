@@ -30,7 +30,7 @@ This project is deployed in accordance to the [DargStack template](https://githu
     
     The DJ website's AWS access key id.
     
- - ### `creal_s3_secret-access-key`
+ - ### `creal_s3_access-key-secret`
     
     The DJ website's AWS access key.
     
