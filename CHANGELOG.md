@@ -1,3 +1,5 @@
+## [15.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.4...15.0.0-beta.1) (2026-08-12)
+
 ## [13.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...13.0.0-beta.1) (2026-01-30)
 
 ### ⚠ BREAKING CHANGES
