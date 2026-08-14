@@ -348,7 +348,7 @@ services:
     env_file: ../production/configurations/nextcloud/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:34.0.2-fpm-alpine
+    image: nextcloud:34.0.3-fpm-alpine
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
@@ -362,7 +362,7 @@ services:
     env_file: ../production/configurations/nextcloud/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:34.0.2-fpm-alpine
+    image: nextcloud:34.0.3-fpm-alpine
     secrets:
     - nextcloud_admin-password
     - nextcloud_admin-user
