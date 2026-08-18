@@ -1,0 +1,12 @@
+secrets:
+  shared-nuxt-og-image-secret:
+    # The secret used for generating Open Graph images on Nuxt websites.
+    file: ~~/artifacts/secrets/shared-nuxt-og-image-secret.secret
+volumes:
+  pnpm-data:
+    # The node package manager's data.
+    {}
+x-dargstack:
+  secrets:
+    shared-nuxt-og-image-secret:
+      type: random_string

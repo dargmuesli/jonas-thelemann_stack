@@ -1,0 +1,7 @@
+services:
+  hedgedoc:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.hedgedoc-secure.middlewares=cloudflarewarp
+        - traefik.http.routers.hedgedoc-secure.tls.certresolver=default

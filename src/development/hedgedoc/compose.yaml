@@ -1,0 +1,35 @@
+secrets:
+  hedgedoc-db-url:
+    # The markdown collaboration tool's database url.
+    file: ~~/artifacts/secrets/hedgedoc-db-url.secret
+  hedgedoc-session-secret:
+    # The markdown collaboration tool's session secret.
+    file: ~~/artifacts/secrets/hedgedoc-session-secret.secret
+services:
+  hedgedoc:
+    # You can access the markdown collaboration tool at [hedgedoc.localhost](https://hedgedoc.localhost/).
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.hedgedoc.middlewares=redirectscheme
+        - traefik.http.routers.hedgedoc.rule=Host(`hedgedoc.${STACK_DOMAIN}`)
+        - traefik.http.routers.hedgedoc-secure.rule=Host(`hedgedoc.${STACK_DOMAIN}`)
+        - traefik.http.routers.hedgedoc-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.hedgedoc.loadbalancer.server.port=3000
+    environment:
+      CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
+      CMD_PROTOCOL_USESSL: "true"
+      CMD_URL_ADDPORT: "false"
+    image: quay.io/hedgedoc/hedgedoc:1.11.1-alpine
+    secrets:
+      - source: hedgedoc-db-url
+        target: dbURL
+      - source: hedgedoc-session-secret
+        target: sessionsecret
+x-dargstack:
+  secrets:
+    hedgedoc-db-url:
+      type: template
+      template: postgres://{{secret:postgres-user}}:{{secret:postgres-password}}@postgres:5432/hedgedoc
+    hedgedoc-session-secret:
+      type: random_string

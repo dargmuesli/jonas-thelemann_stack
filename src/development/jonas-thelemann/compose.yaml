@@ -1,0 +1,65 @@
+secrets:
+  jonas-thelemann-nodemailer-transport:
+    # The email service's SMTP configuration.
+    file: ~~/artifacts/secrets/jonas-thelemann-nodemailer-transport.secret
+  jonas-thelemann-turnstile-key:
+    # The captcha provider's application key.
+    file: ~~/artifacts/secrets/jonas-thelemann-turnstile-key.secret
+services:
+  jonas-thelemann:
+    # You can access the main project at [localhost](https://localhost/).
+    deploy:
+      labels:
+        - dargstack.development.git.ssh=git@github.com:dargmuesli/jonas-thelemann.git
+        - dargstack.development.git.https=https://github.com/dargmuesli/jonas-thelemann.git
+        - traefik.enable=true
+        - traefik.http.routers.jonas-thelemann.entryPoints=web
+        - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme
+        - traefik.http.routers.jonas-thelemann.rule=Host(`${STACK_DOMAIN}`) || Host(`backend.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann.service=jonas-thelemann # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure.entryPoints=web-secure
+        - traefik.http.routers.jonas-thelemann-secure.middlewares=header_cors # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure.rule=Host(`${STACK_DOMAIN}`) || Host(`backend.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure.service=jonas-thelemann # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure-nuxt.entryPoints=nuxt # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure-nuxt.service=jonas-thelemann-secure-nuxt # dargstack:dev-only
+        - traefik.http.routers.jonas-thelemann-secure-nuxt.rule=Host(`${STACK_DOMAIN}`) || Host(`backend.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.services.jonas-thelemann.loadbalancer.server.port=3000
+        - traefik.http.services.jonas-thelemann-secure-nuxt.loadbalancer.server.port=24678 # dargstack:dev-only
+    environment:
+      NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
+      NUXT_PUBLIC_I18N_BASE_URL: https://${STACK_DOMAIN}
+      NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
+      NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
+    image: dargmuesli/jonas-thelemann:dev
+    secrets:
+      - source: jonas-thelemann-nodemailer-transport
+        target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
+      - source: jonas-thelemann-turnstile-key
+        target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
+      - source: shared-nuxt-og-image-secret
+        target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
+    volumes:
+      - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
+      - ~~~/jonas-thelemann/:/srv/app/ # dargstack:dev-only
+      - jonas-thelemann-data:/srv/app/node_modules # dargstack:dev-only
+volumes:
+  jonas-thelemann-data:
+    # The main project's data.
+    {}
+x-dargstack:
+  secrets:
+    jonas-thelemann-nodemailer-transport:
+      type: insecure_default
+      insecure_default: |
+        {
+          "host": "localhost",
+          "port": 25,
+          "tls": {
+            "rejectUnauthorized": false
+          }
+        }
+    jonas-thelemann-turnstile-key:
+      type: insecure_default
+      insecure_default: 1x0000000000000000000000000000000AA

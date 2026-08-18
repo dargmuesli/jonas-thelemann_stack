@@ -1,0 +1,34 @@
+services: # dargstack:dev-only
+  minio: # dargstack:dev-only
+    # You can access the s3 console at [minio.localhost](https://minio.localhost/).
+    # You can access the s3 api service at [s3.localhost](https://s3.localhost/) if you want to access via cli from outside the stack.
+    entrypoint: /patched-entrypoint.sh # dargstack:dev-only
+    command: server /data --console-address ":9001" # dargstack:dev-only
+    deploy: # dargstack:dev-only
+      labels: # dargstack:dev-only
+        - traefik.enable=true # dargstack:dev-only
+        - traefik.http.routers.minio.middlewares=redirectscheme # dargstack:dev-only
+        - traefik.http.routers.minio.rule=Host(`minio.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.minio-secure.rule=Host(`minio.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.minio-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.minio.loadbalancer.server.port=9001 # dargstack:dev-only
+        - traefik.http.services.minio.loadbalancer.passhostheader=true # dargstack:dev-only
+        - traefik.http.routers.s3.middlewares=redirectscheme # dargstack:dev-only
+        - traefik.http.routers.s3.rule=Host(`s3.${STACK_DOMAIN}`) || Host(`creal-audio.s3.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.s3-secure.rule=Host(`s3.${STACK_DOMAIN}`) || Host(`creal-audio.s3.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.routers.s3-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.s3.loadbalancer.server.port=9000 # dargstack:dev-only
+        - traefik.http.services.s3.loadbalancer.passhostheader=true # dargstack:dev-only
+    environment: # dargstack:dev-only
+      MINIO_BROWSER_REDIRECT_URL: https://minio.${STACK_DOMAIN} # dargstack:dev-only
+      MINIO_DOMAIN: https://minio.${STACK_DOMAIN} # dargstack:dev-only
+      MINIO_ROOT_PASSWORD: s3password # dargstack:dev-only
+      MINIO_ROOT_USER: s3user # dargstack:dev-only
+    image: minio/minio # dargstack:dev-only
+    volumes: # dargstack:dev-only
+      - minio-data:/data # dargstack:dev-only
+      - ./configurations/entrypoint.sh:/patched-entrypoint.sh # dargstack:dev-only
+volumes: # dargstack:dev-only
+  minio-data: # dargstack:dev-only
+    # The s3 server's data. # dargstack:dev-only
+    {} # dargstack:dev-only

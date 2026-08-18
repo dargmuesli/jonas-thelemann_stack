@@ -1,0 +1,10 @@
+services:
+  redis:
+    # You cannot access the key-value store via a web interface.
+    image: redis:8.8.1-alpine
+    volumes:
+      - redis-data:/data
+volumes:
+  redis-data:
+    # The key-value store's data.
+    {}

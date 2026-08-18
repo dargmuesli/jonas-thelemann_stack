@@ -1,0 +1,10 @@
+services:
+  creal-strapi:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.creal-strapi-secure.middlewares=cloudflarewarp
+        - traefik.http.routers.creal-strapi-secure.tls.certresolver=default
+    image: ghcr.io/dargmuesli/creal_strapi:4.2.16
+    volumes:
+      - creal-strapi-data:/srv/app/public/

@@ -1,0 +1,33 @@
+secrets:
+  creal-postgraphile-connection:
+    # The cReal GraphQL API's database URI.
+    file: ~~/artifacts/secrets/creal-postgraphile-connection.secret
+  creal-postgraphile-owner-connection:
+    # The cReal GraphQL API's database owner URI.
+    file: ~~/artifacts/secrets/creal-postgraphile-owner-connection.secret
+services:
+  creal-postgraphile:
+    # You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.localhost](https://creal-postgraphile.localhost/).
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.creal-postgraphile.middlewares=redirectscheme
+        - traefik.http.routers.creal-postgraphile.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
+        - traefik.http.routers.creal-postgraphile-secure.middlewares=header_cors # dargstack:dev-only
+        - traefik.http.routers.creal-postgraphile-secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
+        - traefik.http.routers.creal-postgraphile-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.creal-postgraphile.loadbalancer.server.port=5000
+    image: graphile/postgraphile:4.14.1
+    secrets:
+      - creal-postgraphile-connection
+      - creal-postgraphile-owner-connection
+    volumes:
+      - ./configurations/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
+x-dargstack:
+  secrets:
+    creal-postgraphile-connection:
+      type: template
+      template: postgresql://creal_postgraphile:{{secret:postgres-role-creal-postgraphile-password}}@postgres:5432/creal
+    creal-postgraphile-owner-connection:
+      type: template
+      template: postgresql://{{secret:postgres-user}}:{{secret:postgres-password}}@postgres:5432/creal
