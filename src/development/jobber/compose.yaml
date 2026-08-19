@@ -40,8 +40,7 @@ x-dargstack:
       type: insecure_default
       insecure_default: "default: mail@localhost"
     jobber-aws-bucket:
-      type: insecure_default
-      insecure_default: jonas-thelemann-backup
+      type: wordlist_word
     jobber-aws-configuration:
       type: template
       template: |
@@ -74,22 +73,38 @@ x-dargstack:
         aws_access_key_id = s3user
         aws_secret_access_key = s3password
     jobber-msmtprc:
-      type: insecure_default
-      insecure_default: |
+      type: template
+      template: |
         # Set default values for all following accounts.
         defaults
-        auth           off
-        tls            off
+        auth           on
+        tls            on
         tls_trust_file /etc/ssl/certs/ca-certificates.crt
         syslog         on
 
-        # localhost
-        account        localhost
-        host           localhost
-        port           25
-        from           mail@localhost
-        user           mail@localhost
+        # <name>
+        account        {{secret:jobber-msmtprc-account}}
+        from           {{secret:jobber-msmtprc-from}}
+        host           {{secret:jobber-msmtprc-host}}
+        password       {{secret:jobber-msmtprc-password}}
+        port           {{secret:jobber-msmtprc-port}}
+        user           {{secret:jobber-msmtprc-user}}
+        # or
+        #auth           off
+        #tls            off
 
         # Set a default account
-        account default : localhost
+        account default : <name>
         aliases        /etc/aliases
+    jobber-msmtprc-account:
+      type: third_party
+    jobber-msmtprc-from:
+      type: third_party
+    jobber-msmtprc-host:
+      type: third_party
+    jobber-msmtprc-password:
+      type: third_party
+    jobber-msmtprc-port:
+      type: third_party
+    jobber-msmtprc-user:
+      type: third_party
