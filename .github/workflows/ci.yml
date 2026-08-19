@@ -31,9 +31,11 @@ jobs:
           ref: ${{ github.head_ref || github.ref_name }}
       - name: Install dargstack
         run: |
+          VERSION="$(sed -n 's#^FROM ghcr\.io/dargstack/dargstack:##p' Dockerfile.md)"
+          BASE_URL="https://github.com/dargstack/dargstack/releases/download/v${VERSION}"
           ARCHIVE="dargstack_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/aarch64/arm64/').tar.gz"
-          curl -sfL -o "$ARCHIVE" "https://github.com/dargstack/dargstack/releases/latest/download/$ARCHIVE"
-          curl -sfL https://github.com/dargstack/dargstack/releases/latest/download/checksums.txt | sha256sum -c - --ignore-missing
+          curl -sfL -o "$ARCHIVE" "${BASE_URL}/$ARCHIVE"
+          curl -sfL "${BASE_URL}/checksums.txt" | sha256sum -c - --ignore-missing
           tar xzf "$ARCHIVE" && rm "$ARCHIVE"
           mv dargstack /usr/local/bin/
       - name: Regenerate docs
