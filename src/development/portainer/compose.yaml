@@ -8,6 +8,7 @@ services:
     command: -H tcp://tasks.portainer-agent:9001 --tlsskipverify --admin-password-file '/run/secrets/portainer-admin-password'
     deploy:
       labels:
+        - dargstack.profiles=portainer
         - traefik.enable=true
         - traefik.http.routers.portainer.middlewares=redirectscheme
         - traefik.http.routers.portainer.rule=Host(`portainer.${STACK_DOMAIN}`)
@@ -27,6 +28,8 @@ services:
   portainer-agent:
     # You can access the container manager agent via `portainer`.
     deploy:
+      labels:
+        - dargstack.profiles=portainer
       mode: global
       placement:
         constraints:

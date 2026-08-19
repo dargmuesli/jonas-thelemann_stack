@@ -13,6 +13,7 @@ services:
       - --providers.file.watch=true # dargstack:dev-only
     deploy:
       labels:
+        - dargstack.profiles=default,creal,trapparty,nextcloud,portainer,backup
         - traefik.enable=true
         - traefik.http.middlewares.header_cors.headers.accessControlAllowHeaders=authorization,content-type
         - traefik.http.middlewares.header_cors.headers.accessControlAllowOriginList=*

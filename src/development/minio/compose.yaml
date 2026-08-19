@@ -6,6 +6,7 @@ services: # dargstack:dev-only
     command: server /data --console-address ":9001" # dargstack:dev-only
     deploy: # dargstack:dev-only
       labels: # dargstack:dev-only
+        - dargstack.profiles=backup # dargstack:dev-only
         - traefik.enable=true # dargstack:dev-only
         - traefik.http.routers.minio.middlewares=redirectscheme # dargstack:dev-only
         - traefik.http.routers.minio.rule=Host(`minio.${STACK_DOMAIN}`) # dargstack:dev-only

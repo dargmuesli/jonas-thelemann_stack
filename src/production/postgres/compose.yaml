@@ -5,6 +5,9 @@ secrets:
 services:
   postgres-backup:
     # Backup service for `postgres`.
+    deploy:
+      labels:
+        - dargstack.profiles=backup
     environment:
       POSTGRES_DB_FILE: /run/secrets/postgres-backup-db
       POSTGRES_HOST: postgres

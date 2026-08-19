@@ -10,6 +10,7 @@ services:
     # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
     deploy:
       labels:
+        - dargstack.profiles=trapparty
         - traefik.enable=true
         - traefik.http.routers.trapparty-postgraphile.middlewares=redirectscheme
         - traefik.http.routers.trapparty-postgraphile.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)

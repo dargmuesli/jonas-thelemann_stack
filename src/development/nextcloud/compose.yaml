@@ -8,6 +8,9 @@ secrets:
 services:
   nextcloud:
     # You can access nextcloud via `nextcloud-nginx`.
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
     env_file: ./configurations/nextcloud.env
     environment:
       REDIS_HOST: redis
@@ -21,6 +24,9 @@ services:
       - nextcloud-data:/var/www/html/
   nextcloud-cron:
     # You can access nextcloud via `nextcloud-nginx`.
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
     entrypoint: /cron.sh
     env_file: ./configurations/nextcloud.env
     environment:
@@ -37,6 +43,7 @@ services:
     # You can access nextcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
     deploy:
       labels:
+        - dargstack.profiles=nextcloud
         - traefik.enable=true
         - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-dav.redirectregex.permanent=true
         - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-dav.redirectregex.regex=https://([^/]+)/.well-known/(?:card|cal)dav

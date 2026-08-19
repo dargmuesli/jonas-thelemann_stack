@@ -2,6 +2,34 @@
 
 The Docker stack configuration for [jonas-thelemann.de](https://jonas-thelemann.de/). See [jonas-thelemann](https://github.com/dargmuesli/jonas-thelemann).
 
+## Profiles
+
+Profiles group services so you can deploy subsets on demand. Activate with `dargstack deploy --profiles <name>`.
+
+### backup
+
+Services: jobber, minio, postgres, postgres-backup, traefik, traefik-certs-dumper
+
+### creal
+
+Services: creal, creal-postgraphile, creal-strapi, postgres, traefik, traefik-certs-dumper
+
+### default
+
+Services: adminer, jonas-thelemann, postgres, traefik, traefik-certs-dumper
+
+### nextcloud
+
+Services: nextcloud, nextcloud-cron, nextcloud-nginx, postgres, redis, traefik, traefik-certs-dumper
+
+### portainer
+
+Services: portainer, portainer-agent, traefik, traefik-certs-dumper
+
+### trapparty
+
+Services: postgres, traefik, traefik-certs-dumper, trapparty, trapparty-postgraphile
+
 ## Services
 
 Each service corresponds to a compose.yaml file. Descriptions are extracted from YAML comments in the source. Services marked *(production only)* exist only in the production overlay.
@@ -68,7 +96,7 @@ You can access nextcloud via `nextcloud-nginx`.
 
 ### nextcloud-nginx
 
-You can access nexcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
+You can access nextcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
 
 ### portainer
 
@@ -92,7 +120,7 @@ You cannot access the key-value store via a web interface.
 
 ### thelounge
 
-You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
+You can access the web IRC client's dashboard at [thelounge.localhost](https://thelounge.localhost/).
 
 ### traefik
 

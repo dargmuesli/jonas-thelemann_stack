@@ -12,6 +12,7 @@ services:
       labels:
         - dargstack.development.git.ssh=git@github.com:dargmuesli/jonas-thelemann.git
         - dargstack.development.git.https=https://github.com/dargmuesli/jonas-thelemann.git
+        - dargstack.profiles=default
         - traefik.enable=true
         - traefik.http.routers.jonas-thelemann.entryPoints=web
         - traefik.http.routers.jonas-thelemann.middlewares=redirectscheme

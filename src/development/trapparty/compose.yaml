@@ -9,6 +9,7 @@ services:
       labels:
         - dargstack.development.git.ssh=git@github.com:dargmuesli/trapparty.git
         - dargstack.development.git.https=https://github.com/dargmuesli/trapparty.git
+        - dargstack.profiles=trapparty
         - traefik.enable=true
         - traefik.http.routers.trapparty.entryPoints=web
         - traefik.http.routers.trapparty.middlewares=redirectscheme

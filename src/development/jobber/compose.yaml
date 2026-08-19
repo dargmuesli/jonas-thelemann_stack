@@ -17,6 +17,9 @@ secrets:
 services:
   jobber:
     # You cannot access the jobber via a web interface.
+    deploy:
+      labels:
+        - dargstack.profiles=backup
     environment:
       AWS_SHARED_CREDENTIALS_FILE: /run/secrets/jobber-aws-credentials
     image: ghcr.io/dargmuesli/jobber-aws-msmtp:1.3.0

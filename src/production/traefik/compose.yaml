@@ -29,6 +29,9 @@ services:
       - traefik-cf-zone-api-token
   traefik-certs-dumper:
     # You cannot access the reverse proxy's certificate helper directly.
+    deploy:
+      labels:
+        - dargstack.profiles=default,creal,trapparty,nextcloud,portainer,backup
     command:
       - file
       - --clean=false

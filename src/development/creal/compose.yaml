@@ -15,6 +15,7 @@ services:
       labels:
         - dargstack.development.git.ssh=git@github.com:dargmuesli/creal.git
         - dargstack.development.git.https=https://github.com/dargmuesli/creal.git
+        - dargstack.profiles=creal
         - traefik.enable=true
         - traefik.http.routers.creal.entryPoints=web
         - traefik.http.routers.creal.middlewares=redirectscheme

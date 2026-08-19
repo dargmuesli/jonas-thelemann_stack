@@ -10,6 +10,7 @@ services:
     # You can access cReal's GraphQL API for the PostgreSQL database at [creal-postgraphile.localhost](https://creal-postgraphile.localhost/).
     deploy:
       labels:
+        - dargstack.profiles=creal
         - traefik.enable=true
         - traefik.http.routers.creal-postgraphile.middlewares=redirectscheme
         - traefik.http.routers.creal-postgraphile.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
