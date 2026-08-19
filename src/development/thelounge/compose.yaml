@@ -1,6 +1,6 @@
 services:
   thelounge:
-    # You can access the web IRC client's dashboard at [thelounge.localhost](https://traefik.localhost/).
+    # You can access the web IRC client's dashboard at [thelounge.localhost](https://thelounge.localhost/).
     deploy:
       labels:
         - traefik.enable=true
