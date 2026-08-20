@@ -1,0 +1,7 @@
+services:
+  trapparty-postgraphile:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.trapparty-postgraphile-secure.middlewares=cloudflarewarp,header_cors
+        - traefik.http.routers.trapparty-postgraphile-secure.tls.certresolver=default

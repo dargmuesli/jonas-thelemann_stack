@@ -1,0 +1,7 @@
+services:
+  creal-postgraphile:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.creal-postgraphile-secure.middlewares=cloudflarewarp,header_cors
+        - traefik.http.routers.creal-postgraphile-secure.tls.certresolver=default

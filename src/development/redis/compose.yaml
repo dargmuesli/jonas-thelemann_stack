@@ -1,0 +1,13 @@
+services:
+  redis:
+    # You cannot access the key-value store via a web interface.
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
+    image: redis:8.8.1-alpine
+    volumes:
+      - redis-data:/data
+volumes:
+  redis-data:
+    # The key-value store's data.
+    {}
