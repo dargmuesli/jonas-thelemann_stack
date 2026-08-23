@@ -1,3 +1,9 @@
+## [14.0.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.8...14.0.9) (2026-08-23)
+
+### Bug Fixes
+
+* schedule release ([187fbed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/187fbed30b1706028c20223a0f763373278d9eef))
+
 ## [14.0.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.7...14.0.8) (2026-08-12)
 
 ## [14.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.6...14.0.7) (2026-08-09)
