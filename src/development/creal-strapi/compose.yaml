@@ -19,8 +19,8 @@ services:
     # You can access the DJ website's CMS at [creal-strapi.localhost](https://creal-strapi.localhost/).
     deploy:
       labels:
-        - dargstack.development.git.ssh=git@github.com:dargmuesli/creal_strapi.git
-        - dargstack.development.git.https=https://github.com/dargmuesli/creal_strapi.git
+        - dargstack.development.git.ssh=git@github.com:dargmuesli/creal-strapi.git
+        - dargstack.development.git.https=https://github.com/dargmuesli/creal-strapi.git
         - dargstack.profiles=creal
         - traefik.enable=true
         - traefik.http.routers.creal-strapi.middlewares=redirectscheme
@@ -30,7 +30,7 @@ services:
         - traefik.http.services.creal-strapi.loadbalancer.server.port=1337
     environment:
       DATABASE_HOST: postgres
-      DATABASE_NAME: creal_strapi
+      DATABASE_NAME: creal-strapi
       DATABASE_PORT: 5432
     image: jonas-thelemann/creal-strapi:development
     secrets:
@@ -50,7 +50,7 @@ services:
         target: /run/environment-variables/DATABASE_USERNAME
     volumes:
       - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
-      - ~~~/creal_strapi/:/srv/app/ # dargstack:dev-only
+      - ~~~/creal-strapi/:/srv/app/ # dargstack:dev-only
       - creal-strapi-data:/srv/app/node_modules # dargstack:dev-only
 volumes:
   creal-strapi-data:

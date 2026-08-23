@@ -7,7 +7,7 @@ The fullstack environment composes several services, among those are the followi
 | Repository | Required | Access |
 |---|---|---|
 | [dargmuesli/creal](https://github.com/dargmuesli/creal) | ✅ | public |
-| [dargmuesli/creal_strapi](https://github.com/dargmuesli/creal_strapi) | ✅ | public |
+| [dargmuesli/creal-strapi](https://github.com/dargmuesli/creal-strapi) | ✅ | public |
 | [dargmuesli/jonas-thelemann](https://github.com/dargmuesli/jonas-thelemann) | ✅ | public |
 | [dargmuesli/jonas-thelemann_stack](https://github.com/dargmuesli/jonas-thelemann_stack) | ✅ | public |
 | [dargmuesli/trapparty](https://github.com/dargmuesli/trapparty) | ✅ | public |
@@ -38,7 +38,7 @@ If you prefer to step through each action yourself:
    ```sh
    mkdir jonas-thelemann && cd jonas-thelemann
    git clone git@github.com:dargmuesli/creal.git
-   git clone git@github.com:dargmuesli/creal_strapi.git
+   git clone git@github.com:dargmuesli/creal-strapi.git
    git clone git@github.com:dargmuesli/jonas-thelemann.git
    git clone git@github.com:dargmuesli/jonas-thelemann_stack.git
    git clone git@github.com:dargmuesli/trapparty.git
@@ -50,7 +50,7 @@ If you prefer to step through each action yourself:
    ```sh
    mkdir jonas-thelemann && cd jonas-thelemann
    git clone https://github.com/dargmuesli/creal.git
-   git clone https://github.com/dargmuesli/creal_strapi.git
+   git clone https://github.com/dargmuesli/creal-strapi.git
    git clone https://github.com/dargmuesli/jonas-thelemann.git
    git clone https://github.com/dargmuesli/jonas-thelemann_stack.git
    git clone https://github.com/dargmuesli/trapparty.git
