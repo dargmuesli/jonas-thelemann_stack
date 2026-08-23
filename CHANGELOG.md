@@ -1,3 +1,13 @@
+## [15.0.0-beta.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.2...15.0.0-beta.3) (2026-08-23)
+
+### ⚠ BREAKING CHANGES
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1
+
+### Features
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1 ([e076e44](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e076e449addc2dfe1684601351c8a404493b482b))
+
 ## [15.0.0-beta.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.1...15.0.0-beta.2) (2026-08-23)
 
 ### ⚠ BREAKING CHANGES
