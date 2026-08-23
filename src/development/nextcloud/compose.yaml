@@ -14,7 +14,7 @@ services:
     env_file: ./configurations/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:34.0.2-fpm-alpine
+    image: nextcloud:34.0.3-fpm-alpine
     secrets:
       - nextcloud-admin-password
       - nextcloud-admin-user
@@ -31,7 +31,7 @@ services:
     env_file: ./configurations/nextcloud.env
     environment:
       REDIS_HOST: redis
-    image: nextcloud:34.0.2-fpm-alpine
+    image: nextcloud:34.0.3-fpm-alpine
     secrets:
       - nextcloud-admin-password
       - nextcloud-admin-user
@@ -67,7 +67,7 @@ services:
         - traefik.http.routers.nextcloud-nginx-secure-contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
         - traefik.http.routers.nextcloud-nginx-secure-contacts.tls.options=mintls13@file # dargstack:dev-only
         - traefik.http.services.nextcloud-nginx.loadbalancer.server.port=80
-    image: nginx:1.31.3-alpine
+    image: nginx:1.31.4-alpine
     volumes:
       - ./configurations/nginx.conf:/etc/nginx/nginx.conf
       - nextcloud-data:/var/www/html/

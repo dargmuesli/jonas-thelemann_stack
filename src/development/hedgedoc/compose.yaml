@@ -17,10 +17,13 @@ services:
         - traefik.http.routers.hedgedoc-secure.tls.options=mintls13@file # dargstack:dev-only
         - traefik.http.services.hedgedoc.loadbalancer.server.port=3000
     environment:
+      CMD_ALLOW_ANONYMOUS: "false"
+      CMD_ALLOW_ANONYMOUS_EDITS: "true"
+      CMD_ALLOW_EMAIL_REGISTER: "false"
       CMD_DOMAIN: hedgedoc.${STACK_DOMAIN}
       CMD_PROTOCOL_USESSL: "true"
       CMD_URL_ADDPORT: "false"
-    image: quay.io/hedgedoc/hedgedoc:1.11.1-alpine
+    image: quay.io/hedgedoc/hedgedoc:1.12.0-alpine
     secrets:
       - source: hedgedoc-db-url
         target: dbURL
