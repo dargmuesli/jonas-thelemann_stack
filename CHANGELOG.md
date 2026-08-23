@@ -1,3 +1,9 @@
+## [15.0.0-beta.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.3...15.0.0-beta.4) (2026-08-23)
+
+### Bug Fixes
+
+* **dargstack:** correct certificate names ([018cff7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/018cff76b2e6c4ead30e990c4de1d16bbccd57ae))
+
 ## [15.0.0-beta.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.2...15.0.0-beta.3) (2026-08-23)
 
 ### ⚠ BREAKING CHANGES
