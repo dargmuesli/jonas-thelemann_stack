@@ -15,20 +15,47 @@ on:
 jobs:
   ci-optimization:
     name: CI optimization
-    uses: dargmuesli/github-actions/.github/workflows/ci-optimization.yml@709b1aafc707215fb7bdee40fd3367d3623b4aa8 # 5.9.0
+    uses: dargmuesli/github-actions/.github/workflows/ci-optimization.yml@ab0335fad9df7941df2880f0645d8f685278da1c # 5.9.4
     permissions:
       pull-requests: read
   build:
     needs: ci-optimization
     if: needs.ci-optimization.outputs.continue == 'true'
-    name: dargstack rgen
-    uses: dargmuesli/github-actions/.github/workflows/dargstack-rgen.yml@709b1aafc707215fb7bdee40fd3367d3623b4aa8 # 5.9.0
+    name: Update generated docs
+    runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Install dargstack
+        run: |
+          VERSION="$(sed -n 's#^FROM ghcr\.io/dargstack/dargstack:##p' Dockerfile.md)"
+          BASE_URL="https://github.com/dargstack/dargstack/releases/download/v${VERSION}"
+          ARCHIVE="dargstack_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/aarch64/arm64/').tar.gz"
+          curl -sfL -o "$ARCHIVE" "${BASE_URL}/$ARCHIVE"
+          curl -sfL "${BASE_URL}/checksums.txt" | sha256sum -c - --ignore-missing
+          tar xzf "$ARCHIVE" && rm "$ARCHIVE"
+          mv dargstack /usr/local/bin/
+      - name: Regenerate docs
+        run: dargstack document
+      - name: Commit and push updated docs
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add artifacts/docs/
+          if git diff --staged --quiet; then
+            echo "Docs are already up to date"
+          else
+            git commit -m "chore: update generated docs"
+            git push
+          fi
   release-semantic:
     needs: build
     name: Semantic Release
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@709b1aafc707215fb7bdee40fd3367d3623b4aa8 # 5.9.0
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@ab0335fad9df7941df2880f0645d8f685278da1c # 5.9.4
     permissions:
       contents: write
       id-token: write

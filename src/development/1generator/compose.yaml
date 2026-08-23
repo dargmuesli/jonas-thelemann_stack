@@ -1,0 +1,12 @@
+services:
+  1generator:
+    # You can access this subproject at [1generator.localhost](https://1generator.localhost/).
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.1generator.middlewares=redirectscheme
+        - traefik.http.routers.1generator.rule=Host(`1generator.${STACK_DOMAIN}`)
+        - traefik.http.routers.1generator-secure.rule=Host(`1generator.${STACK_DOMAIN}`)
+        - traefik.http.routers.1generator-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.1generator.loadbalancer.server.port=80
+    image: dargmuesli/1generator:1.0.1

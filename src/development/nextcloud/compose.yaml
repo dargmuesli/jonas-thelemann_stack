@@ -1,0 +1,83 @@
+secrets:
+  nextcloud-admin-password:
+    # The cloud admin user's password.
+    file: ~~/artifacts/secrets/nextcloud-admin-password.secret
+  nextcloud-admin-user:
+    # The cloud admin user's name.
+    file: ~~/artifacts/secrets/nextcloud-admin-user.secret
+services:
+  nextcloud:
+    # You can access nextcloud via `nextcloud-nginx`.
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
+    env_file: ./configurations/nextcloud.env
+    environment:
+      REDIS_HOST: redis
+    image: nextcloud:34.0.3-fpm-alpine
+    secrets:
+      - nextcloud-admin-password
+      - nextcloud-admin-user
+      - postgres-password
+      - postgres-user
+    volumes:
+      - nextcloud-data:/var/www/html/
+  nextcloud-cron:
+    # You can access nextcloud via `nextcloud-nginx`.
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
+    entrypoint: /cron.sh
+    env_file: ./configurations/nextcloud.env
+    environment:
+      REDIS_HOST: redis
+    image: nextcloud:34.0.3-fpm-alpine
+    secrets:
+      - nextcloud-admin-password
+      - nextcloud-admin-user
+      - postgres-password
+      - postgres-user
+    volumes:
+      - nextcloud-data:/var/www/html/
+  nextcloud-nginx:
+    # You can access nextcloud's frontend at [nextcloud.localhost](https://nextcloud.localhost/).
+    deploy:
+      labels:
+        - dargstack.profiles=nextcloud
+        - traefik.enable=true
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-dav.redirectregex.permanent=true
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-dav.redirectregex.regex=https://([^/]+)/.well-known/(?:card|cal)dav
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-dav.redirectregex.replacement=https://$${1}/remote.php/dav
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-well-known.redirectregex.permanent=true
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-well-known.redirectregex.regex=https://([^/]+)/.well-known/(.*)
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-well-known.redirectregex.replacement=https://$${1}/index.php/.well-known/$${2}
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-calendar.redirectregex.regex=.*
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-calendar.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/calendar/
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-contacts.redirectregex.regex=.*
+        - traefik.http.middlewares.nextcloud-nginx-secure-redirectregex-contacts.redirectregex.replacement=https://nextcloud.${STACK_DOMAIN}/apps/contacts/
+        - traefik.http.routers.nextcloud-nginx.middlewares=redirectscheme
+        - traefik.http.routers.nextcloud-nginx.rule=Host(`nextcloud.${STACK_DOMAIN}`)
+        - traefik.http.routers.nextcloud-nginx-secure.middlewares=nextcloud-nginx-secure-redirectregex-dav,nextcloud-nginx-secure-redirectregex-well-known # dargstack:dev-only
+        - traefik.http.routers.nextcloud-nginx-secure.rule=Host(`nextcloud.${STACK_DOMAIN}`)
+        - traefik.http.routers.nextcloud-nginx-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.routers.nextcloud-nginx-secure-calendar.middlewares=nextcloud-nginx-secure-redirectregex-calendar
+        - traefik.http.routers.nextcloud-nginx-secure-calendar.rule=Host(`calendar.${STACK_DOMAIN}`)
+        - traefik.http.routers.nextcloud-nginx-secure-calendar.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.routers.nextcloud-nginx-secure-contacts.middlewares=nextcloud-nginx-secure-redirectregex-contacts
+        - traefik.http.routers.nextcloud-nginx-secure-contacts.rule=Host(`contacts.${STACK_DOMAIN}`)
+        - traefik.http.routers.nextcloud-nginx-secure-contacts.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.nextcloud-nginx.loadbalancer.server.port=80
+    image: nginx:1.31.4-alpine
+    volumes:
+      - ./configurations/nginx.conf:/etc/nginx/nginx.conf
+      - nextcloud-data:/var/www/html/
+volumes:
+  nextcloud-data:
+    # The cloud's data.
+    {}
+x-dargstack:
+  secrets:
+    nextcloud-admin-password:
+      type: random_string
+    nextcloud-admin-user:
+      type: wordlist_word

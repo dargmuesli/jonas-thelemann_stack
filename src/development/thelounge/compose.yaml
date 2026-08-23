@@ -1,0 +1,18 @@
+services:
+  thelounge:
+    # You can access the web IRC client's dashboard at [thelounge.localhost](https://thelounge.localhost/).
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.thelounge.middlewares=redirectscheme
+        - traefik.http.routers.thelounge.rule=Host(`thelounge.${STACK_DOMAIN}`)
+        - traefik.http.routers.thelounge-secure.rule=Host(`thelounge.${STACK_DOMAIN}`)
+        - traefik.http.routers.thelounge-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.thelounge.loadbalancer.server.port=9000
+    image: thelounge/thelounge:4.3.0-alpine
+    volumes:
+      - thelounge-data:/var/opt/thelounge
+volumes:
+  thelounge-data:
+    # The IRC client's data.
+    {}
