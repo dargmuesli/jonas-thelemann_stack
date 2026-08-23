@@ -1,3 +1,13 @@
+## [15.0.0-beta.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.1...15.0.0-beta.2) (2026-08-23)
+
+### ⚠ BREAKING CHANGES
+
+* **dargstack:** migrate to v4 (#206)
+
+### Features
+
+* **dargstack:** migrate to v4 ([#206](https://github.com/dargmuesli/jonas-thelemann_stack/issues/206)) ([a343a50](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a343a50d903c914c53cd8f1231f85ac77ddd4334))
+
 ## [15.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.4...15.0.0-beta.1) (2026-08-12)
 
 ## [13.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...13.0.0-beta.1) (2026-01-30)
