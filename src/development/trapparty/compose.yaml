@@ -28,7 +28,7 @@ services:
       NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
       NUXT_PUBLIC_I18N_BASE_URL: https://trapparty.${STACK_DOMAIN}
       NUXT_PUBLIC_SITE_URL: https://trapparty.${STACK_DOMAIN}
-    image: dargmuesli/trapparty:dev
+    image: jonas-thelemann/trapparty:development
     secrets:
       - trapparty-sqitch-target
       - postgres-role-trapparty-postgraphile-password

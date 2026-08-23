@@ -33,7 +33,7 @@ services:
       NUXT_PUBLIC_I18N_BASE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_SITE_URL: https://${STACK_DOMAIN}
       NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY}
-    image: dargmuesli/jonas-thelemann:dev
+    image: jonas-thelemann/jonas-thelemann:development
     secrets:
       - source: jonas-thelemann-nodemailer-transport
         target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
