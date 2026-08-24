@@ -1,3 +1,14 @@
+## [15.0.0-beta.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.4...15.0.0-beta.5) (2026-08-24)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal docker tag to v5.4.0 ([b47abb8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b47abb827ba83cedcd154f542b5acd786ee4f569))
+* **hedgedoc:** lock down ([2597f89](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2597f8946605d1c01389607894cd6babf398fbed))
+* **nextcloud:** correct environment variable file path ([642b1fb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/642b1fb313655eee1bcf8c9613e2d8ddcd4a3934))
+* schedule release ([187fbed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/187fbed30b1706028c20223a0f763373278d9eef))
+* schedule release ([0115c42](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0115c422823dec691818d062f12591f49cf6139b))
+* schedule release ([a6cc353](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6cc353bc88cb68ef9d03646065961bd3aa2e281))
+
 ## [15.0.0-beta.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.3...15.0.0-beta.4) (2026-08-23)
 
 ### Bug Fixes
