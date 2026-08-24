@@ -1,3 +1,9 @@
+## [15.1.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.3...15.1.4) (2026-08-24)
+
+### Bug Fixes
+
+* **traefik:** append production volumes ([a6d968d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6d968d2acd3e4e45c184a15d906f3777a156f39))
+
 ## [15.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.2...15.1.3) (2026-08-24)
 
 ### Bug Fixes
