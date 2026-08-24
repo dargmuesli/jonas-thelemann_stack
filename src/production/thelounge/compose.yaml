@@ -5,3 +5,5 @@ services:
         - (( append ))
         - traefik.http.routers.thelounge-secure.middlewares=cloudflarewarp
         - traefik.http.routers.thelounge-secure.tls.certresolver=default
+      update_config:
+        order: stop-first

@@ -3,11 +3,17 @@ secrets:
     # The database backup service's database name.
     external: true
 services:
+  postgres:
+    deploy:
+      update_config:
+        order: stop-first
   postgres-backup:
     # Backup service for `postgres`.
     deploy:
       labels:
         - dargstack.profiles=backup
+      update_config:
+        order: stop-first
     environment:
       POSTGRES_DB_FILE: /run/secrets/postgres-backup-db
       POSTGRES_HOST: postgres

@@ -1,0 +1,9 @@
+services:
+  portainer:
+    deploy:
+      update_config:
+        order: stop-first
+  portainer-agent:
+    deploy:
+      update_config:
+        order: stop-first

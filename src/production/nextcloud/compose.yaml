@@ -1,4 +1,12 @@
 services:
+  nextcloud:
+    deploy:
+      update_config:
+        order: stop-first
+  nextcloud-cron:
+    deploy:
+      update_config:
+        order: stop-first
   nextcloud-nginx:
     deploy:
       labels:
@@ -7,3 +15,5 @@ services:
         - traefik.http.routers.nextcloud-nginx-secure.tls.certresolver=default
         - traefik.http.routers.nextcloud-nginx-secure-calendar.tls.certresolver=default
         - traefik.http.routers.nextcloud-nginx-secure-contacts.tls.certresolver=default
+      update_config:
+        order: stop-first

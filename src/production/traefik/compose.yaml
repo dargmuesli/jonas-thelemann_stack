@@ -21,6 +21,8 @@ services:
         - traefik.http.middlewares.cloudflarewarp.plugin.cloudflarewarp.disableDefault=false
         - traefik.http.routers.traefik-secure.middlewares=cloudflarewarp
         - traefik.http.routers.traefik-secure.tls.certresolver=default
+      update_config:
+        order: stop-first
     environment:
       CF_DNS_API_TOKEN_FILE: /run/secrets/traefik-cf-dns-api-token
       CF_ZONE_API_TOKEN_FILE: /run/secrets/traefik-cf-zone-api-token
@@ -32,6 +34,8 @@ services:
     deploy:
       labels:
         - dargstack.profiles=default,creal,trapparty,nextcloud,portainer,backup
+      update_config:
+        order: stop-first
     command:
       - file
       - --clean=false
