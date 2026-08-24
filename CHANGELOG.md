@@ -1,3 +1,9 @@
+## [15.1.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.4...15.1.5) (2026-08-24)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal-strapi to 5.0.2 ([b9c7468](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b9c7468e9bdc8604aba28acdac3db2174346747a))
+
 ## [15.1.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.3...15.1.4) (2026-08-24)
 
 ### Bug Fixes
