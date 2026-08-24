@@ -1,3 +1,9 @@
+## [15.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.0...15.1.1) (2026-08-24)
+
+### Bug Fixes
+
+* **deploy:** hardcode stop-first update order for stateful services ([#210](https://github.com/dargmuesli/jonas-thelemann_stack/issues/210)) ([95d6cde](https://github.com/dargmuesli/jonas-thelemann_stack/commit/95d6cdecc3973ac07481a573c104066445220eb4))
+
 ## [15.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0...15.1.0) (2026-08-24)
 
 ### Features
