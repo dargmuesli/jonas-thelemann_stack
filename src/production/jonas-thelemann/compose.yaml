@@ -7,5 +7,7 @@ services:
         - traefik.http.routers.jonas-thelemann-secure.middlewares=cloudflarewarp,header_cors
         - traefik.http.routers.jonas-thelemann-secure.rule=Host(`backend.jonas-thelemann.de`) && PathPrefix(`/api`)
         - traefik.http.routers.jonas-thelemann-secure.tls.certresolver=default
+      update_config:
+        order: start-first
     image: ghcr.io/dargmuesli/jonas-thelemann:6.17.3
     volumes: (( prune ))

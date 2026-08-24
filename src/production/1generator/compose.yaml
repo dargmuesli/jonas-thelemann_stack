@@ -5,3 +5,5 @@ services:
         - (( append ))
         - traefik.http.routers.1generator-secure.middlewares=cloudflarewarp
         - traefik.http.routers.1generator-secure.tls.certresolver=default
+      update_config:
+        order: start-first
