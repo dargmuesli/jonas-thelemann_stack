@@ -1,6 +1,10 @@
 services:
   portainer:
     deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.portainer-secure.middlewares=cloudflarewarp
+        - traefik.http.routers.portainer-secure.tls.certresolver=default
       update_config:
         order: stop-first
   portainer-agent:
