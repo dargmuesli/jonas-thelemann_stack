@@ -1,3 +1,24 @@
+## [15.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.9...15.0.0) (2026-08-24)
+
+### ⚠ BREAKING CHANGES
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1
+* **dargstack:** migrate to v4 (#206)
+* **creal:** rename access key secret
+* **jonas-thelemann:** rename nodemailer transport secret
+
+### Features
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1 ([e076e44](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e076e449addc2dfe1684601351c8a404493b482b))
+* **creal:** rename access key secret ([a6fee4d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6fee4dcc28216894335e40424c63ee91b06b810))
+* **dargstack:** migrate to v4 ([#206](https://github.com/dargmuesli/jonas-thelemann_stack/issues/206)) ([a343a50](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a343a50d903c914c53cd8f1231f85ac77ddd4334))
+* **jonas-thelemann:** rename nodemailer transport secret ([7e54bd4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7e54bd49296fedc5a70d5bda002aafaceda6fe5c))
+
+### Bug Fixes
+
+* **dargstack:** correct certificate names ([018cff7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/018cff76b2e6c4ead30e990c4de1d16bbccd57ae))
+* **nextcloud:** correct environment variable file path ([642b1fb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/642b1fb313655eee1bcf8c9613e2d8ddcd4a3934))
+
 ## [15.0.0-beta.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.4...15.0.0-beta.5) (2026-08-24)
 
 ### Bug Fixes
