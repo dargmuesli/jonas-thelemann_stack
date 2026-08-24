@@ -1,3 +1,9 @@
+## [15.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.1...15.1.2) (2026-08-24)
+
+### Bug Fixes
+
+* **deploy:** add missing tls.certresolver to portainer ([afbaf2b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/afbaf2b650b0bedcbe3a02679815d91c7e05abd2))
+
 ## [15.1.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.0...15.1.1) (2026-08-24)
 
 ### Bug Fixes
