@@ -5,6 +5,6 @@ services:
         - (( append ))
         - traefik.http.routers.creal-strapi-secure.middlewares=cloudflarewarp
         - traefik.http.routers.creal-strapi-secure.tls.certresolver=default
-    image: ghcr.io/dargmuesli/creal-strapi:5.0.0-beta.1
+    image: ghcr.io/dargmuesli/creal-strapi:5.0.0
     volumes:
       - creal-strapi-data:/srv/app/public/
