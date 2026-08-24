@@ -1,3 +1,9 @@
+## [15.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.2...15.1.3) (2026-08-24)
+
+### Bug Fixes
+
+* **traefik:** add acme volume ([ede9b6e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/ede9b6ebbeb11e75bea6e5acd45e03d1053f2b49))
+
 ## [15.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.1...15.1.2) (2026-08-24)
 
 ### Bug Fixes
