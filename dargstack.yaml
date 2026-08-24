@@ -1,0 +1,28 @@
+# Dargstack configuration file
+
+environment:
+  # development:
+  #   domain: app.localhost # optional, defaults to "app.localhost"
+  #   certificate:
+  #     include: [] # optional, domains added to TLS cert
+  #       # - "*.app.localhost"
+  #     exclude: [] # optional, domains removed from TLS cert
+  production:
+    domain: jonas-thelemann.de # optional, defaults to "app.localhost"
+    # branch: main # optional, defaults to "main"
+    # tag: latest # optional, defaults to "latest"
+
+metadata:
+  compatibility: ">=4.13.0-0 <5.0.0"
+  name: "jonas-thelemann"
+  source:
+    name: "jonas-thelemann"
+    url: "https://github.com/dargmuesli/jonas-thelemann"
+
+runtime:
+  # deploy:
+  #   volumes:
+  #     prompt: true # optional, defaults to true
+  # build:
+  #   mode: missing # optional, "always" | "missing"
+  # sudo: auto # optional, "auto" | "always" | "never"

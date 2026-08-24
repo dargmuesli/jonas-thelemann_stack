@@ -1,0 +1,70 @@
+secrets:
+  creal-strapi-admin-jwt-secret:
+    # The DJ website's CMS administrator JWT secret.
+    file: ~~/artifacts/secrets/creal-strapi-admin-jwt-secret.secret
+  creal-strapi-api-token-salt:
+    # The DJ website's CMS administrator admin token salt.
+    file: ~~/artifacts/secrets/creal-strapi-api-token-salt.secret
+  creal-strapi-app-keys:
+    # The DJ website's CMS session secrets.
+    file: ~~/artifacts/secrets/creal-strapi-app-keys.secret
+  creal-strapi-jwt-secret:
+    # The DJ website's CMS JWT secret.
+    file: ~~/artifacts/secrets/creal-strapi-jwt-secret.secret
+  creal-strapi-transfer-token-salt:
+    # The DJ website's CMS transfer token salt.
+    file: ~~/artifacts/secrets/creal-strapi-transfer-token-salt.secret
+services:
+  creal-strapi:
+    # You can access the DJ website's CMS at [creal-strapi.localhost](https://creal-strapi.localhost/).
+    deploy:
+      labels:
+        - dargstack.development.git.ssh=git@github.com:dargmuesli/creal-strapi.git
+        - dargstack.development.git.https=https://github.com/dargmuesli/creal-strapi.git
+        - dargstack.profiles=creal
+        - traefik.enable=true
+        - traefik.http.routers.creal-strapi.middlewares=redirectscheme
+        - traefik.http.routers.creal-strapi.rule=Host(`creal-strapi.${STACK_DOMAIN}`)
+        - traefik.http.routers.creal-strapi-secure.rule=Host(`creal-strapi.${STACK_DOMAIN}`)
+        - traefik.http.routers.creal-strapi-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.creal-strapi.loadbalancer.server.port=1337
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_NAME: creal-strapi
+      DATABASE_PORT: 5432
+    image: jonas-thelemann/creal-strapi:development
+    secrets:
+      - source: creal-strapi-admin-jwt-secret
+        target: /run/environment-variables/ADMIN_JWT_SECRET
+      - source: creal-strapi-api-token-salt
+        target: /run/environment-variables/API_TOKEN_SALT
+      - source: creal-strapi-app-keys
+        target: /run/environment-variables/APP_KEYS
+      - source: creal-strapi-jwt-secret
+        target: /run/environment-variables/JWT_SECRET
+      - source: creal-strapi-transfer-token-salt
+        target: /run/environment-variables/TRANSFER_TOKEN_SALT
+      - source: postgres-password
+        target: /run/environment-variables/DATABASE_PASSWORD
+      - source: postgres-user
+        target: /run/environment-variables/DATABASE_USERNAME
+    volumes:
+      - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
+      - ~~~/creal-strapi/:/srv/app/ # dargstack:dev-only
+      - creal-strapi-data:/srv/app/node_modules # dargstack:dev-only
+volumes:
+  creal-strapi-data:
+    # The DJ website CMS' data.
+    {}
+x-dargstack:
+  secrets:
+    creal-strapi-admin-jwt-secret:
+      type: random_string
+    creal-strapi-api-token-salt:
+      type: random_string
+    creal-strapi-app-keys:
+      type: random_string
+    creal-strapi-jwt-secret:
+      type: random_string
+    creal-strapi-transfer-token-salt:
+      type: random_string

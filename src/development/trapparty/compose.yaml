@@ -1,0 +1,49 @@
+secrets:
+  trapparty-sqitch-target:
+    # The party website's Sqitch target.
+    file: ~~/artifacts/secrets/trapparty-sqitch-target.secret
+services:
+  trapparty:
+    # You can access TrapParty's website at [trapparty.localhost](https://trapparty.localhost/).
+    deploy:
+      labels:
+        - dargstack.development.git.ssh=git@github.com:dargmuesli/trapparty.git
+        - dargstack.development.git.https=https://github.com/dargmuesli/trapparty.git
+        - dargstack.profiles=trapparty
+        - traefik.enable=true
+        - traefik.http.routers.trapparty.entryPoints=web
+        - traefik.http.routers.trapparty.middlewares=redirectscheme
+        - traefik.http.routers.trapparty.rule=Host(`trapparty.${STACK_DOMAIN}`)
+        - traefik.http.routers.trapparty.service=trapparty # dargstack:dev-only
+        - traefik.http.routers.trapparty-secure.entryPoints=web-secure
+        - traefik.http.routers.trapparty-secure.rule=Host(`trapparty.${STACK_DOMAIN}`)
+        - traefik.http.routers.trapparty-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.routers.trapparty-secure.service=trapparty # dargstack:dev-only
+        - traefik.http.routers.trapparty-secure-nuxt.entryPoints=nuxt # dargstack:dev-only
+        - traefik.http.routers.trapparty-secure-nuxt.service=trapparty-secure-nuxt # dargstack:dev-only
+        - traefik.http.routers.trapparty-secure-nuxt.rule=Host(`trapparty.${STACK_DOMAIN}`) # dargstack:dev-only
+        - traefik.http.services.trapparty.loadbalancer.server.port=3000
+        - traefik.http.services.trapparty-secure-nuxt.loadbalancer.server.port=24678 # dargstack:dev-only
+    environment:
+      NUXT_PUBLIC_GTAG_ID: ${GTAG_ID}
+      NUXT_PUBLIC_I18N_BASE_URL: https://trapparty.${STACK_DOMAIN}
+      NUXT_PUBLIC_SITE_URL: https://trapparty.${STACK_DOMAIN}
+    image: jonas-thelemann/trapparty:development
+    secrets:
+      - trapparty-sqitch-target
+      - postgres-role-trapparty-postgraphile-password
+      - source: shared-nuxt-og-image-secret
+        target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
+    volumes:
+      - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
+      - ~~~/trapparty/:/srv/app/ # dargstack:dev-only
+      - trapparty-data:/srv/app/node_modules # dargstack:dev-only
+volumes:
+  trapparty-data:
+    # The TrapParty website's data.
+    {}
+x-dargstack:
+  secrets:
+    trapparty-sqitch-target:
+      type: template
+      template: db:pg://{{secret:postgres-user}}:{{secret:postgres-password}}@postgres/trapparty

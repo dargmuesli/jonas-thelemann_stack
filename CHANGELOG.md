@@ -1,3 +1,66 @@
+## [15.0.0-beta.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.4...15.0.0-beta.5) (2026-08-24)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal docker tag to v5.4.0 ([b47abb8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b47abb827ba83cedcd154f542b5acd786ee4f569))
+* **hedgedoc:** lock down ([2597f89](https://github.com/dargmuesli/jonas-thelemann_stack/commit/2597f8946605d1c01389607894cd6babf398fbed))
+* **nextcloud:** correct environment variable file path ([642b1fb](https://github.com/dargmuesli/jonas-thelemann_stack/commit/642b1fb313655eee1bcf8c9613e2d8ddcd4a3934))
+* schedule release ([187fbed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/187fbed30b1706028c20223a0f763373278d9eef))
+* schedule release ([0115c42](https://github.com/dargmuesli/jonas-thelemann_stack/commit/0115c422823dec691818d062f12591f49cf6139b))
+* schedule release ([a6cc353](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a6cc353bc88cb68ef9d03646065961bd3aa2e281))
+
+## [15.0.0-beta.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.3...15.0.0-beta.4) (2026-08-23)
+
+### Bug Fixes
+
+* **dargstack:** correct certificate names ([018cff7](https://github.com/dargmuesli/jonas-thelemann_stack/commit/018cff76b2e6c4ead30e990c4de1d16bbccd57ae))
+
+## [15.0.0-beta.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.2...15.0.0-beta.3) (2026-08-23)
+
+### ⚠ BREAKING CHANGES
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1
+
+### Features
+
+* **creal-strapi:** upgrade to v5.0.0-beta.1 ([e076e44](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e076e449addc2dfe1684601351c8a404493b482b))
+
+## [15.0.0-beta.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0-beta.1...15.0.0-beta.2) (2026-08-23)
+
+### ⚠ BREAKING CHANGES
+
+* **dargstack:** migrate to v4 (#206)
+
+### Features
+
+* **dargstack:** migrate to v4 ([#206](https://github.com/dargmuesli/jonas-thelemann_stack/issues/206)) ([a343a50](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a343a50d903c914c53cd8f1231f85ac77ddd4334))
+
+## [15.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.4...15.0.0-beta.1) (2026-08-12)
+
+## [13.0.0-beta.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/12.0.3...13.0.0-beta.1) (2026-01-30)
+
+### ⚠ BREAKING CHANGES
+
+* **jonas-thelemann:** rename nodemailer transport secret
+
+### Features
+
+* **jonas-thelemann:** rename nodemailer transport secret ([7e54bd4](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7e54bd49296fedc5a70d5bda002aafaceda6fe5c))
+
+## [14.0.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.8...14.0.9) (2026-08-23)
+
+### Bug Fixes
+
+* schedule release ([187fbed](https://github.com/dargmuesli/jonas-thelemann_stack/commit/187fbed30b1706028c20223a0f763373278d9eef))
+
+## [14.0.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.7...14.0.8) (2026-08-12)
+
+## [14.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.6...14.0.7) (2026-08-09)
+
+## [14.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.5...14.0.6) (2026-07-31)
+
+## [14.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.4...14.0.5) (2026-07-28)
+
 ## [14.0.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.8...14.0.9) (2026-08-23)
 
 ### Bug Fixes

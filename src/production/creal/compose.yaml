@@ -1,0 +1,9 @@
+services:
+  creal:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.creal-secure.middlewares=cloudflarewarp
+        - traefik.http.routers.creal-secure.tls.certresolver=default
+    image: ghcr.io/dargmuesli/creal:6.0.0
+    volumes: (( prune ))

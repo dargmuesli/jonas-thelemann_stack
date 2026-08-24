@@ -1,0 +1,9 @@
+services:
+  nextcloud-nginx:
+    deploy:
+      labels:
+        - (( append ))
+        - traefik.http.routers.nextcloud-nginx-secure.middlewares=cloudflarewarp,nextcloud-nginx-secure-redirectregex-dav,nextcloud-nginx-secure-redirectregex-well-known
+        - traefik.http.routers.nextcloud-nginx-secure.tls.certresolver=default
+        - traefik.http.routers.nextcloud-nginx-secure-calendar.tls.certresolver=default
+        - traefik.http.routers.nextcloud-nginx-secure-contacts.tls.certresolver=default

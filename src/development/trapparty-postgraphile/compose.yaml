@@ -1,0 +1,34 @@
+secrets:
+  trapparty-postgraphile-connection:
+    # The TrapParty GraphQL API's database URI.
+    file: ~~/artifacts/secrets/trapparty-postgraphile-connection.secret
+  trapparty-postgraphile-owner-connection:
+    # The TrapParty GraphQL API's database owner URI.
+    file: ~~/artifacts/secrets/trapparty-postgraphile-owner-connection.secret
+services:
+  trapparty-postgraphile:
+    # You can access TrapParty's GraphQL API for the PostgreSQL database at [postgraphile.localhost](https://postgraphile.localhost/).
+    deploy:
+      labels:
+        - dargstack.profiles=trapparty
+        - traefik.enable=true
+        - traefik.http.routers.trapparty-postgraphile.middlewares=redirectscheme
+        - traefik.http.routers.trapparty-postgraphile.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
+        - traefik.http.routers.trapparty-postgraphile-secure.middlewares=header_cors # dargstack:dev-only
+        - traefik.http.routers.trapparty-postgraphile-secure.rule=Host(`trapparty-postgraphile.${STACK_DOMAIN}`)
+        - traefik.http.routers.trapparty-postgraphile-secure.tls.options=mintls13@file # dargstack:dev-only
+        - traefik.http.services.trapparty-postgraphile.loadbalancer.server.port=5000
+    image: graphile/postgraphile:4.14.1
+    secrets:
+      - trapparty-postgraphile-connection
+      - trapparty-postgraphile-owner-connection
+    volumes:
+      - ./configurations/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
+x-dargstack:
+  secrets:
+    trapparty-postgraphile-connection:
+      type: template
+      template: postgresql://trapparty_postgraphile:{{secret:postgres-role-trapparty-postgraphile-password}}@postgres:5432/trapparty
+    trapparty-postgraphile-owner-connection:
+      type: template
+      template: postgresql://{{secret:postgres-user}}:{{secret:postgres-password}}@postgres:5432/trapparty
