@@ -1,3 +1,9 @@
+## [15.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.0.0...15.1.0) (2026-08-24)
+
+### Features
+
+* **deploy:** use start-first update order for stateless services ([320e9c0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/320e9c05f22006933fe26a129723d1a4538460ce))
+
 ## [15.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/14.0.9...15.0.0) (2026-08-24)
 
 ### ⚠ BREAKING CHANGES
