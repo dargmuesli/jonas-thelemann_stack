@@ -7,5 +7,5 @@ services:
         - traefik.http.routers.trapparty-secure.tls.certresolver=default
       update_config:
         order: start-first
-    image: ghcr.io/dargmuesli/trapparty:5.0.0
+    image: ghcr.io/dargmuesli/trapparty:5.1.0
     volumes: (( prune ))
