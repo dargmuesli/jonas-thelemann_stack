@@ -7,5 +7,5 @@ services:
         - traefik.http.routers.creal-secure.tls.certresolver=default
       update_config:
         order: start-first
-    image: ghcr.io/dargmuesli/creal:6.2.0
+    image: ghcr.io/dargmuesli/creal:6.2.1
     volumes: (( prune ))
