@@ -9,5 +9,5 @@ services:
         - traefik.http.routers.jonas-thelemann-secure.tls.certresolver=default
       update_config:
         order: start-first
-    image: ghcr.io/dargmuesli/jonas-thelemann:6.18.0
+    image: ghcr.io/dargmuesli/jonas-thelemann:6.18.1
     volumes: (( prune ))
