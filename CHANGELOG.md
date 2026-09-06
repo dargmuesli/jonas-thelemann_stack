@@ -1,3 +1,9 @@
+## [15.1.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.6...15.1.7) (2026-09-06)
+
+### Bug Fixes
+
+* schedule release ([c73705e](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c73705e7873217da97bb72cf8740d782735ffdbe))
+
 ## [15.1.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.5...15.1.6) (2026-08-28)
 
 ### Bug Fixes
