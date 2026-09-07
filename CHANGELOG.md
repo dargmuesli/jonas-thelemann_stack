@@ -1,3 +1,9 @@
+## [15.1.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.8...15.1.9) (2026-09-07)
+
+### Bug Fixes
+
+* **traefik:** trust cloudflare ips on the web-secure entrypoint ([#212](https://github.com/dargmuesli/jonas-thelemann_stack/issues/212)) ([a8108f0](https://github.com/dargmuesli/jonas-thelemann_stack/commit/a8108f0126f3b12f41241067ef416e13b324583d))
+
 ## [15.1.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.7...15.1.8) (2026-09-07)
 
 ### Bug Fixes
