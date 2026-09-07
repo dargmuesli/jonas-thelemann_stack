@@ -1,3 +1,9 @@
+## [15.1.8](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.7...15.1.8) (2026-09-07)
+
+### Bug Fixes
+
+* **nextcloud:** sync nginx configuration with upstream example ([#211](https://github.com/dargmuesli/jonas-thelemann_stack/issues/211)) ([e0dc314](https://github.com/dargmuesli/jonas-thelemann_stack/commit/e0dc31496d4e6ab7f73150b922b2dc1967c6d2fb))
+
 ## [15.1.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.6...15.1.7) (2026-09-06)
 
 ### Bug Fixes
