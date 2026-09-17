@@ -1,3 +1,9 @@
+## [16.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.1...16.0.2) (2026-09-17)
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/dargmuesli/creal docker tag to v6.4.0 ([8b0086b](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8b0086b16d1d00bea9ff3ce0d70241457dfb3006))
+
 ## [16.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.0...16.0.1) (2026-09-17)
 
 ### Bug Fixes
