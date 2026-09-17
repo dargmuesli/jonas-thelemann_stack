@@ -1,3 +1,9 @@
+## [16.0.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.2...16.0.3) (2026-09-17)
+
+### Bug Fixes
+
+* **nextcloud:** derive trusted domains from the stack domain ([#214](https://github.com/dargmuesli/jonas-thelemann_stack/issues/214)) ([1d9a23f](https://github.com/dargmuesli/jonas-thelemann_stack/commit/1d9a23f396cdfd4235229aa46c767a805cbd436e))
+
 ## [16.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.1...16.0.2) (2026-09-17)
 
 ### Bug Fixes
