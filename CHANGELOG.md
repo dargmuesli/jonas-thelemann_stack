@@ -1,3 +1,13 @@
+## [16.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.9...16.0.0) (2026-09-17)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update nextcloud docker tag to v35 (#213)
+
+### Miscellaneous Chores
+
+* **deps:** update nextcloud docker tag to v35 ([#213](https://github.com/dargmuesli/jonas-thelemann_stack/issues/213)) ([93e015c](https://github.com/dargmuesli/jonas-thelemann_stack/commit/93e015c95125694af8460966cff512716c24ae2b))
+
 ## [15.1.9](https://github.com/dargmuesli/jonas-thelemann_stack/compare/15.1.8...15.1.9) (2026-09-07)
 
 ### Bug Fixes
