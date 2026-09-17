@@ -1,3 +1,14 @@
+# The anchor has to precede the services that alias it, so this key cannot be sorted with the other extension keys.
+x-nextcloud-environment: &nextcloud-environment
+  # The environment that the cloud and its cron companion share.
+  NEXTCLOUD_ADMIN_PASSWORD_FILE: /run/secrets/nextcloud-admin-password
+  NEXTCLOUD_ADMIN_USER_FILE: /run/secrets/nextcloud-admin-user
+  NEXTCLOUD_TRUSTED_DOMAINS: nextcloud.${STACK_DOMAIN} nextcloud-nginx
+  POSTGRES_DB: nextcloud
+  POSTGRES_HOST: postgres
+  POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
+  POSTGRES_USER_FILE: /run/secrets/postgres-user
+  REDIS_HOST: redis
 secrets:
   nextcloud-admin-password:
     # The cloud admin user's password.
@@ -11,10 +22,7 @@ services:
     deploy:
       labels:
         - dargstack.profiles=nextcloud
-    env_file: ./src/development/nextcloud/configurations/nextcloud.env
-    environment:
-      NEXTCLOUD_TRUSTED_DOMAINS: nextcloud.${STACK_DOMAIN} nextcloud-nginx
-      REDIS_HOST: redis
+    environment: *nextcloud-environment
     image: nextcloud:35.0.0-fpm-alpine
     secrets:
       - nextcloud-admin-password
@@ -29,10 +37,7 @@ services:
       labels:
         - dargstack.profiles=nextcloud
     entrypoint: /cron.sh
-    env_file: ./src/development/nextcloud/configurations/nextcloud.env
-    environment:
-      NEXTCLOUD_TRUSTED_DOMAINS: nextcloud.${STACK_DOMAIN} nextcloud-nginx
-      REDIS_HOST: redis
+    environment: *nextcloud-environment
     image: nextcloud:35.0.0-fpm-alpine
     secrets:
       - nextcloud-admin-password
