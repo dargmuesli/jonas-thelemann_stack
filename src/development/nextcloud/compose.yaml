@@ -23,7 +23,7 @@ services:
       labels:
         - dargstack.profiles=nextcloud
     environment: *nextcloud-environment
-    image: nextcloud:35.0.0-fpm-alpine
+    image: nextcloud:35.0.1-fpm-alpine
     secrets:
       - nextcloud-admin-password
       - nextcloud-admin-user
@@ -38,7 +38,7 @@ services:
         - dargstack.profiles=nextcloud
     entrypoint: /cron.sh
     environment: *nextcloud-environment
-    image: nextcloud:35.0.0-fpm-alpine
+    image: nextcloud:35.0.1-fpm-alpine
     secrets:
       - nextcloud-admin-password
       - nextcloud-admin-user
