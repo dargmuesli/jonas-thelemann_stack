@@ -4,6 +4,16 @@ jobs:
   DBBackup:
     cmd: |
       /srv/sinks/sentry/in-progress.sh
+      # Guarded only from here, so a Sentry outage cannot stop the upload. The
+      # trailing `deactivate` always succeeds and would otherwise mask a failed
+      # sync, letting the run report success.
+      set -e
+      # Syncing an empty or stale directory also exits 0, so the dumps
+      # themselves have to be checked.
+      if [ -z "$(find /backups -type f -mmin -1500 -print -quit)" ]; then
+        echo "no database dump under /backups is newer than 25 hours" >&2
+        exit 1
+      fi
       source .venv/bin/activate
       aws s3 sync /backups s3://$(cat /run/secrets/jobber-aws-bucket)/backups
       deactivate
