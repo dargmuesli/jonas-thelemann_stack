@@ -1,3 +1,9 @@
+## [16.0.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.5...16.0.6) (2026-09-27)
+
+### Bug Fixes
+
+* **jobber:** report a failed or stale backup sync ([#216](https://github.com/dargmuesli/jonas-thelemann_stack/issues/216)) ([b0365ad](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b0365adcf75cc10ba962314078136bd0fb83a97c))
+
 ## [16.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.4...16.0.5) (2026-09-27)
 
 ### Bug Fixes
