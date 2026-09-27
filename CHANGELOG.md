@@ -1,3 +1,9 @@
+## [16.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.4...16.0.5) (2026-09-27)
+
+### Bug Fixes
+
+* **jobber:** restore the postgres backup mount ([#215](https://github.com/dargmuesli/jonas-thelemann_stack/issues/215)) ([7afecd9](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7afecd93a7e61ebb45feb149bc526be6b0e64b4c))
+
 ## [16.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.3...16.0.4) (2026-09-27)
 
 ### Bug Fixes
