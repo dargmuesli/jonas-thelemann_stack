@@ -7,4 +7,5 @@ services:
       SENTRY_CRONS: ${SENTRY_CRONS}
     volumes:
       - (( append ))
+      - ../backups/postgres/:/backups/
       - ./configurations/sinks:/srv/sinks:ro
