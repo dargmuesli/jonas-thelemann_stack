@@ -1,3 +1,9 @@
+## [17.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.0...17.0.1) (2026-10-14)
+
+### Bug Fixes
+
+* **deps:** update to non-beta majors ([07fcde3](https://github.com/dargmuesli/jonas-thelemann_stack/commit/07fcde3a803b425bd0511354f85fe0d7126c2717))
+
 ## [17.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.7...17.0.0) (2026-10-14)
 
 ### ⚠ BREAKING CHANGES
