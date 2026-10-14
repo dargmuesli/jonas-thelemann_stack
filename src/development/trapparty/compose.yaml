@@ -32,8 +32,8 @@ services:
     secrets:
       - trapparty-sqitch-target
       - postgres-role-trapparty-postgraphile-password
-      - source: shared-nuxt-og-image-secret
-        target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
+      - source: shared-nuxt-app-secret
+        target: /run/environment-variables/NUXT_APP_SECRET
     volumes:
       - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
       - ~~~/trapparty/:/srv/app/ # dargstack:dev-only

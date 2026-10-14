@@ -1,12 +1,13 @@
 secrets:
-  shared-nuxt-og-image-secret:
-    # The secret used for generating Open Graph images on Nuxt websites.
-    file: ~~/artifacts/secrets/shared-nuxt-og-image-secret.secret
+  shared-nuxt-app-secret:
+    # The root secret of Nuxt websites, e.g. for signing Open Graph image URLs.
+    file: ~~/artifacts/secrets/shared-nuxt-app-secret.secret
 volumes:
   pnpm-data:
     # The node package manager's data.
     {}
 x-dargstack:
   secrets:
-    shared-nuxt-og-image-secret:
+    shared-nuxt-app-secret:
+      special_characters: false # nitro parses environment overrides, so the value must stay a plain string
       type: random_string

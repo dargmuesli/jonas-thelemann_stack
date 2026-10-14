@@ -39,8 +39,8 @@ services:
         target: /run/environment-variables/NUXT_VIO_EMAIL_NODEMAILER_TRANSPORT
       - source: jonas-thelemann-turnstile-key
         target: /run/environment-variables/NUXT_TURNSTILE_SECRET_KEY
-      - source: shared-nuxt-og-image-secret
-        target: /run/environment-variables/NUXT_OG_IMAGE_SECRET
+      - source: shared-nuxt-app-secret
+        target: /run/environment-variables/NUXT_APP_SECRET
     volumes:
       - pnpm-data:/srv/.pnpm-store/ # dargstack:dev-only
       - ~~~/jonas-thelemann/:/srv/app/ # dargstack:dev-only
