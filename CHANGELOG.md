@@ -1,3 +1,13 @@
+## [17.0.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.7...17.0.0) (2026-10-14)
+
+### ⚠ BREAKING CHANGES
+
+* **nuxt:** update the Nuxt websites to their betas with a shared app secret (#217)
+
+### Features
+
+* **nuxt:** update the Nuxt websites to their betas with a shared app secret ([#217](https://github.com/dargmuesli/jonas-thelemann_stack/issues/217)) ([c3257b8](https://github.com/dargmuesli/jonas-thelemann_stack/commit/c3257b89ab1129e82ebb926b6b95b59611f2aba4))
+
 ## [16.0.7](https://github.com/dargmuesli/jonas-thelemann_stack/compare/16.0.6...16.0.7) (2026-10-11)
 
 ### Bug Fixes
