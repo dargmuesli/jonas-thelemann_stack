@@ -1,3 +1,9 @@
+## [17.0.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.1...17.0.2) (2026-10-21)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([8994aa5](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8994aa56bdca539165c8d217719e5abf54bd5121))
+
 ## [17.0.1](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.0...17.0.1) (2026-10-14)
 
 ### Bug Fixes
