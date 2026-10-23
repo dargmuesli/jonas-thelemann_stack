@@ -1,3 +1,9 @@
+## [17.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.4...17.0.5) (2026-10-23)
+
+### Bug Fixes
+
+* **thelounge:** update thelounge docker tag to v4.5.2 ([#218](https://github.com/dargmuesli/jonas-thelemann_stack/issues/218)) ([8ad35c6](https://github.com/dargmuesli/jonas-thelemann_stack/commit/8ad35c6ce1986d8df6afd92e33ae959d0ee75421))
+
 ## [17.0.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.3...17.0.4) (2026-10-23)
 
 ### Bug Fixes
