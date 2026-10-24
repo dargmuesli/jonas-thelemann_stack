@@ -18,12 +18,19 @@ services:
         - traefik.http.routers.creal-postgraphile-secure.rule=Host(`creal-postgraphile.${STACK_DOMAIN}`)
         - traefik.http.routers.creal-postgraphile-secure.tls.options=mintls13@file # dargstack:dev-only
         - traefik.http.services.creal-postgraphile.loadbalancer.server.port=5000
-    image: graphile/postgraphile:4.14.1
+    environment:
+      # The PostgreSQL schema exposed by the GraphQL API.
+      POSTGRAPHILE_SCHEMA: creal
+      # The role the GraphQL API uses for every request.
+      POSTGRAPHILE_DEFAULT_ROLE: creal_anonymous
+      # The HTTP port of the GraphQL API; must be a container environment variable because the healthcheck only reads the container environment.
+      POSTGRAPHILE_PORT: 5000
+    image: ghcr.io/maevsi/postgraphile:3.0.0-beta.3
     secrets:
-      - creal-postgraphile-connection
-      - creal-postgraphile-owner-connection
-    volumes:
-      - ./configurations/.postgraphilerc.js:/postgraphile/.postgraphilerc.js:ro
+      - source: creal-postgraphile-connection
+        target: /run/environment-variables/POSTGRAPHILE_CONNECTION
+      - source: creal-postgraphile-owner-connection
+        target: /run/environment-variables/POSTGRAPHILE_OWNER_CONNECTION
 x-dargstack:
   secrets:
     creal-postgraphile-connection:
