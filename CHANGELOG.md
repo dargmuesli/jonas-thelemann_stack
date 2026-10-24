@@ -1,3 +1,9 @@
+## [17.1.0](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.5...17.1.0) (2026-10-24)
+
+### Features
+
+* **postgraphile:** migrate to the 3.0.0-beta.3 image ([#219](https://github.com/dargmuesli/jonas-thelemann_stack/issues/219)) ([4b919bf](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4b919bf60d53a66276a955fe3cf6eb50454c16b7))
+
 ## [17.0.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.0.4...17.0.5) (2026-10-23)
 
 ### Bug Fixes
