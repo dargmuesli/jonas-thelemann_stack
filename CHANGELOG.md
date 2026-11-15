@@ -1,3 +1,9 @@
+## [17.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.2...17.1.3) (2026-11-15)
+
+### Bug Fixes
+
+* schedule release ([4ac9cff](https://github.com/dargmuesli/jonas-thelemann_stack/commit/4ac9cff28992791e631d4cbfbbec7879f32e6319))
+
 ## [17.1.2](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.1...17.1.2) (2026-11-08)
 
 ### Bug Fixes
