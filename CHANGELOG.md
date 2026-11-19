@@ -1,3 +1,9 @@
+## [17.1.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.3...17.1.4) (2026-11-19)
+
+### Bug Fixes
+
+* **nextcloud:** update nginx to 1.31.9 ([#223](https://github.com/dargmuesli/jonas-thelemann_stack/issues/223)) ([b85ec1d](https://github.com/dargmuesli/jonas-thelemann_stack/commit/b85ec1d0e9175e51141eb33868ac0a8cc012adb9))
+
 ## [17.1.3](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.2...17.1.3) (2026-11-15)
 
 ### Bug Fixes
