@@ -1,3 +1,9 @@
+## [17.1.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.4...17.1.5) (2026-11-23)
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([#226](https://github.com/dargmuesli/jonas-thelemann_stack/issues/226)) ([7fd0866](https://github.com/dargmuesli/jonas-thelemann_stack/commit/7fd08666d7682848ce6609bc48a2a49c723884ab))
+
 ## [17.1.4](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.3...17.1.4) (2026-11-19)
 
 ### Bug Fixes
