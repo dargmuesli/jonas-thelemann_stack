@@ -51,7 +51,7 @@ services:
       - --watch
     environment:
       STACK_DOMAIN: ${STACK_DOMAIN}
-    image: ldez/traefik-certs-dumper:v2.11.4
+    image: ldez/traefik-certs-dumper:v2.11.4@sha256:a34b27edf8e5e96a215035a6bfba00d769d2638f8444a5dd6dc27299d75f43c5
     volumes:
       - acme-data:/etc/traefik/acme/
 volumes:

@@ -7,6 +7,6 @@ services:
         - traefik.http.routers.creal-strapi-secure.tls.certresolver=default
       update_config:
         order: stop-first
-    image: ghcr.io/dargmuesli/creal-strapi:5.0.12
+    image: ghcr.io/dargmuesli/creal-strapi:5.0.13@sha256:3e475a384e6b3ddc22e98a5226f04089f273eab8b0b1dcbc560866c27b81e244
     volumes:
       - creal-strapi-data:/srv/app/public/

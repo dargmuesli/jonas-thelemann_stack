@@ -1,3 +1,3 @@
 # <DEPENDENCIES>
-FROM ghcr.io/dargstack/dargstack:4.23.0
+FROM ghcr.io/dargstack/dargstack:4.24.0@sha256:141db605a91afbe0b6775fd9752369f99f588ff512d7f70cb726b51346257f8b
 # </DEPENDENCIES>
