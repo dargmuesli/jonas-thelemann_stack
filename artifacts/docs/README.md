@@ -34,10 +34,6 @@ Services: postgres, traefik, traefik-certs-dumper, trapparty, trapparty-postgrap
 
 Each service corresponds to a compose.yaml file. Descriptions are extracted from YAML comments in the source. Services marked *(production only)* exist only in the production overlay.
 
-### 1generator
-
-You can access this subproject at [1generator.localhost](https://1generator.localhost/).
-
 ### adminer
 
 You can access the database's frontend at [adminer.localhost](https://adminer.localhost/).
