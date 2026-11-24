@@ -1,3 +1,9 @@
+## [17.1.6](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.5...17.1.6) (2026-11-24)
+
+### Bug Fixes
+
+* **1generator:** remove service ([#227](https://github.com/dargmuesli/jonas-thelemann_stack/issues/227)) ([15befc1](https://github.com/dargmuesli/jonas-thelemann_stack/commit/15befc140fce58ec8c016edcfd27b8384736dd96))
+
 ## [17.1.5](https://github.com/dargmuesli/jonas-thelemann_stack/compare/17.1.4...17.1.5) (2026-11-23)
 
 ### Bug Fixes
